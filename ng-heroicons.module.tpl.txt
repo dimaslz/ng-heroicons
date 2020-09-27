@@ -1,0 +1,18 @@
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CommonModule } from "@angular/common";
+
+{{componentsImports}}
+
+
+@NgModule({
+  declarations: [
+    {{components}}
+  ],
+  imports: [
+    CommonModule
+  ],
+  exports: [
+    {{components}}
+  ]
+})
+export class NgHeroiconsModule { }
