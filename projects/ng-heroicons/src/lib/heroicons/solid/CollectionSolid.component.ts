@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
 
 @Component({
-selector: 'collection-solid-icon',
-template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  selector: 'collection-solid-icon',
+  template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 
 <path d="M7 3C6.44772 3 6 3.44772 6 4C6 4.55228 6.44772 5 7 5H13C13.5523 5 14 4.55228 14 4C14 3.44772 13.5523 3 13 3H7Z" fill="currentColor"/>
 <path d="M4 7C4 6.44772 4.44772 6 5 6H15C15.5523 6 16 6.44772 16 7C16 7.55228 15.5523 8 15 8H5C4.44772 8 4 7.55228 4 7Z" fill="currentColor"/>
@@ -11,23 +11,34 @@ template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://ww
 `,
 })
 export class CollectionSolidComponent implements OnInit {
-@Input() style: string = "";
-@Input() size: number = 24;
-@Input() color: string = "#374151";
+  @Input() style: string = "";
+  @Input() size: number = 24;
+  @Input() color: string = "#374151";
 
-constructor() { }
+  constructor() { }
 
-ngOnInit(): void {
-  let style = [];
-  if (this.size) {
-    style.push(`width: ${this.size}; height: ${this.size};`);
+  ngOnChanges(changes: SimpleChanges) {
+    const colorHasChanged = changes.color?.previousValue !== changes.color?.currentValue;
+    const sizeHasChanged = changes.size?.previousValue !== changes.size?.currentValue;
+    if (colorHasChanged || sizeHasChanged) {
+      this.style = "";
+      this.renderStyle();
+    }
   }
-  if (this.color) {
-    style.push(`color: ${this.color};`);
+
+  ngOnInit(): void {
+    this.renderStyle();
   }
 
-  this.style = style.join(' ') + this.style;
+  renderStyle() {
+    let style = [];
+    if (this.size) {
+      style.push(`width: ${this.size}; height: ${this.size};`);
+    }
+    if (this.color) {
+      style.push(`color: ${this.color};`);
+    }
 
-}
-
+    this.style = style.join(' ') + this.style;
+  }
 }

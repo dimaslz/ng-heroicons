@@ -1,30 +1,41 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
 
 @Component({
-selector: 'exclamation-solid-icon',
-template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  selector: 'exclamation-solid-icon',
+  template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.25706 3.09882C9.02167 1.73952 10.9788 1.73952 11.7434 3.09882L17.3237 13.0194C18.0736 14.3526 17.1102 15.9999 15.5805 15.9999H4.4199C2.89025 15.9999 1.92682 14.3526 2.67675 13.0194L8.25706 3.09882ZM11.0001 13C11.0001 13.5523 10.5524 14 10.0001 14C9.44784 14 9.00012 13.5523 9.00012 13C9.00012 12.4477 9.44784 12 10.0001 12C10.5524 12 11.0001 12.4477 11.0001 13ZM10.0001 5C9.44784 5 9.00012 5.44772 9.00012 6V9C9.00012 9.55228 9.44784 10 10.0001 10C10.5524 10 11.0001 9.55228 11.0001 9V6C11.0001 5.44772 10.5524 5 10.0001 5Z" fill="currentColor"/>
 </svg>
 `,
 })
 export class ExclamationSolidComponent implements OnInit {
-@Input() style: string = "";
-@Input() size: number = 24;
-@Input() color: string = "#374151";
+  @Input() style: string = "";
+  @Input() size: number = 24;
+  @Input() color: string = "#374151";
 
-constructor() { }
+  constructor() { }
 
-ngOnInit(): void {
-  let style = [];
-  if (this.size) {
-    style.push(`width: ${this.size}; height: ${this.size};`);
+  ngOnChanges(changes: SimpleChanges) {
+    const colorHasChanged = changes.color?.previousValue !== changes.color?.currentValue;
+    const sizeHasChanged = changes.size?.previousValue !== changes.size?.currentValue;
+    if (colorHasChanged || sizeHasChanged) {
+      this.style = "";
+      this.renderStyle();
+    }
   }
-  if (this.color) {
-    style.push(`color: ${this.color};`);
+
+  ngOnInit(): void {
+    this.renderStyle();
   }
 
-  this.style = style.join(' ') + this.style;
+  renderStyle() {
+    let style = [];
+    if (this.size) {
+      style.push(`width: ${this.size}; height: ${this.size};`);
+    }
+    if (this.color) {
+      style.push(`color: ${this.color};`);
+    }
 
-}
-
+    this.style = style.join(' ') + this.style;
+  }
 }

@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
 
 @Component({
-selector: 'truck-solid-icon',
-template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  selector: 'truck-solid-icon',
+  template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 16.5C8 17.3284 7.32843 18 6.5 18C5.67157 18 5 17.3284 5 16.5C5 15.6716 5.67157 15 6.5 15C7.32843 15 8 15.6716 8 16.5Z" fill="currentColor"/>
 <path d="M15 16.5C15 17.3284 14.3284 18 13.5 18C12.6716 18 12 17.3284 12 16.5C12 15.6716 12.6716 15 13.5 15C14.3284 15 15 15.6716 15 16.5Z" fill="currentColor"/>
 <path d="M3 4C2.44772 4 2 4.44772 2 5V15C2 15.5523 2.44772 16 3 16H4.05001C4.28164 14.8589 5.29052 14 6.5 14C7.70948 14 8.71836 14.8589 8.94999 16H10C10.5523 16 11 15.5523 11 15V5C11 4.44772 10.5523 4 10 4H3Z" fill="currentColor"/>
@@ -11,23 +11,34 @@ template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://ww
 `,
 })
 export class TruckSolidComponent implements OnInit {
-@Input() style: string = "";
-@Input() size: number = 24;
-@Input() color: string = "#374151";
+  @Input() style: string = "";
+  @Input() size: number = 24;
+  @Input() color: string = "#374151";
 
-constructor() { }
+  constructor() { }
 
-ngOnInit(): void {
-  let style = [];
-  if (this.size) {
-    style.push(`width: ${this.size}; height: ${this.size};`);
+  ngOnChanges(changes: SimpleChanges) {
+    const colorHasChanged = changes.color?.previousValue !== changes.color?.currentValue;
+    const sizeHasChanged = changes.size?.previousValue !== changes.size?.currentValue;
+    if (colorHasChanged || sizeHasChanged) {
+      this.style = "";
+      this.renderStyle();
+    }
   }
-  if (this.color) {
-    style.push(`color: ${this.color};`);
+
+  ngOnInit(): void {
+    this.renderStyle();
   }
 
-  this.style = style.join(' ') + this.style;
+  renderStyle() {
+    let style = [];
+    if (this.size) {
+      style.push(`width: ${this.size}; height: ${this.size};`);
+    }
+    if (this.color) {
+      style.push(`color: ${this.color};`);
+    }
 
-}
-
+    this.style = style.join(' ') + this.style;
+  }
 }

@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
 
 @Component({
-selector: 'qrcode-solid-icon',
-template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  selector: 'qrcode-solid-icon',
+  template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M3 4C3 3.44772 3.44772 3 4 3H7C7.55228 3 8 3.44772 8 4V7C8 7.55228 7.55228 8 7 8H4C3.44772 8 3 7.55228 3 7V4ZM5 6V5H6V6H5Z" fill="currentColor"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M3 13C3 12.4477 3.44772 12 4 12H7C7.55228 12 8 12.4477 8 13V16C8 16.5523 7.55228 17 7 17H4C3.44772 17 3 16.5523 3 16V13ZM5 15V14H6V15H5Z" fill="currentColor"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M13 3C12.4477 3 12 3.44772 12 4V7C12 7.55228 12.4477 8 13 8H16C16.5523 8 17 7.55228 17 7V4C17 3.44772 16.5523 3 16 3H13ZM14 5V6H15V5H14Z" fill="currentColor"/>
@@ -17,23 +17,34 @@ template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://ww
 `,
 })
 export class QrcodeSolidComponent implements OnInit {
-@Input() style: string = "";
-@Input() size: number = 24;
-@Input() color: string = "#374151";
+  @Input() style: string = "";
+  @Input() size: number = 24;
+  @Input() color: string = "#374151";
 
-constructor() { }
+  constructor() { }
 
-ngOnInit(): void {
-  let style = [];
-  if (this.size) {
-    style.push(`width: ${this.size}; height: ${this.size};`);
+  ngOnChanges(changes: SimpleChanges) {
+    const colorHasChanged = changes.color?.previousValue !== changes.color?.currentValue;
+    const sizeHasChanged = changes.size?.previousValue !== changes.size?.currentValue;
+    if (colorHasChanged || sizeHasChanged) {
+      this.style = "";
+      this.renderStyle();
+    }
   }
-  if (this.color) {
-    style.push(`color: ${this.color};`);
+
+  ngOnInit(): void {
+    this.renderStyle();
   }
 
-  this.style = style.join(' ') + this.style;
+  renderStyle() {
+    let style = [];
+    if (this.size) {
+      style.push(`width: ${this.size}; height: ${this.size};`);
+    }
+    if (this.color) {
+      style.push(`color: ${this.color};`);
+    }
 
-}
-
+    this.style = style.join(' ') + this.style;
+  }
 }

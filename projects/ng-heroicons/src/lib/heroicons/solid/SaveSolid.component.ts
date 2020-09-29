@@ -1,31 +1,42 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
 
 @Component({
-selector: 'save-solid-icon',
-template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  selector: 'save-solid-icon',
+  template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M7.70711 10.2929C7.31658 9.90237 6.68342 9.90237 6.29289 10.2929C5.90237 10.6834 5.90237 11.3166 6.29289 11.7071L9.29289 14.7071C9.68342 15.0976 10.3166 15.0976 10.7071 14.7071L13.7071 11.7071C14.0976 11.3166 14.0976 10.6834 13.7071 10.2929C13.3166 9.90237 12.6834 9.90237 12.2929 10.2929L11 11.5858L11 6H16C17.1046 6 18 6.89543 18 8V15C18 16.1046 17.1046 17 16 17H4C2.89543 17 2 16.1046 2 15V8C2 6.89543 2.89543 6 4 6H9L9 11.5858L7.70711 10.2929Z" fill="currentColor"/>
 <path d="M9 4C9 3.44772 9.44772 3 10 3C10.5523 3 11 3.44772 11 4L11 6H9L9 4Z" fill="currentColor"/>
 </svg>
 `,
 })
 export class SaveSolidComponent implements OnInit {
-@Input() style: string = "";
-@Input() size: number = 24;
-@Input() color: string = "#374151";
+  @Input() style: string = "";
+  @Input() size: number = 24;
+  @Input() color: string = "#374151";
 
-constructor() { }
+  constructor() { }
 
-ngOnInit(): void {
-  let style = [];
-  if (this.size) {
-    style.push(`width: ${this.size}; height: ${this.size};`);
+  ngOnChanges(changes: SimpleChanges) {
+    const colorHasChanged = changes.color?.previousValue !== changes.color?.currentValue;
+    const sizeHasChanged = changes.size?.previousValue !== changes.size?.currentValue;
+    if (colorHasChanged || sizeHasChanged) {
+      this.style = "";
+      this.renderStyle();
+    }
   }
-  if (this.color) {
-    style.push(`color: ${this.color};`);
+
+  ngOnInit(): void {
+    this.renderStyle();
   }
 
-  this.style = style.join(' ') + this.style;
+  renderStyle() {
+    let style = [];
+    if (this.size) {
+      style.push(`width: ${this.size}; height: ${this.size};`);
+    }
+    if (this.color) {
+      style.push(`color: ${this.color};`);
+    }
 
-}
-
+    this.style = style.join(' ') + this.style;
+  }
 }

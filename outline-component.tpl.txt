@@ -1,10 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: '{{selectorName}}',
   template: `{{template}}`,
 })
-export class {{className}} implements OnInit {
+export class {{className}} implements OnInit, OnChanges {
   @Input() style: string = "";
   @Input() size: number = 24;
   @Input() stroke: number|string = 1;
@@ -12,7 +12,21 @@ export class {{className}} implements OnInit {
 
   constructor() { }
 
+  ngOnChanges(changes: SimpleChanges) {
+    const colorHasChanged = changes.color?.previousValue !== changes.color?.currentValue;
+    const sizeHasChanged = changes.size?.previousValue !== changes.size?.currentValue;
+    const strokeHasChanged = changes.stroke?.previousValue !== changes.stroke?.currentValue;
+    if (colorHasChanged || sizeHasChanged || strokeHasChanged) {
+      this.style = "";
+      this.renderStyle();
+    }
+  }
+
   ngOnInit(): void {
+    this.renderStyle();
+  }
+
+  renderStyle() {
     let style = [];
     if (this.size) {
       style.push(`width: ${this.size}; height: ${this.size};`);
@@ -25,7 +39,5 @@ export class {{className}} implements OnInit {
     }
 
     this.style = style.join(' ') + this.style;
-
   }
-
 }

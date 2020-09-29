@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: '{{selectorName}}',
@@ -11,7 +11,20 @@ export class {{className}} implements OnInit {
 
   constructor() { }
 
+  ngOnChanges(changes: SimpleChanges) {
+    const colorHasChanged = changes.color?.previousValue !== changes.color?.currentValue;
+    const sizeHasChanged = changes.size?.previousValue !== changes.size?.currentValue;
+    if (colorHasChanged || sizeHasChanged) {
+      this.style = "";
+      this.renderStyle();
+    }
+  }
+
   ngOnInit(): void {
+    this.renderStyle();
+  }
+
+  renderStyle() {
     let style = [];
     if (this.size) {
       style.push(`width: ${this.size}; height: ${this.size};`);
@@ -21,7 +34,5 @@ export class {{className}} implements OnInit {
     }
 
     this.style = style.join(' ') + this.style;
-
   }
-
 }

@@ -13,7 +13,7 @@ async function SVGToAngular({
   const componentTpl = await fs.readFile(`${type}-component.tpl.txt`, 'utf8');
   
   return componentTpl
-    .replace('{{template}}', template)
+    .replace('{{template}}', dedent(template))
     .replace('{{className}}', className)
     .replace('stroke-width="2"', '')
     .replace(/stroke="#.*?"/g, 'stroke="currentColor"')
@@ -76,10 +76,8 @@ Promise.all(['outline', 'solid'].map(type => {
             });
           })
           .then((component) => {
-            const fileName = `${camelcase(file.replace(/\.svg$/, `-${type}`), { pascalCase: true })}.component.ts`
-            const content = dedent(component);
-
-            return fs.writeFile(`${destHeroicons}/${fileName}`, content).then(() => fileName)
+            const fileName = `${camelcase(file.replace(/\.svg$/, `-${type}`), { pascalCase: true })}.component.ts`;
+            return fs.writeFile(`${destHeroicons}/${fileName}`, component).then(() => fileName);
           })
       })
     );
