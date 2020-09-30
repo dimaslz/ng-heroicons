@@ -1,14 +1,22 @@
-import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: '{{selectorName}}',
   template: `{{template}}`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  styles: [`svg {
+    height: inherit;
+    width: inherit;
+    color: inherit;
+    stroke-width: inherit;
+  }`],
 })
 export class {{className}} implements OnInit, OnChanges {
   @Input() style: string = "";
   @Input() size: number = 24;
   @Input() stroke: number|string = 1;
-  @Input() color: string = "#374151";
+  @Input() color: string = "";
+  @Input() class: string = "";
 
   constructor() { }
 
@@ -16,6 +24,7 @@ export class {{className}} implements OnInit, OnChanges {
     const colorHasChanged = changes.color?.previousValue !== changes.color?.currentValue;
     const sizeHasChanged = changes.size?.previousValue !== changes.size?.currentValue;
     const strokeHasChanged = changes.stroke?.previousValue !== changes.stroke?.currentValue;
+    const classHasChanged = changes.class?.previousValue !== changes.class?.currentValue;
     if (colorHasChanged || sizeHasChanged || strokeHasChanged) {
       this.style = "";
       this.renderStyle();

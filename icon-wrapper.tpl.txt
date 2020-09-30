@@ -1,0 +1,6 @@
+<div class="icon-wrapper">
+  <div>
+    {{componentIcon}}
+  </div>
+  <div>{{iconName}}</div>
+</div>

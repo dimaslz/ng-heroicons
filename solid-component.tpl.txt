@@ -1,13 +1,20 @@
-import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: '{{selectorName}}',
   template: `{{template}}`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  styles: [`svg {
+    height: inherit;
+    width: inherit;
+    color: inherit;
+  }`]
 })
-export class {{className}} implements OnInit {
+export class {{className}} implements OnInit, OnChanges {
   @Input() style: string = "";
   @Input() size: number = 24;
-  @Input() color: string = "#374151";
+  @Input() color: string = "";
+  @Input() class: string = "";
 
   constructor() { }
 

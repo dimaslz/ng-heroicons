@@ -3,6 +3,7 @@ const dedent = require('dedent');
 const camelcase = require('camelcase');
 const mkdirp = require('mkdirp');
 const rimraf = require('rimraf');
+const kebabcase = require('lodash.kebabcase');
 
 async function SVGToAngular({
   selectorName,
@@ -15,11 +16,33 @@ async function SVGToAngular({
   return componentTpl
     .replace('{{template}}', dedent(template))
     .replace('{{className}}', className)
-    .replace('stroke-width="2"', '')
+    .replace(/stroke-width="\d+"/g, '')
     .replace(/stroke="#.*?"/g, 'stroke="currentColor"')
     .replace(/fill="#.*?"/g, 'fill="currentColor"')
     .replace(/width="\d+" height="\d+"/, '[style]="style"')
     .replace('{{selectorName}}', selectorName);
+}
+
+
+function jsUcfirst(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+async function generateIconsComponent(icons, type) {
+  const iconTpl = await fs.readFile(`icon-wrapper.tpl.txt`, 'utf8');
+  const iconComponents = icons.filter(i => i).map(icon => {
+    return iconTpl
+      .replace('{{componentIcon}}', `<${kebabcase(icon)}-icon [size]="size" [color]="color" [class]="class" ${type === 'outline' ? '[stroke]="stroke"' : ""}></${kebabcase(icon)}-icon>`)
+      .replace('{{iconName}}', kebabcase(icon).replace(type, ' ').replace(/-/g, ' '));
+  }).join('\n\n');
+
+  let iconComponentsWrapperTpl = await fs.readFile(`icons-list-component.tpl.txt`, 'utf8');
+  iconComponentsWrapperTpl = iconComponentsWrapperTpl
+    .replace(/\{\{type\}\}/g, jsUcfirst(type))
+    .replace(/\{\{icons\}\}/g, iconComponents);
+  const iconComponentsPath = `./projects/ng-heroicons-demo/src/app/icons/${type}-icons.html`;
+  rimraf.sync(iconComponentsPath);
+  return fs.writeFile(iconComponentsPath, iconComponentsWrapperTpl);
 }
 
 async function writeFiles({ fileNames, type }) {
@@ -94,6 +117,10 @@ Promise.all(['outline', 'solid'].map(type => {
 
   const moduleImports = `${outlineContent.moduleImports}\n${solidContent.moduleImports}`;
   const moduleComponents = `${outlineContent.moduleComponents}\n${solidContent.moduleComponents}`;
+
+  await generateIconsComponent(outlineContent.moduleComponents.split(',').map(c => c.replace('Component', '').trim()), 'outline');
+  await generateIconsComponent(solidContent.moduleComponents.split(',').map(c => c.replace('Component', '').trim()), 'solid');
+
   return await fs.readFile(`./ng-heroicons.module.tpl.txt`, 'utf8')
     .then(file => {
       return file
