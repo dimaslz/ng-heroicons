@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'view-grid-solid-icon',
@@ -7,13 +7,19 @@ import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/cor
 <path d="M5 11C3.89543 11 3 11.8954 3 13V15C3 16.1046 3.89543 17 5 17H7C8.10457 17 9 16.1046 9 15V13C9 11.8954 8.10457 11 7 11H5Z" fill="currentColor"/>
 <path d="M11 5C11 3.89543 11.8954 3 13 3H15C16.1046 3 17 3.89543 17 5V7C17 8.10457 16.1046 9 15 9H13C11.8954 9 11 8.10457 11 7V5Z" fill="currentColor"/>
 <path d="M11 13C11 11.8954 11.8954 11 13 11H15C16.1046 11 17 11.8954 17 13V15C17 16.1046 16.1046 17 15 17H13C11.8954 17 11 16.1046 11 15V13Z" fill="currentColor"/>
-</svg>
-`,
+</svg>`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  styles: [`svg {
+    height: inherit;
+    width: inherit;
+    color: inherit;
+  }`]
 })
-export class ViewGridSolidComponent implements OnInit {
+export class ViewGridSolidComponent implements OnInit, OnChanges {
   @Input() style: string = "";
   @Input() size: number = 24;
-  @Input() color: string = "#374151";
+  @Input() color: string = "";
+  @Input() class: string = "";
 
   constructor() { }
 

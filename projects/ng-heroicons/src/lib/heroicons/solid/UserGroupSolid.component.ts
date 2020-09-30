@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'user-group-solid-icon',
@@ -10,13 +10,19 @@ import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/cor
 <path d="M6 8C6 9.10457 5.10457 10 4 10C2.89543 10 2 9.10457 2 8C2 6.89543 2.89543 6 4 6C5.10457 6 6 6.89543 6 8Z" fill="currentColor"/>
 <path d="M16 18V15C16 13.9459 15.7282 12.9552 15.2507 12.0943C15.4902 12.0327 15.7413 12 16 12C17.6569 12 19 13.3431 19 15V18H16Z" fill="currentColor"/>
 <path d="M4.74926 12.0943C4.27185 12.9552 4 13.9459 4 15V18H1V15C1 13.3431 2.34315 12 4 12C4.25871 12 4.50977 12.0327 4.74926 12.0943Z" fill="currentColor"/>
-</svg>
-`,
+</svg>`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  styles: [`svg {
+    height: inherit;
+    width: inherit;
+    color: inherit;
+  }`]
 })
-export class UserGroupSolidComponent implements OnInit {
+export class UserGroupSolidComponent implements OnInit, OnChanges {
   @Input() style: string = "";
   @Input() size: number = 24;
-  @Input() color: string = "#374151";
+  @Input() color: string = "";
+  @Input() class: string = "";
 
   constructor() { }
 

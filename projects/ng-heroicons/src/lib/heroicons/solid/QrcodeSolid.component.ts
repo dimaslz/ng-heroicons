@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'qrcode-solid-icon',
@@ -13,13 +13,19 @@ import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/cor
 <path d="M7 11C7.55228 11 8 10.5523 8 10C8 9.44772 7.55228 9 7 9H4C3.44772 9 3 9.44771 3 10C3 10.5523 3.44772 11 4 11H7Z" fill="currentColor"/>
 <path d="M17 13C17 13.5523 16.5523 14 16 14H14C13.4477 14 13 13.5523 13 13C13 12.4477 13.4477 12 14 12H16C16.5523 12 17 12.4477 17 13Z" fill="currentColor"/>
 <path d="M16 17C16.5523 17 17 16.5523 17 16C17 15.4477 16.5523 15 16 15H13C12.4477 15 12 15.4477 12 16C12 16.5523 12.4477 17 13 17H16Z" fill="currentColor"/>
-</svg>
-`,
+</svg>`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  styles: [`svg {
+    height: inherit;
+    width: inherit;
+    color: inherit;
+  }`]
 })
-export class QrcodeSolidComponent implements OnInit {
+export class QrcodeSolidComponent implements OnInit, OnChanges {
   @Input() style: string = "";
   @Input() size: number = 24;
-  @Input() color: string = "#374151";
+  @Input() color: string = "";
+  @Input() class: string = "";
 
   constructor() { }
 
