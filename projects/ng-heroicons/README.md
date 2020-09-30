@@ -57,7 +57,7 @@ You can use your style in line, css or just pass color and size.
 `$ yarn build --prod ng-heroicons`
 
 ## TODO
-- [ ] Copy component tag into clipboard on click in an icon from the list
+- [X] Copy component tag into clipboard on click in an icon from the list
 - [ ] Copy svg into clipboard on click in an icon from the list
 - [ ] Search input
 
