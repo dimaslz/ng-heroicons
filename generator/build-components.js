@@ -38,7 +38,7 @@ async function generateIconsComponent(icons, type) {
   const iconComponents = icons.filter(i => i).map(icon => {
     return iconTpl
       .replace('{{componentIcon}}', `<${kebabcase(icon)}-icon [size]="size" [color]="color" [class]="class" ${type === 'outline' ? '[stroke]="stroke"' : ""}></${kebabcase(icon)}-icon>`)
-      .replace('{{iconName}}', kebabcase(icon).replace(type, ' ').replace(/-/g, ' '));
+      .replace('{{iconName}}', kebabcase(icon).replace(type, ' ').replace(/-/g, ' ').trim());
   }).join('\n\n');
 
   let iconComponentsWrapperTpl = await fs.readFile(`${here}/icons-list-component.tpl.txt`, 'utf8');
