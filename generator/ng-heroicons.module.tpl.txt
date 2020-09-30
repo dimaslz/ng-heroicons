@@ -3,16 +3,19 @@ import { CommonModule } from "@angular/common";
 
 {{componentsImports}}
 
+const COMPONENTS = [
+  {{components}}
+];
 
 @NgModule({
   declarations: [
-    {{components}}
+    COMPONENTS,
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    {{components}}
+    COMPONENTS,
   ]
 })
 export class NgHeroiconsModule { }
