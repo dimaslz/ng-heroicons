@@ -16,7 +16,7 @@ import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStra
 export class CursorClickOutlineComponent implements OnInit, OnChanges {
   @Input() style: string = "";
   @Input() size: number = 24;
-  @Input() stroke: number|string = 1;
+  @Input() stroke: number|string = 2;
   @Input() color: string = "";
   @Input() class: string = "";
 
