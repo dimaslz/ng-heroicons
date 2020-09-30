@@ -5,10 +5,33 @@ const camelcase = require('camelcase');
 const mkdirp = require('mkdirp');
 const rimraf = require('rimraf');
 const kebabcase = require('lodash.kebabcase');
+const shell = require('shelljs');
 
-const root = path.resolve('.');
+const root = path.resolve(__dirname + '/..');
 const projectsPath = path.resolve(`${root}/projects`);
 const here = path.resolve(`${root}/generator`);
+const heroiconsPath = path.resolve(`${root}/heroicons`);
+const heroiconsGitRepo = 'https://github.com/tailwindlabs/heroicons.git';
+
+function cloneHeroicons() {
+
+  console.log('👨‍💻  Clonning Heroicons from git');
+  if (!shell.which('git')) {
+    shell.echo('Sorry, this script requires git repo');
+    shell.exit(1);
+  } else {
+    rimraf.sync(heroiconsPath);
+    shell.exec(`git clone ${heroiconsGitRepo} ${path.resolve(`${__dirname}/../heroicons`)}`);
+    shell.exec(`mv ${heroiconsPath}/src/outline ${heroiconsPath}/`);
+    shell.exec(`mv ${heroiconsPath}/src/solid ${heroiconsPath}/`);
+    const heroiconsFolder = require('fs').readdirSync(heroiconsPath);
+    heroiconsFolder.filter(folder => !['outline', 'solid'].includes(folder)).forEach(folder => {
+      rimraf.sync(path.resolve(`${heroiconsPath}/${folder}`));
+    });
+  }
+
+  console.log("Heroicons repo cloned! \n");
+}
 
 async function SVGToAngular({
   selectorName,
@@ -80,21 +103,22 @@ async function writeFiles({ fileNames, type }) {
   };
 }
 
-console.log('Building NgHeroicons components...')
+cloneHeroicons();
+
+console.log('🏗  Building NgHeroicons components...')
 Promise.all(['outline', 'solid'].map(type => {
   console.log(`Building ${type} icons`);
 
   const destHeroicons = `${projectsPath}/ng-heroicons/src/lib/heroicons/${type}`;
   rimraf.sync(destHeroicons);
   mkdirp.sync(destHeroicons);
-  const heroiconsPath = `${root}/heroicons/src/${type}`;
-  return fs.readdir(heroiconsPath).then((files) => {
+  return fs.readdir(`${heroiconsPath}/${type}`).then((files) => {
     return Promise.all(
       files
       .filter((file) => !/Ds_Store/gi.test(file))
       .map((file) => {
         return fs
-          .readFile(`${heroiconsPath}/${file}`, 'utf8')
+          .readFile(`${heroiconsPath}/${type}/${file}`, 'utf8')
           .then(async (template) => {
             return await SVGToAngular({
               selectorName: `${file.replace(/\.svg$/, '')}-${type}-icon`,
