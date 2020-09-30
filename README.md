@@ -58,6 +58,7 @@ You can use your style in line, css or just pass color and size.
 
 ## TODO
 - [ ] Copy component tag into clipboard on click in an icon from the list
+- [ ] Copy svg into clipboard on click in an icon from the list
 - [ ] Search input
 
 
