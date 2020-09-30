@@ -1,9 +1,14 @@
 const fs = require('fs').promises;
+const path = require('path');
 const dedent = require('dedent');
 const camelcase = require('camelcase');
 const mkdirp = require('mkdirp');
 const rimraf = require('rimraf');
 const kebabcase = require('lodash.kebabcase');
+
+const root = path.resolve('.');
+const projectsPath = path.resolve(`${root}/projects`);
+const here = path.resolve(`${root}/generator`);
 
 async function SVGToAngular({
   selectorName,
@@ -11,7 +16,7 @@ async function SVGToAngular({
   className,
   type,
 }) {
-  const componentTpl = await fs.readFile(`${type}-component.tpl.txt`, 'utf8');
+  const componentTpl = await fs.readFile(`${here}/${type}-component.tpl.txt`, 'utf8');
   
   return componentTpl
     .replace('{{template}}', dedent(template))
@@ -29,18 +34,18 @@ function jsUcfirst(string) {
 }
 
 async function generateIconsComponent(icons, type) {
-  const iconTpl = await fs.readFile(`icon-wrapper.tpl.txt`, 'utf8');
+  const iconTpl = await fs.readFile(`${here}/icon-wrapper.tpl.txt`, 'utf8');
   const iconComponents = icons.filter(i => i).map(icon => {
     return iconTpl
       .replace('{{componentIcon}}', `<${kebabcase(icon)}-icon [size]="size" [color]="color" [class]="class" ${type === 'outline' ? '[stroke]="stroke"' : ""}></${kebabcase(icon)}-icon>`)
       .replace('{{iconName}}', kebabcase(icon).replace(type, ' ').replace(/-/g, ' '));
   }).join('\n\n');
 
-  let iconComponentsWrapperTpl = await fs.readFile(`icons-list-component.tpl.txt`, 'utf8');
+  let iconComponentsWrapperTpl = await fs.readFile(`${here}/icons-list-component.tpl.txt`, 'utf8');
   iconComponentsWrapperTpl = iconComponentsWrapperTpl
     .replace(/\{\{type\}\}/g, jsUcfirst(type))
     .replace(/\{\{icons\}\}/g, iconComponents);
-  const iconComponentsPath = `./projects/playground/src/app/icons/${type}-icons.html`;
+  const iconComponentsPath = `${projectsPath}/playground/src/app/icons/${type}-icons.html`;
   rimraf.sync(iconComponentsPath);
   return fs.writeFile(iconComponentsPath, iconComponentsWrapperTpl);
 }
@@ -53,7 +58,7 @@ async function writeFiles({ fileNames, type }) {
     })
     .join('\n')
 
-  await fs.writeFile(`./projects/ng-heroicons/src/lib/heroicons/${type}/index.ts`, exportStatements);
+  await fs.writeFile(`${projectsPath}/ng-heroicons/src/lib/heroicons/${type}/index.ts`, exportStatements);
 
   const moduleImports = fileNames
     .map((fileName) => {
@@ -79,10 +84,10 @@ console.log('Building NgHeroicons components...')
 Promise.all(['outline', 'solid'].map(type => {
   console.log(`Building ${type} icons`);
 
-  const destHeroicons = `./projects/ng-heroicons/src/lib/heroicons/${type}`;
+  const destHeroicons = `${projectsPath}/ng-heroicons/src/lib/heroicons/${type}`;
   rimraf.sync(destHeroicons);
   mkdirp.sync(destHeroicons);
-  const heroiconsPath = `./heroicons/src/${type}`;
+  const heroiconsPath = `${root}/heroicons/src/${type}`;
   return fs.readdir(heroiconsPath).then((files) => {
     return Promise.all(
       files
@@ -121,12 +126,12 @@ Promise.all(['outline', 'solid'].map(type => {
   await generateIconsComponent(outlineContent.moduleComponents.split(',').map(c => c.replace('Component', '').trim()), 'outline');
   await generateIconsComponent(solidContent.moduleComponents.split(',').map(c => c.replace('Component', '').trim()), 'solid');
 
-  return await fs.readFile(`./ng-heroicons.module.tpl.txt`, 'utf8')
+  return await fs.readFile(`${here}/ng-heroicons.module.tpl.txt`, 'utf8')
     .then(file => {
       return file
         .replace('{{componentsImports}}', moduleImports)
         .replace(/\{\{components\}\}/g, moduleComponents);
     }).then(content => {
-      return fs.writeFile('./projects/ng-heroicons/src/lib/ng-heroicons.module.ts', content);
+      return fs.writeFile(`${projectsPath}/ng-heroicons/src/lib/ng-heroicons.module.ts`, content);
     });
 });
