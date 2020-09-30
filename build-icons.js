@@ -40,7 +40,7 @@ async function generateIconsComponent(icons, type) {
   iconComponentsWrapperTpl = iconComponentsWrapperTpl
     .replace(/\{\{type\}\}/g, jsUcfirst(type))
     .replace(/\{\{icons\}\}/g, iconComponents);
-  const iconComponentsPath = `./projects/ng-heroicons-demo/src/app/icons/${type}-icons.html`;
+  const iconComponentsPath = `./projects/playground/src/app/icons/${type}-icons.html`;
   rimraf.sync(iconComponentsPath);
   return fs.writeFile(iconComponentsPath, iconComponentsWrapperTpl);
 }

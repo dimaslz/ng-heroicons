@@ -43,32 +43,32 @@
         }
       }
     },
-    "ng-heroicons-demo": {
+    "playground": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/ng-heroicons-demo",
-      "sourceRoot": "projects/ng-heroicons-demo/src",
+      "root": "projects/playground",
+      "sourceRoot": "projects/playground/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/ng-heroicons-demo",
-            "index": "projects/ng-heroicons-demo/src/index.html",
-            "main": "projects/ng-heroicons-demo/src/main.ts",
-            "polyfills": "projects/ng-heroicons-demo/src/polyfills.ts",
-            "tsConfig": "projects/ng-heroicons-demo/tsconfig.app.json",
+            "outputPath": "dist/playground",
+            "index": "projects/playground/src/index.html",
+            "main": "projects/playground/src/main.ts",
+            "polyfills": "projects/playground/src/polyfills.ts",
+            "tsConfig": "projects/playground/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/ng-heroicons-demo/src/favicon.ico",
-              "projects/ng-heroicons-demo/src/assets"
+              "projects/playground/src/favicon.ico",
+              "projects/playground/src/assets"
             ],
             "styles": [
-              "projects/ng-heroicons-demo/src/styles.scss"
+              "projects/playground/src/styles.scss"
             ],
             "scripts": [],
             "customWebpackConfig": {
@@ -79,8 +79,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/ng-heroicons-demo/src/environments/environment.ts",
-                  "with": "projects/ng-heroicons-demo/src/environments/environment.prod.ts"
+                  "replace": "projects/playground/src/environments/environment.ts",
+                  "with": "projects/playground/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -109,36 +109,36 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "ng-heroicons-demo:build",
+            "browserTarget": "playground:build",
             "customWebpackConfig": {
               "path": "webpack.config.js"
             }
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-heroicons-demo:build:production"
+              "browserTarget": "playground:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-heroicons-demo:build"
+            "browserTarget": "playground:build"
           }
         },
         "test": {
           "builder": "@angular-builders/custom-webpack:karma",
           "options": {
-            "main": "projects/ng-heroicons-demo/src/test.ts",
-            "polyfills": "projects/ng-heroicons-demo/src/polyfills.ts",
-            "tsConfig": "projects/ng-heroicons-demo/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-heroicons-demo/karma.conf.js",
+            "main": "projects/playground/src/test.ts",
+            "polyfills": "projects/playground/src/polyfills.ts",
+            "tsConfig": "projects/playground/tsconfig.spec.json",
+            "karmaConfig": "projects/playground/karma.conf.js",
             "assets": [
-              "projects/ng-heroicons-demo/src/favicon.ico",
-              "projects/ng-heroicons-demo/src/assets"
+              "projects/playground/src/favicon.ico",
+              "projects/playground/src/assets"
             ],
             "styles": [
-              "projects/ng-heroicons-demo/src/styles.scss"
+              "projects/playground/src/styles.scss"
             ],
             "scripts": [],
             "customWebpackConfig": {
@@ -150,9 +150,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ng-heroicons-demo/tsconfig.app.json",
-              "projects/ng-heroicons-demo/tsconfig.spec.json",
-              "projects/ng-heroicons-demo/e2e/tsconfig.json"
+              "projects/playground/tsconfig.app.json",
+              "projects/playground/tsconfig.spec.json",
+              "projects/playground/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -162,12 +162,12 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/ng-heroicons-demo/e2e/protractor.conf.js",
-            "devServerTarget": "ng-heroicons-demo:serve"
+            "protractorConfig": "projects/playground/e2e/protractor.conf.js",
+            "devServerTarget": "playground:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-heroicons-demo:serve:production"
+              "devServerTarget": "playground:serve:production"
             }
           }
         }

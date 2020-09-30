@@ -1,0 +1,26 @@
+<div class="Icons">
+  <div class="Icons__menu flex justify-end my-4">
+    <div class="flex">
+      <button (click)="decrementSize()" class="w-8 h-8 flex items-center justify-center bg-red-600 text-white hover:bg-red-500 focus:outline-none">
+        <zoom-out-outline-icon></zoom-out-outline-icon>
+      </button>
+      <div class="w-16 h-8 flex items-center justify-center bg-red-600 text-white">{{ size }}</div>
+      <button (click)="incrementSize()" class="w-8 h-8 flex items-center justify-center bg-red-600 text-white hover:bg-red-500 focus:outline-none">
+        <zoom-in-outline-icon></zoom-in-outline-icon>
+      </button>
+    </div>
+    <div class="flex ml-2">
+      <button *ngIf="type === 'outline'" (click)="switchToSolid()" class="w-8 h-8 flex items-center justify-center bg-red-600 text-white hover:bg-red-500 focus:outline-none">
+        <heart-outline-icon></heart-outline-icon>
+      </button>
+      <button *ngIf="type === 'solid'" (click)="switchToOutline()" class="w-8 h-8 flex items-center justify-center bg-red-600 text-white hover:bg-red-500 focus:outline-none">
+        <heart-solid-icon></heart-solid-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- to replace by generator -->
+  <outline-icons *ngIf="type === 'outline'" [size]="size" [color]="color" [stroke]="stroke" [class]="class"></outline-icons>
+  <solid-icons *ngIf="type === 'solid'" [size]="size" [color]="color"></solid-icons>
+  <!-- ! to replace by generator -->
+</div>
