@@ -911,13 +911,13 @@ ZoomOutSolidComponent,
 
 @NgModule({
   declarations: [
-    COMPONENTS,
+    ...COMPONENTS,
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    COMPONENTS,
+    ...COMPONENTS,
   ]
 })
 export class NgHeroiconsModule { }
