@@ -5,11 +5,14 @@ import { CommonModule } from '@angular/common';
 import { OutlineIconsComponent } from './outline-icons.component';
 import { SolidIconsComponent } from './solid-icons.component';
 
+import { TooltipComponent } from '../tooltip/tooltip.component';
+
 @NgModule({
   declarations: [
     IconsComponent,
     OutlineIconsComponent,
     SolidIconsComponent,
+    TooltipComponent
   ],
   imports: [
     CommonModule,

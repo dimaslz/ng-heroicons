@@ -19,6 +19,9 @@
     </div>
   </div>
 
+  
   <outline-icons *ngIf="type === 'outline'" [size]="size" [color]="color" [stroke]="stroke" [class]="class"></outline-icons>
   <solid-icons *ngIf="type === 'solid'" [size]="size" [color]="color" [class]="class"></solid-icons>
+
+  <tooltip *ngIf="tooltipContent" [copied]="componentTagCopied"><div>{{ tooltipContent }}</div></tooltip>
 </div>
