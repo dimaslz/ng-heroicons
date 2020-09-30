@@ -1,9 +1,9 @@
 {
   "name": "@dimaslz/ng-heroicons",
   "version": "0.0.1",
-  "author": "Dimas López (dimaslz) <me@dimaslz.io>",
+  "author": "Dimas López <me@dimaslz.io> (dimaslz)",
   "repository": {
-    "url": "https://github.com/dimaslz/ng-heroicons",
+    "url": "git+https://github.com/dimaslz/ng-heroicons.git",
     "type": "git"
   },
   "peerDependencies": {
