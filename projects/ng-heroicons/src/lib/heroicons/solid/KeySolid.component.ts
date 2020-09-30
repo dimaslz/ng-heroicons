@@ -16,13 +16,13 @@ export class KeySolidComponent implements OnInit, OnChanges {
   @Input() style: string = "";
   @Input() size: number = 24;
   @Input() color: string = "";
-  @Input() class: string = "";
 
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges) {
     const colorHasChanged = changes.color?.previousValue !== changes.color?.currentValue;
     const sizeHasChanged = changes.size?.previousValue !== changes.size?.currentValue;
+    
     if (colorHasChanged || sizeHasChanged) {
       this.style = "";
       this.renderStyle();

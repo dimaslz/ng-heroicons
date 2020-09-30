@@ -21,7 +21,6 @@ export class ViewGridOutlineComponent implements OnInit, OnChanges {
   @Input() size: number = 24;
   @Input() stroke: number|string = 2;
   @Input() color: string = "";
-  @Input() class: string = "";
 
   constructor() { }
 
@@ -29,7 +28,7 @@ export class ViewGridOutlineComponent implements OnInit, OnChanges {
     const colorHasChanged = changes.color?.previousValue !== changes.color?.currentValue;
     const sizeHasChanged = changes.size?.previousValue !== changes.size?.currentValue;
     const strokeHasChanged = changes.stroke?.previousValue !== changes.stroke?.currentValue;
-    const classHasChanged = changes.class?.previousValue !== changes.class?.currentValue;
+
     if (colorHasChanged || sizeHasChanged || strokeHasChanged) {
       this.style = "";
       this.renderStyle();
