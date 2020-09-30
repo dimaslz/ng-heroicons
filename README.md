@@ -1,10 +1,10 @@
 # NgHeroicons
 
-NgHeroicons just it is my solution to use [Heroicons](https://heroicons.com) in your Angular projects. I hope that could be useful.
+NgHeroicons just it is a Angular components to use [Heroicons](https://heroicons.com) in your projects. I hope that could be useful.
 
 If you want to know how is working Angular CLI follow this [https://cli.angular.io/](https://cli.angular.io/).
 
-Live demo: [https://ng-heroicons.vercel.com](https://ng-heroicons.vercel.com)
+Live demo: [https://ng-heroicons.dimaslz.dev](https://ng-heroicons.dimaslz.dev)
 
 ## How to install in your project
 `$ yarn add @dimaslz/ng-heroicons`
@@ -29,7 +29,7 @@ import { NgHeroiconsModule } from "@dimaslz/ng-heroicons";
 ```
 
 ## How to use
-Go to [https://ng-heroicons.vercel.com](https://ng-heroicons.vercel.com) and get the name of the icon and use in your tag html following suffix `{outline|solid}-icon`. For example: `academic cap` should be `<academic-cap-outline-icon></academic-cap-outline-icon>` for outline or `<academic-cap-solid-icon></academic-cap-solid-icon>` for solid icons.
+Go to [https://ng-heroicons.dimaslz.dev](https://ng-heroicons.dimaslz.dev) and get the name of the icon and use in your tag html following suffix `{outline|solid}-icon`. For example: `academic cap` should be `<academic-cap-outline-icon></academic-cap-outline-icon>` for outline or `<academic-cap-solid-icon></academic-cap-solid-icon>` for solid icons.
 
 You can use your style in line, css or just pass color and size.
 ```html
