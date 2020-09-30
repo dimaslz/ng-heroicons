@@ -6,8 +6,8 @@ module.exports = {
   purge: {
     enabled: enablePurge,
     content: [
-      './src/**/*.html',
-      './src/**/*.scss'
+      './projects/**/*.html',
+      './projects/**/*.scss'
     ]
   },
   future: {
