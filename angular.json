@@ -42,6 +42,136 @@
           }
         }
       }
+    },
+    "ng-heroicons-demo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ng-heroicons-demo",
+      "sourceRoot": "projects/ng-heroicons-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/ng-heroicons-demo",
+            "index": "projects/ng-heroicons-demo/src/index.html",
+            "main": "projects/ng-heroicons-demo/src/main.ts",
+            "polyfills": "projects/ng-heroicons-demo/src/polyfills.ts",
+            "tsConfig": "projects/ng-heroicons-demo/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ng-heroicons-demo/src/favicon.ico",
+              "projects/ng-heroicons-demo/src/assets"
+            ],
+            "styles": [
+              "projects/ng-heroicons-demo/src/styles.scss"
+            ],
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            }
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-heroicons-demo/src/environments/environment.ts",
+                  "with": "projects/ng-heroicons-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "options": {
+            "browserTarget": "ng-heroicons-demo:build",
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            }
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-heroicons-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-heroicons-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-builders/custom-webpack:karma",
+          "options": {
+            "main": "projects/ng-heroicons-demo/src/test.ts",
+            "polyfills": "projects/ng-heroicons-demo/src/polyfills.ts",
+            "tsConfig": "projects/ng-heroicons-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-heroicons-demo/karma.conf.js",
+            "assets": [
+              "projects/ng-heroicons-demo/src/favicon.ico",
+              "projects/ng-heroicons-demo/src/assets"
+            ],
+            "styles": [
+              "projects/ng-heroicons-demo/src/styles.scss"
+            ],
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-heroicons-demo/tsconfig.app.json",
+              "projects/ng-heroicons-demo/tsconfig.spec.json",
+              "projects/ng-heroicons-demo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ng-heroicons-demo/e2e/protractor.conf.js",
+            "devServerTarget": "ng-heroicons-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-heroicons-demo:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "TestLib"
