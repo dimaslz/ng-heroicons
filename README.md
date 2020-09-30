@@ -1,27 +1,71 @@
 # NgHeroicons
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
+NgHeroicons just it is my solution to use [Heroicons](https://heroicons.com) in your Angular projects. I hope that could be useful.
+
+If you want to know how is working Angular CLI follow this [https://cli.angular.io/](https://cli.angular.io/).
+
+Live demo: [https://ng-heroicons.vercel.com](https://ng-heroicons.vercel.com)
+
+## How to install in your project
+`$ yarn add @dimaslz/ng-heroicons`
+
+`$ npm install @dimaslz/ng-heroicons`
+
+```ts
+// app.module.ts
+import { NgHeroiconsModule } from "@dimaslz/ng-heroicons";
+// ...
+
+@NgModule({
+  // ...
+  imports: [
+    CommonModule,
+    NgHeroiconsModule,
+  ],
+  // ...
+})
+
+//...
+```
+
+## How to use
+Go to [https://ng-heroicons.vercel.com](https://ng-heroicons.vercel.com) and get the name of the icon and use in your tag html following suffix `{outline|solid}-icon`. For example: `academic cap` should be `<academic-cap-outline-icon></academic-cap-outline-icon>` for outline or `<academic-cap-solid-icon></academic-cap-solid-icon>` for solid icons.
+
+You can use your style in line, css or just pass color and size.
+```html
+<!-- using style in line -->
+<academic-cap-outline-icon style="color: red"></academic-cap-outline-icon>
+<academic-cap-outline-icon style="color: red"></academic-cap-outline-icon>
+
+<!-- using css classes -->
+<academic-cap-outline-icon class="text-red-400"></academic-cap-outline-icon>
+
+<!-- pass color or size -->
+<academic-cap-outline-icon size="48" color="red"></academic-cap-outline-icon>
+
+```
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Run playground
+`$ yarn start playground`
 
-## Code scaffolding
+### Regenerate components
+`$ yarn generate` This will generate the new angular components in `projects/ng-heroicons/src/lib/heroicons/outline` and `projects/ng-heroicons/src/lib/heroicons/solid`, and the templated in playground as `projects/playground/src/app/icons/outline-icons.html` adn `projects/playground/src/app/icons/solid-icons.html`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Build heroicons
+`$ yarn build --prod ng-heroicons`
 
-## Build
+## TODO
+- [ ] Copy component tag into clipboard on click in an icon from the list
+- [ ] Search input
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Author
+Dimas López · FullStack Software development
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+🐦  [https://twitter.com/dimaslz](https://twitter.com/dimaslz)
 
-## Running end-to-end tests
+👨🏻‍💻  [https://dimaslz.dev](https://dimaslz.dev)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+📄  [https://www.linkedin.com/in/dimaslopezzurita](https://www.linkedin.com/in/dimaslopezzurita)
