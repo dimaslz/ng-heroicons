@@ -31,7 +31,7 @@ export class QrcodeSolidComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     const colorHasChanged = changes.color?.previousValue !== changes.color?.currentValue;
     const sizeHasChanged = changes.size?.previousValue !== changes.size?.currentValue;
-    
+
     if (colorHasChanged || sizeHasChanged) {
       this.style = "";
       this.renderStyle();
@@ -45,7 +45,7 @@ export class QrcodeSolidComponent implements OnInit, OnChanges {
   renderStyle() {
     let style = [];
     if (this.size) {
-      style.push(`width: ${this.size}; height: ${this.size};`);
+      style.push(`width: ${this.size}px; height: ${this.size}px;`);
     }
     if (this.color) {
       style.push(`color: ${this.color};`);

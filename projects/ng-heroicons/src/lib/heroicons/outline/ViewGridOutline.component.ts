@@ -42,7 +42,7 @@ export class ViewGridOutlineComponent implements OnInit, OnChanges {
   renderStyle() {
     let style = [];
     if (this.size) {
-      style.push(`width: ${this.size}; height: ${this.size};`);
+      style.push(`width: ${this.size}px; height: ${this.size}px;`);
     }
     if (this.color) {
       style.push(`color: ${this.color};`);

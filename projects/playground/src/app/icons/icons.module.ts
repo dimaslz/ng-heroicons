@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-// import { NgHeroiconsModule } from "../../../../ng-heroicons/src/public-api";
-import { NgHeroiconsModule } from "@dimaslz/ng-heroicons";
+import { NgHeroiconsModule } from "../../../../ng-heroicons/src/public-api";
+// import { NgHeroiconsModule } from "@dimaslz/ng-heroicons";
 import { IconsComponent } from './icons.component';
 import { CommonModule } from '@angular/common';
 import { OutlineIconsComponent } from './outline-icons.component';
