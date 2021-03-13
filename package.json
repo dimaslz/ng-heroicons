@@ -60,6 +60,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-scss": "^3.0.2",
     "protractor": "~7.0.0",
+    "release-it": "^14.4.1",
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.4",
     "sync-json": "^1.0.2",
