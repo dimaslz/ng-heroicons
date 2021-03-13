@@ -1,6 +1,6 @@
 {
   "name": "@dimaslz/ng-heroicons",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "Dimas López <me@dimaslz.io> (dimaslz)",
   "repository": {
     "url": "git+https://github.com/dimaslz/ng-heroicons.git",
@@ -12,5 +12,11 @@
   },
   "dependencies": {
     "tslib": "^2.0.0"
+  },
+  "ngPackage": {
+    "lib": {
+      "entryFile": "src/public-api.ts"
+    },
+    "dest": "dist"
   }
 }

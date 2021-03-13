@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import throttle from 'lodash.throttle';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'icons',
@@ -16,21 +18,32 @@ export class IconsComponent implements OnInit, OnDestroy {
   class = '';
   tooltipContent = '';
   componentTagCopied = false;
+  form = new FormGroup({
+    search: new FormControl('')
+  });
+  formSubscription$: Subscription = null;
+  debounceSearch: any = null;
+  empty: boolean = false;
+  loading: boolean = false;
 
   constructor() {
     this.onMouseOverHandler = throttle(this.onMouseOverHandler.bind(this), 200);
     this.onMouseLeaveHandler = throttle(this.onMouseLeaveHandler.bind(this), 200);
     this.onClickIcon = this.onClickIcon.bind(this);
+    this.onChangeSearch = this.onChangeSearch.bind(this);
   }
 
   ngOnInit() {
     document.querySelector('.Icons').addEventListener('mouseover', this.onMouseOverHandler);
     document.querySelector('.Icons').addEventListener('mouseleave', this.onMouseLeaveHandler);
+
+    this.formSubscription$ = this.form.get('search').valueChanges.subscribe(this.onChangeSearch)
   }
 
   ngOnDestroy() {
     document.querySelector('.Icons').removeEventListener('mouseover', this.onMouseOverHandler);
     document.querySelector('.Icons').removeEventListener('mouseleave', this.onMouseLeaveHandler);
+    if (this.formSubscription$) this.formSubscription$.unsubscribe();
   }
 
   onMouseOverHandler($event: Event) {
@@ -101,5 +114,54 @@ export class IconsComponent implements OnInit, OnDestroy {
       this.sizeIndex--;
       this.size = this.sizes[this.sizeIndex];
     }
+  }
+
+  showIconsWhenMatchWithQuery(query: string) {
+    if (!query) return;
+
+    query = query.trim().replace(/\s+/g, '-').toLowerCase();
+    const icons: NodeListOf<Element> = document.querySelectorAll(
+      `.IconWrapper .IconWrapper__icon:not([id*=${query}])`
+    );
+    const iconElements: Element[] = Array.from(icons);
+
+    iconElements.forEach((element: Element) => {
+      element.parentElement.classList.add('hidden');
+    });
+
+    this.isEmpty();
+  }
+
+  showAllIcons() {
+    const icons: NodeListOf<Element> = document.querySelectorAll(
+      `.IconWrapper[class*="hidden"]`
+    );
+    const iconElements: Element[] = Array.from(icons);
+
+    iconElements.forEach((element: Element) => {
+      element.classList.remove('hidden');
+    });
+
+    this.isEmpty();
+  }
+
+  isEmpty() {
+    const icons: NodeListOf<Element> = document.querySelectorAll(
+      `.IconWrapper:not([class*=hidden])`
+    );
+    const iconElements: Element[] = Array.from(icons);
+
+    this.empty = iconElements.length === 0;
+  }
+
+  onChangeSearch(query: string) {
+    this.loading = true;
+    if (this.debounceSearch) clearTimeout(this.debounceSearch);
+    this.showAllIcons();
+
+    this.debounceSearch = setTimeout(() => {
+      this.showIconsWhenMatchWithQuery(query);
+      this.loading = false;
+    }, 200);
   }
 }

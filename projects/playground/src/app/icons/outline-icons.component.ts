@@ -10,7 +10,7 @@ export class OutlineIconsComponent {
   @Input() color = '#333333';
   @Input() stroke = 2;
   @Input() class = "";
-  
+
   constructor() {
   }
 }

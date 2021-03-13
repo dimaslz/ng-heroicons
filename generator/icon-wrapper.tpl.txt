@@ -1,5 +1,5 @@
 <div class="IconWrapper">
-  <div class="IconWrapper__icon">
+  <div class="IconWrapper__icon" id="{{iconId}}">
     {{componentIcon}}
   </div>
   <div class="IconWrapper__name">{{iconName}}</div>

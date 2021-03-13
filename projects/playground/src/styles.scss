@@ -3,14 +3,25 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+html, body {
+  height: 100%;
+}
+
 .IconWrapper {
-  @apply flex flex-col items-center p-2 bg-gray-100 text-sm;
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+  @apply flex flex-col items-center justify-center p-2 bg-gray-100 text-sm h-32;
   &:hover {
     @apply bg-gray-200 cursor-pointer;
   }
 
-  &__icon, 
+
+  &__icon {
+    @apply flex-grow flex items-center justify-center
+  }
+
+  &__icon,
   &__name {
-    @apply pointer-events-none;
+    @apply pointer-events-none text-xs text-center;
   }
 }

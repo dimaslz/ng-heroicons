@@ -40,7 +40,7 @@ async function SVGToAngular({
   type,
 }) {
   const componentTpl = await fs.readFile(`${here}/${type}-component.tpl.txt`, 'utf8');
-  
+
   return componentTpl
     .replace('{{template}}', dedent(template))
     .replace('{{className}}', className)
@@ -61,7 +61,8 @@ async function generateIconsComponent(icons, type) {
   const iconComponents = icons.filter(i => i).map(icon => {
     return iconTpl
       .replace('{{componentIcon}}', `<${kebabcase(icon)}-icon [size]="size" [color]="color" [class]="class" ${type === 'outline' ? '[stroke]="stroke"' : ""}></${kebabcase(icon)}-icon>`)
-      .replace('{{iconName}}', kebabcase(icon).replace(type, ' ').replace(/-/g, ' ').trim());
+      .replace('{{iconName}}', kebabcase(icon).replace(type, ' ').replace(/-/g, ' ').trim())
+      .replace('{{iconId}}', kebabcase(icon).replace(type, ' ').trim().replace(/^-|-$/g, ''));
   }).join('\n\n');
 
   let iconComponentsWrapperTpl = await fs.readFile(`${here}/icons-list-component.tpl.txt`, 'utf8');
