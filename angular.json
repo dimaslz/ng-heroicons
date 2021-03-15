@@ -30,14 +30,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ng-heroicons/tsconfig.lib.json",
-              "projects/ng-heroicons/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/playground/src/**/*.ts",
+              "projects/playground/src/**/*.component.html"
             ]
           }
         }
@@ -55,7 +52,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/playground",
             "index": "projects/playground/src/index.html",
@@ -67,13 +64,8 @@
               "projects/playground/src/favicon.ico",
               "projects/playground/src/assets"
             ],
-            "styles": [
-              "projects/playground/src/styles.scss"
-            ],
-            "scripts": [],
-            "customWebpackConfig": {
-              "path": "webpack.config.js"
-            }
+            "styles": ["projects/playground/src/styles.scss"],
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -86,7 +78,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -107,12 +98,9 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "playground:build",
-            "customWebpackConfig": {
-              "path": "webpack.config.js"
-            }
+            "browserTarget": "playground:build"
           },
           "configurations": {
             "production": {
@@ -127,7 +115,7 @@
           }
         },
         "test": {
-          "builder": "@angular-builders/custom-webpack:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "projects/playground/src/test.ts",
             "polyfills": "projects/playground/src/polyfills.ts",
@@ -137,25 +125,16 @@
               "projects/playground/src/favicon.ico",
               "projects/playground/src/assets"
             ],
-            "styles": [
-              "projects/playground/src/styles.scss"
-            ],
-            "scripts": [],
-            "customWebpackConfig": {
-              "path": "webpack.config.js"
-            }
+            "styles": ["projects/playground/src/styles.scss"],
+            "scripts": []
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/playground/tsconfig.app.json",
-              "projects/playground/tsconfig.spec.json",
-              "projects/playground/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/playground/src/**/*.ts",
+              "projects/playground/src/**/*.component.html"
             ]
           }
         },
@@ -174,5 +153,5 @@
       }
     }
   },
-  "defaultProject": "TestLib"
+  "defaultProject": "playground"
 }

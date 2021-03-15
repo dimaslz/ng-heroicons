@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/unbound-method, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call */
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import throttle from 'lodash.throttle';
@@ -5,8 +6,8 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'icons',
-  templateUrl: './icons.html',
-  styleUrls: ['./icons.scss']
+  templateUrl: './icons.component.html',
+  styleUrls: ['./icons.component.scss'],
 })
 export class IconsComponent implements OnInit, OnDestroy {
   sizes: number[] = [6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64];
@@ -19,49 +20,66 @@ export class IconsComponent implements OnInit, OnDestroy {
   tooltipContent = '';
   componentTagCopied = false;
   form = new FormGroup({
-    search: new FormControl('')
+    search: new FormControl(''),
   });
-  formSubscription$: Subscription = null;
+  formSubscription$: Subscription | undefined = new Subscription();
   debounceSearch: any = null;
-  empty: boolean = false;
-  loading: boolean = false;
+  empty = false;
+  loading = false;
 
   constructor() {
     this.onMouseOverHandler = throttle(this.onMouseOverHandler.bind(this), 200);
-    this.onMouseLeaveHandler = throttle(this.onMouseLeaveHandler.bind(this), 200);
+    this.onMouseLeaveHandler = throttle(
+      this.onMouseLeaveHandler.bind(this),
+      200
+    );
     this.onClickIcon = this.onClickIcon.bind(this);
     this.onChangeSearch = this.onChangeSearch.bind(this);
   }
 
-  ngOnInit() {
-    document.querySelector('.Icons').addEventListener('mouseover', this.onMouseOverHandler);
-    document.querySelector('.Icons').addEventListener('mouseleave', this.onMouseLeaveHandler);
+  ngOnInit(): void {
+    document
+      .querySelector('.Icons')
+      ?.addEventListener('mouseover', this.onMouseOverHandler);
+    document
+      .querySelector('.Icons')
+      ?.addEventListener('mouseleave', this.onMouseLeaveHandler);
 
-    this.formSubscription$ = this.form.get('search').valueChanges.subscribe(this.onChangeSearch)
+    this.formSubscription$ = this.form
+      .get('search')
+      ?.valueChanges.subscribe(this.onChangeSearch);
   }
 
-  ngOnDestroy() {
-    document.querySelector('.Icons').removeEventListener('mouseover', this.onMouseOverHandler);
-    document.querySelector('.Icons').removeEventListener('mouseleave', this.onMouseLeaveHandler);
-    if (this.formSubscription$) this.formSubscription$.unsubscribe();
-  }
-
-  onMouseOverHandler($event: Event) {
-    if (/IconWrapper/.test(($event.target as HTMLElement).className)) {
-      const iconName = ($event.target as HTMLElement).querySelector('.IconWrapper__name');
-      const componentTag = iconName?.textContent.trim().replace(/\s+/g, '-');
-
-      if (componentTag) {
-        this.tooltipContent = `<${componentTag}-${this.type}-icon></${componentTag}-${this.type}-icon>`;
-        $event.target.addEventListener('click', this.onClickIcon);
-      }
-    } else {
-      this.tooltipContent = '';
-      $event.target.removeEventListener('click', this.onClickIcon);
+  ngOnDestroy(): void {
+    document
+      .querySelector('.Icons')
+      ?.removeEventListener('mouseover', this.onMouseOverHandler);
+    document
+      .querySelector('.Icons')
+      ?.removeEventListener('mouseleave', this.onMouseLeaveHandler);
+    if (this.formSubscription$) {
+      this.formSubscription$.unsubscribe();
     }
   }
 
-  onClickIcon() {
+  onMouseOverHandler($event: Event): void {
+    if (/IconWrapper/.test(($event.target as HTMLElement).className)) {
+      const iconName = ($event.target as HTMLElement).querySelector(
+        '.IconWrapper__name'
+      );
+      const componentTag = iconName?.textContent?.trim().replace(/\s+/g, '-');
+
+      if (componentTag) {
+        this.tooltipContent = `<${componentTag}-${this.type}-icon></${componentTag}-${this.type}-icon>`;
+        $event.target?.addEventListener('click', this.onClickIcon);
+      }
+    } else {
+      this.tooltipContent = '';
+      $event.target?.removeEventListener('click', this.onClickIcon);
+    }
+  }
+
+  onClickIcon(): void {
     this.copyToClipboard(this.tooltipContent);
     this.componentTagCopied = true;
     const time = setTimeout(() => {
@@ -70,11 +88,11 @@ export class IconsComponent implements OnInit, OnDestroy {
     }, 500);
   }
 
-  onMouseLeaveHandler($event: Event) {
+  onMouseLeaveHandler(): void {
     this.tooltipContent = '';
   }
 
-  copyToClipboard(str) {
+  copyToClipboard(str: string): void {
     const el = document.createElement('textarea');
     el.value = str;
     el.setAttribute('readonly', '');
@@ -84,82 +102,86 @@ export class IconsComponent implements OnInit, OnDestroy {
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
-  };
+  }
 
-  switchToSolid() {
+  switchToSolid(): void {
     this.type = 'solid';
   }
 
-  switchToOutline() {
+  switchToOutline(): void {
     this.type = 'outline';
   }
 
-  removeColor() {
+  removeColor(): void {
     this.color = '';
   }
 
-  changeClass() {
+  changeClass(): void {
     this.class = 'text-pink-500';
   }
 
-  incrementSize() {
-    if (this.sizeIndex < this.sizes.length -1) {
+  incrementSize(): void {
+    if (this.sizeIndex < this.sizes.length - 1) {
       this.sizeIndex++;
       this.size = this.sizes[this.sizeIndex];
     }
   }
 
-  decrementSize() {
+  decrementSize(): void {
     if (this.sizeIndex > 0) {
       this.sizeIndex--;
       this.size = this.sizes[this.sizeIndex];
     }
   }
 
-  showIconsWhenMatchWithQuery(query: string) {
-    if (!query) return;
+  showIconsWhenMatchWithQuery(query: string): void {
+    try {
+      query = query.trim().replace(/\s+/g, '-').toLowerCase();
+      const icons: NodeListOf<Element> = document.querySelectorAll(
+        `.IconWrapper .IconWrapper__icon:not([id*=${query}])`
+      );
+      const iconElements: Element[] = Array.from(icons);
 
-    query = query.trim().replace(/\s+/g, '-').toLowerCase();
-    const icons: NodeListOf<Element> = document.querySelectorAll(
-      `.IconWrapper .IconWrapper__icon:not([id*=${query}])`
-    );
-    const iconElements: Element[] = Array.from(icons);
-
-    iconElements.forEach((element: Element) => {
-      element.parentElement.classList.add('hidden');
-    });
-
+      iconElements.forEach((element: Element) => {
+        element.parentElement?.classList.add('hidden');
+      });
+    } catch (err) {}
     this.isEmpty();
   }
 
-  showAllIcons() {
-    const icons: NodeListOf<Element> = document.querySelectorAll(
-      `.IconWrapper[class*="hidden"]`
-    );
-    const iconElements: Element[] = Array.from(icons);
+  showAllIcons(): void {
+    try {
+      const icons: NodeListOf<Element> = document.querySelectorAll(
+        '.IconWrapper[class*="hidden"]'
+      );
+      const iconElements: Element[] = Array.from(icons);
 
-    iconElements.forEach((element: Element) => {
-      element.classList.remove('hidden');
-    });
-
-    this.isEmpty();
+      iconElements.forEach((element: Element) => {
+        element.classList.remove('hidden');
+      });
+    } catch (err) {}
   }
 
-  isEmpty() {
-    const icons: NodeListOf<Element> = document.querySelectorAll(
-      `.IconWrapper:not([class*=hidden])`
-    );
-    const iconElements: Element[] = Array.from(icons);
-
-    this.empty = iconElements.length === 0;
+  isEmpty(): void {
+    try {
+      const icons: NodeListOf<Element> = document.querySelectorAll(
+        '.IconWrapper:not([class*=hidden])'
+      );
+      const iconElements: Element[] = Array.from(icons);
+      this.empty = iconElements.length === 0;
+    } catch (err) {
+      this.empty = true;
+    }
   }
 
-  onChangeSearch(query: string) {
-    this.loading = true;
-    if (this.debounceSearch) clearTimeout(this.debounceSearch);
-    this.showAllIcons();
+  onChangeSearch(query: string): void {
+    if (this.debounceSearch) {
+      clearTimeout(this.debounceSearch);
+    }
 
     this.debounceSearch = setTimeout(() => {
+      this.loading = true;
+      this.showAllIcons();
       this.showIconsWhenMatchWithQuery(query);
       this.loading = false;
     }, 200);

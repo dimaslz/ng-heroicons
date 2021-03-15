@@ -5,16 +5,11 @@ import { AppComponent } from './app.component';
 import { IconsModule } from './icons/icons.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    IconsModule,
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, IconsModule],
   exports: [],
   schemas: [],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

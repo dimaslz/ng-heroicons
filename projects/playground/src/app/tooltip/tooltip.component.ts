@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'tooltip',
-  templateUrl: `./tooltip.html`,
+  templateUrl: './tooltip.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TooltipComponent {

@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -15,9 +16,8 @@ html, body {
     @apply bg-gray-200 cursor-pointer;
   }
 
-
   &__icon {
-    @apply flex-grow flex items-center justify-center
+    @apply flex-grow flex items-center justify-center;
   }
 
   &__icon,
