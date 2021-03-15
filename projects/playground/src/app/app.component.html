@@ -18,9 +18,11 @@
 
     <div class="Header__install">
       <code
-        class="bg-gray-900 flex p-4 text-sm rounded text-gray-400 shadow-inner"
+        class="bg-gray-900 flex p-4 text-sm rounded text-gray-400 shadow-inner hover:bg-gray-700 cursor-pointer"
       >
-        <pre>$ yarn add @dimaslz/ng-heroicons</pre>
+        <pre (click)="onClickCommandExample($event)">
+$ yarn add @dimaslz/ng-heroicons</pre
+        >
       </code>
     </div>
   </div>
