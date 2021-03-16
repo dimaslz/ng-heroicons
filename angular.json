@@ -21,14 +21,6 @@
             }
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ng-heroicons/src/test.ts",
-            "tsConfig": "projects/ng-heroicons/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-heroicons/karma.conf.js"
-          }
-        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
@@ -112,21 +104,6 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "playground:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/playground/src/test.ts",
-            "polyfills": "projects/playground/src/polyfills.ts",
-            "tsConfig": "projects/playground/tsconfig.spec.json",
-            "karmaConfig": "projects/playground/karma.conf.js",
-            "assets": [
-              "projects/playground/src/favicon.ico",
-              "projects/playground/src/assets"
-            ],
-            "styles": ["projects/playground/src/styles.scss"],
-            "scripts": []
           }
         },
         "lint": {

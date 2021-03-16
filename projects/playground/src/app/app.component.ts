@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import copyToClipboard from '../utils/copy-to-clipboard.utils';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,19 +13,7 @@ export class AppComponent {
 
     if (target instanceof Element) {
       const value = target?.textContent as string;
-      this.copyToClipboard(value.replace('$ ', ''));
+      copyToClipboard(value.replace('$ ', ''));
     }
-  }
-
-  copyToClipboard(str: string): void {
-    const el = document.createElement('textarea');
-    el.value = str;
-    el.setAttribute('readonly', '');
-    el.style.position = 'absolute';
-    el.style.left = '-9999px';
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
   }
 }

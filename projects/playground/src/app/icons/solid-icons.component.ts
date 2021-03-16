@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'solid-icons',
-  templateUrl: './solid-icons.html',
+  templateUrl: './solid-icons.component.html',
+  encapsulation: ViewEncapsulation.None,
 })
 export class SolidIconsComponent {
   @Input() size = 24;

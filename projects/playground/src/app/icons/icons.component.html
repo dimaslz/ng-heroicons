@@ -7,6 +7,7 @@
           class="outline-none border border-red-600 text-xs text-gray-800 w-full pl-2 pr-6"
           placeholder="arrow"
           formControlName="search"
+          data-testid="search"
         />
         <x-outline-icon
           class="absolute right-0 top-0 h-full flex items-center pr-1 cursor-pointer hover:opacity-50"
@@ -14,6 +15,7 @@
           *ngIf="form.get('search')?.value"
           (click)="form.get('search')?.setValue('')"
           name="clear-query"
+          data-testid="clear-query"
         ></x-outline-icon>
       </div>
       <div class="w-8 h-8 flex items-center justify-center bg-red-600">
@@ -25,7 +27,11 @@
     <button
       (click)="decrementSize()"
       name="zoom-out"
-      class="w-8 h-8 flex items-center justify-center bg-red-600 text-white hover:bg-red-500 focus:outline-none"
+      [ngClass]="[
+        'flex items-center justify-center',
+        'w-8 h-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none'
+      ]"
+      data-testid="zoom-out"
     >
       <zoom-out-outline-icon></zoom-out-outline-icon>
     </button>
@@ -37,7 +43,11 @@
     <button
       (click)="incrementSize()"
       name="zoom-in"
-      class="w-8 h-8 flex items-center justify-center bg-red-600 text-white hover:bg-red-500 focus:outline-none"
+      [ngClass]="[
+        'flex items-center justify-center',
+        'w-8 h-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none'
+      ]"
+      data-testid="zoom-in"
     >
       <zoom-in-outline-icon></zoom-in-outline-icon>
     </button>
@@ -46,15 +56,24 @@
     <button
       *ngIf="type === 'outline'"
       name="outline-solid-toggle"
+      data-testid="outline-solid-toggle"
       (click)="switchToSolid()"
-      class="w-8 h-8 flex items-center justify-center bg-red-600 text-white hover:bg-red-500 focus:outline-none"
+      [ngClass]="[
+        'flex items-center justify-center',
+        'w-8 h-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none'
+      ]"
     >
       <heart-outline-icon></heart-outline-icon>
     </button>
     <button
       *ngIf="type === 'solid'"
+      name="outline-solid-toggle"
+      data-testid="outline-solid-toggle"
       (click)="switchToOutline()"
-      class="w-8 h-8 flex items-center justify-center bg-red-600 text-white hover:bg-red-500 focus:outline-none"
+      [ngClass]="[
+        'flex items-center justify-center',
+        'w-8 h-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none'
+      ]"
     >
       <heart-solid-icon></heart-solid-icon>
     </button>
@@ -63,8 +82,14 @@
 
 <div class="relative h-full">
   <div
-    class="absolute top-0 bottom-0 left-0 right-0 w-full h-full bg-white flex items-center justify-center text-gray-700 text-xl flex-col z-10"
+    [ngClass]="[
+      'absolute top-0 bottom-0 left-0 right-0 z-10',
+      'w-full h-full',
+      'flex items-center justify-center flex-col',
+      'bg-white text-gray-700 text-xl'
+    ]"
     *ngIf="empty"
+    data-testid="empty"
   >
     <img src="../assets/empty.svg" alt="" srcset="" class="w-64 h-64" />
     <div>there are no icons matching the search</div>
@@ -77,7 +102,7 @@
     loading...
   </div>
 
-  <div [ngClass]="{ hidden: empty || loading }">
+  <div data-testid="list-of-icons" [ngClass]="{ hidden: empty || loading }">
     <outline-icons
       *ngIf="type === 'outline'"
       [size]="size"
@@ -94,6 +119,9 @@
   </div>
 </div>
 
-<tooltip *ngIf="tooltipContent" [copied]="componentTagCopied"
+<tooltip
+  data-testid="tooltip"
+  *ngIf="tooltipContent"
+  [copied]="componentTagCopied"
   ><div>{{ tooltipContent }}</div></tooltip
 >

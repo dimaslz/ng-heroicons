@@ -4,6 +4,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import throttle from 'lodash.throttle';
 import { Subscription } from 'rxjs';
 
+import copyToClipboard from '../../utils/copy-to-clipboard.utils';
+
 @Component({
   selector: 'icons',
   templateUrl: './icons.component.html',
@@ -80,7 +82,7 @@ export class IconsComponent implements OnInit, OnDestroy {
   }
 
   onClickIcon(): void {
-    this.copyToClipboard(this.tooltipContent);
+    copyToClipboard(this.tooltipContent);
     this.componentTagCopied = true;
     const time = setTimeout(() => {
       this.componentTagCopied = false;
@@ -90,18 +92,6 @@ export class IconsComponent implements OnInit, OnDestroy {
 
   onMouseLeaveHandler(): void {
     this.tooltipContent = '';
-  }
-
-  copyToClipboard(str: string): void {
-    const el = document.createElement('textarea');
-    el.value = str;
-    el.setAttribute('readonly', '');
-    el.style.position = 'absolute';
-    el.style.left = '-9999px';
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
   }
 
   switchToSolid(): void {

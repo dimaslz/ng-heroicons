@@ -2,7 +2,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'outline-icons',
-  templateUrl: './outline-icons.html',
+  templateUrl: './outline-icons.component.html',
   encapsulation: ViewEncapsulation.None,
 })
 export class OutlineIconsComponent {
