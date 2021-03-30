@@ -8,12 +8,20 @@ import copyToClipboard from '../utils/copy-to-clipboard.utils';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  public copied = false;
+
   onClickCommandExample($event: MouseEvent): void {
+    this.copied = true;
+
     const target: EventTarget | null = $event.target;
 
     if (target instanceof Element) {
       const value = target?.textContent as string;
       copyToClipboard(value.replace('$ ', ''));
     }
+
+    setTimeout(() => {
+      this.copied = false;
+    }, 1000);
   }
 }

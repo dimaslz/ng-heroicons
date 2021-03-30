@@ -25,3 +25,17 @@ body {
     @apply pointer-events-none text-xs text-center;
   }
 }
+
+.dark {
+  .IconWrapper {
+    @apply bg-gray-700 text-white;
+
+    &:hover {
+      @apply bg-gray-600 cursor-pointer;
+    }
+
+    &__icon svg {
+      color: currentColor !important;
+    }
+  }
+}
