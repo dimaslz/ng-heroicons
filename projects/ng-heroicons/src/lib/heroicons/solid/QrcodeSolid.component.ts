@@ -1,4 +1,6 @@
-import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+
+import { BaseSolidIconComponent } from '../../../components/base-solid-icon.component';
 
 @Component({
   selector: 'qrcode-solid-icon',
@@ -21,36 +23,4 @@ import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStra
     color: inherit;
   }`]
 })
-export class QrcodeSolidComponent implements OnInit, OnChanges {
-  @Input() style: string = "";
-  @Input() size: number = 24;
-  @Input() color: string = "";
-
-  constructor() { }
-
-  ngOnChanges(changes: SimpleChanges) {
-    const colorHasChanged = changes.color?.previousValue !== changes.color?.currentValue;
-    const sizeHasChanged = changes.size?.previousValue !== changes.size?.currentValue;
-
-    if (colorHasChanged || sizeHasChanged) {
-      this.style = "";
-      this.renderStyle();
-    }
-  }
-
-  ngOnInit(): void {
-    this.renderStyle();
-  }
-
-  renderStyle() {
-    let style = [];
-    if (this.size) {
-      style.push(`width: ${this.size}px; height: ${this.size}px;`);
-    }
-    if (this.color) {
-      style.push(`color: ${this.color};`);
-    }
-
-    this.style = style.join(' ') + this.style;
-  }
-}
+export class QrcodeSolidComponent extends BaseSolidIconComponent { }

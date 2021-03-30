@@ -1,4 +1,6 @@
-import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+
+import { BaseOutlineIconComponent } from '../../../components/base-outline-icon.component';
 
 @Component({
   selector: 'cash-outline-icon',
@@ -13,41 +15,4 @@ import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStra
     stroke-width: inherit;
   }`],
 })
-export class CashOutlineComponent implements OnInit, OnChanges {
-  @Input() style: string = "";
-  @Input() size: number = 24;
-  @Input() stroke: number|string = 2;
-  @Input() color: string = "";
-
-  constructor() { }
-
-  ngOnChanges(changes: SimpleChanges) {
-    const colorHasChanged = changes.color?.previousValue !== changes.color?.currentValue;
-    const sizeHasChanged = changes.size?.previousValue !== changes.size?.currentValue;
-    const strokeHasChanged = changes.stroke?.previousValue !== changes.stroke?.currentValue;
-
-    if (colorHasChanged || sizeHasChanged || strokeHasChanged) {
-      this.style = "";
-      this.renderStyle();
-    }
-  }
-
-  ngOnInit(): void {
-    this.renderStyle();
-  }
-
-  renderStyle() {
-    let style = [];
-    if (this.size) {
-      style.push(`width: ${this.size}px; height: ${this.size}px;`);
-    }
-    if (this.color) {
-      style.push(`color: ${this.color};`);
-    }
-    if (this.stroke) {
-      style.push(`stroke-width: ${this.stroke}px;`);
-    }
-
-    this.style = style.join(' ') + this.style;
-  }
-}
+export class CashOutlineComponent extends BaseOutlineIconComponent { }
