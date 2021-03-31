@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import copyToClipboard from '../utils/copy-to-clipboard.utils';
 
@@ -7,8 +7,19 @@ import copyToClipboard from '../utils/copy-to-clipboard.utils';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public copied = false;
+
+  ngOnInit(): void {
+    const node: HTMLScriptElement = document.createElement('script');
+    node.src = 'https://plausible.io/js/plausible.js';
+    node.type = 'text/javascript';
+    node.async = true;
+    node.defer = true;
+    node.dataset.domain = 'ng-heroicons.dimaslz.dev';
+
+    document.getElementsByTagName('head')[0].appendChild(node);
+  }
 
   onClickCommandExample($event: MouseEvent): void {
     this.copied = true;
