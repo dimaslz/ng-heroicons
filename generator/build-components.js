@@ -69,7 +69,7 @@ async function generateIconsComponent(icons, type) {
   iconComponentsWrapperTpl = iconComponentsWrapperTpl
     .replace(/\{\{type\}\}/g, jsUcfirst(type))
     .replace(/\{\{icons\}\}/g, iconComponents);
-  const iconComponentsPath = `${projectsPath}/playground/src/app/icons/${type}-icons.html`;
+  const iconComponentsPath = `${projectsPath}/playground/src/app/icons/${type}-icons.component.html`;
   rimraf.sync(iconComponentsPath);
   return fs.writeFile(iconComponentsPath, iconComponentsWrapperTpl);
 }

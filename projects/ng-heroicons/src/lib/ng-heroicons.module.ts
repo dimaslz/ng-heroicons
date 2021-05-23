@@ -16,6 +16,10 @@ import { ArrowNarrowLeftOutlineComponent } from './heroicons/outline/ArrowNarrow
 import { ArrowNarrowRightOutlineComponent } from './heroicons/outline/ArrowNarrowRightOutline.component';
 import { ArrowNarrowUpOutlineComponent } from './heroicons/outline/ArrowNarrowUpOutline.component';
 import { ArrowRightOutlineComponent } from './heroicons/outline/ArrowRightOutline.component';
+import { ArrowSmDownOutlineComponent } from './heroicons/outline/ArrowSmDownOutline.component';
+import { ArrowSmLeftOutlineComponent } from './heroicons/outline/ArrowSmLeftOutline.component';
+import { ArrowSmRightOutlineComponent } from './heroicons/outline/ArrowSmRightOutline.component';
+import { ArrowSmUpOutlineComponent } from './heroicons/outline/ArrowSmUpOutline.component';
 import { ArrowUpOutlineComponent } from './heroicons/outline/ArrowUpOutline.component';
 import { ArrowsExpandOutlineComponent } from './heroicons/outline/ArrowsExpandOutline.component';
 import { AtSymbolOutlineComponent } from './heroicons/outline/AtSymbolOutline.component';
@@ -242,6 +246,10 @@ import { ArrowNarrowLeftSolidComponent } from './heroicons/solid/ArrowNarrowLeft
 import { ArrowNarrowRightSolidComponent } from './heroicons/solid/ArrowNarrowRightSolid.component';
 import { ArrowNarrowUpSolidComponent } from './heroicons/solid/ArrowNarrowUpSolid.component';
 import { ArrowRightSolidComponent } from './heroicons/solid/ArrowRightSolid.component';
+import { ArrowSmDownSolidComponent } from './heroicons/solid/ArrowSmDownSolid.component';
+import { ArrowSmLeftSolidComponent } from './heroicons/solid/ArrowSmLeftSolid.component';
+import { ArrowSmRightSolidComponent } from './heroicons/solid/ArrowSmRightSolid.component';
+import { ArrowSmUpSolidComponent } from './heroicons/solid/ArrowSmUpSolid.component';
 import { ArrowUpSolidComponent } from './heroicons/solid/ArrowUpSolid.component';
 import { ArrowsExpandSolidComponent } from './heroicons/solid/ArrowsExpandSolid.component';
 import { AtSymbolSolidComponent } from './heroicons/solid/AtSymbolSolid.component';
@@ -454,12 +462,7 @@ import { XSolidComponent } from './heroicons/solid/XSolid.component';
 import { ZoomInSolidComponent } from './heroicons/solid/ZoomInSolid.component';
 import { ZoomOutSolidComponent } from './heroicons/solid/ZoomOutSolid.component';
 
-import { BaseSolidIconComponent } from '../components/base-solid-icon.component';
-import { BaseOutlineIconComponent } from '../components/base-outline-icon.component';
-
 const COMPONENTS = [
-  BaseSolidIconComponent,
-  BaseOutlineIconComponent,
   AcademicCapOutlineComponent,
 AdjustmentsOutlineComponent,
 AnnotationOutlineComponent,
@@ -475,6 +478,10 @@ ArrowNarrowLeftOutlineComponent,
 ArrowNarrowRightOutlineComponent,
 ArrowNarrowUpOutlineComponent,
 ArrowRightOutlineComponent,
+ArrowSmDownOutlineComponent,
+ArrowSmLeftOutlineComponent,
+ArrowSmRightOutlineComponent,
+ArrowSmUpOutlineComponent,
 ArrowUpOutlineComponent,
 ArrowsExpandOutlineComponent,
 AtSymbolOutlineComponent,
@@ -701,6 +708,10 @@ ArrowNarrowLeftSolidComponent,
 ArrowNarrowRightSolidComponent,
 ArrowNarrowUpSolidComponent,
 ArrowRightSolidComponent,
+ArrowSmDownSolidComponent,
+ArrowSmLeftSolidComponent,
+ArrowSmRightSolidComponent,
+ArrowSmUpSolidComponent,
 ArrowUpSolidComponent,
 ArrowsExpandSolidComponent,
 AtSymbolSolidComponent,

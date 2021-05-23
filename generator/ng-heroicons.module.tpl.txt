@@ -3,12 +3,7 @@ import { CommonModule } from "@angular/common";
 
 {{componentsImports}}
 
-import { BaseSolidIconComponent } from '../components/base-solid-icon.component';
-import { BaseOutlineIconComponent } from '../components/base-outline-icon.component';
-
 const COMPONENTS = [
-  BaseSolidIconComponent,
-  BaseOutlineIconComponent,
   {{components}}
 ];
 
