@@ -3,29 +3,29 @@ branch: master
 tagFormat: "${version}"
 plugins:
   - "@semantic-release/commit-analyzer"
+  # - "@semantic-release/npm"
   - "@semantic-release/release-notes-generator"
-	- "@semantic-release/npm"
-		npmPublish: false
-	- "@semantic-release/changelog"
+  - "@semantic-release/changelog"
   - "@semantic-release/git"
   - "@semantic-release/github"
 
 verifyConditions:
-  - '@semantic-release/git'
+  - "@semantic-release/git"
   - "@semantic-release/github"
+  # - "@semantic-release/npm"
 analyzeCommits:
   - path: "@semantic-release/commit-analyzer"
     releaseRules:
-    - type: "feat"
-      release: "patch"
-    - type: "hotfix"
-      release: "patch"
-    - type: "patch"
-      release: "patch"
-    - type: "minor"
-      release: "minor"
-    - type: "breaking"
-      release: "major"
+      - type: "feat"
+        release: "patch"
+      - type: "hotfix"
+        release: "patch"
+      - type: "patch"
+        release: "patch"
+      - type: "minor"
+        release: "minor"
+      - type: "breaking"
+        release: "major"
 generateNotes:
   - path: "@semantic-release/release-notes-generator"
     writerOpts:
@@ -65,7 +65,6 @@ prepare:
     changelogFile: "./CHANGELOG.md"
 publish:
   - path: "@semantic-release/github"
-		publish: false
 
 success:
   - "@semantic-release/github"
