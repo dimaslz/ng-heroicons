@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/unbound-method, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call */
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import throttle from 'lodash.throttle';
 import { Subscription } from 'rxjs';
@@ -12,8 +12,9 @@ import copyToClipboard from '../../utils/copy-to-clipboard.utils';
   styleUrls: ['./icons.component.scss'],
 })
 export class IconsComponent implements OnInit, OnDestroy {
+  @Input() color = '#ffffff';
+
   sizes: number[] = [6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64];
-  color = '#333333';
   stroke = 2;
   sizeIndex = 6;
   size = this.sizes[this.sizeIndex];

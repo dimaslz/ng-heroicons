@@ -33,9 +33,5 @@ body {
     &:hover {
       @apply bg-gray-600 cursor-pointer;
     }
-
-    &__icon svg {
-      color: currentColor !important;
-    }
   }
 }
