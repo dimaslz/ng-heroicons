@@ -24,11 +24,25 @@ describe('AppComponent', () => {
     expect(screen.getByText('go to dark')).toBeTruthy();
   });
 
-  it('on click, should switch to dark mode', async () => {
-    const { fixture } = await render(DarkModeComponent);
-    fireEvent.click(screen.getByText('go to dark'));
-    fixture.detectChanges();
+  describe('on click, should switch to dark mode', () => {
+    let fixture: any = null;
+    beforeEach(async () => {
+      const renderComponent = await render(DarkModeComponent);
+      fixture = renderComponent.fixture;
 
-    expect(screen.getByText('go to light')).toBeTruthy();
+      spyOn(fixture.componentInstance.update, 'emit');
+      fixture.detectChanges();
+
+      fireEvent.click(screen.getByText('go to dark'));
+      fixture.detectChanges();
+    });
+
+    it('should see "go to ligth"', () => {
+      expect(screen.getByText('go to light')).toBeTruthy();
+    });
+
+    it('should see "go to ligth"', () => {
+      expect(fixture.componentInstance.update.emit).toHaveBeenCalled();
+    });
   });
 });
