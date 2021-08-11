@@ -6,6 +6,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TooltipComponent {
-  @Input() componentTag = '';
   @Input() copied = false;
 }
