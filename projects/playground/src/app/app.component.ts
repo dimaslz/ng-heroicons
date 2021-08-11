@@ -9,6 +9,7 @@ import copyToClipboard from '../utils/copy-to-clipboard.utils';
 })
 export class AppComponent implements OnInit {
   public copied = false;
+  public color = '#ffffff';
 
   ngOnInit(): void {
     const node: HTMLScriptElement = document.createElement('script');
@@ -34,5 +35,13 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       this.copied = false;
     }, 1000);
+  }
+
+  onModeChange(mode: string): void {
+    if (mode === 'dark') {
+      this.color = '#333333';
+    } else {
+      this.color = '#ffffff';
+    }
   }
 }

@@ -1,22 +1,26 @@
 import {
   Component,
   OnInit,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 
 @Component({
   selector: 'app-darkmode-toggle',
   template: `<div class="flex p-4">
-  <button *ngIf="!darkmode" (click)="toggleDarkMode()" class="flex p-2 focus:outline-none text-gray-800 hover:opacity-75">
+  <button *ngIf="!darkmode" (click)="toggleDarkMode()" class="DarkModeButton flex p-2 focus:outline-none text-gray-800 hover:opacity-75">
     <moon-outline-icon></moon-outline-icon>
     <div class="flex items-center justify-center ml-2 text-sm">go to dark</div>
   </button>
-  <button *ngIf="darkmode" (click)="toggleDarkMode()" class="flex p-2 focus:outline-none text-white hover:opacity-75">
+  <button *ngIf="darkmode" (click)="toggleDarkMode()" class="LightModeButton flex p-2 focus:outline-none text-white hover:opacity-75">
     <sun-outline-icon></sun-outline-icon>
     <div class="flex items-center justify-center ml-2 text-sm">go to light</div>
   </button>
 </div>`
 })
 export class DarkModeComponent implements OnInit {
+  @Output() update = new EventEmitter();
+
   public darkmode = false;
 
   ngOnInit(): void {
@@ -35,5 +39,7 @@ export class DarkModeComponent implements OnInit {
     } else {
       document.querySelector('html')?.classList.remove('dark');
     }
+
+    this.update.emit(!this.darkmode ? 'dark' : 'light');
   }
 }

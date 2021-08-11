@@ -10,7 +10,7 @@
 </div>
 
 <div class="container my-0 mx-auto px-4 h-full flex flex-col">
-  <app-darkmode-toggle></app-darkmode-toggle>
+  <app-darkmode-toggle (update)="onModeChange($event)"></app-darkmode-toggle>
 
   <div class="Header flex flex-col items-center">
     <div>
@@ -41,7 +41,7 @@ $ yarn add @dimaslz/ng-heroicons</pre
     in your projects.
   </h2>
 
-  <icons class="Icons flex flex-col flex-grow pb-16"></icons>
+  <icons class="Icons flex flex-col flex-grow pb-16" [color]="color"></icons>
 
   <div class="fixed bottom-0 right-0 w-full text-xs p-4 text-right bg-white dark:bg-gray-900 dark:text-white">
     developed with ♥ by
