@@ -37,11 +37,11 @@ describe('AppComponent', () => {
       fixture.detectChanges();
     });
 
-    it('should see "go to ligth"', () => {
+    it('should see "go to light"', () => {
       expect(screen.getByText('go to light')).toBeTruthy();
     });
 
-    it('should see "go to ligth"', () => {
+    it('should see "go to light"', () => {
       expect(fixture.componentInstance.update.emit).toHaveBeenCalled();
     });
   });
