@@ -9,7 +9,13 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, CommonModule, IconsModule, IconModule, DarkModeModule],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    IconsModule,
+    IconModule,
+    DarkModeModule,
+  ],
   exports: [],
   schemas: [],
   providers: [],
