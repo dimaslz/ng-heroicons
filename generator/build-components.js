@@ -47,7 +47,7 @@ async function SVGToAngular({
     .replace(/stroke-width="\d+"/g, '')
     .replace(/stroke="#.*?"/g, 'stroke="currentColor"')
     .replace(/fill="#.*?"/g, 'fill="currentColor"')
-    .replace(/width="\d+" height="\d+"/, '[style]="style"')
+    .replace(/width="\d+" height="\d+"/, '[style]="style" [ngClass]="class"')
     .replace('{{selectorName}}', selectorName);
 }
 

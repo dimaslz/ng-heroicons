@@ -4,7 +4,7 @@ import { BaseSolidIconComponent } from '../../../components/base-solid-icon.comp
 
 @Component({
   selector: 'light-bulb-solid-icon',
-  template: `<svg [style]="style" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  template: `<svg [style]="style" [ngClass]="class" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 3C11 2.44772 10.5523 2 10 2C9.44771 2 9 2.44772 9 3V4C9 4.55228 9.44771 5 10 5C10.5523 5 11 4.55228 11 4V3Z" fill="currentColor"/>
 <path d="M15.6568 5.75731C16.0473 5.36678 16.0473 4.73362 15.6568 4.34309C15.2663 3.95257 14.6331 3.95257 14.2426 4.34309L13.5355 5.0502C13.145 5.44072 13.145 6.07389 13.5355 6.46441C13.926 6.85494 14.5592 6.85494 14.9497 6.46441L15.6568 5.75731Z" fill="currentColor"/>
 <path d="M18 10C18 10.5523 17.5523 11 17 11H16C15.4477 11 15 10.5523 15 10C15 9.44771 15.4477 9 16 9H17C17.5523 9 18 9.44771 18 10Z" fill="currentColor"/>
@@ -13,11 +13,5 @@ import { BaseSolidIconComponent } from '../../../components/base-solid-icon.comp
 <path d="M8 16V15H12V16C12 17.1046 11.1046 18 10 18C8.89543 18 8 17.1046 8 16Z" fill="currentColor"/>
 <path d="M12.0009 14C12.0155 13.6597 12.2076 13.3537 12.4768 13.1411C13.4046 12.4086 14 11.2738 14 10C14 7.79086 12.2091 6 10 6C7.79086 6 6 7.79086 6 10C6 11.2738 6.59545 12.4086 7.52319 13.1411C7.79241 13.3537 7.98451 13.6597 7.99911 14H12.0009Z" fill="currentColor"/>
 </svg>`,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  styles: [`svg {
-    height: inherit;
-    width: inherit;
-    color: inherit;
-  }`]
 })
 export class LightBulbSolidComponent extends BaseSolidIconComponent { }

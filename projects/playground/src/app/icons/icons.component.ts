@@ -12,12 +12,14 @@ import copyToClipboard from '../../utils/copy-to-clipboard.utils';
   styleUrls: ['./icons.component.scss'],
 })
 export class IconsComponent implements OnInit, OnDestroy {
-  @Input() color = '#ffffff';
+  @Input() color = 'white';
 
   query = '';
+  classColor = 'white';
+  colors: string[] = ['white', 'gray', 'red', 'yellow', 'green', 'blue', 'indigo', 'purple'];
   sizes: number[] = [6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64];
-  stroke = 2;
-  sizeIndex = 6;
+  stroke = 1;
+  sizeIndex = 8;
   size = this.sizes[this.sizeIndex];
   type = 'outline';
   class = '';
@@ -194,5 +196,17 @@ export class IconsComponent implements OnInit, OnDestroy {
       this.showIconsWhenMatchWithQuery(query);
       this.loading = false;
     }, 200);
+  }
+
+  onClickColor(color: string): void {
+    this.classColor = color === 'white' ? 'text-white' : `text-${color}-400`;
+  }
+
+  getColor(color: string): string {
+    return color === 'white' ? 'bg-white text-gray-900' : `bg-${color}-400 text-${color}-900`;
+  }
+
+  addRing(color: string): string {
+    return this.classColor.includes(color) ? 'ring' : '';
   }
 }

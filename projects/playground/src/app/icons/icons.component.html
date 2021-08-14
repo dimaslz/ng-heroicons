@@ -88,7 +88,6 @@
       'bg-white text-gray-700 text-xl dark:text-white dark:bg-gray-900'
     ]"
     *ngIf="empty"
-    data-testid="empty"
   >
     <img src="../assets/empty.svg" alt="" srcset="" class="w-64 h-64" />
     <div>there are no icons matching the search</div>
@@ -103,17 +102,26 @@
     loading...
   </div>
 
+  <div class="flex items-center justify-center pb-4">
+    <button
+      *ngFor="let c of colors"
+      [ngClass]="[getColor(c), 'mx-2', addRing(c)]"
+      class="w-12 h-12 rounded-full text-xs"
+      (click)="onClickColor(c)"
+    >{{ c }}</button>
+  </div>
+
   <div data-testid="list-of-icons" [ngClass]="{ hidden: empty || loading }">
     <outline-icons
       *ngIf="type === 'outline'"
       [size]="size"
       [stroke]="stroke"
-      [class]="class"
+      [class]="classColor"
     ></outline-icons>
     <solid-icons
       *ngIf="type === 'solid'"
       [size]="size"
-      [class]="class"
+      [class]="classColor"
     ></solid-icons>
   </div>
 </div>

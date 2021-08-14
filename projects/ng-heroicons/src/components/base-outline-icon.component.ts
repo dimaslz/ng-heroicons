@@ -14,8 +14,9 @@ import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStra
 export class BaseOutlineIconComponent implements OnInit, OnChanges {
   @Input() style: string = "";
   @Input() size: number = 24;
-  @Input() stroke: number|string = 2;
+  @Input() stroke: number|string = 1;
   @Input() color: string = "";
+  @Input() class: string = "";
 
   constructor() { }
 
@@ -35,7 +36,7 @@ export class BaseOutlineIconComponent implements OnInit, OnChanges {
   }
 
   renderStyle() {
-    let style = [];
+    let style: string[] = [];
     if (this.size) {
       style.push(`width: ${this.size}px; height: ${this.size}px;`);
     }
@@ -46,6 +47,6 @@ export class BaseOutlineIconComponent implements OnInit, OnChanges {
       style.push(`stroke-width: ${this.stroke}px;`);
     }
 
-    this.style = style.join(' ') + this.style;
+    this.style = this.style + style.join(' ');
   }
 }

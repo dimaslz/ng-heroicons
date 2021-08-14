@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import copyToClipboard from '../utils/copy-to-clipboard.utils';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +10,7 @@ import copyToClipboard from '../utils/copy-to-clipboard.utils';
 })
 export class AppComponent implements OnInit {
   public copied = false;
-  public color = '#ffffff';
+  public color = 'white';
 
   ngOnInit(): void {
     const node: HTMLScriptElement = document.createElement('script');
@@ -39,9 +40,9 @@ export class AppComponent implements OnInit {
 
   onModeChange(mode: string): void {
     if (mode === 'dark') {
-      this.color = '#333333';
+      this.color = 'gray';
     } else {
-      this.color = '#ffffff';
+      this.color = 'white';
     }
   }
 }

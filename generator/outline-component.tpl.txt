@@ -5,12 +5,5 @@ import { BaseOutlineIconComponent } from '../../../components/base-outline-icon.
 @Component({
   selector: '{{selectorName}}',
   template: `{{template}}`,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  styles: [`svg {
-    height: inherit;
-    width: inherit;
-    color: inherit;
-    stroke-width: inherit;
-  }`],
 })
 export class {{className}} extends BaseOutlineIconComponent { }

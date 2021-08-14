@@ -14,6 +14,7 @@ export class BaseSolidIconComponent implements OnInit, OnChanges {
   @Input() style: string = "";
   @Input() size: number = 24;
   @Input() color: string = "";
+  @Input() class: string = "";
 
   constructor() { }
 
