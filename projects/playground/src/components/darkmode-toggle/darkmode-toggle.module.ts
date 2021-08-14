@@ -5,9 +5,7 @@ import { DarkModeComponent } from './darkmode-toggle.component';
 import { NgHeroiconsModule } from '../../../../ng-heroicons/src/public-api';
 
 @NgModule({
-  declarations: [
-    DarkModeComponent,
-  ],
+  declarations: [DarkModeComponent],
   imports: [CommonModule, NgHeroiconsModule],
   exports: [DarkModeComponent],
   bootstrap: [],

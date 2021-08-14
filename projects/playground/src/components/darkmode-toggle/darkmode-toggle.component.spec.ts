@@ -1,10 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
+import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { render, screen, fireEvent } from '@testing-library/angular';
-import { MoonOutlineComponent, SunOutlineComponent } from '../../../../ng-heroicons/src/public-api';
+
 import { DarkModeComponent } from './darkmode-toggle.component';
+
+@Component({ selector: 'moon-outline-icon', template: '' })
+class MoonOutlineComponent {
+}
+
+@Component({ selector: 'sun-outline-icon', template: '' })
+class SunOutlineComponent {
+}
 
 describe('AppComponent', () => {
   beforeEach(async () => {
