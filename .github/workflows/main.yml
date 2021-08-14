@@ -1,0 +1,33 @@
+name: Testing
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  # ID of the job
+  run-jest-tests:
+    name: Jest Tests
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout under $GITHUB_WORKSPACE
+        uses: actions/checkout@master
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Install yarn
+        run: npm install -g yarn
+
+      - name: Install all dependencies
+        run: yarn install
+
+      - name: Run Jest Tests
+        run: yarn test
