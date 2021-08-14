@@ -1,0 +1,26 @@
+<div class="Tooltip fixed bottom-0 left-0 right-0 z-10">
+  <code
+    class="
+      bg-gray-900
+      flex
+      p-4
+      text-sm text-blue-400
+      shadow-inner
+      text-center
+      justify-center
+    "
+  >
+    <pre><ng-content></ng-content></pre>
+  </code>
+
+  <div
+    class="FeedbackAction absolute right-0 top-0 z-10 bg-green-400 text-sm p-4"
+    [ngClass]="{ visible: copied, invisible: !copied }"
+  >
+    Copied!
+  </div>
+
+  <div class="NoteAction absolute left-0 top-0 z-10 text-gray-100 text-sm p-4">
+    Click to copy on clipboard
+  </div>
+</div>

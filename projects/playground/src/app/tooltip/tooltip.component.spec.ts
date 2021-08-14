@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 import { Component, Input } from '@angular/core';
-import { TestBed } from '@angular/core/testing';
+import { render, RenderResult, screen } from '@testing-library/angular';
 import { TooltipComponent } from './tooltip.component';
 
 @Component({
@@ -16,50 +16,36 @@ class AppDummyComponent {
 describe('TooltipComponent', () => {
 
   describe('By default', () => {
+    let componentRender: RenderResult<TooltipComponent>;
     beforeEach(async () => {
-      await TestBed.configureTestingModule({
-        declarations: [TooltipComponent]
-      }).compileComponents();
+      componentRender = await render(TooltipComponent);
     });
 
     it('should create the tooltip component', () => {
-      const fixture = TestBed.createComponent(TooltipComponent);
-      const tooltip = fixture.componentInstance;
+      const tooltip = componentRender.fixture.componentInstance;
       expect(tooltip).toBeTruthy();
     });
   });
 
   describe('In different scenarios', () => {
+    let componentRender: RenderResult<TooltipComponent>;
     beforeEach(async () => {
-      await TestBed.configureTestingModule({
-        declarations: [TooltipComponent, AppDummyComponent]
-      }).compileComponents();
+      componentRender = await render(AppDummyComponent, {
+        declarations: [TooltipComponent]
+      });
     });
 
-    it('I should see the children content', () => {
-      const fixture = TestBed.createComponent(AppDummyComponent);
-      fixture.autoDetectChanges();
-      expect(fixture.nativeElement.querySelector('tooltip')).toBeTruthy();
-      expect(fixture.nativeElement.querySelector('#foo').outerHTML).toBe('<div id="foo">FOO</div>');
+    it('should see the content', () => {
+      expect(screen.getByText('FOO')).toBeTruthy();
     });
 
-    it('By default, should have status "Click to copy on clipboard"', () => {
-      const fixture = TestBed.createComponent(AppDummyComponent);
-      fixture.autoDetectChanges();
+    it('if copied, I can see the notification', () => {
+      expect(screen.getByText('Copied!').classList.contains('invisible')).toBe(true);
 
-      expect(fixture.nativeElement.querySelector('tooltip')).toBeTruthy();
-      expect(fixture.nativeElement.querySelector('.NoteAction')).toBeTruthy();
-      expect(fixture.nativeElement.querySelector('.FeedbackAction').className.includes('opacity-0')).toBe(true);
-    });
+      componentRender.fixture.componentInstance.copied = true;
+      componentRender.fixture.detectChanges();
 
-    it('If copied value is true, should have layer with content "Copied!"', () => {
-      const fixture = TestBed.createComponent(AppDummyComponent);
-      fixture.componentInstance.copied = true;
-      fixture.autoDetectChanges();
-
-      expect(fixture.nativeElement.querySelector('tooltip')).toBeTruthy();
-      expect(fixture.nativeElement.querySelector('.NoteAction')).toBeTruthy();
-      expect(fixture.nativeElement.querySelector('.FeedbackAction').className.includes('opacity-100')).toBe(true);
+      expect(screen.getByText('Copied!').classList.contains('visible')).toBe(true);
     });
   });
 });
