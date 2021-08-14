@@ -5,17 +5,18 @@ import { CommonModule } from '@angular/common';
 import { OutlineIconsComponent } from './outline-icons.component';
 import { SolidIconsComponent } from './solid-icons.component';
 
-import { TooltipComponent } from '../tooltip/tooltip.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TooltipModule } from '../../components/tooltip/tooltip.component.module';
 
 @NgModule({
-  declarations: [
-    IconsComponent,
-    OutlineIconsComponent,
-    SolidIconsComponent,
-    TooltipComponent,
+  declarations: [IconsComponent, OutlineIconsComponent, SolidIconsComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgHeroiconsModule,
+    TooltipModule,
   ],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, NgHeroiconsModule],
   exports: [OutlineIconsComponent, SolidIconsComponent, IconsComponent],
   bootstrap: [],
 })
