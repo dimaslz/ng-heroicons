@@ -14,6 +14,7 @@ import copyToClipboard from '../../utils/copy-to-clipboard.utils';
 export class IconsComponent implements OnInit, OnDestroy {
   @Input() color = '#ffffff';
 
+  query = '';
   sizes: number[] = [6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64];
   stroke = 2;
   sizeIndex = 6;
@@ -97,10 +98,26 @@ export class IconsComponent implements OnInit, OnDestroy {
 
   switchToSolid(): void {
     this.type = 'solid';
+
+    if (this.query) {
+      this.loading = true;
+      setTimeout(() => {
+        this.showIconsWhenMatchWithQuery(this.query);
+        this.loading = false;
+      });
+    }
   }
 
   switchToOutline(): void {
     this.type = 'outline';
+
+    if (this.query) {
+      this.loading = true;
+      setTimeout(() => {
+        this.showIconsWhenMatchWithQuery(this.query);
+        this.loading = false;
+      });
+    }
   }
 
   removeColor(): void {
@@ -166,6 +183,7 @@ export class IconsComponent implements OnInit, OnDestroy {
   }
 
   onChangeSearch(query: string): void {
+    this.query = query;
     if (this.debounceSearch) {
       clearTimeout(this.debounceSearch);
     }

@@ -3,16 +3,87 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 
-import { NgHeroiconsModule } from '../../../../ng-heroicons/src/public-api';
 import { IconsComponent } from './icons.component';
-import { OutlineIconsComponent } from './outline-icons.component';
-import { SolidIconsComponent } from './solid-icons.component';
 
-import { TooltipComponent } from '../tooltip/tooltip.component';
+import { TooltipModule } from '../../components/tooltip/tooltip.component.module';
+
+@Component({
+  selector: 'x-outline-icon',
+  template: '.'
+})
+class XOutlineIconComponent {
+  @Input() size = 24;
+}
+
+@Component({
+  selector: 'search-outline-icon',
+  template: '.'
+})
+class SearchOutlineIconComponent {
+  @Input() size = 24;
+}
+
+@Component({
+  selector: 'zoom-out-outline-icon',
+  template: 'ZOOM_OUT_OUTLINE_ICON'
+})
+class ZoomOutOutlineIconComponent {
+  @Input() size = 24;
+}
+
+@Component({
+  selector: 'zoom-in-outline-icon',
+  template: 'ZOOM_IN_OUTLINE_ICON'
+})
+class ZoomInOutlineIconComponent {
+  @Input() size = 24;
+}
+
+@Component({
+  selector: 'outline-icons',
+  template: `<div>OUTLINE_ICONS</div>
+  <div>
+    <div class="IconWrapper">
+      <div class="IconWrapper__icon" id="icon_1">
+        icon_1
+      </div>
+      <div class="IconWrapper__name">icon_1</div>
+    </div>
+  </div>`
+})
+class OutlineIconsComponent {
+  @Input() size = 24;
+  @Input() stroke = 0;
+}
+
+@Component({
+  selector: 'solid-icons',
+  template: 'SOLID_ICONS'
+})
+class SolidIconsComponent {
+  @Input() size = 24;
+}
+
+@Component({
+  selector: 'heart-outline-icon',
+  template: 'HEART_OUTLINE_ICON'
+})
+class HeartOutlineIconComponent {
+  @Input() size = 24;
+}
+
+@Component({
+  selector: 'heart-solid-icon',
+  template: 'HEART_SOLID_ICON'
+})
+class HeartSolidIconComponent {
+  @Input() size = 24;
+}
 
 describe('IconsComponent', () => {
   let fixture: any;
@@ -25,13 +96,19 @@ describe('IconsComponent', () => {
         IconsComponent,
         OutlineIconsComponent,
         SolidIconsComponent,
-        TooltipComponent,
+
+        XOutlineIconComponent,
+        SearchOutlineIconComponent,
+        ZoomOutOutlineIconComponent,
+        ZoomInOutlineIconComponent,
+        HeartOutlineIconComponent,
+        HeartSolidIconComponent,
       ],
       imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        NgHeroiconsModule,
+        TooltipModule,
       ],
     });
 
@@ -52,67 +129,65 @@ describe('IconsComponent', () => {
 
     it('outline icons should be render', () => {
       fixture.detectChanges();
-      expect(fixture.nativeElement.querySelector('outline-icons')).toBeTruthy();
+      expect(screen.getByText('OUTLINE_ICONS')).toBeTruthy();
     });
 
     it('solid icons should be render', () => {
       fixture.componentInstance.type = 'solid';
       fixture.detectChanges();
 
-      expect(fixture.nativeElement.querySelector('solid-icons')).toBeTruthy();
+      expect(screen.getByText('SOLID_ICONS')).toBeTruthy();
     });
   });
 
   describe('MENU', () => {
     it('clicking on heart, should switch the icon type', () => {
-      const input = screen.getByTestId('outline-solid-toggle');
+      const input = screen.getByText('HEART_OUTLINE_ICON');
       userEvent.click(input);
       fixture.detectChanges();
 
-      expect(fixture.nativeElement.querySelector('solid-icons')).toBeTruthy();
+      expect(screen.getByText('HEART_SOLID_ICON')).toBeTruthy();
     });
 
     it('on zoon in should modify the UI and default values', () => {
-      const input = screen.getByTestId('zoom-in');
+      const input = screen.getByText('ZOOM_IN_OUTLINE_ICON');
       userEvent.click(input);
       fixture.detectChanges();
 
-      expect(fixture.componentInstance.size).toBe(32);
+      expect(fixture.componentInstance.size).toBe(48);
     });
   });
 
   describe('on typing in search', () => {
     it('search icons does not exists', () => {
-      const input = screen.getByTestId('search');
+      const input = screen.getByRole('search');
       userEvent.type(input, 'something');
-      jest.advanceTimersByTime(200);
+      jest.advanceTimersByTime(300);
 
       fixture.detectChanges();
 
-      expect(screen.getByTestId('empty')).toBeTruthy();
+      expect(fixture.componentInstance.empty).toBe(true);
+      expect(screen.getByText('there are no icons matching the search')).toBeTruthy();
     });
 
     it('clear input search', () => {
-      const input = screen.getByTestId('search');
+      const input = screen.getByRole('search');
       userEvent.clear(input);
       jest.advanceTimersByTime(200);
 
       fixture.detectChanges();
 
-      expect(screen.getByTestId('list-of-icons')).toBeTruthy();
+      expect(screen.getByText('OUTLINE_ICONS')).toBeTruthy();
     });
 
     it('search existing icons', () => {
-      const input = screen.getByTestId('search');
-      userEvent.type(input, 'arrow');
+      const input = screen.getByRole('search');
+      userEvent.type(input, 'icon');
       jest.advanceTimersByTime(200);
 
       fixture.detectChanges();
 
-      expect(
-        container.querySelectorAll('div.IconWrapper:not([class*=hidden])')
-          .length > 0
-      ).toBe(true);
+      expect(screen.getAllByText(/icon_*/));
     });
   });
 });

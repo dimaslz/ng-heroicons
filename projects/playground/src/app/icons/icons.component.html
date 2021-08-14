@@ -3,6 +3,7 @@
     <form [formGroup]="form" novalidate class="flex w-full">
       <div class="relative flex flex-row w-full">
         <input
+          role="search"
           type="text"
           class="outline-none border border-red-600 text-xs text-gray-800 w-full pl-2 pr-6
           dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
@@ -16,7 +17,6 @@
           *ngIf="form.get('search')?.value"
           (click)="form.get('search')?.setValue('')"
           name="clear-query"
-          data-testid="clear-query"
         ></x-outline-icon>
       </div>
       <div class="w-8 h-8 flex items-center justify-center bg-red-600">
@@ -32,7 +32,6 @@
         'flex items-center justify-center',
         'w-8 h-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none'
       ]"
-      data-testid="zoom-out"
     >
       <zoom-out-outline-icon></zoom-out-outline-icon>
     </button>
@@ -48,7 +47,6 @@
         'flex items-center justify-center',
         'w-8 h-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none'
       ]"
-      data-testid="zoom-in"
     >
       <zoom-in-outline-icon></zoom-in-outline-icon>
     </button>
@@ -109,21 +107,18 @@
     <outline-icons
       *ngIf="type === 'outline'"
       [size]="size"
-      [color]="color"
       [stroke]="stroke"
       [class]="class"
     ></outline-icons>
     <solid-icons
       *ngIf="type === 'solid'"
       [size]="size"
-      [color]="color"
       [class]="class"
     ></solid-icons>
   </div>
 </div>
 
 <tooltip
-  data-testid="tooltip"
   *ngIf="tooltipContent"
   [copied]="componentTagCopied"
   ><div>{{ tooltipContent }}</div></tooltip
