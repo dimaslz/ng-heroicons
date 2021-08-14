@@ -8,7 +8,14 @@ module.exports = {
     enabled: enablePurge,
     content: [
       './projects/**/*.html',
-      './projects/**/*.scss'
+      './projects/**/*.scss',
+      './projects/**/*.ts'
+    ],
+    safelist: [
+      "bg-white",
+      "text-white",
+      /^bg-(gray|red|yellow|green|blue|purple|indigo)-400$/,
+      /^text-(gray|red|yellow|green|blue|purple|indigo)-(900|400)$/
     ]
   },
   future: {
