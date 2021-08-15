@@ -12,11 +12,5 @@
   },
   "dependencies": {
     "tslib": "^2.2.0"
-  },
-  "ngPackage": {
-    "lib": {
-      "entryFile": "src/public-api.ts"
-    },
-    "dest": "dist"
   }
 }

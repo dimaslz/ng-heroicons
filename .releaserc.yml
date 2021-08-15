@@ -1,5 +1,6 @@
 ---
 branch: master
+preset: angular
 tagFormat: "${version}"
 plugins:
   - "@semantic-release/commit-analyzer"
@@ -41,9 +42,11 @@ generateNotes:
       # Tracked bug fix with a hotfix branch
       - type: "hotfix"
       - section: "Bug Fixes"
-      # Uninmportent fix (CI testing, etc)
       - type: "fix"
-      - hidden: true
+      - section: "Improvements"
+      - type: "perf"
+      - section: "Performance"
+      # Uninmportent fix (CI testing, etc)
       - type: "chore"
       - hidden: true
       - type: "docs"
@@ -54,8 +57,6 @@ generateNotes:
       - hidden: true
       - type: "refactor"
       - hidden: true
-      - type: "perf"
-      - hidden: true
       - type: "test"
       - hidden: true
     presetConfig: true
@@ -63,11 +64,3 @@ prepare:
   - path: "@semantic-release/git"
   - path: "@semantic-release/changelog"
     changelogFile: "./CHANGELOG.md"
-publish:
-  - path: "@semantic-release/github"
-
-success:
-  - "@semantic-release/github"
-
-fail:
-  - "@semantic-release/github"
