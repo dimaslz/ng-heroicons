@@ -1,9 +1,9 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { BaseSolidIconComponent } from '../../../components/base-solid-icon.component';
 
 @Component({
-  selector: '{{selectorName}}',
+  selector: '{{selector}}',
   template: `{{template}}`,
 })
 export class {{className}} extends BaseSolidIconComponent { }
