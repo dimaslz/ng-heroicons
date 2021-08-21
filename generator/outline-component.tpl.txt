@@ -1,9 +1,9 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { BaseOutlineIconComponent } from '../../../components/base-outline-icon.component';
 
 @Component({
-  selector: '{{selectorName}}',
+  selector: '{{selector}}',
   template: `{{template}}`,
 })
 export class {{className}} extends BaseOutlineIconComponent { }
