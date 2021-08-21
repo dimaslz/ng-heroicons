@@ -82,14 +82,14 @@ async function setIconsInPlayground({ icons, type, iconTpl }) {
       );
   }).join('\n\n');
 
-  iconComponentsWrapperTpl = iconComponentsWrapperTpl
+  const wrapperTpl = iconComponentsWrapperTpl
     .replace(/\{\{type\}\}/g, jsUcfirst(type))
     .replace(/\{\{icons\}\}/g, iconComponents);
 
   const iconComponentsPath = `${projectsPath}/playground/src/app/icons/${type}-icons.component.html`;
   rimraf.sync(iconComponentsPath);
 
-  return fs.writeFile(iconComponentsPath, iconComponentsWrapperTpl);
+  return fs.writeFile(iconComponentsPath, wrapperTpl);
 }
 
 async function writeFiles({ files, type }) {
@@ -128,11 +128,10 @@ async function compressSVG() {
     mkdirp.sync(`${destHeroicons}/${type}`);
 
     icons = icons.concat((await fs.readdir(`${heroiconsPath}/${type}`))
-      // .slice(0, 5)
       .filter((filename) => !/Ds_Store/gi.test(filename))
       .map((filename) => {
         const filePath = `${heroiconsPath}/${type}/${filename}`;
-        shell.exec(`svgo --config svgo.config.js ${filePath} -o ${filePath}`);
+        shell.exec(`svgo --config svgo.config.js ${filePath} -o ${filePath} >> /dev/null`);
 
         return {
           path: filePath,
