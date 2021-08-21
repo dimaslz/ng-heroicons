@@ -33,7 +33,7 @@ export class BaseSolidIconComponent implements OnInit, OnChanges {
   }
 
   renderStyle() {
-    let style = [];
+    let style: string[] = [];
     if (this.size) {
       style.push(`width: ${this.size}px; height: ${this.size}px;`);
     }
@@ -41,6 +41,6 @@ export class BaseSolidIconComponent implements OnInit, OnChanges {
       style.push(`color: ${this.color};`);
     }
 
-    this.style = style.join(' ') + this.style;
+    this.style = this.style + style.join(' ');
   }
 }

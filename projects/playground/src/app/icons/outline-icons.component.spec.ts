@@ -2,55 +2,52 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
+import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { render } from '@testing-library/angular';
+import kebabcase from 'lodash.kebabcase';
+
+import { OutlineIconsComponent } from './outline-icons.component';
 
 import * as OUTLINE_ICONS from '../../../../ng-heroicons/src/lib/heroicons/outline';
 
-describe('Outline icons', () => {
-  describe.each(Object.entries(OUTLINE_ICONS))(
-    'component: %s',
-    (name, iconComponent) => {
-      it('should work', async () => {
-        const { fixture } = await render(iconComponent);
-        expect(fixture.componentInstance).toBeTruthy();
-      });
+describe('OutlineIconsComponent', () => {
+  let fixture: any;
+  let container: any;
+  beforeEach(async () => {
+    jest.useFakeTimers();
 
-      it('size parameter should work', async () => {
-        const { fixture } = await render(iconComponent);
+    const component = await render(OutlineIconsComponent, {
+      imports: [
+        CommonModule,
+			],
+			schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    });
 
-        fixture.componentInstance.size = 99;
-        fixture.componentInstance.renderStyle();
-        fixture.detectChanges();
+    fixture = component.fixture;
+    container = component.container;
+  });
 
-        const { width, height } = fixture.nativeElement.querySelector('svg').style;
+  describe('By default', () => {
+    it('should create the app', () => {
+      const app = fixture.componentInstance;
+      expect(app).toBeTruthy();
+    });
 
-        expect(width).toBe('99px');
-        expect(height).toBe('99px');
-      });
+		it('should have icons wrapper', () => {
+      expect(container.querySelector('.OutlineIcons')).toBeTruthy();
+    });
 
-      test('color parameter should work', async () => {
-        const { fixture } = await render(iconComponent);
+		describe('the list of icons', () => {
+			test.each(Object.entries(OUTLINE_ICONS))
+				('should have the icon %s', (component) => {
+					const componentSelector = kebabcase(component).replace('-component', '')
 
-        fixture.componentInstance.color = 'red';
-        fixture.componentInstance.renderStyle();
-        fixture.detectChanges();
+					expect(
+						container.querySelector(`.OutlineIcons .IconWrapper ${componentSelector}`),
+					).toBeTruthy();
+				});
+		});
+  });
 
-        expect(
-          fixture.nativeElement.querySelector('svg').style.color
-        ).toBe('red');
-      });
-
-      test('stroke parameter should work', async () => {
-        const { fixture } = await render(iconComponent);
-
-        fixture.componentInstance.stroke = 99;
-        fixture.componentInstance.renderStyle();
-        fixture.detectChanges();
-
-        expect(
-          fixture.nativeElement.querySelector('svg').style.strokeWidth
-        ).toBe('99px');
-      });
-    }
-  );
 });

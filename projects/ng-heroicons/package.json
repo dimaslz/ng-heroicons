@@ -2,6 +2,7 @@
   "name": "@dimaslz/ng-heroicons",
   "version": "0.0.4",
   "author": "Dimas López <me@dimaslz.io> (dimaslz)",
+  "license": "MIT",
   "repository": {
     "url": "git+https://github.com/dimaslz/ng-heroicons.git",
     "type": "git"

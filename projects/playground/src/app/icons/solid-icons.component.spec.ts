@@ -2,43 +2,52 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
+import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { render } from '@testing-library/angular';
+import kebabcase from 'lodash.kebabcase';
 
-import * as SOLID_ICONS from '../../../../ng-heroicons/src/lib/heroicons/outline';
+import { SolidIconsComponent } from './solid-icons.component';
 
-describe('Solid icons', () => {
-  describe.each(Object.entries(SOLID_ICONS))(
-    'component: %s',
-    (name, iconComponent) => {
-      test('should work', async () => {
-        const { fixture } = await render(iconComponent);
-        expect(fixture.componentInstance).toBeTruthy();
-      });
+import * as SOLID_ICONS from '../../../../ng-heroicons/src/lib/heroicons/solid';
 
-      it('size parameter should work', async () => {
-        const { fixture } = await render(iconComponent);
+describe('SolidIconsComponent', () => {
+  let fixture: any;
+  let container: any;
+  beforeEach(async () => {
+    jest.useFakeTimers();
 
-        fixture.componentInstance.size = 99;
-        fixture.componentInstance.renderStyle();
-        fixture.detectChanges();
+    const component = await render(SolidIconsComponent, {
+      imports: [
+        CommonModule,
+			],
+			schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    });
 
-        const { width, height } = fixture.nativeElement.querySelector('svg').style;
+    fixture = component.fixture;
+    container = component.container;
+  });
 
-        expect(width).toBe('99px');
-        expect(height).toBe('99px');
-      });
+  describe('By default', () => {
+    it('should create the app', () => {
+      const app = fixture.componentInstance;
+      expect(app).toBeTruthy();
+    });
 
-      test('color parameter should work', async () => {
-        const { fixture } = await render(iconComponent);
+		it('should have icons wrapper', () => {
+      expect(container.querySelector('.SolidIcons')).toBeTruthy();
+    });
 
-        fixture.componentInstance.color = 'red';
-        fixture.componentInstance.renderStyle();
-        fixture.detectChanges();
+		describe('the list of icons', () => {
+			test.each(Object.entries(SOLID_ICONS))
+				('should have the icon %s', (component) => {
+					const componentSelector = kebabcase(component).replace('-component', '')
 
-        expect(
-          fixture.nativeElement.querySelector('svg').style.color
-        ).toBe('red');
-      });
-    }
-  );
+					expect(
+						container.querySelector(`.SolidIcons .IconWrapper ${componentSelector}`),
+					).toBeTruthy();
+				});
+		});
+  });
+
 });

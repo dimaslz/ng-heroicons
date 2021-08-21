@@ -1,928 +1,928 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 
-import { AcademicCapOutlineComponent } from './heroicons/outline/AcademicCapOutline.component';
-import { AdjustmentsOutlineComponent } from './heroicons/outline/AdjustmentsOutline.component';
-import { AnnotationOutlineComponent } from './heroicons/outline/AnnotationOutline.component';
-import { ArchiveOutlineComponent } from './heroicons/outline/ArchiveOutline.component';
-import { ArrowCircleDownOutlineComponent } from './heroicons/outline/ArrowCircleDownOutline.component';
-import { ArrowCircleLeftOutlineComponent } from './heroicons/outline/ArrowCircleLeftOutline.component';
-import { ArrowCircleRightOutlineComponent } from './heroicons/outline/ArrowCircleRightOutline.component';
-import { ArrowCircleUpOutlineComponent } from './heroicons/outline/ArrowCircleUpOutline.component';
-import { ArrowDownOutlineComponent } from './heroicons/outline/ArrowDownOutline.component';
-import { ArrowLeftOutlineComponent } from './heroicons/outline/ArrowLeftOutline.component';
-import { ArrowNarrowDownOutlineComponent } from './heroicons/outline/ArrowNarrowDownOutline.component';
-import { ArrowNarrowLeftOutlineComponent } from './heroicons/outline/ArrowNarrowLeftOutline.component';
-import { ArrowNarrowRightOutlineComponent } from './heroicons/outline/ArrowNarrowRightOutline.component';
-import { ArrowNarrowUpOutlineComponent } from './heroicons/outline/ArrowNarrowUpOutline.component';
-import { ArrowRightOutlineComponent } from './heroicons/outline/ArrowRightOutline.component';
-import { ArrowSmDownOutlineComponent } from './heroicons/outline/ArrowSmDownOutline.component';
-import { ArrowSmLeftOutlineComponent } from './heroicons/outline/ArrowSmLeftOutline.component';
-import { ArrowSmRightOutlineComponent } from './heroicons/outline/ArrowSmRightOutline.component';
-import { ArrowSmUpOutlineComponent } from './heroicons/outline/ArrowSmUpOutline.component';
-import { ArrowUpOutlineComponent } from './heroicons/outline/ArrowUpOutline.component';
-import { ArrowsExpandOutlineComponent } from './heroicons/outline/ArrowsExpandOutline.component';
-import { AtSymbolOutlineComponent } from './heroicons/outline/AtSymbolOutline.component';
-import { BackspaceOutlineComponent } from './heroicons/outline/BackspaceOutline.component';
-import { BadgeCheckOutlineComponent } from './heroicons/outline/BadgeCheckOutline.component';
-import { BanOutlineComponent } from './heroicons/outline/BanOutline.component';
-import { BeakerOutlineComponent } from './heroicons/outline/BeakerOutline.component';
-import { BellOutlineComponent } from './heroicons/outline/BellOutline.component';
-import { BookOpenOutlineComponent } from './heroicons/outline/BookOpenOutline.component';
-import { BookmarkAltOutlineComponent } from './heroicons/outline/BookmarkAltOutline.component';
-import { BookmarkOutlineComponent } from './heroicons/outline/BookmarkOutline.component';
-import { BriefcaseOutlineComponent } from './heroicons/outline/BriefcaseOutline.component';
-import { CakeOutlineComponent } from './heroicons/outline/CakeOutline.component';
-import { CalculatorOutlineComponent } from './heroicons/outline/CalculatorOutline.component';
-import { CalendarOutlineComponent } from './heroicons/outline/CalendarOutline.component';
-import { CameraOutlineComponent } from './heroicons/outline/CameraOutline.component';
-import { CashOutlineComponent } from './heroicons/outline/CashOutline.component';
-import { ChartBarOutlineComponent } from './heroicons/outline/ChartBarOutline.component';
-import { ChartPieOutlineComponent } from './heroicons/outline/ChartPieOutline.component';
-import { ChartSquareBarOutlineComponent } from './heroicons/outline/ChartSquareBarOutline.component';
-import { ChatAlt2OutlineComponent } from './heroicons/outline/ChatAlt2Outline.component';
-import { ChatAltOutlineComponent } from './heroicons/outline/ChatAltOutline.component';
-import { ChatOutlineComponent } from './heroicons/outline/ChatOutline.component';
-import { CheckCircleOutlineComponent } from './heroicons/outline/CheckCircleOutline.component';
-import { CheckOutlineComponent } from './heroicons/outline/CheckOutline.component';
-import { ChevronDoubleDownOutlineComponent } from './heroicons/outline/ChevronDoubleDownOutline.component';
-import { ChevronDoubleLeftOutlineComponent } from './heroicons/outline/ChevronDoubleLeftOutline.component';
-import { ChevronDoubleRightOutlineComponent } from './heroicons/outline/ChevronDoubleRightOutline.component';
-import { ChevronDoubleUpOutlineComponent } from './heroicons/outline/ChevronDoubleUpOutline.component';
-import { ChevronDownOutlineComponent } from './heroicons/outline/ChevronDownOutline.component';
-import { ChevronLeftOutlineComponent } from './heroicons/outline/ChevronLeftOutline.component';
-import { ChevronRightOutlineComponent } from './heroicons/outline/ChevronRightOutline.component';
-import { ChevronUpOutlineComponent } from './heroicons/outline/ChevronUpOutline.component';
-import { ChipOutlineComponent } from './heroicons/outline/ChipOutline.component';
-import { ClipboardCheckOutlineComponent } from './heroicons/outline/ClipboardCheckOutline.component';
-import { ClipboardCopyOutlineComponent } from './heroicons/outline/ClipboardCopyOutline.component';
-import { ClipboardListOutlineComponent } from './heroicons/outline/ClipboardListOutline.component';
-import { ClipboardOutlineComponent } from './heroicons/outline/ClipboardOutline.component';
-import { ClockOutlineComponent } from './heroicons/outline/ClockOutline.component';
-import { CloudDownloadOutlineComponent } from './heroicons/outline/CloudDownloadOutline.component';
-import { CloudUploadOutlineComponent } from './heroicons/outline/CloudUploadOutline.component';
-import { CloudOutlineComponent } from './heroicons/outline/CloudOutline.component';
-import { CodeOutlineComponent } from './heroicons/outline/CodeOutline.component';
-import { CogOutlineComponent } from './heroicons/outline/CogOutline.component';
-import { CollectionOutlineComponent } from './heroicons/outline/CollectionOutline.component';
-import { ColorSwatchOutlineComponent } from './heroicons/outline/ColorSwatchOutline.component';
-import { CreditCardOutlineComponent } from './heroicons/outline/CreditCardOutline.component';
-import { CubeTransparentOutlineComponent } from './heroicons/outline/CubeTransparentOutline.component';
-import { CubeOutlineComponent } from './heroicons/outline/CubeOutline.component';
-import { CurrencyBangladeshiOutlineComponent } from './heroicons/outline/CurrencyBangladeshiOutline.component';
-import { CurrencyDollarOutlineComponent } from './heroicons/outline/CurrencyDollarOutline.component';
-import { CurrencyEuroOutlineComponent } from './heroicons/outline/CurrencyEuroOutline.component';
-import { CurrencyPoundOutlineComponent } from './heroicons/outline/CurrencyPoundOutline.component';
-import { CurrencyRupeeOutlineComponent } from './heroicons/outline/CurrencyRupeeOutline.component';
-import { CurrencyYenOutlineComponent } from './heroicons/outline/CurrencyYenOutline.component';
-import { CursorClickOutlineComponent } from './heroicons/outline/CursorClickOutline.component';
-import { DatabaseOutlineComponent } from './heroicons/outline/DatabaseOutline.component';
-import { DesktopComputerOutlineComponent } from './heroicons/outline/DesktopComputerOutline.component';
-import { DeviceMobileOutlineComponent } from './heroicons/outline/DeviceMobileOutline.component';
-import { DeviceTabletOutlineComponent } from './heroicons/outline/DeviceTabletOutline.component';
-import { DocumentAddOutlineComponent } from './heroicons/outline/DocumentAddOutline.component';
-import { DocumentDownloadOutlineComponent } from './heroicons/outline/DocumentDownloadOutline.component';
-import { DocumentDuplicateOutlineComponent } from './heroicons/outline/DocumentDuplicateOutline.component';
-import { DocumentRemoveOutlineComponent } from './heroicons/outline/DocumentRemoveOutline.component';
-import { DocumentReportOutlineComponent } from './heroicons/outline/DocumentReportOutline.component';
-import { DocumentSearchOutlineComponent } from './heroicons/outline/DocumentSearchOutline.component';
-import { DocumentTextOutlineComponent } from './heroicons/outline/DocumentTextOutline.component';
-import { DocumentOutlineComponent } from './heroicons/outline/DocumentOutline.component';
-import { DotsCircleHorizontalOutlineComponent } from './heroicons/outline/DotsCircleHorizontalOutline.component';
-import { DotsHorizontalOutlineComponent } from './heroicons/outline/DotsHorizontalOutline.component';
-import { DotsVerticalOutlineComponent } from './heroicons/outline/DotsVerticalOutline.component';
-import { DownloadOutlineComponent } from './heroicons/outline/DownloadOutline.component';
-import { DuplicateOutlineComponent } from './heroicons/outline/DuplicateOutline.component';
-import { EmojiHappyOutlineComponent } from './heroicons/outline/EmojiHappyOutline.component';
-import { EmojiSadOutlineComponent } from './heroicons/outline/EmojiSadOutline.component';
-import { ExclamationCircleOutlineComponent } from './heroicons/outline/ExclamationCircleOutline.component';
-import { ExclamationOutlineComponent } from './heroicons/outline/ExclamationOutline.component';
-import { ExternalLinkOutlineComponent } from './heroicons/outline/ExternalLinkOutline.component';
-import { EyeOffOutlineComponent } from './heroicons/outline/EyeOffOutline.component';
-import { EyeOutlineComponent } from './heroicons/outline/EyeOutline.component';
-import { FastForwardOutlineComponent } from './heroicons/outline/FastForwardOutline.component';
-import { FilmOutlineComponent } from './heroicons/outline/FilmOutline.component';
-import { FilterOutlineComponent } from './heroicons/outline/FilterOutline.component';
-import { FingerPrintOutlineComponent } from './heroicons/outline/FingerPrintOutline.component';
-import { FireOutlineComponent } from './heroicons/outline/FireOutline.component';
-import { FlagOutlineComponent } from './heroicons/outline/FlagOutline.component';
-import { FolderAddOutlineComponent } from './heroicons/outline/FolderAddOutline.component';
-import { FolderDownloadOutlineComponent } from './heroicons/outline/FolderDownloadOutline.component';
-import { FolderOpenOutlineComponent } from './heroicons/outline/FolderOpenOutline.component';
-import { FolderRemoveOutlineComponent } from './heroicons/outline/FolderRemoveOutline.component';
-import { FolderOutlineComponent } from './heroicons/outline/FolderOutline.component';
-import { GiftOutlineComponent } from './heroicons/outline/GiftOutline.component';
-import { GlobeAltOutlineComponent } from './heroicons/outline/GlobeAltOutline.component';
-import { GlobeOutlineComponent } from './heroicons/outline/GlobeOutline.component';
-import { HandOutlineComponent } from './heroicons/outline/HandOutline.component';
-import { HashtagOutlineComponent } from './heroicons/outline/HashtagOutline.component';
-import { HeartOutlineComponent } from './heroicons/outline/HeartOutline.component';
-import { HomeOutlineComponent } from './heroicons/outline/HomeOutline.component';
-import { IdentificationOutlineComponent } from './heroicons/outline/IdentificationOutline.component';
-import { InboxInOutlineComponent } from './heroicons/outline/InboxInOutline.component';
-import { InboxOutlineComponent } from './heroicons/outline/InboxOutline.component';
-import { InformationCircleOutlineComponent } from './heroicons/outline/InformationCircleOutline.component';
-import { KeyOutlineComponent } from './heroicons/outline/KeyOutline.component';
-import { LibraryOutlineComponent } from './heroicons/outline/LibraryOutline.component';
-import { LightBulbOutlineComponent } from './heroicons/outline/LightBulbOutline.component';
-import { LightningBoltOutlineComponent } from './heroicons/outline/LightningBoltOutline.component';
-import { LinkOutlineComponent } from './heroicons/outline/LinkOutline.component';
-import { LocationMarkerOutlineComponent } from './heroicons/outline/LocationMarkerOutline.component';
-import { LockClosedOutlineComponent } from './heroicons/outline/LockClosedOutline.component';
-import { LockOpenOutlineComponent } from './heroicons/outline/LockOpenOutline.component';
-import { LoginOutlineComponent } from './heroicons/outline/LoginOutline.component';
-import { LogoutOutlineComponent } from './heroicons/outline/LogoutOutline.component';
-import { MailOpenOutlineComponent } from './heroicons/outline/MailOpenOutline.component';
-import { MailOutlineComponent } from './heroicons/outline/MailOutline.component';
-import { MapOutlineComponent } from './heroicons/outline/MapOutline.component';
-import { MenuAlt1OutlineComponent } from './heroicons/outline/MenuAlt1Outline.component';
-import { MenuAlt2OutlineComponent } from './heroicons/outline/MenuAlt2Outline.component';
-import { MenuAlt3OutlineComponent } from './heroicons/outline/MenuAlt3Outline.component';
-import { MenuAlt4OutlineComponent } from './heroicons/outline/MenuAlt4Outline.component';
-import { MenuOutlineComponent } from './heroicons/outline/MenuOutline.component';
-import { MicrophoneOutlineComponent } from './heroicons/outline/MicrophoneOutline.component';
-import { MinusCircleOutlineComponent } from './heroicons/outline/MinusCircleOutline.component';
-import { MinusSmOutlineComponent } from './heroicons/outline/MinusSmOutline.component';
-import { MinusOutlineComponent } from './heroicons/outline/MinusOutline.component';
-import { MoonOutlineComponent } from './heroicons/outline/MoonOutline.component';
-import { MusicNoteOutlineComponent } from './heroicons/outline/MusicNoteOutline.component';
-import { NewspaperOutlineComponent } from './heroicons/outline/NewspaperOutline.component';
-import { OfficeBuildingOutlineComponent } from './heroicons/outline/OfficeBuildingOutline.component';
-import { PaperAirplaneOutlineComponent } from './heroicons/outline/PaperAirplaneOutline.component';
-import { PaperClipOutlineComponent } from './heroicons/outline/PaperClipOutline.component';
-import { PauseOutlineComponent } from './heroicons/outline/PauseOutline.component';
-import { PencilAltOutlineComponent } from './heroicons/outline/PencilAltOutline.component';
-import { PencilOutlineComponent } from './heroicons/outline/PencilOutline.component';
-import { PhoneIncomingOutlineComponent } from './heroicons/outline/PhoneIncomingOutline.component';
-import { PhoneMissedCallOutlineComponent } from './heroicons/outline/PhoneMissedCallOutline.component';
-import { PhoneOutgoingOutlineComponent } from './heroicons/outline/PhoneOutgoingOutline.component';
-import { PhoneOutlineComponent } from './heroicons/outline/PhoneOutline.component';
-import { PhotographOutlineComponent } from './heroicons/outline/PhotographOutline.component';
-import { PlayOutlineComponent } from './heroicons/outline/PlayOutline.component';
-import { PlusCircleOutlineComponent } from './heroicons/outline/PlusCircleOutline.component';
-import { PlusSmOutlineComponent } from './heroicons/outline/PlusSmOutline.component';
-import { PlusOutlineComponent } from './heroicons/outline/PlusOutline.component';
-import { PresentationChartBarOutlineComponent } from './heroicons/outline/PresentationChartBarOutline.component';
-import { PresentationChartLineOutlineComponent } from './heroicons/outline/PresentationChartLineOutline.component';
-import { PrinterOutlineComponent } from './heroicons/outline/PrinterOutline.component';
-import { PuzzleOutlineComponent } from './heroicons/outline/PuzzleOutline.component';
-import { QrcodeOutlineComponent } from './heroicons/outline/QrcodeOutline.component';
-import { QuestionMarkCircleOutlineComponent } from './heroicons/outline/QuestionMarkCircleOutline.component';
-import { ReceiptRefundOutlineComponent } from './heroicons/outline/ReceiptRefundOutline.component';
-import { ReceiptTaxOutlineComponent } from './heroicons/outline/ReceiptTaxOutline.component';
-import { RefreshOutlineComponent } from './heroicons/outline/RefreshOutline.component';
-import { ReplyOutlineComponent } from './heroicons/outline/ReplyOutline.component';
-import { RewindOutlineComponent } from './heroicons/outline/RewindOutline.component';
-import { RssOutlineComponent } from './heroicons/outline/RssOutline.component';
-import { SaveAsOutlineComponent } from './heroicons/outline/SaveAsOutline.component';
-import { SaveOutlineComponent } from './heroicons/outline/SaveOutline.component';
-import { ScaleOutlineComponent } from './heroicons/outline/ScaleOutline.component';
-import { ScissorsOutlineComponent } from './heroicons/outline/ScissorsOutline.component';
-import { SearchCircleOutlineComponent } from './heroicons/outline/SearchCircleOutline.component';
-import { SearchOutlineComponent } from './heroicons/outline/SearchOutline.component';
-import { SelectorOutlineComponent } from './heroicons/outline/SelectorOutline.component';
-import { ServerOutlineComponent } from './heroicons/outline/ServerOutline.component';
-import { ShareOutlineComponent } from './heroicons/outline/ShareOutline.component';
-import { ShieldCheckOutlineComponent } from './heroicons/outline/ShieldCheckOutline.component';
-import { ShieldExclamationOutlineComponent } from './heroicons/outline/ShieldExclamationOutline.component';
-import { ShoppingBagOutlineComponent } from './heroicons/outline/ShoppingBagOutline.component';
-import { ShoppingCartOutlineComponent } from './heroicons/outline/ShoppingCartOutline.component';
-import { SortAscendingOutlineComponent } from './heroicons/outline/SortAscendingOutline.component';
-import { SortDescendingOutlineComponent } from './heroicons/outline/SortDescendingOutline.component';
-import { SparklesOutlineComponent } from './heroicons/outline/SparklesOutline.component';
-import { SpeakerphoneOutlineComponent } from './heroicons/outline/SpeakerphoneOutline.component';
-import { StarOutlineComponent } from './heroicons/outline/StarOutline.component';
-import { StatusOfflineOutlineComponent } from './heroicons/outline/StatusOfflineOutline.component';
-import { StatusOnlineOutlineComponent } from './heroicons/outline/StatusOnlineOutline.component';
-import { StopOutlineComponent } from './heroicons/outline/StopOutline.component';
-import { SunOutlineComponent } from './heroicons/outline/SunOutline.component';
-import { SupportOutlineComponent } from './heroicons/outline/SupportOutline.component';
-import { SwitchHorizontalOutlineComponent } from './heroicons/outline/SwitchHorizontalOutline.component';
-import { SwitchVerticalOutlineComponent } from './heroicons/outline/SwitchVerticalOutline.component';
-import { TableOutlineComponent } from './heroicons/outline/TableOutline.component';
-import { TagOutlineComponent } from './heroicons/outline/TagOutline.component';
-import { TemplateOutlineComponent } from './heroicons/outline/TemplateOutline.component';
-import { TerminalOutlineComponent } from './heroicons/outline/TerminalOutline.component';
-import { ThumbDownOutlineComponent } from './heroicons/outline/ThumbDownOutline.component';
-import { ThumbUpOutlineComponent } from './heroicons/outline/ThumbUpOutline.component';
-import { TicketOutlineComponent } from './heroicons/outline/TicketOutline.component';
-import { TranslateOutlineComponent } from './heroicons/outline/TranslateOutline.component';
-import { TrashOutlineComponent } from './heroicons/outline/TrashOutline.component';
-import { TrendingDownOutlineComponent } from './heroicons/outline/TrendingDownOutline.component';
-import { TrendingUpOutlineComponent } from './heroicons/outline/TrendingUpOutline.component';
-import { TruckOutlineComponent } from './heroicons/outline/TruckOutline.component';
-import { UploadOutlineComponent } from './heroicons/outline/UploadOutline.component';
-import { UserAddOutlineComponent } from './heroicons/outline/UserAddOutline.component';
-import { UserCircleOutlineComponent } from './heroicons/outline/UserCircleOutline.component';
-import { UserGroupOutlineComponent } from './heroicons/outline/UserGroupOutline.component';
-import { UserRemoveOutlineComponent } from './heroicons/outline/UserRemoveOutline.component';
-import { UserOutlineComponent } from './heroicons/outline/UserOutline.component';
-import { UsersOutlineComponent } from './heroicons/outline/UsersOutline.component';
-import { VariableOutlineComponent } from './heroicons/outline/VariableOutline.component';
-import { VideoCameraOutlineComponent } from './heroicons/outline/VideoCameraOutline.component';
-import { ViewBoardsOutlineComponent } from './heroicons/outline/ViewBoardsOutline.component';
-import { ViewGridAddOutlineComponent } from './heroicons/outline/ViewGridAddOutline.component';
-import { ViewGridOutlineComponent } from './heroicons/outline/ViewGridOutline.component';
-import { ViewListOutlineComponent } from './heroicons/outline/ViewListOutline.component';
-import { VolumeOffOutlineComponent } from './heroicons/outline/VolumeOffOutline.component';
-import { VolumeUpOutlineComponent } from './heroicons/outline/VolumeUpOutline.component';
-import { WifiOutlineComponent } from './heroicons/outline/WifiOutline.component';
-import { XCircleOutlineComponent } from './heroicons/outline/XCircleOutline.component';
-import { XOutlineComponent } from './heroicons/outline/XOutline.component';
-import { ZoomInOutlineComponent } from './heroicons/outline/ZoomInOutline.component';
-import { ZoomOutOutlineComponent } from './heroicons/outline/ZoomOutOutline.component';
-import { AcademicCapSolidComponent } from './heroicons/solid/AcademicCapSolid.component';
-import { AdjustmentsSolidComponent } from './heroicons/solid/AdjustmentsSolid.component';
-import { AnnotationSolidComponent } from './heroicons/solid/AnnotationSolid.component';
-import { ArchiveSolidComponent } from './heroicons/solid/ArchiveSolid.component';
-import { ArrowCircleDownSolidComponent } from './heroicons/solid/ArrowCircleDownSolid.component';
-import { ArrowCircleLeftSolidComponent } from './heroicons/solid/ArrowCircleLeftSolid.component';
-import { ArrowCircleRightSolidComponent } from './heroicons/solid/ArrowCircleRightSolid.component';
-import { ArrowCircleUpSolidComponent } from './heroicons/solid/ArrowCircleUpSolid.component';
-import { ArrowDownSolidComponent } from './heroicons/solid/ArrowDownSolid.component';
-import { ArrowLeftSolidComponent } from './heroicons/solid/ArrowLeftSolid.component';
-import { ArrowNarrowDownSolidComponent } from './heroicons/solid/ArrowNarrowDownSolid.component';
-import { ArrowNarrowLeftSolidComponent } from './heroicons/solid/ArrowNarrowLeftSolid.component';
-import { ArrowNarrowRightSolidComponent } from './heroicons/solid/ArrowNarrowRightSolid.component';
-import { ArrowNarrowUpSolidComponent } from './heroicons/solid/ArrowNarrowUpSolid.component';
-import { ArrowRightSolidComponent } from './heroicons/solid/ArrowRightSolid.component';
-import { ArrowSmDownSolidComponent } from './heroicons/solid/ArrowSmDownSolid.component';
-import { ArrowSmLeftSolidComponent } from './heroicons/solid/ArrowSmLeftSolid.component';
-import { ArrowSmRightSolidComponent } from './heroicons/solid/ArrowSmRightSolid.component';
-import { ArrowSmUpSolidComponent } from './heroicons/solid/ArrowSmUpSolid.component';
-import { ArrowUpSolidComponent } from './heroicons/solid/ArrowUpSolid.component';
-import { ArrowsExpandSolidComponent } from './heroicons/solid/ArrowsExpandSolid.component';
-import { AtSymbolSolidComponent } from './heroicons/solid/AtSymbolSolid.component';
-import { BackspaceSolidComponent } from './heroicons/solid/BackspaceSolid.component';
-import { BadgeCheckSolidComponent } from './heroicons/solid/BadgeCheckSolid.component';
-import { BanSolidComponent } from './heroicons/solid/BanSolid.component';
-import { BeakerSolidComponent } from './heroicons/solid/BeakerSolid.component';
-import { BellSolidComponent } from './heroicons/solid/BellSolid.component';
-import { BookOpenSolidComponent } from './heroicons/solid/BookOpenSolid.component';
-import { BookmarkAltSolidComponent } from './heroicons/solid/BookmarkAltSolid.component';
-import { BookmarkSolidComponent } from './heroicons/solid/BookmarkSolid.component';
-import { BriefcaseSolidComponent } from './heroicons/solid/BriefcaseSolid.component';
-import { CakeSolidComponent } from './heroicons/solid/CakeSolid.component';
-import { CalculatorSolidComponent } from './heroicons/solid/CalculatorSolid.component';
-import { CalendarSolidComponent } from './heroicons/solid/CalendarSolid.component';
-import { CameraSolidComponent } from './heroicons/solid/CameraSolid.component';
-import { CashSolidComponent } from './heroicons/solid/CashSolid.component';
-import { ChartBarSolidComponent } from './heroicons/solid/ChartBarSolid.component';
-import { ChartPieSolidComponent } from './heroicons/solid/ChartPieSolid.component';
-import { ChartSquareBarSolidComponent } from './heroicons/solid/ChartSquareBarSolid.component';
-import { ChatAlt2SolidComponent } from './heroicons/solid/ChatAlt2Solid.component';
-import { ChatAltSolidComponent } from './heroicons/solid/ChatAltSolid.component';
-import { ChatSolidComponent } from './heroicons/solid/ChatSolid.component';
-import { CheckCircleSolidComponent } from './heroicons/solid/CheckCircleSolid.component';
-import { CheckSolidComponent } from './heroicons/solid/CheckSolid.component';
-import { ChevronDoubleDownSolidComponent } from './heroicons/solid/ChevronDoubleDownSolid.component';
-import { ChevronDoubleLeftSolidComponent } from './heroicons/solid/ChevronDoubleLeftSolid.component';
-import { ChevronDoubleRightSolidComponent } from './heroicons/solid/ChevronDoubleRightSolid.component';
-import { ChevronDoubleUpSolidComponent } from './heroicons/solid/ChevronDoubleUpSolid.component';
-import { ChevronDownSolidComponent } from './heroicons/solid/ChevronDownSolid.component';
-import { ChevronLeftSolidComponent } from './heroicons/solid/ChevronLeftSolid.component';
-import { ChevronRightSolidComponent } from './heroicons/solid/ChevronRightSolid.component';
-import { ChevronUpSolidComponent } from './heroicons/solid/ChevronUpSolid.component';
-import { ChipSolidComponent } from './heroicons/solid/ChipSolid.component';
-import { ClipboardCheckSolidComponent } from './heroicons/solid/ClipboardCheckSolid.component';
-import { ClipboardCopySolidComponent } from './heroicons/solid/ClipboardCopySolid.component';
-import { ClipboardListSolidComponent } from './heroicons/solid/ClipboardListSolid.component';
-import { ClipboardSolidComponent } from './heroicons/solid/ClipboardSolid.component';
-import { ClockSolidComponent } from './heroicons/solid/ClockSolid.component';
-import { CloudDownloadSolidComponent } from './heroicons/solid/CloudDownloadSolid.component';
-import { CloudUploadSolidComponent } from './heroicons/solid/CloudUploadSolid.component';
-import { CloudSolidComponent } from './heroicons/solid/CloudSolid.component';
-import { CodeSolidComponent } from './heroicons/solid/CodeSolid.component';
-import { CogSolidComponent } from './heroicons/solid/CogSolid.component';
-import { CollectionSolidComponent } from './heroicons/solid/CollectionSolid.component';
-import { ColorSwatchSolidComponent } from './heroicons/solid/ColorSwatchSolid.component';
-import { CreditCardSolidComponent } from './heroicons/solid/CreditCardSolid.component';
-import { CubeTransparentSolidComponent } from './heroicons/solid/CubeTransparentSolid.component';
-import { CubeSolidComponent } from './heroicons/solid/CubeSolid.component';
-import { CurrencyBangladeshiSolidComponent } from './heroicons/solid/CurrencyBangladeshiSolid.component';
-import { CurrencyDollarSolidComponent } from './heroicons/solid/CurrencyDollarSolid.component';
-import { CurrencyEuroSolidComponent } from './heroicons/solid/CurrencyEuroSolid.component';
-import { CurrencyPoundSolidComponent } from './heroicons/solid/CurrencyPoundSolid.component';
-import { CurrencyRupeeSolidComponent } from './heroicons/solid/CurrencyRupeeSolid.component';
-import { CurrencyYenSolidComponent } from './heroicons/solid/CurrencyYenSolid.component';
-import { CursorClickSolidComponent } from './heroicons/solid/CursorClickSolid.component';
-import { DatabaseSolidComponent } from './heroicons/solid/DatabaseSolid.component';
-import { DesktopComputerSolidComponent } from './heroicons/solid/DesktopComputerSolid.component';
-import { DeviceMobileSolidComponent } from './heroicons/solid/DeviceMobileSolid.component';
-import { DeviceTabletSolidComponent } from './heroicons/solid/DeviceTabletSolid.component';
-import { DocumentAddSolidComponent } from './heroicons/solid/DocumentAddSolid.component';
-import { DocumentDownloadSolidComponent } from './heroicons/solid/DocumentDownloadSolid.component';
-import { DocumentDuplicateSolidComponent } from './heroicons/solid/DocumentDuplicateSolid.component';
-import { DocumentRemoveSolidComponent } from './heroicons/solid/DocumentRemoveSolid.component';
-import { DocumentReportSolidComponent } from './heroicons/solid/DocumentReportSolid.component';
-import { DocumentSearchSolidComponent } from './heroicons/solid/DocumentSearchSolid.component';
-import { DocumentTextSolidComponent } from './heroicons/solid/DocumentTextSolid.component';
-import { DocumentSolidComponent } from './heroicons/solid/DocumentSolid.component';
-import { DotsCircleHorizontalSolidComponent } from './heroicons/solid/DotsCircleHorizontalSolid.component';
-import { DotsHorizontalSolidComponent } from './heroicons/solid/DotsHorizontalSolid.component';
-import { DotsVerticalSolidComponent } from './heroicons/solid/DotsVerticalSolid.component';
-import { DownloadSolidComponent } from './heroicons/solid/DownloadSolid.component';
-import { DuplicateSolidComponent } from './heroicons/solid/DuplicateSolid.component';
-import { EmojiHappySolidComponent } from './heroicons/solid/EmojiHappySolid.component';
-import { EmojiSadSolidComponent } from './heroicons/solid/EmojiSadSolid.component';
-import { ExclamationCircleSolidComponent } from './heroicons/solid/ExclamationCircleSolid.component';
-import { ExclamationSolidComponent } from './heroicons/solid/ExclamationSolid.component';
-import { ExternalLinkSolidComponent } from './heroicons/solid/ExternalLinkSolid.component';
-import { EyeOffSolidComponent } from './heroicons/solid/EyeOffSolid.component';
-import { EyeSolidComponent } from './heroicons/solid/EyeSolid.component';
-import { FastForwardSolidComponent } from './heroicons/solid/FastForwardSolid.component';
-import { FilmSolidComponent } from './heroicons/solid/FilmSolid.component';
-import { FilterSolidComponent } from './heroicons/solid/FilterSolid.component';
-import { FingerPrintSolidComponent } from './heroicons/solid/FingerPrintSolid.component';
-import { FireSolidComponent } from './heroicons/solid/FireSolid.component';
-import { FlagSolidComponent } from './heroicons/solid/FlagSolid.component';
-import { FolderAddSolidComponent } from './heroicons/solid/FolderAddSolid.component';
-import { FolderDownloadSolidComponent } from './heroicons/solid/FolderDownloadSolid.component';
-import { FolderOpenSolidComponent } from './heroicons/solid/FolderOpenSolid.component';
-import { FolderRemoveSolidComponent } from './heroicons/solid/FolderRemoveSolid.component';
-import { FolderSolidComponent } from './heroicons/solid/FolderSolid.component';
-import { GiftSolidComponent } from './heroicons/solid/GiftSolid.component';
-import { GlobeAltSolidComponent } from './heroicons/solid/GlobeAltSolid.component';
-import { GlobeSolidComponent } from './heroicons/solid/GlobeSolid.component';
-import { HandSolidComponent } from './heroicons/solid/HandSolid.component';
-import { HashtagSolidComponent } from './heroicons/solid/HashtagSolid.component';
-import { HeartSolidComponent } from './heroicons/solid/HeartSolid.component';
-import { HomeSolidComponent } from './heroicons/solid/HomeSolid.component';
-import { IdentificationSolidComponent } from './heroicons/solid/IdentificationSolid.component';
-import { InboxInSolidComponent } from './heroicons/solid/InboxInSolid.component';
-import { InboxSolidComponent } from './heroicons/solid/InboxSolid.component';
-import { InformationCircleSolidComponent } from './heroicons/solid/InformationCircleSolid.component';
-import { KeySolidComponent } from './heroicons/solid/KeySolid.component';
-import { LibrarySolidComponent } from './heroicons/solid/LibrarySolid.component';
-import { LightBulbSolidComponent } from './heroicons/solid/LightBulbSolid.component';
-import { LightningBoltSolidComponent } from './heroicons/solid/LightningBoltSolid.component';
-import { LinkSolidComponent } from './heroicons/solid/LinkSolid.component';
-import { LocationMarkerSolidComponent } from './heroicons/solid/LocationMarkerSolid.component';
-import { LockClosedSolidComponent } from './heroicons/solid/LockClosedSolid.component';
-import { LockOpenSolidComponent } from './heroicons/solid/LockOpenSolid.component';
-import { LoginSolidComponent } from './heroicons/solid/LoginSolid.component';
-import { LogoutSolidComponent } from './heroicons/solid/LogoutSolid.component';
-import { MailOpenSolidComponent } from './heroicons/solid/MailOpenSolid.component';
-import { MailSolidComponent } from './heroicons/solid/MailSolid.component';
-import { MapSolidComponent } from './heroicons/solid/MapSolid.component';
-import { MenuAlt1SolidComponent } from './heroicons/solid/MenuAlt1Solid.component';
-import { MenuAlt2SolidComponent } from './heroicons/solid/MenuAlt2Solid.component';
-import { MenuAlt3SolidComponent } from './heroicons/solid/MenuAlt3Solid.component';
-import { MenuAlt4SolidComponent } from './heroicons/solid/MenuAlt4Solid.component';
-import { MenuSolidComponent } from './heroicons/solid/MenuSolid.component';
-import { MicrophoneSolidComponent } from './heroicons/solid/MicrophoneSolid.component';
-import { MinusCircleSolidComponent } from './heroicons/solid/MinusCircleSolid.component';
-import { MinusSmSolidComponent } from './heroicons/solid/MinusSmSolid.component';
-import { MinusSolidComponent } from './heroicons/solid/MinusSolid.component';
-import { MoonSolidComponent } from './heroicons/solid/MoonSolid.component';
-import { MusicNoteSolidComponent } from './heroicons/solid/MusicNoteSolid.component';
-import { NewspaperSolidComponent } from './heroicons/solid/NewspaperSolid.component';
-import { OfficeBuildingSolidComponent } from './heroicons/solid/OfficeBuildingSolid.component';
-import { PaperAirplaneSolidComponent } from './heroicons/solid/PaperAirplaneSolid.component';
-import { PaperClipSolidComponent } from './heroicons/solid/PaperClipSolid.component';
-import { PauseSolidComponent } from './heroicons/solid/PauseSolid.component';
-import { PencilAltSolidComponent } from './heroicons/solid/PencilAltSolid.component';
-import { PencilSolidComponent } from './heroicons/solid/PencilSolid.component';
-import { PhoneIncomingSolidComponent } from './heroicons/solid/PhoneIncomingSolid.component';
-import { PhoneMissedCallSolidComponent } from './heroicons/solid/PhoneMissedCallSolid.component';
-import { PhoneOutgoingSolidComponent } from './heroicons/solid/PhoneOutgoingSolid.component';
-import { PhoneSolidComponent } from './heroicons/solid/PhoneSolid.component';
-import { PhotographSolidComponent } from './heroicons/solid/PhotographSolid.component';
-import { PlaySolidComponent } from './heroicons/solid/PlaySolid.component';
-import { PlusCircleSolidComponent } from './heroicons/solid/PlusCircleSolid.component';
-import { PlusSmSolidComponent } from './heroicons/solid/PlusSmSolid.component';
-import { PlusSolidComponent } from './heroicons/solid/PlusSolid.component';
-import { PresentationChartBarSolidComponent } from './heroicons/solid/PresentationChartBarSolid.component';
-import { PresentationChartLineSolidComponent } from './heroicons/solid/PresentationChartLineSolid.component';
-import { PrinterSolidComponent } from './heroicons/solid/PrinterSolid.component';
-import { PuzzleSolidComponent } from './heroicons/solid/PuzzleSolid.component';
-import { QrcodeSolidComponent } from './heroicons/solid/QrcodeSolid.component';
-import { QuestionMarkCircleSolidComponent } from './heroicons/solid/QuestionMarkCircleSolid.component';
-import { ReceiptRefundSolidComponent } from './heroicons/solid/ReceiptRefundSolid.component';
-import { ReceiptTaxSolidComponent } from './heroicons/solid/ReceiptTaxSolid.component';
-import { RefreshSolidComponent } from './heroicons/solid/RefreshSolid.component';
-import { ReplySolidComponent } from './heroicons/solid/ReplySolid.component';
-import { RewindSolidComponent } from './heroicons/solid/RewindSolid.component';
-import { RssSolidComponent } from './heroicons/solid/RssSolid.component';
-import { SaveAsSolidComponent } from './heroicons/solid/SaveAsSolid.component';
-import { SaveSolidComponent } from './heroicons/solid/SaveSolid.component';
-import { ScaleSolidComponent } from './heroicons/solid/ScaleSolid.component';
-import { ScissorsSolidComponent } from './heroicons/solid/ScissorsSolid.component';
-import { SearchCircleSolidComponent } from './heroicons/solid/SearchCircleSolid.component';
-import { SearchSolidComponent } from './heroicons/solid/SearchSolid.component';
-import { SelectorSolidComponent } from './heroicons/solid/SelectorSolid.component';
-import { ServerSolidComponent } from './heroicons/solid/ServerSolid.component';
-import { ShareSolidComponent } from './heroicons/solid/ShareSolid.component';
-import { ShieldCheckSolidComponent } from './heroicons/solid/ShieldCheckSolid.component';
-import { ShieldExclamationSolidComponent } from './heroicons/solid/ShieldExclamationSolid.component';
-import { ShoppingBagSolidComponent } from './heroicons/solid/ShoppingBagSolid.component';
-import { ShoppingCartSolidComponent } from './heroicons/solid/ShoppingCartSolid.component';
-import { SortAscendingSolidComponent } from './heroicons/solid/SortAscendingSolid.component';
-import { SortDescendingSolidComponent } from './heroicons/solid/SortDescendingSolid.component';
-import { SparklesSolidComponent } from './heroicons/solid/SparklesSolid.component';
-import { SpeakerphoneSolidComponent } from './heroicons/solid/SpeakerphoneSolid.component';
-import { StarSolidComponent } from './heroicons/solid/StarSolid.component';
-import { StatusOfflineSolidComponent } from './heroicons/solid/StatusOfflineSolid.component';
-import { StatusOnlineSolidComponent } from './heroicons/solid/StatusOnlineSolid.component';
-import { StopSolidComponent } from './heroicons/solid/StopSolid.component';
-import { SunSolidComponent } from './heroicons/solid/SunSolid.component';
-import { SupportSolidComponent } from './heroicons/solid/SupportSolid.component';
-import { SwitchHorizontalSolidComponent } from './heroicons/solid/SwitchHorizontalSolid.component';
-import { SwitchVerticalSolidComponent } from './heroicons/solid/SwitchVerticalSolid.component';
-import { TableSolidComponent } from './heroicons/solid/TableSolid.component';
-import { TagSolidComponent } from './heroicons/solid/TagSolid.component';
-import { TemplateSolidComponent } from './heroicons/solid/TemplateSolid.component';
-import { TerminalSolidComponent } from './heroicons/solid/TerminalSolid.component';
-import { ThumbDownSolidComponent } from './heroicons/solid/ThumbDownSolid.component';
-import { ThumbUpSolidComponent } from './heroicons/solid/ThumbUpSolid.component';
-import { TicketSolidComponent } from './heroicons/solid/TicketSolid.component';
-import { TranslateSolidComponent } from './heroicons/solid/TranslateSolid.component';
-import { TrashSolidComponent } from './heroicons/solid/TrashSolid.component';
-import { TrendingDownSolidComponent } from './heroicons/solid/TrendingDownSolid.component';
-import { TrendingUpSolidComponent } from './heroicons/solid/TrendingUpSolid.component';
-import { TruckSolidComponent } from './heroicons/solid/TruckSolid.component';
-import { UploadSolidComponent } from './heroicons/solid/UploadSolid.component';
-import { UserAddSolidComponent } from './heroicons/solid/UserAddSolid.component';
-import { UserCircleSolidComponent } from './heroicons/solid/UserCircleSolid.component';
-import { UserGroupSolidComponent } from './heroicons/solid/UserGroupSolid.component';
-import { UserRemoveSolidComponent } from './heroicons/solid/UserRemoveSolid.component';
-import { UserSolidComponent } from './heroicons/solid/UserSolid.component';
-import { UsersSolidComponent } from './heroicons/solid/UsersSolid.component';
-import { VariableSolidComponent } from './heroicons/solid/VariableSolid.component';
-import { VideoCameraSolidComponent } from './heroicons/solid/VideoCameraSolid.component';
-import { ViewBoardsSolidComponent } from './heroicons/solid/ViewBoardsSolid.component';
-import { ViewGridAddSolidComponent } from './heroicons/solid/ViewGridAddSolid.component';
-import { ViewGridSolidComponent } from './heroicons/solid/ViewGridSolid.component';
-import { ViewListSolidComponent } from './heroicons/solid/ViewListSolid.component';
-import { VolumeOffSolidComponent } from './heroicons/solid/VolumeOffSolid.component';
-import { VolumeUpSolidComponent } from './heroicons/solid/VolumeUpSolid.component';
-import { WifiSolidComponent } from './heroicons/solid/WifiSolid.component';
-import { XCircleSolidComponent } from './heroicons/solid/XCircleSolid.component';
-import { XSolidComponent } from './heroicons/solid/XSolid.component';
-import { ZoomInSolidComponent } from './heroicons/solid/ZoomInSolid.component';
-import { ZoomOutSolidComponent } from './heroicons/solid/ZoomOutSolid.component';
+import { AcademicCapOutlineIconComponent } from './heroicons/outline/AcademicCapOutlineIcon.component';
+import { AdjustmentsOutlineIconComponent } from './heroicons/outline/AdjustmentsOutlineIcon.component';
+import { AnnotationOutlineIconComponent } from './heroicons/outline/AnnotationOutlineIcon.component';
+import { ArchiveOutlineIconComponent } from './heroicons/outline/ArchiveOutlineIcon.component';
+import { ArrowCircleDownOutlineIconComponent } from './heroicons/outline/ArrowCircleDownOutlineIcon.component';
+import { ArrowCircleLeftOutlineIconComponent } from './heroicons/outline/ArrowCircleLeftOutlineIcon.component';
+import { ArrowCircleRightOutlineIconComponent } from './heroicons/outline/ArrowCircleRightOutlineIcon.component';
+import { ArrowCircleUpOutlineIconComponent } from './heroicons/outline/ArrowCircleUpOutlineIcon.component';
+import { ArrowDownOutlineIconComponent } from './heroicons/outline/ArrowDownOutlineIcon.component';
+import { ArrowLeftOutlineIconComponent } from './heroicons/outline/ArrowLeftOutlineIcon.component';
+import { ArrowNarrowDownOutlineIconComponent } from './heroicons/outline/ArrowNarrowDownOutlineIcon.component';
+import { ArrowNarrowLeftOutlineIconComponent } from './heroicons/outline/ArrowNarrowLeftOutlineIcon.component';
+import { ArrowNarrowRightOutlineIconComponent } from './heroicons/outline/ArrowNarrowRightOutlineIcon.component';
+import { ArrowNarrowUpOutlineIconComponent } from './heroicons/outline/ArrowNarrowUpOutlineIcon.component';
+import { ArrowRightOutlineIconComponent } from './heroicons/outline/ArrowRightOutlineIcon.component';
+import { ArrowSmDownOutlineIconComponent } from './heroicons/outline/ArrowSmDownOutlineIcon.component';
+import { ArrowSmLeftOutlineIconComponent } from './heroicons/outline/ArrowSmLeftOutlineIcon.component';
+import { ArrowSmRightOutlineIconComponent } from './heroicons/outline/ArrowSmRightOutlineIcon.component';
+import { ArrowSmUpOutlineIconComponent } from './heroicons/outline/ArrowSmUpOutlineIcon.component';
+import { ArrowUpOutlineIconComponent } from './heroicons/outline/ArrowUpOutlineIcon.component';
+import { ArrowsExpandOutlineIconComponent } from './heroicons/outline/ArrowsExpandOutlineIcon.component';
+import { AtSymbolOutlineIconComponent } from './heroicons/outline/AtSymbolOutlineIcon.component';
+import { BackspaceOutlineIconComponent } from './heroicons/outline/BackspaceOutlineIcon.component';
+import { BadgeCheckOutlineIconComponent } from './heroicons/outline/BadgeCheckOutlineIcon.component';
+import { BanOutlineIconComponent } from './heroicons/outline/BanOutlineIcon.component';
+import { BeakerOutlineIconComponent } from './heroicons/outline/BeakerOutlineIcon.component';
+import { BellOutlineIconComponent } from './heroicons/outline/BellOutlineIcon.component';
+import { BookOpenOutlineIconComponent } from './heroicons/outline/BookOpenOutlineIcon.component';
+import { BookmarkAltOutlineIconComponent } from './heroicons/outline/BookmarkAltOutlineIcon.component';
+import { BookmarkOutlineIconComponent } from './heroicons/outline/BookmarkOutlineIcon.component';
+import { BriefcaseOutlineIconComponent } from './heroicons/outline/BriefcaseOutlineIcon.component';
+import { CakeOutlineIconComponent } from './heroicons/outline/CakeOutlineIcon.component';
+import { CalculatorOutlineIconComponent } from './heroicons/outline/CalculatorOutlineIcon.component';
+import { CalendarOutlineIconComponent } from './heroicons/outline/CalendarOutlineIcon.component';
+import { CameraOutlineIconComponent } from './heroicons/outline/CameraOutlineIcon.component';
+import { CashOutlineIconComponent } from './heroicons/outline/CashOutlineIcon.component';
+import { ChartBarOutlineIconComponent } from './heroicons/outline/ChartBarOutlineIcon.component';
+import { ChartPieOutlineIconComponent } from './heroicons/outline/ChartPieOutlineIcon.component';
+import { ChartSquareBarOutlineIconComponent } from './heroicons/outline/ChartSquareBarOutlineIcon.component';
+import { ChatAlt2OutlineIconComponent } from './heroicons/outline/ChatAlt2OutlineIcon.component';
+import { ChatAltOutlineIconComponent } from './heroicons/outline/ChatAltOutlineIcon.component';
+import { ChatOutlineIconComponent } from './heroicons/outline/ChatOutlineIcon.component';
+import { CheckCircleOutlineIconComponent } from './heroicons/outline/CheckCircleOutlineIcon.component';
+import { CheckOutlineIconComponent } from './heroicons/outline/CheckOutlineIcon.component';
+import { ChevronDoubleDownOutlineIconComponent } from './heroicons/outline/ChevronDoubleDownOutlineIcon.component';
+import { ChevronDoubleLeftOutlineIconComponent } from './heroicons/outline/ChevronDoubleLeftOutlineIcon.component';
+import { ChevronDoubleRightOutlineIconComponent } from './heroicons/outline/ChevronDoubleRightOutlineIcon.component';
+import { ChevronDoubleUpOutlineIconComponent } from './heroicons/outline/ChevronDoubleUpOutlineIcon.component';
+import { ChevronDownOutlineIconComponent } from './heroicons/outline/ChevronDownOutlineIcon.component';
+import { ChevronLeftOutlineIconComponent } from './heroicons/outline/ChevronLeftOutlineIcon.component';
+import { ChevronRightOutlineIconComponent } from './heroicons/outline/ChevronRightOutlineIcon.component';
+import { ChevronUpOutlineIconComponent } from './heroicons/outline/ChevronUpOutlineIcon.component';
+import { ChipOutlineIconComponent } from './heroicons/outline/ChipOutlineIcon.component';
+import { ClipboardCheckOutlineIconComponent } from './heroicons/outline/ClipboardCheckOutlineIcon.component';
+import { ClipboardCopyOutlineIconComponent } from './heroicons/outline/ClipboardCopyOutlineIcon.component';
+import { ClipboardListOutlineIconComponent } from './heroicons/outline/ClipboardListOutlineIcon.component';
+import { ClipboardOutlineIconComponent } from './heroicons/outline/ClipboardOutlineIcon.component';
+import { ClockOutlineIconComponent } from './heroicons/outline/ClockOutlineIcon.component';
+import { CloudDownloadOutlineIconComponent } from './heroicons/outline/CloudDownloadOutlineIcon.component';
+import { CloudUploadOutlineIconComponent } from './heroicons/outline/CloudUploadOutlineIcon.component';
+import { CloudOutlineIconComponent } from './heroicons/outline/CloudOutlineIcon.component';
+import { CodeOutlineIconComponent } from './heroicons/outline/CodeOutlineIcon.component';
+import { CogOutlineIconComponent } from './heroicons/outline/CogOutlineIcon.component';
+import { CollectionOutlineIconComponent } from './heroicons/outline/CollectionOutlineIcon.component';
+import { ColorSwatchOutlineIconComponent } from './heroicons/outline/ColorSwatchOutlineIcon.component';
+import { CreditCardOutlineIconComponent } from './heroicons/outline/CreditCardOutlineIcon.component';
+import { CubeTransparentOutlineIconComponent } from './heroicons/outline/CubeTransparentOutlineIcon.component';
+import { CubeOutlineIconComponent } from './heroicons/outline/CubeOutlineIcon.component';
+import { CurrencyBangladeshiOutlineIconComponent } from './heroicons/outline/CurrencyBangladeshiOutlineIcon.component';
+import { CurrencyDollarOutlineIconComponent } from './heroicons/outline/CurrencyDollarOutlineIcon.component';
+import { CurrencyEuroOutlineIconComponent } from './heroicons/outline/CurrencyEuroOutlineIcon.component';
+import { CurrencyPoundOutlineIconComponent } from './heroicons/outline/CurrencyPoundOutlineIcon.component';
+import { CurrencyRupeeOutlineIconComponent } from './heroicons/outline/CurrencyRupeeOutlineIcon.component';
+import { CurrencyYenOutlineIconComponent } from './heroicons/outline/CurrencyYenOutlineIcon.component';
+import { CursorClickOutlineIconComponent } from './heroicons/outline/CursorClickOutlineIcon.component';
+import { DatabaseOutlineIconComponent } from './heroicons/outline/DatabaseOutlineIcon.component';
+import { DesktopComputerOutlineIconComponent } from './heroicons/outline/DesktopComputerOutlineIcon.component';
+import { DeviceMobileOutlineIconComponent } from './heroicons/outline/DeviceMobileOutlineIcon.component';
+import { DeviceTabletOutlineIconComponent } from './heroicons/outline/DeviceTabletOutlineIcon.component';
+import { DocumentAddOutlineIconComponent } from './heroicons/outline/DocumentAddOutlineIcon.component';
+import { DocumentDownloadOutlineIconComponent } from './heroicons/outline/DocumentDownloadOutlineIcon.component';
+import { DocumentDuplicateOutlineIconComponent } from './heroicons/outline/DocumentDuplicateOutlineIcon.component';
+import { DocumentRemoveOutlineIconComponent } from './heroicons/outline/DocumentRemoveOutlineIcon.component';
+import { DocumentReportOutlineIconComponent } from './heroicons/outline/DocumentReportOutlineIcon.component';
+import { DocumentSearchOutlineIconComponent } from './heroicons/outline/DocumentSearchOutlineIcon.component';
+import { DocumentTextOutlineIconComponent } from './heroicons/outline/DocumentTextOutlineIcon.component';
+import { DocumentOutlineIconComponent } from './heroicons/outline/DocumentOutlineIcon.component';
+import { DotsCircleHorizontalOutlineIconComponent } from './heroicons/outline/DotsCircleHorizontalOutlineIcon.component';
+import { DotsHorizontalOutlineIconComponent } from './heroicons/outline/DotsHorizontalOutlineIcon.component';
+import { DotsVerticalOutlineIconComponent } from './heroicons/outline/DotsVerticalOutlineIcon.component';
+import { DownloadOutlineIconComponent } from './heroicons/outline/DownloadOutlineIcon.component';
+import { DuplicateOutlineIconComponent } from './heroicons/outline/DuplicateOutlineIcon.component';
+import { EmojiHappyOutlineIconComponent } from './heroicons/outline/EmojiHappyOutlineIcon.component';
+import { EmojiSadOutlineIconComponent } from './heroicons/outline/EmojiSadOutlineIcon.component';
+import { ExclamationCircleOutlineIconComponent } from './heroicons/outline/ExclamationCircleOutlineIcon.component';
+import { ExclamationOutlineIconComponent } from './heroicons/outline/ExclamationOutlineIcon.component';
+import { ExternalLinkOutlineIconComponent } from './heroicons/outline/ExternalLinkOutlineIcon.component';
+import { EyeOffOutlineIconComponent } from './heroicons/outline/EyeOffOutlineIcon.component';
+import { EyeOutlineIconComponent } from './heroicons/outline/EyeOutlineIcon.component';
+import { FastForwardOutlineIconComponent } from './heroicons/outline/FastForwardOutlineIcon.component';
+import { FilmOutlineIconComponent } from './heroicons/outline/FilmOutlineIcon.component';
+import { FilterOutlineIconComponent } from './heroicons/outline/FilterOutlineIcon.component';
+import { FingerPrintOutlineIconComponent } from './heroicons/outline/FingerPrintOutlineIcon.component';
+import { FireOutlineIconComponent } from './heroicons/outline/FireOutlineIcon.component';
+import { FlagOutlineIconComponent } from './heroicons/outline/FlagOutlineIcon.component';
+import { FolderAddOutlineIconComponent } from './heroicons/outline/FolderAddOutlineIcon.component';
+import { FolderDownloadOutlineIconComponent } from './heroicons/outline/FolderDownloadOutlineIcon.component';
+import { FolderOpenOutlineIconComponent } from './heroicons/outline/FolderOpenOutlineIcon.component';
+import { FolderRemoveOutlineIconComponent } from './heroicons/outline/FolderRemoveOutlineIcon.component';
+import { FolderOutlineIconComponent } from './heroicons/outline/FolderOutlineIcon.component';
+import { GiftOutlineIconComponent } from './heroicons/outline/GiftOutlineIcon.component';
+import { GlobeAltOutlineIconComponent } from './heroicons/outline/GlobeAltOutlineIcon.component';
+import { GlobeOutlineIconComponent } from './heroicons/outline/GlobeOutlineIcon.component';
+import { HandOutlineIconComponent } from './heroicons/outline/HandOutlineIcon.component';
+import { HashtagOutlineIconComponent } from './heroicons/outline/HashtagOutlineIcon.component';
+import { HeartOutlineIconComponent } from './heroicons/outline/HeartOutlineIcon.component';
+import { HomeOutlineIconComponent } from './heroicons/outline/HomeOutlineIcon.component';
+import { IdentificationOutlineIconComponent } from './heroicons/outline/IdentificationOutlineIcon.component';
+import { InboxInOutlineIconComponent } from './heroicons/outline/InboxInOutlineIcon.component';
+import { InboxOutlineIconComponent } from './heroicons/outline/InboxOutlineIcon.component';
+import { InformationCircleOutlineIconComponent } from './heroicons/outline/InformationCircleOutlineIcon.component';
+import { KeyOutlineIconComponent } from './heroicons/outline/KeyOutlineIcon.component';
+import { LibraryOutlineIconComponent } from './heroicons/outline/LibraryOutlineIcon.component';
+import { LightBulbOutlineIconComponent } from './heroicons/outline/LightBulbOutlineIcon.component';
+import { LightningBoltOutlineIconComponent } from './heroicons/outline/LightningBoltOutlineIcon.component';
+import { LinkOutlineIconComponent } from './heroicons/outline/LinkOutlineIcon.component';
+import { LocationMarkerOutlineIconComponent } from './heroicons/outline/LocationMarkerOutlineIcon.component';
+import { LockClosedOutlineIconComponent } from './heroicons/outline/LockClosedOutlineIcon.component';
+import { LockOpenOutlineIconComponent } from './heroicons/outline/LockOpenOutlineIcon.component';
+import { LoginOutlineIconComponent } from './heroicons/outline/LoginOutlineIcon.component';
+import { LogoutOutlineIconComponent } from './heroicons/outline/LogoutOutlineIcon.component';
+import { MailOpenOutlineIconComponent } from './heroicons/outline/MailOpenOutlineIcon.component';
+import { MailOutlineIconComponent } from './heroicons/outline/MailOutlineIcon.component';
+import { MapOutlineIconComponent } from './heroicons/outline/MapOutlineIcon.component';
+import { MenuAlt1OutlineIconComponent } from './heroicons/outline/MenuAlt1OutlineIcon.component';
+import { MenuAlt2OutlineIconComponent } from './heroicons/outline/MenuAlt2OutlineIcon.component';
+import { MenuAlt3OutlineIconComponent } from './heroicons/outline/MenuAlt3OutlineIcon.component';
+import { MenuAlt4OutlineIconComponent } from './heroicons/outline/MenuAlt4OutlineIcon.component';
+import { MenuOutlineIconComponent } from './heroicons/outline/MenuOutlineIcon.component';
+import { MicrophoneOutlineIconComponent } from './heroicons/outline/MicrophoneOutlineIcon.component';
+import { MinusCircleOutlineIconComponent } from './heroicons/outline/MinusCircleOutlineIcon.component';
+import { MinusSmOutlineIconComponent } from './heroicons/outline/MinusSmOutlineIcon.component';
+import { MinusOutlineIconComponent } from './heroicons/outline/MinusOutlineIcon.component';
+import { MoonOutlineIconComponent } from './heroicons/outline/MoonOutlineIcon.component';
+import { MusicNoteOutlineIconComponent } from './heroicons/outline/MusicNoteOutlineIcon.component';
+import { NewspaperOutlineIconComponent } from './heroicons/outline/NewspaperOutlineIcon.component';
+import { OfficeBuildingOutlineIconComponent } from './heroicons/outline/OfficeBuildingOutlineIcon.component';
+import { PaperAirplaneOutlineIconComponent } from './heroicons/outline/PaperAirplaneOutlineIcon.component';
+import { PaperClipOutlineIconComponent } from './heroicons/outline/PaperClipOutlineIcon.component';
+import { PauseOutlineIconComponent } from './heroicons/outline/PauseOutlineIcon.component';
+import { PencilAltOutlineIconComponent } from './heroicons/outline/PencilAltOutlineIcon.component';
+import { PencilOutlineIconComponent } from './heroicons/outline/PencilOutlineIcon.component';
+import { PhoneIncomingOutlineIconComponent } from './heroicons/outline/PhoneIncomingOutlineIcon.component';
+import { PhoneMissedCallOutlineIconComponent } from './heroicons/outline/PhoneMissedCallOutlineIcon.component';
+import { PhoneOutgoingOutlineIconComponent } from './heroicons/outline/PhoneOutgoingOutlineIcon.component';
+import { PhoneOutlineIconComponent } from './heroicons/outline/PhoneOutlineIcon.component';
+import { PhotographOutlineIconComponent } from './heroicons/outline/PhotographOutlineIcon.component';
+import { PlayOutlineIconComponent } from './heroicons/outline/PlayOutlineIcon.component';
+import { PlusCircleOutlineIconComponent } from './heroicons/outline/PlusCircleOutlineIcon.component';
+import { PlusSmOutlineIconComponent } from './heroicons/outline/PlusSmOutlineIcon.component';
+import { PlusOutlineIconComponent } from './heroicons/outline/PlusOutlineIcon.component';
+import { PresentationChartBarOutlineIconComponent } from './heroicons/outline/PresentationChartBarOutlineIcon.component';
+import { PresentationChartLineOutlineIconComponent } from './heroicons/outline/PresentationChartLineOutlineIcon.component';
+import { PrinterOutlineIconComponent } from './heroicons/outline/PrinterOutlineIcon.component';
+import { PuzzleOutlineIconComponent } from './heroicons/outline/PuzzleOutlineIcon.component';
+import { QrcodeOutlineIconComponent } from './heroicons/outline/QrcodeOutlineIcon.component';
+import { QuestionMarkCircleOutlineIconComponent } from './heroicons/outline/QuestionMarkCircleOutlineIcon.component';
+import { ReceiptRefundOutlineIconComponent } from './heroicons/outline/ReceiptRefundOutlineIcon.component';
+import { ReceiptTaxOutlineIconComponent } from './heroicons/outline/ReceiptTaxOutlineIcon.component';
+import { RefreshOutlineIconComponent } from './heroicons/outline/RefreshOutlineIcon.component';
+import { ReplyOutlineIconComponent } from './heroicons/outline/ReplyOutlineIcon.component';
+import { RewindOutlineIconComponent } from './heroicons/outline/RewindOutlineIcon.component';
+import { RssOutlineIconComponent } from './heroicons/outline/RssOutlineIcon.component';
+import { SaveAsOutlineIconComponent } from './heroicons/outline/SaveAsOutlineIcon.component';
+import { SaveOutlineIconComponent } from './heroicons/outline/SaveOutlineIcon.component';
+import { ScaleOutlineIconComponent } from './heroicons/outline/ScaleOutlineIcon.component';
+import { ScissorsOutlineIconComponent } from './heroicons/outline/ScissorsOutlineIcon.component';
+import { SearchCircleOutlineIconComponent } from './heroicons/outline/SearchCircleOutlineIcon.component';
+import { SearchOutlineIconComponent } from './heroicons/outline/SearchOutlineIcon.component';
+import { SelectorOutlineIconComponent } from './heroicons/outline/SelectorOutlineIcon.component';
+import { ServerOutlineIconComponent } from './heroicons/outline/ServerOutlineIcon.component';
+import { ShareOutlineIconComponent } from './heroicons/outline/ShareOutlineIcon.component';
+import { ShieldCheckOutlineIconComponent } from './heroicons/outline/ShieldCheckOutlineIcon.component';
+import { ShieldExclamationOutlineIconComponent } from './heroicons/outline/ShieldExclamationOutlineIcon.component';
+import { ShoppingBagOutlineIconComponent } from './heroicons/outline/ShoppingBagOutlineIcon.component';
+import { ShoppingCartOutlineIconComponent } from './heroicons/outline/ShoppingCartOutlineIcon.component';
+import { SortAscendingOutlineIconComponent } from './heroicons/outline/SortAscendingOutlineIcon.component';
+import { SortDescendingOutlineIconComponent } from './heroicons/outline/SortDescendingOutlineIcon.component';
+import { SparklesOutlineIconComponent } from './heroicons/outline/SparklesOutlineIcon.component';
+import { SpeakerphoneOutlineIconComponent } from './heroicons/outline/SpeakerphoneOutlineIcon.component';
+import { StarOutlineIconComponent } from './heroicons/outline/StarOutlineIcon.component';
+import { StatusOfflineOutlineIconComponent } from './heroicons/outline/StatusOfflineOutlineIcon.component';
+import { StatusOnlineOutlineIconComponent } from './heroicons/outline/StatusOnlineOutlineIcon.component';
+import { StopOutlineIconComponent } from './heroicons/outline/StopOutlineIcon.component';
+import { SunOutlineIconComponent } from './heroicons/outline/SunOutlineIcon.component';
+import { SupportOutlineIconComponent } from './heroicons/outline/SupportOutlineIcon.component';
+import { SwitchHorizontalOutlineIconComponent } from './heroicons/outline/SwitchHorizontalOutlineIcon.component';
+import { SwitchVerticalOutlineIconComponent } from './heroicons/outline/SwitchVerticalOutlineIcon.component';
+import { TableOutlineIconComponent } from './heroicons/outline/TableOutlineIcon.component';
+import { TagOutlineIconComponent } from './heroicons/outline/TagOutlineIcon.component';
+import { TemplateOutlineIconComponent } from './heroicons/outline/TemplateOutlineIcon.component';
+import { TerminalOutlineIconComponent } from './heroicons/outline/TerminalOutlineIcon.component';
+import { ThumbDownOutlineIconComponent } from './heroicons/outline/ThumbDownOutlineIcon.component';
+import { ThumbUpOutlineIconComponent } from './heroicons/outline/ThumbUpOutlineIcon.component';
+import { TicketOutlineIconComponent } from './heroicons/outline/TicketOutlineIcon.component';
+import { TranslateOutlineIconComponent } from './heroicons/outline/TranslateOutlineIcon.component';
+import { TrashOutlineIconComponent } from './heroicons/outline/TrashOutlineIcon.component';
+import { TrendingDownOutlineIconComponent } from './heroicons/outline/TrendingDownOutlineIcon.component';
+import { TrendingUpOutlineIconComponent } from './heroicons/outline/TrendingUpOutlineIcon.component';
+import { TruckOutlineIconComponent } from './heroicons/outline/TruckOutlineIcon.component';
+import { UploadOutlineIconComponent } from './heroicons/outline/UploadOutlineIcon.component';
+import { UserAddOutlineIconComponent } from './heroicons/outline/UserAddOutlineIcon.component';
+import { UserCircleOutlineIconComponent } from './heroicons/outline/UserCircleOutlineIcon.component';
+import { UserGroupOutlineIconComponent } from './heroicons/outline/UserGroupOutlineIcon.component';
+import { UserRemoveOutlineIconComponent } from './heroicons/outline/UserRemoveOutlineIcon.component';
+import { UserOutlineIconComponent } from './heroicons/outline/UserOutlineIcon.component';
+import { UsersOutlineIconComponent } from './heroicons/outline/UsersOutlineIcon.component';
+import { VariableOutlineIconComponent } from './heroicons/outline/VariableOutlineIcon.component';
+import { VideoCameraOutlineIconComponent } from './heroicons/outline/VideoCameraOutlineIcon.component';
+import { ViewBoardsOutlineIconComponent } from './heroicons/outline/ViewBoardsOutlineIcon.component';
+import { ViewGridAddOutlineIconComponent } from './heroicons/outline/ViewGridAddOutlineIcon.component';
+import { ViewGridOutlineIconComponent } from './heroicons/outline/ViewGridOutlineIcon.component';
+import { ViewListOutlineIconComponent } from './heroicons/outline/ViewListOutlineIcon.component';
+import { VolumeOffOutlineIconComponent } from './heroicons/outline/VolumeOffOutlineIcon.component';
+import { VolumeUpOutlineIconComponent } from './heroicons/outline/VolumeUpOutlineIcon.component';
+import { WifiOutlineIconComponent } from './heroicons/outline/WifiOutlineIcon.component';
+import { XCircleOutlineIconComponent } from './heroicons/outline/XCircleOutlineIcon.component';
+import { XOutlineIconComponent } from './heroicons/outline/XOutlineIcon.component';
+import { ZoomInOutlineIconComponent } from './heroicons/outline/ZoomInOutlineIcon.component';
+import { ZoomOutOutlineIconComponent } from './heroicons/outline/ZoomOutOutlineIcon.component';
+import { AcademicCapSolidIconComponent } from './heroicons/solid/AcademicCapSolidIcon.component';
+import { AdjustmentsSolidIconComponent } from './heroicons/solid/AdjustmentsSolidIcon.component';
+import { AnnotationSolidIconComponent } from './heroicons/solid/AnnotationSolidIcon.component';
+import { ArchiveSolidIconComponent } from './heroicons/solid/ArchiveSolidIcon.component';
+import { ArrowCircleDownSolidIconComponent } from './heroicons/solid/ArrowCircleDownSolidIcon.component';
+import { ArrowCircleLeftSolidIconComponent } from './heroicons/solid/ArrowCircleLeftSolidIcon.component';
+import { ArrowCircleRightSolidIconComponent } from './heroicons/solid/ArrowCircleRightSolidIcon.component';
+import { ArrowCircleUpSolidIconComponent } from './heroicons/solid/ArrowCircleUpSolidIcon.component';
+import { ArrowDownSolidIconComponent } from './heroicons/solid/ArrowDownSolidIcon.component';
+import { ArrowLeftSolidIconComponent } from './heroicons/solid/ArrowLeftSolidIcon.component';
+import { ArrowNarrowDownSolidIconComponent } from './heroicons/solid/ArrowNarrowDownSolidIcon.component';
+import { ArrowNarrowLeftSolidIconComponent } from './heroicons/solid/ArrowNarrowLeftSolidIcon.component';
+import { ArrowNarrowRightSolidIconComponent } from './heroicons/solid/ArrowNarrowRightSolidIcon.component';
+import { ArrowNarrowUpSolidIconComponent } from './heroicons/solid/ArrowNarrowUpSolidIcon.component';
+import { ArrowRightSolidIconComponent } from './heroicons/solid/ArrowRightSolidIcon.component';
+import { ArrowSmDownSolidIconComponent } from './heroicons/solid/ArrowSmDownSolidIcon.component';
+import { ArrowSmLeftSolidIconComponent } from './heroicons/solid/ArrowSmLeftSolidIcon.component';
+import { ArrowSmRightSolidIconComponent } from './heroicons/solid/ArrowSmRightSolidIcon.component';
+import { ArrowSmUpSolidIconComponent } from './heroicons/solid/ArrowSmUpSolidIcon.component';
+import { ArrowUpSolidIconComponent } from './heroicons/solid/ArrowUpSolidIcon.component';
+import { ArrowsExpandSolidIconComponent } from './heroicons/solid/ArrowsExpandSolidIcon.component';
+import { AtSymbolSolidIconComponent } from './heroicons/solid/AtSymbolSolidIcon.component';
+import { BackspaceSolidIconComponent } from './heroicons/solid/BackspaceSolidIcon.component';
+import { BadgeCheckSolidIconComponent } from './heroicons/solid/BadgeCheckSolidIcon.component';
+import { BanSolidIconComponent } from './heroicons/solid/BanSolidIcon.component';
+import { BeakerSolidIconComponent } from './heroicons/solid/BeakerSolidIcon.component';
+import { BellSolidIconComponent } from './heroicons/solid/BellSolidIcon.component';
+import { BookOpenSolidIconComponent } from './heroicons/solid/BookOpenSolidIcon.component';
+import { BookmarkAltSolidIconComponent } from './heroicons/solid/BookmarkAltSolidIcon.component';
+import { BookmarkSolidIconComponent } from './heroicons/solid/BookmarkSolidIcon.component';
+import { BriefcaseSolidIconComponent } from './heroicons/solid/BriefcaseSolidIcon.component';
+import { CakeSolidIconComponent } from './heroicons/solid/CakeSolidIcon.component';
+import { CalculatorSolidIconComponent } from './heroicons/solid/CalculatorSolidIcon.component';
+import { CalendarSolidIconComponent } from './heroicons/solid/CalendarSolidIcon.component';
+import { CameraSolidIconComponent } from './heroicons/solid/CameraSolidIcon.component';
+import { CashSolidIconComponent } from './heroicons/solid/CashSolidIcon.component';
+import { ChartBarSolidIconComponent } from './heroicons/solid/ChartBarSolidIcon.component';
+import { ChartPieSolidIconComponent } from './heroicons/solid/ChartPieSolidIcon.component';
+import { ChartSquareBarSolidIconComponent } from './heroicons/solid/ChartSquareBarSolidIcon.component';
+import { ChatAlt2SolidIconComponent } from './heroicons/solid/ChatAlt2SolidIcon.component';
+import { ChatAltSolidIconComponent } from './heroicons/solid/ChatAltSolidIcon.component';
+import { ChatSolidIconComponent } from './heroicons/solid/ChatSolidIcon.component';
+import { CheckCircleSolidIconComponent } from './heroicons/solid/CheckCircleSolidIcon.component';
+import { CheckSolidIconComponent } from './heroicons/solid/CheckSolidIcon.component';
+import { ChevronDoubleDownSolidIconComponent } from './heroicons/solid/ChevronDoubleDownSolidIcon.component';
+import { ChevronDoubleLeftSolidIconComponent } from './heroicons/solid/ChevronDoubleLeftSolidIcon.component';
+import { ChevronDoubleRightSolidIconComponent } from './heroicons/solid/ChevronDoubleRightSolidIcon.component';
+import { ChevronDoubleUpSolidIconComponent } from './heroicons/solid/ChevronDoubleUpSolidIcon.component';
+import { ChevronDownSolidIconComponent } from './heroicons/solid/ChevronDownSolidIcon.component';
+import { ChevronLeftSolidIconComponent } from './heroicons/solid/ChevronLeftSolidIcon.component';
+import { ChevronRightSolidIconComponent } from './heroicons/solid/ChevronRightSolidIcon.component';
+import { ChevronUpSolidIconComponent } from './heroicons/solid/ChevronUpSolidIcon.component';
+import { ChipSolidIconComponent } from './heroicons/solid/ChipSolidIcon.component';
+import { ClipboardCheckSolidIconComponent } from './heroicons/solid/ClipboardCheckSolidIcon.component';
+import { ClipboardCopySolidIconComponent } from './heroicons/solid/ClipboardCopySolidIcon.component';
+import { ClipboardListSolidIconComponent } from './heroicons/solid/ClipboardListSolidIcon.component';
+import { ClipboardSolidIconComponent } from './heroicons/solid/ClipboardSolidIcon.component';
+import { ClockSolidIconComponent } from './heroicons/solid/ClockSolidIcon.component';
+import { CloudDownloadSolidIconComponent } from './heroicons/solid/CloudDownloadSolidIcon.component';
+import { CloudUploadSolidIconComponent } from './heroicons/solid/CloudUploadSolidIcon.component';
+import { CloudSolidIconComponent } from './heroicons/solid/CloudSolidIcon.component';
+import { CodeSolidIconComponent } from './heroicons/solid/CodeSolidIcon.component';
+import { CogSolidIconComponent } from './heroicons/solid/CogSolidIcon.component';
+import { CollectionSolidIconComponent } from './heroicons/solid/CollectionSolidIcon.component';
+import { ColorSwatchSolidIconComponent } from './heroicons/solid/ColorSwatchSolidIcon.component';
+import { CreditCardSolidIconComponent } from './heroicons/solid/CreditCardSolidIcon.component';
+import { CubeTransparentSolidIconComponent } from './heroicons/solid/CubeTransparentSolidIcon.component';
+import { CubeSolidIconComponent } from './heroicons/solid/CubeSolidIcon.component';
+import { CurrencyBangladeshiSolidIconComponent } from './heroicons/solid/CurrencyBangladeshiSolidIcon.component';
+import { CurrencyDollarSolidIconComponent } from './heroicons/solid/CurrencyDollarSolidIcon.component';
+import { CurrencyEuroSolidIconComponent } from './heroicons/solid/CurrencyEuroSolidIcon.component';
+import { CurrencyPoundSolidIconComponent } from './heroicons/solid/CurrencyPoundSolidIcon.component';
+import { CurrencyRupeeSolidIconComponent } from './heroicons/solid/CurrencyRupeeSolidIcon.component';
+import { CurrencyYenSolidIconComponent } from './heroicons/solid/CurrencyYenSolidIcon.component';
+import { CursorClickSolidIconComponent } from './heroicons/solid/CursorClickSolidIcon.component';
+import { DatabaseSolidIconComponent } from './heroicons/solid/DatabaseSolidIcon.component';
+import { DesktopComputerSolidIconComponent } from './heroicons/solid/DesktopComputerSolidIcon.component';
+import { DeviceMobileSolidIconComponent } from './heroicons/solid/DeviceMobileSolidIcon.component';
+import { DeviceTabletSolidIconComponent } from './heroicons/solid/DeviceTabletSolidIcon.component';
+import { DocumentAddSolidIconComponent } from './heroicons/solid/DocumentAddSolidIcon.component';
+import { DocumentDownloadSolidIconComponent } from './heroicons/solid/DocumentDownloadSolidIcon.component';
+import { DocumentDuplicateSolidIconComponent } from './heroicons/solid/DocumentDuplicateSolidIcon.component';
+import { DocumentRemoveSolidIconComponent } from './heroicons/solid/DocumentRemoveSolidIcon.component';
+import { DocumentReportSolidIconComponent } from './heroicons/solid/DocumentReportSolidIcon.component';
+import { DocumentSearchSolidIconComponent } from './heroicons/solid/DocumentSearchSolidIcon.component';
+import { DocumentTextSolidIconComponent } from './heroicons/solid/DocumentTextSolidIcon.component';
+import { DocumentSolidIconComponent } from './heroicons/solid/DocumentSolidIcon.component';
+import { DotsCircleHorizontalSolidIconComponent } from './heroicons/solid/DotsCircleHorizontalSolidIcon.component';
+import { DotsHorizontalSolidIconComponent } from './heroicons/solid/DotsHorizontalSolidIcon.component';
+import { DotsVerticalSolidIconComponent } from './heroicons/solid/DotsVerticalSolidIcon.component';
+import { DownloadSolidIconComponent } from './heroicons/solid/DownloadSolidIcon.component';
+import { DuplicateSolidIconComponent } from './heroicons/solid/DuplicateSolidIcon.component';
+import { EmojiHappySolidIconComponent } from './heroicons/solid/EmojiHappySolidIcon.component';
+import { EmojiSadSolidIconComponent } from './heroicons/solid/EmojiSadSolidIcon.component';
+import { ExclamationCircleSolidIconComponent } from './heroicons/solid/ExclamationCircleSolidIcon.component';
+import { ExclamationSolidIconComponent } from './heroicons/solid/ExclamationSolidIcon.component';
+import { ExternalLinkSolidIconComponent } from './heroicons/solid/ExternalLinkSolidIcon.component';
+import { EyeOffSolidIconComponent } from './heroicons/solid/EyeOffSolidIcon.component';
+import { EyeSolidIconComponent } from './heroicons/solid/EyeSolidIcon.component';
+import { FastForwardSolidIconComponent } from './heroicons/solid/FastForwardSolidIcon.component';
+import { FilmSolidIconComponent } from './heroicons/solid/FilmSolidIcon.component';
+import { FilterSolidIconComponent } from './heroicons/solid/FilterSolidIcon.component';
+import { FingerPrintSolidIconComponent } from './heroicons/solid/FingerPrintSolidIcon.component';
+import { FireSolidIconComponent } from './heroicons/solid/FireSolidIcon.component';
+import { FlagSolidIconComponent } from './heroicons/solid/FlagSolidIcon.component';
+import { FolderAddSolidIconComponent } from './heroicons/solid/FolderAddSolidIcon.component';
+import { FolderDownloadSolidIconComponent } from './heroicons/solid/FolderDownloadSolidIcon.component';
+import { FolderOpenSolidIconComponent } from './heroicons/solid/FolderOpenSolidIcon.component';
+import { FolderRemoveSolidIconComponent } from './heroicons/solid/FolderRemoveSolidIcon.component';
+import { FolderSolidIconComponent } from './heroicons/solid/FolderSolidIcon.component';
+import { GiftSolidIconComponent } from './heroicons/solid/GiftSolidIcon.component';
+import { GlobeAltSolidIconComponent } from './heroicons/solid/GlobeAltSolidIcon.component';
+import { GlobeSolidIconComponent } from './heroicons/solid/GlobeSolidIcon.component';
+import { HandSolidIconComponent } from './heroicons/solid/HandSolidIcon.component';
+import { HashtagSolidIconComponent } from './heroicons/solid/HashtagSolidIcon.component';
+import { HeartSolidIconComponent } from './heroicons/solid/HeartSolidIcon.component';
+import { HomeSolidIconComponent } from './heroicons/solid/HomeSolidIcon.component';
+import { IdentificationSolidIconComponent } from './heroicons/solid/IdentificationSolidIcon.component';
+import { InboxInSolidIconComponent } from './heroicons/solid/InboxInSolidIcon.component';
+import { InboxSolidIconComponent } from './heroicons/solid/InboxSolidIcon.component';
+import { InformationCircleSolidIconComponent } from './heroicons/solid/InformationCircleSolidIcon.component';
+import { KeySolidIconComponent } from './heroicons/solid/KeySolidIcon.component';
+import { LibrarySolidIconComponent } from './heroicons/solid/LibrarySolidIcon.component';
+import { LightBulbSolidIconComponent } from './heroicons/solid/LightBulbSolidIcon.component';
+import { LightningBoltSolidIconComponent } from './heroicons/solid/LightningBoltSolidIcon.component';
+import { LinkSolidIconComponent } from './heroicons/solid/LinkSolidIcon.component';
+import { LocationMarkerSolidIconComponent } from './heroicons/solid/LocationMarkerSolidIcon.component';
+import { LockClosedSolidIconComponent } from './heroicons/solid/LockClosedSolidIcon.component';
+import { LockOpenSolidIconComponent } from './heroicons/solid/LockOpenSolidIcon.component';
+import { LoginSolidIconComponent } from './heroicons/solid/LoginSolidIcon.component';
+import { LogoutSolidIconComponent } from './heroicons/solid/LogoutSolidIcon.component';
+import { MailOpenSolidIconComponent } from './heroicons/solid/MailOpenSolidIcon.component';
+import { MailSolidIconComponent } from './heroicons/solid/MailSolidIcon.component';
+import { MapSolidIconComponent } from './heroicons/solid/MapSolidIcon.component';
+import { MenuAlt1SolidIconComponent } from './heroicons/solid/MenuAlt1SolidIcon.component';
+import { MenuAlt2SolidIconComponent } from './heroicons/solid/MenuAlt2SolidIcon.component';
+import { MenuAlt3SolidIconComponent } from './heroicons/solid/MenuAlt3SolidIcon.component';
+import { MenuAlt4SolidIconComponent } from './heroicons/solid/MenuAlt4SolidIcon.component';
+import { MenuSolidIconComponent } from './heroicons/solid/MenuSolidIcon.component';
+import { MicrophoneSolidIconComponent } from './heroicons/solid/MicrophoneSolidIcon.component';
+import { MinusCircleSolidIconComponent } from './heroicons/solid/MinusCircleSolidIcon.component';
+import { MinusSmSolidIconComponent } from './heroicons/solid/MinusSmSolidIcon.component';
+import { MinusSolidIconComponent } from './heroicons/solid/MinusSolidIcon.component';
+import { MoonSolidIconComponent } from './heroicons/solid/MoonSolidIcon.component';
+import { MusicNoteSolidIconComponent } from './heroicons/solid/MusicNoteSolidIcon.component';
+import { NewspaperSolidIconComponent } from './heroicons/solid/NewspaperSolidIcon.component';
+import { OfficeBuildingSolidIconComponent } from './heroicons/solid/OfficeBuildingSolidIcon.component';
+import { PaperAirplaneSolidIconComponent } from './heroicons/solid/PaperAirplaneSolidIcon.component';
+import { PaperClipSolidIconComponent } from './heroicons/solid/PaperClipSolidIcon.component';
+import { PauseSolidIconComponent } from './heroicons/solid/PauseSolidIcon.component';
+import { PencilAltSolidIconComponent } from './heroicons/solid/PencilAltSolidIcon.component';
+import { PencilSolidIconComponent } from './heroicons/solid/PencilSolidIcon.component';
+import { PhoneIncomingSolidIconComponent } from './heroicons/solid/PhoneIncomingSolidIcon.component';
+import { PhoneMissedCallSolidIconComponent } from './heroicons/solid/PhoneMissedCallSolidIcon.component';
+import { PhoneOutgoingSolidIconComponent } from './heroicons/solid/PhoneOutgoingSolidIcon.component';
+import { PhoneSolidIconComponent } from './heroicons/solid/PhoneSolidIcon.component';
+import { PhotographSolidIconComponent } from './heroicons/solid/PhotographSolidIcon.component';
+import { PlaySolidIconComponent } from './heroicons/solid/PlaySolidIcon.component';
+import { PlusCircleSolidIconComponent } from './heroicons/solid/PlusCircleSolidIcon.component';
+import { PlusSmSolidIconComponent } from './heroicons/solid/PlusSmSolidIcon.component';
+import { PlusSolidIconComponent } from './heroicons/solid/PlusSolidIcon.component';
+import { PresentationChartBarSolidIconComponent } from './heroicons/solid/PresentationChartBarSolidIcon.component';
+import { PresentationChartLineSolidIconComponent } from './heroicons/solid/PresentationChartLineSolidIcon.component';
+import { PrinterSolidIconComponent } from './heroicons/solid/PrinterSolidIcon.component';
+import { PuzzleSolidIconComponent } from './heroicons/solid/PuzzleSolidIcon.component';
+import { QrcodeSolidIconComponent } from './heroicons/solid/QrcodeSolidIcon.component';
+import { QuestionMarkCircleSolidIconComponent } from './heroicons/solid/QuestionMarkCircleSolidIcon.component';
+import { ReceiptRefundSolidIconComponent } from './heroicons/solid/ReceiptRefundSolidIcon.component';
+import { ReceiptTaxSolidIconComponent } from './heroicons/solid/ReceiptTaxSolidIcon.component';
+import { RefreshSolidIconComponent } from './heroicons/solid/RefreshSolidIcon.component';
+import { ReplySolidIconComponent } from './heroicons/solid/ReplySolidIcon.component';
+import { RewindSolidIconComponent } from './heroicons/solid/RewindSolidIcon.component';
+import { RssSolidIconComponent } from './heroicons/solid/RssSolidIcon.component';
+import { SaveAsSolidIconComponent } from './heroicons/solid/SaveAsSolidIcon.component';
+import { SaveSolidIconComponent } from './heroicons/solid/SaveSolidIcon.component';
+import { ScaleSolidIconComponent } from './heroicons/solid/ScaleSolidIcon.component';
+import { ScissorsSolidIconComponent } from './heroicons/solid/ScissorsSolidIcon.component';
+import { SearchCircleSolidIconComponent } from './heroicons/solid/SearchCircleSolidIcon.component';
+import { SearchSolidIconComponent } from './heroicons/solid/SearchSolidIcon.component';
+import { SelectorSolidIconComponent } from './heroicons/solid/SelectorSolidIcon.component';
+import { ServerSolidIconComponent } from './heroicons/solid/ServerSolidIcon.component';
+import { ShareSolidIconComponent } from './heroicons/solid/ShareSolidIcon.component';
+import { ShieldCheckSolidIconComponent } from './heroicons/solid/ShieldCheckSolidIcon.component';
+import { ShieldExclamationSolidIconComponent } from './heroicons/solid/ShieldExclamationSolidIcon.component';
+import { ShoppingBagSolidIconComponent } from './heroicons/solid/ShoppingBagSolidIcon.component';
+import { ShoppingCartSolidIconComponent } from './heroicons/solid/ShoppingCartSolidIcon.component';
+import { SortAscendingSolidIconComponent } from './heroicons/solid/SortAscendingSolidIcon.component';
+import { SortDescendingSolidIconComponent } from './heroicons/solid/SortDescendingSolidIcon.component';
+import { SparklesSolidIconComponent } from './heroicons/solid/SparklesSolidIcon.component';
+import { SpeakerphoneSolidIconComponent } from './heroicons/solid/SpeakerphoneSolidIcon.component';
+import { StarSolidIconComponent } from './heroicons/solid/StarSolidIcon.component';
+import { StatusOfflineSolidIconComponent } from './heroicons/solid/StatusOfflineSolidIcon.component';
+import { StatusOnlineSolidIconComponent } from './heroicons/solid/StatusOnlineSolidIcon.component';
+import { StopSolidIconComponent } from './heroicons/solid/StopSolidIcon.component';
+import { SunSolidIconComponent } from './heroicons/solid/SunSolidIcon.component';
+import { SupportSolidIconComponent } from './heroicons/solid/SupportSolidIcon.component';
+import { SwitchHorizontalSolidIconComponent } from './heroicons/solid/SwitchHorizontalSolidIcon.component';
+import { SwitchVerticalSolidIconComponent } from './heroicons/solid/SwitchVerticalSolidIcon.component';
+import { TableSolidIconComponent } from './heroicons/solid/TableSolidIcon.component';
+import { TagSolidIconComponent } from './heroicons/solid/TagSolidIcon.component';
+import { TemplateSolidIconComponent } from './heroicons/solid/TemplateSolidIcon.component';
+import { TerminalSolidIconComponent } from './heroicons/solid/TerminalSolidIcon.component';
+import { ThumbDownSolidIconComponent } from './heroicons/solid/ThumbDownSolidIcon.component';
+import { ThumbUpSolidIconComponent } from './heroicons/solid/ThumbUpSolidIcon.component';
+import { TicketSolidIconComponent } from './heroicons/solid/TicketSolidIcon.component';
+import { TranslateSolidIconComponent } from './heroicons/solid/TranslateSolidIcon.component';
+import { TrashSolidIconComponent } from './heroicons/solid/TrashSolidIcon.component';
+import { TrendingDownSolidIconComponent } from './heroicons/solid/TrendingDownSolidIcon.component';
+import { TrendingUpSolidIconComponent } from './heroicons/solid/TrendingUpSolidIcon.component';
+import { TruckSolidIconComponent } from './heroicons/solid/TruckSolidIcon.component';
+import { UploadSolidIconComponent } from './heroicons/solid/UploadSolidIcon.component';
+import { UserAddSolidIconComponent } from './heroicons/solid/UserAddSolidIcon.component';
+import { UserCircleSolidIconComponent } from './heroicons/solid/UserCircleSolidIcon.component';
+import { UserGroupSolidIconComponent } from './heroicons/solid/UserGroupSolidIcon.component';
+import { UserRemoveSolidIconComponent } from './heroicons/solid/UserRemoveSolidIcon.component';
+import { UserSolidIconComponent } from './heroicons/solid/UserSolidIcon.component';
+import { UsersSolidIconComponent } from './heroicons/solid/UsersSolidIcon.component';
+import { VariableSolidIconComponent } from './heroicons/solid/VariableSolidIcon.component';
+import { VideoCameraSolidIconComponent } from './heroicons/solid/VideoCameraSolidIcon.component';
+import { ViewBoardsSolidIconComponent } from './heroicons/solid/ViewBoardsSolidIcon.component';
+import { ViewGridAddSolidIconComponent } from './heroicons/solid/ViewGridAddSolidIcon.component';
+import { ViewGridSolidIconComponent } from './heroicons/solid/ViewGridSolidIcon.component';
+import { ViewListSolidIconComponent } from './heroicons/solid/ViewListSolidIcon.component';
+import { VolumeOffSolidIconComponent } from './heroicons/solid/VolumeOffSolidIcon.component';
+import { VolumeUpSolidIconComponent } from './heroicons/solid/VolumeUpSolidIcon.component';
+import { WifiSolidIconComponent } from './heroicons/solid/WifiSolidIcon.component';
+import { XCircleSolidIconComponent } from './heroicons/solid/XCircleSolidIcon.component';
+import { XSolidIconComponent } from './heroicons/solid/XSolidIcon.component';
+import { ZoomInSolidIconComponent } from './heroicons/solid/ZoomInSolidIcon.component';
+import { ZoomOutSolidIconComponent } from './heroicons/solid/ZoomOutSolidIcon.component';
 
 const COMPONENTS = [
-  AcademicCapOutlineComponent,
-AdjustmentsOutlineComponent,
-AnnotationOutlineComponent,
-ArchiveOutlineComponent,
-ArrowCircleDownOutlineComponent,
-ArrowCircleLeftOutlineComponent,
-ArrowCircleRightOutlineComponent,
-ArrowCircleUpOutlineComponent,
-ArrowDownOutlineComponent,
-ArrowLeftOutlineComponent,
-ArrowNarrowDownOutlineComponent,
-ArrowNarrowLeftOutlineComponent,
-ArrowNarrowRightOutlineComponent,
-ArrowNarrowUpOutlineComponent,
-ArrowRightOutlineComponent,
-ArrowSmDownOutlineComponent,
-ArrowSmLeftOutlineComponent,
-ArrowSmRightOutlineComponent,
-ArrowSmUpOutlineComponent,
-ArrowUpOutlineComponent,
-ArrowsExpandOutlineComponent,
-AtSymbolOutlineComponent,
-BackspaceOutlineComponent,
-BadgeCheckOutlineComponent,
-BanOutlineComponent,
-BeakerOutlineComponent,
-BellOutlineComponent,
-BookOpenOutlineComponent,
-BookmarkAltOutlineComponent,
-BookmarkOutlineComponent,
-BriefcaseOutlineComponent,
-CakeOutlineComponent,
-CalculatorOutlineComponent,
-CalendarOutlineComponent,
-CameraOutlineComponent,
-CashOutlineComponent,
-ChartBarOutlineComponent,
-ChartPieOutlineComponent,
-ChartSquareBarOutlineComponent,
-ChatAlt2OutlineComponent,
-ChatAltOutlineComponent,
-ChatOutlineComponent,
-CheckCircleOutlineComponent,
-CheckOutlineComponent,
-ChevronDoubleDownOutlineComponent,
-ChevronDoubleLeftOutlineComponent,
-ChevronDoubleRightOutlineComponent,
-ChevronDoubleUpOutlineComponent,
-ChevronDownOutlineComponent,
-ChevronLeftOutlineComponent,
-ChevronRightOutlineComponent,
-ChevronUpOutlineComponent,
-ChipOutlineComponent,
-ClipboardCheckOutlineComponent,
-ClipboardCopyOutlineComponent,
-ClipboardListOutlineComponent,
-ClipboardOutlineComponent,
-ClockOutlineComponent,
-CloudDownloadOutlineComponent,
-CloudUploadOutlineComponent,
-CloudOutlineComponent,
-CodeOutlineComponent,
-CogOutlineComponent,
-CollectionOutlineComponent,
-ColorSwatchOutlineComponent,
-CreditCardOutlineComponent,
-CubeTransparentOutlineComponent,
-CubeOutlineComponent,
-CurrencyBangladeshiOutlineComponent,
-CurrencyDollarOutlineComponent,
-CurrencyEuroOutlineComponent,
-CurrencyPoundOutlineComponent,
-CurrencyRupeeOutlineComponent,
-CurrencyYenOutlineComponent,
-CursorClickOutlineComponent,
-DatabaseOutlineComponent,
-DesktopComputerOutlineComponent,
-DeviceMobileOutlineComponent,
-DeviceTabletOutlineComponent,
-DocumentAddOutlineComponent,
-DocumentDownloadOutlineComponent,
-DocumentDuplicateOutlineComponent,
-DocumentRemoveOutlineComponent,
-DocumentReportOutlineComponent,
-DocumentSearchOutlineComponent,
-DocumentTextOutlineComponent,
-DocumentOutlineComponent,
-DotsCircleHorizontalOutlineComponent,
-DotsHorizontalOutlineComponent,
-DotsVerticalOutlineComponent,
-DownloadOutlineComponent,
-DuplicateOutlineComponent,
-EmojiHappyOutlineComponent,
-EmojiSadOutlineComponent,
-ExclamationCircleOutlineComponent,
-ExclamationOutlineComponent,
-ExternalLinkOutlineComponent,
-EyeOffOutlineComponent,
-EyeOutlineComponent,
-FastForwardOutlineComponent,
-FilmOutlineComponent,
-FilterOutlineComponent,
-FingerPrintOutlineComponent,
-FireOutlineComponent,
-FlagOutlineComponent,
-FolderAddOutlineComponent,
-FolderDownloadOutlineComponent,
-FolderOpenOutlineComponent,
-FolderRemoveOutlineComponent,
-FolderOutlineComponent,
-GiftOutlineComponent,
-GlobeAltOutlineComponent,
-GlobeOutlineComponent,
-HandOutlineComponent,
-HashtagOutlineComponent,
-HeartOutlineComponent,
-HomeOutlineComponent,
-IdentificationOutlineComponent,
-InboxInOutlineComponent,
-InboxOutlineComponent,
-InformationCircleOutlineComponent,
-KeyOutlineComponent,
-LibraryOutlineComponent,
-LightBulbOutlineComponent,
-LightningBoltOutlineComponent,
-LinkOutlineComponent,
-LocationMarkerOutlineComponent,
-LockClosedOutlineComponent,
-LockOpenOutlineComponent,
-LoginOutlineComponent,
-LogoutOutlineComponent,
-MailOpenOutlineComponent,
-MailOutlineComponent,
-MapOutlineComponent,
-MenuAlt1OutlineComponent,
-MenuAlt2OutlineComponent,
-MenuAlt3OutlineComponent,
-MenuAlt4OutlineComponent,
-MenuOutlineComponent,
-MicrophoneOutlineComponent,
-MinusCircleOutlineComponent,
-MinusSmOutlineComponent,
-MinusOutlineComponent,
-MoonOutlineComponent,
-MusicNoteOutlineComponent,
-NewspaperOutlineComponent,
-OfficeBuildingOutlineComponent,
-PaperAirplaneOutlineComponent,
-PaperClipOutlineComponent,
-PauseOutlineComponent,
-PencilAltOutlineComponent,
-PencilOutlineComponent,
-PhoneIncomingOutlineComponent,
-PhoneMissedCallOutlineComponent,
-PhoneOutgoingOutlineComponent,
-PhoneOutlineComponent,
-PhotographOutlineComponent,
-PlayOutlineComponent,
-PlusCircleOutlineComponent,
-PlusSmOutlineComponent,
-PlusOutlineComponent,
-PresentationChartBarOutlineComponent,
-PresentationChartLineOutlineComponent,
-PrinterOutlineComponent,
-PuzzleOutlineComponent,
-QrcodeOutlineComponent,
-QuestionMarkCircleOutlineComponent,
-ReceiptRefundOutlineComponent,
-ReceiptTaxOutlineComponent,
-RefreshOutlineComponent,
-ReplyOutlineComponent,
-RewindOutlineComponent,
-RssOutlineComponent,
-SaveAsOutlineComponent,
-SaveOutlineComponent,
-ScaleOutlineComponent,
-ScissorsOutlineComponent,
-SearchCircleOutlineComponent,
-SearchOutlineComponent,
-SelectorOutlineComponent,
-ServerOutlineComponent,
-ShareOutlineComponent,
-ShieldCheckOutlineComponent,
-ShieldExclamationOutlineComponent,
-ShoppingBagOutlineComponent,
-ShoppingCartOutlineComponent,
-SortAscendingOutlineComponent,
-SortDescendingOutlineComponent,
-SparklesOutlineComponent,
-SpeakerphoneOutlineComponent,
-StarOutlineComponent,
-StatusOfflineOutlineComponent,
-StatusOnlineOutlineComponent,
-StopOutlineComponent,
-SunOutlineComponent,
-SupportOutlineComponent,
-SwitchHorizontalOutlineComponent,
-SwitchVerticalOutlineComponent,
-TableOutlineComponent,
-TagOutlineComponent,
-TemplateOutlineComponent,
-TerminalOutlineComponent,
-ThumbDownOutlineComponent,
-ThumbUpOutlineComponent,
-TicketOutlineComponent,
-TranslateOutlineComponent,
-TrashOutlineComponent,
-TrendingDownOutlineComponent,
-TrendingUpOutlineComponent,
-TruckOutlineComponent,
-UploadOutlineComponent,
-UserAddOutlineComponent,
-UserCircleOutlineComponent,
-UserGroupOutlineComponent,
-UserRemoveOutlineComponent,
-UserOutlineComponent,
-UsersOutlineComponent,
-VariableOutlineComponent,
-VideoCameraOutlineComponent,
-ViewBoardsOutlineComponent,
-ViewGridAddOutlineComponent,
-ViewGridOutlineComponent,
-ViewListOutlineComponent,
-VolumeOffOutlineComponent,
-VolumeUpOutlineComponent,
-WifiOutlineComponent,
-XCircleOutlineComponent,
-XOutlineComponent,
-ZoomInOutlineComponent,
-ZoomOutOutlineComponent,
-AcademicCapSolidComponent,
-AdjustmentsSolidComponent,
-AnnotationSolidComponent,
-ArchiveSolidComponent,
-ArrowCircleDownSolidComponent,
-ArrowCircleLeftSolidComponent,
-ArrowCircleRightSolidComponent,
-ArrowCircleUpSolidComponent,
-ArrowDownSolidComponent,
-ArrowLeftSolidComponent,
-ArrowNarrowDownSolidComponent,
-ArrowNarrowLeftSolidComponent,
-ArrowNarrowRightSolidComponent,
-ArrowNarrowUpSolidComponent,
-ArrowRightSolidComponent,
-ArrowSmDownSolidComponent,
-ArrowSmLeftSolidComponent,
-ArrowSmRightSolidComponent,
-ArrowSmUpSolidComponent,
-ArrowUpSolidComponent,
-ArrowsExpandSolidComponent,
-AtSymbolSolidComponent,
-BackspaceSolidComponent,
-BadgeCheckSolidComponent,
-BanSolidComponent,
-BeakerSolidComponent,
-BellSolidComponent,
-BookOpenSolidComponent,
-BookmarkAltSolidComponent,
-BookmarkSolidComponent,
-BriefcaseSolidComponent,
-CakeSolidComponent,
-CalculatorSolidComponent,
-CalendarSolidComponent,
-CameraSolidComponent,
-CashSolidComponent,
-ChartBarSolidComponent,
-ChartPieSolidComponent,
-ChartSquareBarSolidComponent,
-ChatAlt2SolidComponent,
-ChatAltSolidComponent,
-ChatSolidComponent,
-CheckCircleSolidComponent,
-CheckSolidComponent,
-ChevronDoubleDownSolidComponent,
-ChevronDoubleLeftSolidComponent,
-ChevronDoubleRightSolidComponent,
-ChevronDoubleUpSolidComponent,
-ChevronDownSolidComponent,
-ChevronLeftSolidComponent,
-ChevronRightSolidComponent,
-ChevronUpSolidComponent,
-ChipSolidComponent,
-ClipboardCheckSolidComponent,
-ClipboardCopySolidComponent,
-ClipboardListSolidComponent,
-ClipboardSolidComponent,
-ClockSolidComponent,
-CloudDownloadSolidComponent,
-CloudUploadSolidComponent,
-CloudSolidComponent,
-CodeSolidComponent,
-CogSolidComponent,
-CollectionSolidComponent,
-ColorSwatchSolidComponent,
-CreditCardSolidComponent,
-CubeTransparentSolidComponent,
-CubeSolidComponent,
-CurrencyBangladeshiSolidComponent,
-CurrencyDollarSolidComponent,
-CurrencyEuroSolidComponent,
-CurrencyPoundSolidComponent,
-CurrencyRupeeSolidComponent,
-CurrencyYenSolidComponent,
-CursorClickSolidComponent,
-DatabaseSolidComponent,
-DesktopComputerSolidComponent,
-DeviceMobileSolidComponent,
-DeviceTabletSolidComponent,
-DocumentAddSolidComponent,
-DocumentDownloadSolidComponent,
-DocumentDuplicateSolidComponent,
-DocumentRemoveSolidComponent,
-DocumentReportSolidComponent,
-DocumentSearchSolidComponent,
-DocumentTextSolidComponent,
-DocumentSolidComponent,
-DotsCircleHorizontalSolidComponent,
-DotsHorizontalSolidComponent,
-DotsVerticalSolidComponent,
-DownloadSolidComponent,
-DuplicateSolidComponent,
-EmojiHappySolidComponent,
-EmojiSadSolidComponent,
-ExclamationCircleSolidComponent,
-ExclamationSolidComponent,
-ExternalLinkSolidComponent,
-EyeOffSolidComponent,
-EyeSolidComponent,
-FastForwardSolidComponent,
-FilmSolidComponent,
-FilterSolidComponent,
-FingerPrintSolidComponent,
-FireSolidComponent,
-FlagSolidComponent,
-FolderAddSolidComponent,
-FolderDownloadSolidComponent,
-FolderOpenSolidComponent,
-FolderRemoveSolidComponent,
-FolderSolidComponent,
-GiftSolidComponent,
-GlobeAltSolidComponent,
-GlobeSolidComponent,
-HandSolidComponent,
-HashtagSolidComponent,
-HeartSolidComponent,
-HomeSolidComponent,
-IdentificationSolidComponent,
-InboxInSolidComponent,
-InboxSolidComponent,
-InformationCircleSolidComponent,
-KeySolidComponent,
-LibrarySolidComponent,
-LightBulbSolidComponent,
-LightningBoltSolidComponent,
-LinkSolidComponent,
-LocationMarkerSolidComponent,
-LockClosedSolidComponent,
-LockOpenSolidComponent,
-LoginSolidComponent,
-LogoutSolidComponent,
-MailOpenSolidComponent,
-MailSolidComponent,
-MapSolidComponent,
-MenuAlt1SolidComponent,
-MenuAlt2SolidComponent,
-MenuAlt3SolidComponent,
-MenuAlt4SolidComponent,
-MenuSolidComponent,
-MicrophoneSolidComponent,
-MinusCircleSolidComponent,
-MinusSmSolidComponent,
-MinusSolidComponent,
-MoonSolidComponent,
-MusicNoteSolidComponent,
-NewspaperSolidComponent,
-OfficeBuildingSolidComponent,
-PaperAirplaneSolidComponent,
-PaperClipSolidComponent,
-PauseSolidComponent,
-PencilAltSolidComponent,
-PencilSolidComponent,
-PhoneIncomingSolidComponent,
-PhoneMissedCallSolidComponent,
-PhoneOutgoingSolidComponent,
-PhoneSolidComponent,
-PhotographSolidComponent,
-PlaySolidComponent,
-PlusCircleSolidComponent,
-PlusSmSolidComponent,
-PlusSolidComponent,
-PresentationChartBarSolidComponent,
-PresentationChartLineSolidComponent,
-PrinterSolidComponent,
-PuzzleSolidComponent,
-QrcodeSolidComponent,
-QuestionMarkCircleSolidComponent,
-ReceiptRefundSolidComponent,
-ReceiptTaxSolidComponent,
-RefreshSolidComponent,
-ReplySolidComponent,
-RewindSolidComponent,
-RssSolidComponent,
-SaveAsSolidComponent,
-SaveSolidComponent,
-ScaleSolidComponent,
-ScissorsSolidComponent,
-SearchCircleSolidComponent,
-SearchSolidComponent,
-SelectorSolidComponent,
-ServerSolidComponent,
-ShareSolidComponent,
-ShieldCheckSolidComponent,
-ShieldExclamationSolidComponent,
-ShoppingBagSolidComponent,
-ShoppingCartSolidComponent,
-SortAscendingSolidComponent,
-SortDescendingSolidComponent,
-SparklesSolidComponent,
-SpeakerphoneSolidComponent,
-StarSolidComponent,
-StatusOfflineSolidComponent,
-StatusOnlineSolidComponent,
-StopSolidComponent,
-SunSolidComponent,
-SupportSolidComponent,
-SwitchHorizontalSolidComponent,
-SwitchVerticalSolidComponent,
-TableSolidComponent,
-TagSolidComponent,
-TemplateSolidComponent,
-TerminalSolidComponent,
-ThumbDownSolidComponent,
-ThumbUpSolidComponent,
-TicketSolidComponent,
-TranslateSolidComponent,
-TrashSolidComponent,
-TrendingDownSolidComponent,
-TrendingUpSolidComponent,
-TruckSolidComponent,
-UploadSolidComponent,
-UserAddSolidComponent,
-UserCircleSolidComponent,
-UserGroupSolidComponent,
-UserRemoveSolidComponent,
-UserSolidComponent,
-UsersSolidComponent,
-VariableSolidComponent,
-VideoCameraSolidComponent,
-ViewBoardsSolidComponent,
-ViewGridAddSolidComponent,
-ViewGridSolidComponent,
-ViewListSolidComponent,
-VolumeOffSolidComponent,
-VolumeUpSolidComponent,
-WifiSolidComponent,
-XCircleSolidComponent,
-XSolidComponent,
-ZoomInSolidComponent,
-ZoomOutSolidComponent,
+  AcademicCapOutlineIconComponent,
+AdjustmentsOutlineIconComponent,
+AnnotationOutlineIconComponent,
+ArchiveOutlineIconComponent,
+ArrowCircleDownOutlineIconComponent,
+ArrowCircleLeftOutlineIconComponent,
+ArrowCircleRightOutlineIconComponent,
+ArrowCircleUpOutlineIconComponent,
+ArrowDownOutlineIconComponent,
+ArrowLeftOutlineIconComponent,
+ArrowNarrowDownOutlineIconComponent,
+ArrowNarrowLeftOutlineIconComponent,
+ArrowNarrowRightOutlineIconComponent,
+ArrowNarrowUpOutlineIconComponent,
+ArrowRightOutlineIconComponent,
+ArrowSmDownOutlineIconComponent,
+ArrowSmLeftOutlineIconComponent,
+ArrowSmRightOutlineIconComponent,
+ArrowSmUpOutlineIconComponent,
+ArrowUpOutlineIconComponent,
+ArrowsExpandOutlineIconComponent,
+AtSymbolOutlineIconComponent,
+BackspaceOutlineIconComponent,
+BadgeCheckOutlineIconComponent,
+BanOutlineIconComponent,
+BeakerOutlineIconComponent,
+BellOutlineIconComponent,
+BookOpenOutlineIconComponent,
+BookmarkAltOutlineIconComponent,
+BookmarkOutlineIconComponent,
+BriefcaseOutlineIconComponent,
+CakeOutlineIconComponent,
+CalculatorOutlineIconComponent,
+CalendarOutlineIconComponent,
+CameraOutlineIconComponent,
+CashOutlineIconComponent,
+ChartBarOutlineIconComponent,
+ChartPieOutlineIconComponent,
+ChartSquareBarOutlineIconComponent,
+ChatAlt2OutlineIconComponent,
+ChatAltOutlineIconComponent,
+ChatOutlineIconComponent,
+CheckCircleOutlineIconComponent,
+CheckOutlineIconComponent,
+ChevronDoubleDownOutlineIconComponent,
+ChevronDoubleLeftOutlineIconComponent,
+ChevronDoubleRightOutlineIconComponent,
+ChevronDoubleUpOutlineIconComponent,
+ChevronDownOutlineIconComponent,
+ChevronLeftOutlineIconComponent,
+ChevronRightOutlineIconComponent,
+ChevronUpOutlineIconComponent,
+ChipOutlineIconComponent,
+ClipboardCheckOutlineIconComponent,
+ClipboardCopyOutlineIconComponent,
+ClipboardListOutlineIconComponent,
+ClipboardOutlineIconComponent,
+ClockOutlineIconComponent,
+CloudDownloadOutlineIconComponent,
+CloudUploadOutlineIconComponent,
+CloudOutlineIconComponent,
+CodeOutlineIconComponent,
+CogOutlineIconComponent,
+CollectionOutlineIconComponent,
+ColorSwatchOutlineIconComponent,
+CreditCardOutlineIconComponent,
+CubeTransparentOutlineIconComponent,
+CubeOutlineIconComponent,
+CurrencyBangladeshiOutlineIconComponent,
+CurrencyDollarOutlineIconComponent,
+CurrencyEuroOutlineIconComponent,
+CurrencyPoundOutlineIconComponent,
+CurrencyRupeeOutlineIconComponent,
+CurrencyYenOutlineIconComponent,
+CursorClickOutlineIconComponent,
+DatabaseOutlineIconComponent,
+DesktopComputerOutlineIconComponent,
+DeviceMobileOutlineIconComponent,
+DeviceTabletOutlineIconComponent,
+DocumentAddOutlineIconComponent,
+DocumentDownloadOutlineIconComponent,
+DocumentDuplicateOutlineIconComponent,
+DocumentRemoveOutlineIconComponent,
+DocumentReportOutlineIconComponent,
+DocumentSearchOutlineIconComponent,
+DocumentTextOutlineIconComponent,
+DocumentOutlineIconComponent,
+DotsCircleHorizontalOutlineIconComponent,
+DotsHorizontalOutlineIconComponent,
+DotsVerticalOutlineIconComponent,
+DownloadOutlineIconComponent,
+DuplicateOutlineIconComponent,
+EmojiHappyOutlineIconComponent,
+EmojiSadOutlineIconComponent,
+ExclamationCircleOutlineIconComponent,
+ExclamationOutlineIconComponent,
+ExternalLinkOutlineIconComponent,
+EyeOffOutlineIconComponent,
+EyeOutlineIconComponent,
+FastForwardOutlineIconComponent,
+FilmOutlineIconComponent,
+FilterOutlineIconComponent,
+FingerPrintOutlineIconComponent,
+FireOutlineIconComponent,
+FlagOutlineIconComponent,
+FolderAddOutlineIconComponent,
+FolderDownloadOutlineIconComponent,
+FolderOpenOutlineIconComponent,
+FolderRemoveOutlineIconComponent,
+FolderOutlineIconComponent,
+GiftOutlineIconComponent,
+GlobeAltOutlineIconComponent,
+GlobeOutlineIconComponent,
+HandOutlineIconComponent,
+HashtagOutlineIconComponent,
+HeartOutlineIconComponent,
+HomeOutlineIconComponent,
+IdentificationOutlineIconComponent,
+InboxInOutlineIconComponent,
+InboxOutlineIconComponent,
+InformationCircleOutlineIconComponent,
+KeyOutlineIconComponent,
+LibraryOutlineIconComponent,
+LightBulbOutlineIconComponent,
+LightningBoltOutlineIconComponent,
+LinkOutlineIconComponent,
+LocationMarkerOutlineIconComponent,
+LockClosedOutlineIconComponent,
+LockOpenOutlineIconComponent,
+LoginOutlineIconComponent,
+LogoutOutlineIconComponent,
+MailOpenOutlineIconComponent,
+MailOutlineIconComponent,
+MapOutlineIconComponent,
+MenuAlt1OutlineIconComponent,
+MenuAlt2OutlineIconComponent,
+MenuAlt3OutlineIconComponent,
+MenuAlt4OutlineIconComponent,
+MenuOutlineIconComponent,
+MicrophoneOutlineIconComponent,
+MinusCircleOutlineIconComponent,
+MinusSmOutlineIconComponent,
+MinusOutlineIconComponent,
+MoonOutlineIconComponent,
+MusicNoteOutlineIconComponent,
+NewspaperOutlineIconComponent,
+OfficeBuildingOutlineIconComponent,
+PaperAirplaneOutlineIconComponent,
+PaperClipOutlineIconComponent,
+PauseOutlineIconComponent,
+PencilAltOutlineIconComponent,
+PencilOutlineIconComponent,
+PhoneIncomingOutlineIconComponent,
+PhoneMissedCallOutlineIconComponent,
+PhoneOutgoingOutlineIconComponent,
+PhoneOutlineIconComponent,
+PhotographOutlineIconComponent,
+PlayOutlineIconComponent,
+PlusCircleOutlineIconComponent,
+PlusSmOutlineIconComponent,
+PlusOutlineIconComponent,
+PresentationChartBarOutlineIconComponent,
+PresentationChartLineOutlineIconComponent,
+PrinterOutlineIconComponent,
+PuzzleOutlineIconComponent,
+QrcodeOutlineIconComponent,
+QuestionMarkCircleOutlineIconComponent,
+ReceiptRefundOutlineIconComponent,
+ReceiptTaxOutlineIconComponent,
+RefreshOutlineIconComponent,
+ReplyOutlineIconComponent,
+RewindOutlineIconComponent,
+RssOutlineIconComponent,
+SaveAsOutlineIconComponent,
+SaveOutlineIconComponent,
+ScaleOutlineIconComponent,
+ScissorsOutlineIconComponent,
+SearchCircleOutlineIconComponent,
+SearchOutlineIconComponent,
+SelectorOutlineIconComponent,
+ServerOutlineIconComponent,
+ShareOutlineIconComponent,
+ShieldCheckOutlineIconComponent,
+ShieldExclamationOutlineIconComponent,
+ShoppingBagOutlineIconComponent,
+ShoppingCartOutlineIconComponent,
+SortAscendingOutlineIconComponent,
+SortDescendingOutlineIconComponent,
+SparklesOutlineIconComponent,
+SpeakerphoneOutlineIconComponent,
+StarOutlineIconComponent,
+StatusOfflineOutlineIconComponent,
+StatusOnlineOutlineIconComponent,
+StopOutlineIconComponent,
+SunOutlineIconComponent,
+SupportOutlineIconComponent,
+SwitchHorizontalOutlineIconComponent,
+SwitchVerticalOutlineIconComponent,
+TableOutlineIconComponent,
+TagOutlineIconComponent,
+TemplateOutlineIconComponent,
+TerminalOutlineIconComponent,
+ThumbDownOutlineIconComponent,
+ThumbUpOutlineIconComponent,
+TicketOutlineIconComponent,
+TranslateOutlineIconComponent,
+TrashOutlineIconComponent,
+TrendingDownOutlineIconComponent,
+TrendingUpOutlineIconComponent,
+TruckOutlineIconComponent,
+UploadOutlineIconComponent,
+UserAddOutlineIconComponent,
+UserCircleOutlineIconComponent,
+UserGroupOutlineIconComponent,
+UserRemoveOutlineIconComponent,
+UserOutlineIconComponent,
+UsersOutlineIconComponent,
+VariableOutlineIconComponent,
+VideoCameraOutlineIconComponent,
+ViewBoardsOutlineIconComponent,
+ViewGridAddOutlineIconComponent,
+ViewGridOutlineIconComponent,
+ViewListOutlineIconComponent,
+VolumeOffOutlineIconComponent,
+VolumeUpOutlineIconComponent,
+WifiOutlineIconComponent,
+XCircleOutlineIconComponent,
+XOutlineIconComponent,
+ZoomInOutlineIconComponent,
+ZoomOutOutlineIconComponent,
+AcademicCapSolidIconComponent,
+AdjustmentsSolidIconComponent,
+AnnotationSolidIconComponent,
+ArchiveSolidIconComponent,
+ArrowCircleDownSolidIconComponent,
+ArrowCircleLeftSolidIconComponent,
+ArrowCircleRightSolidIconComponent,
+ArrowCircleUpSolidIconComponent,
+ArrowDownSolidIconComponent,
+ArrowLeftSolidIconComponent,
+ArrowNarrowDownSolidIconComponent,
+ArrowNarrowLeftSolidIconComponent,
+ArrowNarrowRightSolidIconComponent,
+ArrowNarrowUpSolidIconComponent,
+ArrowRightSolidIconComponent,
+ArrowSmDownSolidIconComponent,
+ArrowSmLeftSolidIconComponent,
+ArrowSmRightSolidIconComponent,
+ArrowSmUpSolidIconComponent,
+ArrowUpSolidIconComponent,
+ArrowsExpandSolidIconComponent,
+AtSymbolSolidIconComponent,
+BackspaceSolidIconComponent,
+BadgeCheckSolidIconComponent,
+BanSolidIconComponent,
+BeakerSolidIconComponent,
+BellSolidIconComponent,
+BookOpenSolidIconComponent,
+BookmarkAltSolidIconComponent,
+BookmarkSolidIconComponent,
+BriefcaseSolidIconComponent,
+CakeSolidIconComponent,
+CalculatorSolidIconComponent,
+CalendarSolidIconComponent,
+CameraSolidIconComponent,
+CashSolidIconComponent,
+ChartBarSolidIconComponent,
+ChartPieSolidIconComponent,
+ChartSquareBarSolidIconComponent,
+ChatAlt2SolidIconComponent,
+ChatAltSolidIconComponent,
+ChatSolidIconComponent,
+CheckCircleSolidIconComponent,
+CheckSolidIconComponent,
+ChevronDoubleDownSolidIconComponent,
+ChevronDoubleLeftSolidIconComponent,
+ChevronDoubleRightSolidIconComponent,
+ChevronDoubleUpSolidIconComponent,
+ChevronDownSolidIconComponent,
+ChevronLeftSolidIconComponent,
+ChevronRightSolidIconComponent,
+ChevronUpSolidIconComponent,
+ChipSolidIconComponent,
+ClipboardCheckSolidIconComponent,
+ClipboardCopySolidIconComponent,
+ClipboardListSolidIconComponent,
+ClipboardSolidIconComponent,
+ClockSolidIconComponent,
+CloudDownloadSolidIconComponent,
+CloudUploadSolidIconComponent,
+CloudSolidIconComponent,
+CodeSolidIconComponent,
+CogSolidIconComponent,
+CollectionSolidIconComponent,
+ColorSwatchSolidIconComponent,
+CreditCardSolidIconComponent,
+CubeTransparentSolidIconComponent,
+CubeSolidIconComponent,
+CurrencyBangladeshiSolidIconComponent,
+CurrencyDollarSolidIconComponent,
+CurrencyEuroSolidIconComponent,
+CurrencyPoundSolidIconComponent,
+CurrencyRupeeSolidIconComponent,
+CurrencyYenSolidIconComponent,
+CursorClickSolidIconComponent,
+DatabaseSolidIconComponent,
+DesktopComputerSolidIconComponent,
+DeviceMobileSolidIconComponent,
+DeviceTabletSolidIconComponent,
+DocumentAddSolidIconComponent,
+DocumentDownloadSolidIconComponent,
+DocumentDuplicateSolidIconComponent,
+DocumentRemoveSolidIconComponent,
+DocumentReportSolidIconComponent,
+DocumentSearchSolidIconComponent,
+DocumentTextSolidIconComponent,
+DocumentSolidIconComponent,
+DotsCircleHorizontalSolidIconComponent,
+DotsHorizontalSolidIconComponent,
+DotsVerticalSolidIconComponent,
+DownloadSolidIconComponent,
+DuplicateSolidIconComponent,
+EmojiHappySolidIconComponent,
+EmojiSadSolidIconComponent,
+ExclamationCircleSolidIconComponent,
+ExclamationSolidIconComponent,
+ExternalLinkSolidIconComponent,
+EyeOffSolidIconComponent,
+EyeSolidIconComponent,
+FastForwardSolidIconComponent,
+FilmSolidIconComponent,
+FilterSolidIconComponent,
+FingerPrintSolidIconComponent,
+FireSolidIconComponent,
+FlagSolidIconComponent,
+FolderAddSolidIconComponent,
+FolderDownloadSolidIconComponent,
+FolderOpenSolidIconComponent,
+FolderRemoveSolidIconComponent,
+FolderSolidIconComponent,
+GiftSolidIconComponent,
+GlobeAltSolidIconComponent,
+GlobeSolidIconComponent,
+HandSolidIconComponent,
+HashtagSolidIconComponent,
+HeartSolidIconComponent,
+HomeSolidIconComponent,
+IdentificationSolidIconComponent,
+InboxInSolidIconComponent,
+InboxSolidIconComponent,
+InformationCircleSolidIconComponent,
+KeySolidIconComponent,
+LibrarySolidIconComponent,
+LightBulbSolidIconComponent,
+LightningBoltSolidIconComponent,
+LinkSolidIconComponent,
+LocationMarkerSolidIconComponent,
+LockClosedSolidIconComponent,
+LockOpenSolidIconComponent,
+LoginSolidIconComponent,
+LogoutSolidIconComponent,
+MailOpenSolidIconComponent,
+MailSolidIconComponent,
+MapSolidIconComponent,
+MenuAlt1SolidIconComponent,
+MenuAlt2SolidIconComponent,
+MenuAlt3SolidIconComponent,
+MenuAlt4SolidIconComponent,
+MenuSolidIconComponent,
+MicrophoneSolidIconComponent,
+MinusCircleSolidIconComponent,
+MinusSmSolidIconComponent,
+MinusSolidIconComponent,
+MoonSolidIconComponent,
+MusicNoteSolidIconComponent,
+NewspaperSolidIconComponent,
+OfficeBuildingSolidIconComponent,
+PaperAirplaneSolidIconComponent,
+PaperClipSolidIconComponent,
+PauseSolidIconComponent,
+PencilAltSolidIconComponent,
+PencilSolidIconComponent,
+PhoneIncomingSolidIconComponent,
+PhoneMissedCallSolidIconComponent,
+PhoneOutgoingSolidIconComponent,
+PhoneSolidIconComponent,
+PhotographSolidIconComponent,
+PlaySolidIconComponent,
+PlusCircleSolidIconComponent,
+PlusSmSolidIconComponent,
+PlusSolidIconComponent,
+PresentationChartBarSolidIconComponent,
+PresentationChartLineSolidIconComponent,
+PrinterSolidIconComponent,
+PuzzleSolidIconComponent,
+QrcodeSolidIconComponent,
+QuestionMarkCircleSolidIconComponent,
+ReceiptRefundSolidIconComponent,
+ReceiptTaxSolidIconComponent,
+RefreshSolidIconComponent,
+ReplySolidIconComponent,
+RewindSolidIconComponent,
+RssSolidIconComponent,
+SaveAsSolidIconComponent,
+SaveSolidIconComponent,
+ScaleSolidIconComponent,
+ScissorsSolidIconComponent,
+SearchCircleSolidIconComponent,
+SearchSolidIconComponent,
+SelectorSolidIconComponent,
+ServerSolidIconComponent,
+ShareSolidIconComponent,
+ShieldCheckSolidIconComponent,
+ShieldExclamationSolidIconComponent,
+ShoppingBagSolidIconComponent,
+ShoppingCartSolidIconComponent,
+SortAscendingSolidIconComponent,
+SortDescendingSolidIconComponent,
+SparklesSolidIconComponent,
+SpeakerphoneSolidIconComponent,
+StarSolidIconComponent,
+StatusOfflineSolidIconComponent,
+StatusOnlineSolidIconComponent,
+StopSolidIconComponent,
+SunSolidIconComponent,
+SupportSolidIconComponent,
+SwitchHorizontalSolidIconComponent,
+SwitchVerticalSolidIconComponent,
+TableSolidIconComponent,
+TagSolidIconComponent,
+TemplateSolidIconComponent,
+TerminalSolidIconComponent,
+ThumbDownSolidIconComponent,
+ThumbUpSolidIconComponent,
+TicketSolidIconComponent,
+TranslateSolidIconComponent,
+TrashSolidIconComponent,
+TrendingDownSolidIconComponent,
+TrendingUpSolidIconComponent,
+TruckSolidIconComponent,
+UploadSolidIconComponent,
+UserAddSolidIconComponent,
+UserCircleSolidIconComponent,
+UserGroupSolidIconComponent,
+UserRemoveSolidIconComponent,
+UserSolidIconComponent,
+UsersSolidIconComponent,
+VariableSolidIconComponent,
+VideoCameraSolidIconComponent,
+ViewBoardsSolidIconComponent,
+ViewGridAddSolidIconComponent,
+ViewGridSolidIconComponent,
+ViewListSolidIconComponent,
+VolumeOffSolidIconComponent,
+VolumeUpSolidIconComponent,
+WifiSolidIconComponent,
+XCircleSolidIconComponent,
+XSolidIconComponent,
+ZoomInSolidIconComponent,
+ZoomOutSolidIconComponent
 ];
 
 @NgModule({
