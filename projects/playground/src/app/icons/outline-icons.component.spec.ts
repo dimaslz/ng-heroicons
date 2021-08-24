@@ -13,7 +13,7 @@ import {OutlineIconsComponent} from './outline-icons.component';
 
 const ICONS_ARRAY = Object.entries(OUTLINE_ICONS);
 
-describe('Solid icons', () => {
+describe('Outline icons', () => {
 	let fixture: any;
   let container: any;
   beforeEach(async () => {
