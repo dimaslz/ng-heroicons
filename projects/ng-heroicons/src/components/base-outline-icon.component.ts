@@ -17,6 +17,7 @@ export class BaseOutlineIconComponent implements OnInit, OnChanges {
   @Input() stroke: number|string = 1;
   @Input() color: string = "";
   @Input() class: string = "";
+  @Input() svgClass: string = "";
 
   constructor() { }
 

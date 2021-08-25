@@ -15,6 +15,7 @@ export class BaseSolidIconComponent implements OnInit, OnChanges {
   @Input() size: number = 24;
   @Input() color: string = "";
   @Input() class: string = "";
+  @Input() svgClass: string = "";
 
   constructor() { }
 
