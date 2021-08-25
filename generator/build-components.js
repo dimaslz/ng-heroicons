@@ -34,8 +34,8 @@ function cloneHeroicons() {
   } else {
     rimraf.sync(heroiconsPath);
     shell.exec(`git clone ${heroiconsGitRepo} ${originalHeroiconsPath}`);
-    shell.exec(`mv ${heroiconsPath}/src/outline ${heroiconsPath}/`);
-    shell.exec(`mv ${heroiconsPath}/src/solid ${heroiconsPath}/`);
+    shell.exec(`mv ${heroiconsPath}/optimized/outline ${heroiconsPath}/`);
+    shell.exec(`mv ${heroiconsPath}/optimized/solid ${heroiconsPath}/`);
     const heroiconsFolder = require('fs').readdirSync(heroiconsPath);
     heroiconsFolder.filter(folder => !['outline', 'solid'].includes(folder)).forEach(folder => {
       rimraf.sync(path.resolve(`${heroiconsPath}/${folder}`));
@@ -51,16 +51,16 @@ async function SVGToAngular({
   className,
   type,
 }) {
-  const componentTpl = await fs.readFile(`${here}/${type}-component.tpl.txt`, 'utf8');
+  let componentTpl = await fs.readFile(`${here}/${type}-component.tpl.txt`, 'utf8');
 
-  return componentTpl
+  componentTpl = componentTpl
     .replace('{{template}}', dedent(template))
     .replace('{{className}}', className)
-    .replace(/stroke-width="\d+"/g, '')
-    .replace(/stroke="#.*?"/g, 'stroke="currentColor"')
-    .replace(/fill="#.*?"/g, 'fill="currentColor"')
-    .replace(/width="\d+" height="\d+"/, '[style]="style"')
+    .replace(/stroke-width="\d+"/g, 'stroke-width="1"')
+    .replace(/<svg/, '<svg [style]="style"')
     .replace('{{selector}}', selector);
+
+  return componentTpl;
 }
 
 function jsUcfirst(string) {
