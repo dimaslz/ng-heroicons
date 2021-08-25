@@ -1,3 +1,10 @@
+### [0.1.1](https://github.com/dimaslz/ng-heroicons/compare/0.1.0...0.1.1) (2021-08-25)
+
+
+### Bug Fixes
+
+* **icon:** fix issue [#23](https://github.com/dimaslz/ng-heroicons/issues/23) about class duplication ([76da1ef](https://github.com/dimaslz/ng-heroicons/commit/76da1ef2d07b4d767ad871cb997b56130c826c44))
+
 ## [0.1.0](https://github.com/dimaslz/ng-heroicons/compare/0.0.5...0.1.0) (2021-08-21)
 
 
