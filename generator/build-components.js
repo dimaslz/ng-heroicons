@@ -191,10 +191,11 @@ async function writeFileIcons(angularComponents) {
 }
 
 async function generateModule(angularComponents) {
-  let moduleComponents = [];
-  let moduleImports = [];
 
   for (const typeIndex in TYPES) {
+    let moduleComponents = [];
+    let moduleImports = [];
+
     const type = TYPES[typeIndex];
     const content = await writeFiles({
       files: angularComponents
@@ -214,23 +215,29 @@ async function generateModule(angularComponents) {
     });
 
     moduleComponents = moduleComponents.concat(
-      content.map((c) => (c.className))
+      content
+        .filter((c) => c.type === type)
+        .map((c) => (c.className))
     );
     moduleImports = moduleImports.concat(
-      content.map((c) => (
-        `import { ${c.className} } from './heroicons/${type}/${c.filename.replace('.ts', '')}';`
+      content
+        .filter((c) => c.type === type)
+        .map((c) => (
+        `import { ${c.className} } from './${c.filename.replace('.ts', '')}';`
       ))
     );
+
+    await fs.readFile(`${here}/icon-type.module.tpl.txt`, 'utf8')
+      .then(file => {
+        return file
+          .replace('{{componentsImports}}', moduleImports.join('\n'))
+          .replace(/\{\{components\}\}/g, moduleComponents.join(',\n  '))
+          .replace(/\{\{type\}\}/g, jsUcfirst(type));
+      }).then(content => {
+        return fs.writeFile(`${projectsPath}/ng-heroicons/src/lib/heroicons/${type}/module.ts`, content);
+      });
   }
 
-  await fs.readFile(`${here}/ng-heroicons.module.tpl.txt`, 'utf8')
-    .then(file => {
-      return file
-        .replace('{{componentsImports}}', moduleImports.join('\n'))
-        .replace(/\{\{components\}\}/g, moduleComponents.join(',\n'));
-    }).then(content => {
-      return fs.writeFile(`${projectsPath}/ng-heroicons/src/lib/ng-heroicons.module.ts`, content);
-    });
 }
 
 async function run() {
@@ -248,10 +255,13 @@ async function run() {
   const angularComponents = await getAngularComponent(contentsIcon);
 
   await writeFileIcons(angularComponents);
+  console.log("creating components...")
 
   await generateModule(angularComponents);
+  console.log("creating outline and solid icons modules...")
 
   rimraf.sync(originalHeroiconsPath);
+  console.log("delete original heroicons files")
 
   return;
 }

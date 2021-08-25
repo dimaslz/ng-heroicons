@@ -18,4 +18,4 @@ const COMPONENTS = [
     ...COMPONENTS,
   ]
 })
-export class NgHeroiconsModule { }
+export class {{type}}IconsModule { }
