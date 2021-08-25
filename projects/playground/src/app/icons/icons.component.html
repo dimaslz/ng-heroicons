@@ -105,8 +105,8 @@
   <div class="flex items-center justify-center pb-4">
     <button
       *ngFor="let c of colors"
-      [ngClass]="[getColor(c), 'mx-2', addRing(c)]"
-      class="w-12 h-12 rounded-full text-xs"
+      [ngClass]="[getColor(c), (classColor.includes(c) ? 'font-bold' : '')]"
+      class="w-12 h-12 rounded-full text-xs ring-gray-100 ring-2 mx-2"
       (click)="onClickColor(c)"
     >{{ c }}</button>
   </div>

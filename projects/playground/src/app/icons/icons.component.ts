@@ -218,8 +218,4 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
   getColor(color: string): string {
     return color === 'white' ? 'bg-white text-gray-900' : `bg-${color}-400 text-${color}-900`;
   }
-
-  addRing(color: string): string {
-    return this.classColor.includes(color) ? 'ring' : '';
-  }
 }
