@@ -56,7 +56,7 @@ async function SVGToAngular({
   componentTpl = componentTpl
     .replace('{{template}}', dedent(template))
     .replace('{{className}}', className)
-    .replace(/<svg/, '<svg [style]="style" [attr.class]="svgClass"')
+    .replace(/<svg/, '<svg [attr.style]="style" [attr.class]="svgClass"')
     .replace('{{selector}}', selector);
 
   if (type === 'outline') {

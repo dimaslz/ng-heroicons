@@ -11,11 +11,13 @@ import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStra
   }`]
 })
 export class BaseSolidIconComponent implements OnInit, OnChanges {
-  @Input() style: string = "";
   @Input() size: number = 24;
   @Input() color: string = "";
   @Input() class: string = "";
   @Input() svgClass: string = "";
+  @Input() svgStyle: string = "";
+
+  public style: string = "";
 
   constructor() { }
 
@@ -42,6 +44,6 @@ export class BaseSolidIconComponent implements OnInit, OnChanges {
       style.push(`color: ${this.color};`);
     }
 
-    this.style = this.style + style.join(' ');
+    this.style = this.svgStyle + style.join(' ');
   }
 }
