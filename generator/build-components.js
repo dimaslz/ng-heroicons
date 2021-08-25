@@ -59,7 +59,7 @@ async function SVGToAngular({
     .replace(/stroke-width="\d+"/g, '')
     .replace(/stroke="#.*?"/g, 'stroke="currentColor"')
     .replace(/fill="#.*?"/g, 'fill="currentColor"')
-    .replace(/width="\d+" height="\d+"/, '[style]="style" [ngClass]="class"')
+    .replace(/width="\d+" height="\d+"/, '[style]="style"')
     .replace('{{selector}}', selector);
 }
 
@@ -72,7 +72,7 @@ async function setIconsInPlayground({ icons, type, iconTpl }) {
     return iconTpl
       .replace(
         '{{componentIcon}}',
-        `<${icon.selector} [size]="size" [color]="color" [class]="class" ${type === 'outline' ? '[stroke]="stroke"' : ""}></${icon.selector}>`
+        `<${icon.selector} [size]="size" [color]="color" [ngClass]="class" ${type === 'outline' ? '[stroke]="stroke"' : ""}></${icon.selector}>`
       ).replace(
         '{{iconName}}',
         icon.selector.replace(new RegExp(`${type}[^$]+$`), ' ').replace(/-/g, ' ').trim()

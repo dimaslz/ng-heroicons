@@ -28,7 +28,7 @@ describe('Outline icons', () => {
         expect(height).toBe('99px');
       });
 
-      test('color parameter should work', async () => {
+      it('color parameter should work', async () => {
         const { fixture } = await render(iconComponent);
 
         fixture.componentInstance.color = 'red';
@@ -40,7 +40,7 @@ describe('Outline icons', () => {
         ).toBe('red');
       });
 
-      test('stroke parameter should work', async () => {
+      it('stroke parameter should work', async () => {
         const { fixture } = await render(iconComponent);
 
         fixture.componentInstance.stroke = 99;

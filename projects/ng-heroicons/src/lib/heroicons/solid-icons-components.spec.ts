@@ -10,7 +10,7 @@ describe('Solid icons', () => {
   describe.each(Object.entries(SOLID_ICONS))(
     'component: %s',
     (name, iconComponent) => {
-      test('should work', async () => {
+      it('should work', async () => {
         const { fixture } = await render(iconComponent);
         expect(fixture.componentInstance).toBeTruthy();
       });
@@ -28,7 +28,7 @@ describe('Solid icons', () => {
         expect(height).toBe('99px');
       });
 
-      test('color parameter should work', async () => {
+      it('color parameter should work', async () => {
         const { fixture } = await render(iconComponent);
 
         fixture.componentInstance.color = 'red';

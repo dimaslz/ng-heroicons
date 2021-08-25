@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/unbound-method, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call */
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import throttle from 'lodash.throttle';
 import { Subscription } from 'rxjs';
@@ -11,7 +11,7 @@ import copyToClipboard from '../../utils/copy-to-clipboard.utils';
   templateUrl: './icons.component.html',
   styleUrls: ['./icons.component.scss'],
 })
-export class IconsComponent implements OnInit, OnDestroy {
+export class IconsComponent implements OnInit, OnDestroy, OnChanges {
   @Input() color = 'white';
 
   query = '';
@@ -54,6 +54,15 @@ export class IconsComponent implements OnInit, OnDestroy {
     this.formSubscription$ = this.form
       .get('search')
       ?.valueChanges.subscribe(this.onChangeSearch);
+  }
+
+  ngOnChanges({ color }: SimpleChanges) {
+    if (!color) return;
+
+    const { currentValue, firstChange } = color;
+    if (!firstChange) {
+      this.applyColor(currentValue);
+    }
   }
 
   ngOnDestroy(): void {
@@ -199,6 +208,10 @@ export class IconsComponent implements OnInit, OnDestroy {
   }
 
   onClickColor(color: string): void {
+    this.applyColor(color);
+  }
+
+  applyColor(color: string): void {
     this.classColor = color === 'white' ? 'text-white' : `text-${color}-400`;
   }
 

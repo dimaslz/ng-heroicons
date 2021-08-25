@@ -16,9 +16,7 @@ const ICONS_ARRAY = Object.entries(OUTLINE_ICONS);
 describe('Outline icons', () => {
 	let fixture: any;
   let container: any;
-  beforeEach(async () => {
-    jest.useFakeTimers();
-
+  beforeAll(async () => {
     const component = await render(OutlineIconsComponent, {
       imports: [
         CommonModule,

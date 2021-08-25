@@ -16,9 +16,7 @@ const ICONS_ARRAY = Object.entries(SOLID_ICONS);
 describe('Solid icons', () => {
 	let fixture: any;
   let container: any;
-  beforeEach(async () => {
-    jest.useFakeTimers();
-
+  beforeAll(async () => {
     const component = await render(SolidIconsComponent, {
       imports: [
         CommonModule,
