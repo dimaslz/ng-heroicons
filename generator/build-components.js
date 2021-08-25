@@ -56,9 +56,12 @@ async function SVGToAngular({
   componentTpl = componentTpl
     .replace('{{template}}', dedent(template))
     .replace('{{className}}', className)
-    .replace(/stroke-width="\d+"/g, 'stroke-width="1"')
-    .replace(/<svg/, '<svg [style]="style"')
+    .replace(/<svg/, '<svg [style]="style" [attr.class]="svgClass"')
     .replace('{{selector}}', selector);
+
+  if (type === 'outline') {
+    componentTpl = componentTpl.replace(/stroke-width="\d+"/g, '[attr.stroke-width]="stroke"')
+  }
 
   return componentTpl;
 }
