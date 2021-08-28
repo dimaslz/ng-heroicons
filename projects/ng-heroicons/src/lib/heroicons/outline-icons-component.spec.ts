@@ -15,6 +15,17 @@ describe('Outline icons', () => {
         expect(fixture.componentInstance).toBeTruthy();
       });
 
+      it('default style', async () => {
+        const { fixture } = await render(iconComponent);
+        fixture.detectChanges();
+
+        const { width, height, strokeWidth } = fixture.nativeElement.querySelector('svg').style;
+
+        expect(width).toBe('24px');
+        expect(height).toBe('24px');
+        expect(strokeWidth).toBe('1px');
+      });
+
       it('size parameter should work', async () => {
         const { fixture } = await render(iconComponent);
 
@@ -50,6 +61,30 @@ describe('Outline icons', () => {
         expect(
           fixture.nativeElement.querySelector('svg').style.strokeWidth
         ).toBe('99px');
+      });
+
+      it('svgClass parameter should work', async () => {
+        const { fixture } = await render(iconComponent);
+
+        fixture.componentInstance.svgClass = "my-class";
+        fixture.componentInstance.renderStyle();
+        fixture.detectChanges();
+
+        expect(
+          fixture.nativeElement.querySelector('svg.my-class')
+        ).toBeTruthy();
+      });
+
+      it('svgStyle parameter should work', async () => {
+        const { fixture } = await render(iconComponent);
+
+        fixture.componentInstance.svgStyle = "color: red;";
+        fixture.componentInstance.renderStyle();
+        fixture.detectChanges();
+
+        expect(
+          fixture.nativeElement.querySelector('svg').style.color
+        ).toBe('red');
       });
     }
   );
