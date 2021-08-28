@@ -1,3 +1,12 @@
+### [0.1.2](https://github.com/dimaslz/ng-heroicons/compare/0.1.1...0.1.2) (2021-08-28)
+
+
+### Bug Fixes
+
+* **lib:** allow svgClass and stroke setup ([#34](https://github.com/dimaslz/ng-heroicons/issues/34)) ([00c695c](https://github.com/dimaslz/ng-heroicons/commit/00c695c7a42ba77ffaa94213d6ba338787129730))
+* **lib:** allow svgClass and stroke setup ([#39](https://github.com/dimaslz/ng-heroicons/issues/39)) ([5b82495](https://github.com/dimaslz/ng-heroicons/commit/5b82495741d072d9b3981b0f2425e911ae185616))
+* **lib:** get SVG icons from optimized folder ([#33](https://github.com/dimaslz/ng-heroicons/issues/33)) ([cc2b8b8](https://github.com/dimaslz/ng-heroicons/commit/cc2b8b82a72c8d0e3fb5bbcd5f61078b4e57b68d))
+
 ### [0.1.1](https://github.com/dimaslz/ng-heroicons/compare/0.1.0...0.1.1) (2021-08-25)
 
 
