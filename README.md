@@ -9,11 +9,13 @@ Live demo: [https://ng-heroicons.dimaslz.dev](https://ng-heroicons.dimaslz.dev)
 ng-heroicons README [./projects/ng-heroicons/README.md](./projects/ng-heroicons/README.md)
 
 ## Author
-
-Dimas López · FullStack Software development
-
-🐦 [https://twitter.com/dimaslz](https://twitter.com/dimaslz)
-
-👨🏻‍💻 [https://dimaslz.dev](https://dimaslz.dev)
-
-📄 [https://www.linkedin.com/in/dimaslopezzurita](https://www.linkedin.com/in/dimaslopezzurita)
+```js
+{
+	name: "Dimas López",
+	role: "FullStack Software development",
+	alias: "dimaslz",
+	twitter: "https://twitter.com/dimaslz",
+	site: "https://dimaslz.dev",
+	linkedin: "https://www.linkedin.com/in/dimaslopezzurita"
+}
+```
