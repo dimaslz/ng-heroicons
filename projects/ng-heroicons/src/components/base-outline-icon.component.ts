@@ -12,12 +12,14 @@ import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStra
   }`],
 })
 export class BaseOutlineIconComponent implements OnInit, OnChanges {
-  @Input() style: string = "";
   @Input() size: number = 24;
   @Input() stroke: number|string = 1;
   @Input() color: string = "";
   @Input() class: string = "";
   @Input() svgClass: string = "";
+  @Input() svgStyle: string = "";
+
+  public style: string = "";
 
   constructor() { }
 
@@ -48,6 +50,6 @@ export class BaseOutlineIconComponent implements OnInit, OnChanges {
       style.push(`stroke-width: ${this.stroke}px;`);
     }
 
-    this.style = this.style + style.join(' ');
+    this.style = this.svgStyle + style.join(' ');
   }
 }
