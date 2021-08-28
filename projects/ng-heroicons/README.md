@@ -33,16 +33,20 @@ Go to [https://ng-heroicons.dimaslz.dev](https://ng-heroicons.dimaslz.dev) and g
 
 You can use your style in line, css or just pass color and size.
 ```html
-<!-- using style in line -->
-<academic-cap-outline-icon style="color: red"></academic-cap-outline-icon>
-<academic-cap-outline-icon style="color: red"></academic-cap-outline-icon>
+<!-- using style in line (style for color will affect to svg) -->
+<academic-cap-outline-icon style="color: red;"></academic-cap-outline-icon>
 
-<!-- using css classes -->
+<!-- using css classes (class for color will affect to svg) -->
 <academic-cap-outline-icon class="text-red-400"></academic-cap-outline-icon>
 
 <!-- pass color or size -->
 <academic-cap-outline-icon size="48" color="red"></academic-cap-outline-icon>
 
+<!-- To apply specific style to the SVG, use `svgStyle` -->
+<academic-cap-outline-icon svgStyle="color: red;"></academic-cap-outline-icon>
+
+<!-- To apply specific css to the SVG, use `svgClass` -->
+<academic-cap-outline-icon svgClass="your-class-for-the-svg"></academic-cap-outline-icon>
 ```
 
 ## Development server
@@ -55,11 +59,6 @@ You can use your style in line, css or just pass color and size.
 
 ## Build heroicons
 `$ yarn build --prod ng-heroicons`
-
-## TODO
-- [X] Copy component tag into clipboard on click in an icon from the list
-- [ ] Copy svg into clipboard on click in an icon from the list
-- [ ] Search input
 
 
 ## Author
