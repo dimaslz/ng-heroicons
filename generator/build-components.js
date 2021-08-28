@@ -60,7 +60,7 @@ async function SVGToAngular({
     .replace('{{selector}}', selector);
 
   if (type === 'outline') {
-    componentTpl = componentTpl.replace(/stroke-width="\d+"/g, '[attr.stroke-width]="stroke"')
+    componentTpl = componentTpl.replace(/stroke-width="\d+"/, '');
   }
 
   return componentTpl;
