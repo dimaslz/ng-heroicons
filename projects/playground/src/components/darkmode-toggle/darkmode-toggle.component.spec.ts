@@ -25,11 +25,13 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     const fixture = TestBed.createComponent(DarkModeComponent);
     const app = fixture.componentInstance;
+
     expect(app).toBeTruthy();
   });
 
   it('by default should be light mode', async () => {
     await render(DarkModeComponent);
+
     expect(screen.getByText('go to dark')).toBeTruthy();
   });
 
@@ -39,7 +41,7 @@ describe('AppComponent', () => {
       const renderComponent = await render(DarkModeComponent);
       fixture = renderComponent.fixture;
 
-      spyOn(fixture.componentInstance.update, 'emit');
+      jest.spyOn(fixture.componentInstance.update, 'emit');
       fixture.detectChanges();
 
       fireEvent.click(screen.getByText('go to dark'));
@@ -50,7 +52,7 @@ describe('AppComponent', () => {
       expect(screen.getByText('go to light')).toBeTruthy();
     });
 
-    it('should see "go to light"', () => {
+    it('should call event "update"', () => {
       expect(fixture.componentInstance.update.emit).toHaveBeenCalled();
     });
   });

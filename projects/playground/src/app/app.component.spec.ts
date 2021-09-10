@@ -68,7 +68,7 @@ describe('AppComponent', () => {
       expect(componentInstance.copied).toBe(true);
       expect(copyToClipboard).toBeCalled();
 
-      jest.runTimersToTime(delay);
+      jest.advanceTimersByTime(delay);
       expect(componentInstance.copied).toBe(false);
     });
   });
