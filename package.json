@@ -47,7 +47,7 @@
     "@release-it/conventional-changelog": "^3.3.0",
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/commit-analyzer": "^9.0.1",
-    "@semantic-release/git": "^9.0.1",
+    "@semantic-release/git": "^10.0.0",
     "@semantic-release/npm": "^8.0.0",
     "@semantic-release/release-notes-generator": "^10.0.2",
     "@testing-library/angular": "^10.7.1",
