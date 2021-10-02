@@ -56,8 +56,10 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
       ?.valueChanges.subscribe(this.onChangeSearch);
   }
 
-  ngOnChanges({ color }: SimpleChanges) {
-    if (!color) return;
+  ngOnChanges({ color }: SimpleChanges): void {
+    if (!color) {
+      return;
+    }
 
     const { currentValue, firstChange } = color;
     if (!firstChange) {

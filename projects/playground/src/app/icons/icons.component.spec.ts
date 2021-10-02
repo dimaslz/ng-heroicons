@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,6 +7,7 @@ import userEvent from '@testing-library/user-event';
 import { IconsComponent } from './icons.component';
 
 import { TooltipModule } from '../../components/tooltip/tooltip.component.module';
+import { ComponentFixture } from '@angular/core/testing';
 
 @Component({
   selector: 'x-outline-icon',
@@ -86,8 +83,7 @@ class HeartSolidIconComponent {
 }
 
 describe('IconsComponent', () => {
-  let fixture: any;
-  let container: any;
+  let fixture: ComponentFixture<IconsComponent>;
   beforeEach(async () => {
     jest.useFakeTimers();
 
@@ -113,7 +109,6 @@ describe('IconsComponent', () => {
     });
 
     fixture = component.fixture;
-    container = component.container;
   });
 
   afterEach(() => {
