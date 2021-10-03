@@ -81,7 +81,7 @@
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.4",
     "svgo": "^2.7.0",
-    "tailwindcss": "^2.2.15",
+    "tailwindcss": "^2.2.16",
     "ts-jest": "^27.0.5",
     "ts-node": "~10.2.1",
     "tslint": "~6.1.3",
