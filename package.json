@@ -71,7 +71,7 @@
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "jest": "^27.2.4",
     "jest-cli": "^27.2.3",
-    "jest-preset-angular": "^10.0.0",
+    "jest-preset-angular": "^10.0.1",
     "lodash.kebabcase": "^4.1.1",
     "mkdirp": "^1.0.4",
     "ng-packagr": "^12.2.2",
