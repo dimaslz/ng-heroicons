@@ -36,7 +36,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.2.7",
+    "@angular-devkit/build-angular": "~12.2.10",
     "@angular-eslint/builder": "^12.5.0",
     "@angular-eslint/eslint-plugin": "^12.5.0",
     "@angular-eslint/eslint-plugin-template": "^12.5.0",
@@ -55,10 +55,10 @@
     "@types/jest": "^27.0.2",
     "@types/lodash.kebabcase": "^4.1.6",
     "@types/lodash.throttle": "^4.1.6",
-    "@types/node": "^16.10.1",
+    "@types/node": "^16.10.3",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
-    "@typescript-eslint/eslint-plugin-tslint": "^4.32.0",
-    "@typescript-eslint/parser": "^4.32.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^5.0.0",
+    "@typescript-eslint/parser": "^4.33.0",
     "camelcase": "^6.2.0",
     "codelyzer": "^6.0.2",
     "dedent": "^0.7.0",
