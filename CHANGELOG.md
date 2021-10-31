@@ -1,3 +1,10 @@
+### [0.1.4](https://github.com/dimaslz/ng-heroicons/compare/0.1.3...0.1.4) (2021-10-31)
+
+
+### Bug Fixes
+
+* **icons:** remove stroke width in all path's ([c1fc789](https://github.com/dimaslz/ng-heroicons/commit/c1fc789eb738b4830b7cf0fbaa54ead47995aa5f))
+
 ### [0.1.3](https://github.com/dimaslz/ng-heroicons/compare/0.1.2...0.1.3) (2021-10-31)
 
 
