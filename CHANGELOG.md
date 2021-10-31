@@ -1,3 +1,10 @@
+### [0.1.3](https://github.com/dimaslz/ng-heroicons/compare/0.1.2...0.1.3) (2021-10-31)
+
+
+### Bug Fixes
+
+* **lib:** generate new icon components ([482b330](https://github.com/dimaslz/ng-heroicons/commit/482b3309f2483eaa85b4ca8aab07d03832286708))
+
 ### [0.1.2](https://github.com/dimaslz/ng-heroicons/compare/0.1.1...0.1.2) (2021-08-28)
 
 
