@@ -5,14 +5,31 @@
         <input
           role="search"
           type="text"
-          class="outline-none border border-red-600 text-xs text-gray-800 w-full pl-2 pr-6
-          dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
+          class="
+            outline-none
+            border border-red-600
+            text-xs text-gray-800
+            w-full
+            pl-2
+            pr-6
+            dark:bg-gray-800 dark:text-white dark:placeholder-gray-500
+          "
           placeholder="arrow"
           formControlName="search"
           data-testid="search"
         />
         <x-outline-icon
-          class="absolute right-0 top-0 h-full flex items-center pr-1 cursor-pointer hover:opacity-50"
+          class="
+            absolute
+            right-0
+            top-0
+            h-full
+            flex
+            items-center
+            pr-1
+            cursor-pointer
+            hover:opacity-50
+          "
           [size]="16"
           *ngIf="form.get('search')?.value"
           (click)="form.get('search')?.setValue('')"
@@ -94,9 +111,22 @@
   </div>
 
   <div
-    class="absolute top-0 bottom-0 left-0 right-0 w-full h-full bg-white
-    flex items-center justify-center text-gray-700 text-xl z-10
-    dark:text-white dark:bg-gray-900"
+    class="
+      absolute
+      top-0
+      bottom-0
+      left-0
+      right-0
+      w-full
+      h-full
+      bg-white
+      flex
+      items-center
+      justify-center
+      text-gray-700 text-xl
+      z-10
+      dark:text-white dark:bg-gray-900
+    "
     *ngIf="loading"
   >
     loading...
@@ -105,10 +135,12 @@
   <div class="flex items-center justify-center pb-4">
     <button
       *ngFor="let c of colors"
-      [ngClass]="[getColor(c), (classColor.includes(c) ? 'font-bold' : '')]"
+      [ngClass]="[getColor(c), classColor.includes(c) ? 'font-bold' : '']"
       class="w-12 h-12 rounded-full text-xs ring-gray-100 ring-2 mx-2"
       (click)="onClickColor(c)"
-    >{{ c }}</button>
+    >
+      {{ c }}
+    </button>
   </div>
 
   <div data-testid="list-of-icons" [ngClass]="{ hidden: empty || loading }">
@@ -126,8 +158,6 @@
   </div>
 </div>
 
-<tooltip
-  *ngIf="tooltipContent"
-  [copied]="componentTagCopied"
+<tooltip *ngIf="tooltipContent" [copied]="componentTagCopied"
   ><div>{{ tooltipContent }}</div></tooltip
 >
