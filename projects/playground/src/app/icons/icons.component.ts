@@ -1,5 +1,12 @@
 /* eslint-disable @typescript-eslint/unbound-method, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call */
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import throttle from 'lodash.throttle';
 import { Subscription } from 'rxjs';
@@ -16,7 +23,16 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 
   query = '';
   classColor = 'white';
-  colors: string[] = ['white', 'gray', 'red', 'yellow', 'green', 'blue', 'indigo', 'purple'];
+  colors: string[] = [
+    'white',
+    'gray',
+    'red',
+    'yellow',
+    'green',
+    'blue',
+    'indigo',
+    'purple',
+  ];
   sizes: number[] = [6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64];
   stroke = 1;
   sizeIndex = 8;
@@ -218,6 +234,8 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   getColor(color: string): string {
-    return color === 'white' ? 'bg-white text-gray-900' : `bg-${color}-400 text-${color}-900`;
+    return color === 'white'
+      ? 'bg-white text-gray-900'
+      : `bg-${color}-400 text-${color}-900`;
   }
 }
