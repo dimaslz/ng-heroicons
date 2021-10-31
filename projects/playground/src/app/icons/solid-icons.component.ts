@@ -7,8 +7,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 })
 export class SolidIconsComponent {
   @Input() size = 24;
-  @Input() color = '#ffffff';
-  @Input() stroke = 1;
+  @Input() color = '';
   @Input() class = '';
 
   constructor() {}
