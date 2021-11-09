@@ -9272,10 +9272,10 @@ new-github-release-url@1.0.0:
   dependencies:
     type-fest "^0.4.1"
 
-ng-packagr@^12.2.3:
-  version "12.2.3"
-  resolved "https://registry.yarnpkg.com/ng-packagr/-/ng-packagr-12.2.3.tgz#1597f8e70a78ab88bb395675358942bfc14cbc07"
-  integrity sha512-2KHoglc7UgJMnzkytzZ1wU+IEkb6UrxoU4QZxnF5BSFh9vjUra2nCXH+EKkvxD3WTj0ikXmNIMeNWbwoZpGkgA==
+ng-packagr@^12.2.5:
+  version "12.2.5"
+  resolved "https://registry.yarnpkg.com/ng-packagr/-/ng-packagr-12.2.5.tgz#94e965102bdeca672e942f9b7b5e203f9abe2262"
+  integrity sha512-iNxX8lgAMNYAfXDBJomD7SeFpG47uoyKkGCWQo78AlFS4q3fGiFEIRrX842MTuASshYVAqMaBkaKPOajPx7VXw==
   dependencies:
     "@rollup/plugin-commonjs" "^20.0.0"
     "@rollup/plugin-json" "^4.1.0"
