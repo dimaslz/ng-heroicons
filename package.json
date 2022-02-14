@@ -78,7 +78,7 @@
     "lodash.kebabcase": "^4.1.1",
     "mkdirp": "^1.0.4",
     "ng-packagr": "^12.2.5",
-    "postcss": "^8.3.11",
+    "postcss": "^8.4.6",
     "prettier": "^2.4.1",
     "protractor": "~7.0.0",
     "release-it": "^14.11.6",
