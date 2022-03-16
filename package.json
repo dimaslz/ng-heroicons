@@ -79,7 +79,7 @@
     "mkdirp": "^1.0.4",
     "ng-packagr": "^12.2.5",
     "postcss": "^8.4.8",
-    "prettier": "^2.4.1",
+    "prettier": "^2.6.0",
     "protractor": "~7.0.0",
     "release-it": "^14.11.6",
     "rimraf": "^3.0.2",
