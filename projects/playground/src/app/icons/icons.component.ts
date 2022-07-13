@@ -45,7 +45,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
     search: new UntypedFormControl(''),
   });
   formSubscription$: Subscription | undefined = new Subscription();
-  debounceSearch: any = null;
+  debounceSearch: number | null = null;
   empty = false;
   loading = false;
 
@@ -79,7 +79,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 
     const { currentValue, firstChange } = color;
     if (!firstChange) {
-      this.applyColor(currentValue);
+      this.applyColor(currentValue as string);
     }
   }
 
