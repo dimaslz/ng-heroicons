@@ -53,7 +53,7 @@ jobs:
         run: yarn test:icons
   test-playground:
     name: Test playground
-    needs: test-icon-components
+    needs: dependencies
     if: ${{ success() }}
     runs-on: ubuntu-latest
 
