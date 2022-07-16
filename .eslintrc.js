@@ -17,6 +17,7 @@ module.exports = {
     es6: true,
     node: true,
   },
+  root: true,
   overrides: [
     {
       files: '*.ts',

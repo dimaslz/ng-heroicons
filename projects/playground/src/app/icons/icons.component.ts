@@ -7,7 +7,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import throttle from 'lodash.throttle';
 import { Subscription } from 'rxjs';
 
@@ -41,11 +41,11 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
   class = '';
   tooltipContent = '';
   componentTagCopied = false;
-  form = new FormGroup({
-    search: new FormControl(''),
+  form = new UntypedFormGroup({
+    search: new UntypedFormControl(''),
   });
   formSubscription$: Subscription | undefined = new Subscription();
-  debounceSearch: any = null;
+  debounceSearch: number | null = null;
   empty = false;
   loading = false;
 
@@ -79,7 +79,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 
     const { currentValue, firstChange } = color;
     if (!firstChange) {
-      this.applyColor(currentValue);
+      this.applyColor(currentValue as string);
     }
   }
 

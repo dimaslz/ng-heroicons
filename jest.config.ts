@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/en/configuration.html
  */
 
-export default {
+module.exports = {
   preset: 'jest-preset-angular',
   setupFilesAfterEnv: ['<rootDir>/setupJest.ts'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/*/dist/'],
