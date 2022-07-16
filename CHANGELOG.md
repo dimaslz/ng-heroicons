@@ -1,3 +1,13 @@
+### [0.1.5](https://github.com/dimaslz/ng-heroicons/compare/0.1.4...0.1.5) (2022-07-16)
+
+
+### Bug Fixes
+
+* **heroicons:** update icons from source ([#229](https://github.com/dimaslz/ng-heroicons/issues/229)) ([47db592](https://github.com/dimaslz/ng-heroicons/commit/47db592c413e34104c513e5fc133f498ed4026e6))
+* **lint:** simplify and improve linter rules ([#228](https://github.com/dimaslz/ng-heroicons/issues/228)) ([f6e5171](https://github.com/dimaslz/ng-heroicons/commit/f6e5171cd0b6a7c6eb9a963555e712aa356ca07b))
+* **tailwind:** fix tailwind config ([e55d623](https://github.com/dimaslz/ng-heroicons/commit/e55d623bdfcfa7978bd22caec87ba1f1e3eccafc))
+* upgrade to angular 14 ([#218](https://github.com/dimaslz/ng-heroicons/issues/218)) ([400c1e8](https://github.com/dimaslz/ng-heroicons/commit/400c1e8f2ae1b3d9106d03b38f61557f9c5db086))
+
 ### [0.1.4](https://github.com/dimaslz/ng-heroicons/compare/0.1.3...0.1.4) (2021-10-31)
 
 
