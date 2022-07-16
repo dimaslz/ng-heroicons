@@ -8,10 +8,35 @@ on:
     branches:
       - master
 jobs:
-  # ID of the job
+  dependencies:
+      name: "dependencies"
+      runs-on: "ubuntu-latest"
+
+      steps:
+        - name: "Checkout under $GITHUB_WORKSPACE"
+          uses: "actions/checkout@master"
+
+        - name: "Set up NodeJS"
+          uses: "actions/setup-node@master"
+          with:
+            node-version: 16
+
+        - name: "Install yarn"
+          run: "npm install -g yarn"
+
+        - name: "Install dependencies"
+          run: "yarn install"
+
+        - name: "Cache files"
+          uses: "actions/cache@master"
+          id: "main-files"
+          with:
+            path: "./*"
+            key: "${{ github.sha }}"
   test-icon-components:
     name: Test icon components
-
+    needs: dependencies
+    if: ${{ success() }}
     runs-on: ubuntu-latest
 
     steps:
@@ -23,17 +48,19 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install yarn
-        run: npm install -g yarn
-
-      - name: Install all dependencies
-        run: yarn install
+      - name: "Restore cache files"
+        uses: "actions/cache@master"
+        id: "main-files"
+        with:
+          path: "./*"
+          key: "${{ github.sha }}"
 
       - name: Run Jest Tests
-        run: yarn test
+        run: yarn test:icons
   test-playground:
     name: Test playground
-
+    needs: test-icon-components
+    if: ${{ success() }}
     runs-on: ubuntu-latest
 
     steps:
@@ -45,11 +72,12 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install yarn
-        run: npm install -g yarn
-
-      - name: Install all dependencies
-        run: yarn install
+      - name: "Restore cache files"
+        uses: "actions/cache@master"
+        id: "main-files"
+        with:
+          path: "./*"
+          key: "${{ github.sha }}"
 
       - name: Run Jest Tests
-        run: yarn test
+        run: yarn test:playground
