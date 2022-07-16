@@ -10,6 +10,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "test:icons": "yarn test projects/ng-heroicons",
+    "test:playground": "yarn test projects/playground",
     "test": "./node_modules/.bin/jest",
     "test:watch": "yarn test --watch",
     "test:coverage": "yarn test --coverage",
