@@ -45,7 +45,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
     search: new UntypedFormControl(''),
   });
   formSubscription$: Subscription | undefined = new Subscription();
-  debounceSearch: NodeJS.Timeout | null = null;
+  debounceSearch: ReturnType<typeof setTimeout> | null = null;
   empty = false;
   loading = false;
 
