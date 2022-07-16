@@ -2244,10 +2244,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@testing-library/angular@^10.7.1":
-  version "10.11.1"
-  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-10.11.1.tgz#61ade294128b985d749ea48a171bb18b5e585051"
-  integrity sha512-JAMnsva5eIa0TRPj8aIIvCIrFklna6fmIcmoycE3WWIjvXXQ6OCY1Mh3D8NCnbSR6RlK3pRqrDYyz/K3WiUvLw==
+"@testing-library/angular@^11.0.2":
+  version "11.0.2"
+  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-11.0.2.tgz#268ca52a4881c7503915b2409fbcaefc873b9116"
+  integrity sha512-sqOD9MzTZ/sIXzCj5ogJm72x+iveWU+Q3vu2hZW5YC89YJV+M4w6PuBo0wgqpsyL4xnktVf41vNJcLMkajUjZw==
   dependencies:
     "@testing-library/dom" "^8.0.0"
     tslib "^2.0.0"
