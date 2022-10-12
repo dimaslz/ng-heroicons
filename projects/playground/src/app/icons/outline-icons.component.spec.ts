@@ -6,7 +6,7 @@ import kebabcase from 'lodash.kebabcase';
 
 import * as OUTLINE_ICONS from '../../../../ng-heroicons/src/lib/heroicons/outline';
 
-import {OutlineIconsComponent} from './outline-icons.component';
+import { OutlineIconsComponent } from './outline-icons.component';
 
 const ICONS_ARRAY = Object.entries(OUTLINE_ICONS);
 

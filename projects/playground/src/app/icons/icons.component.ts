@@ -7,7 +7,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import throttle from 'lodash.throttle';
 import { Subscription } from 'rxjs';
 
@@ -41,8 +41,8 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
   class = '';
   tooltipContent = '';
   componentTagCopied = false;
-  form = new UntypedFormGroup({
-    search: new UntypedFormControl(''),
+  form = new FormGroup({
+    search: new FormControl('')
   });
   formSubscription$: Subscription | undefined = new Subscription();
   debounceSearch: ReturnType<typeof setTimeout> | null = null;
@@ -182,7 +182,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
       iconElements.forEach((element: Element) => {
         element.parentElement?.classList.add('hidden');
       });
-    } catch (err) {}
+    } catch (err) { }
     this.isEmpty();
   }
 
@@ -196,7 +196,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
       iconElements.forEach((element: Element) => {
         element.classList.remove('hidden');
       });
-    } catch (err) {}
+    } catch (err) { }
   }
 
   isEmpty(): void {
