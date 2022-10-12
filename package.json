@@ -47,6 +47,7 @@
     "@angular-eslint/template-parser": "^14.0.2",
     "@angular/cli": "^14.0.6",
     "@angular/compiler-cli": "^14.0.5",
+    "@babel/helper-string-parser": "^7.19.4",
     "@release-it/bumper": "^3.0.1",
     "@release-it/conventional-changelog": "^3.3.0",
     "@semantic-release/changelog": "^6.0.1",
