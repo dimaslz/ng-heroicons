@@ -10,34 +10,34 @@ import { TooltipModule } from '../../components/tooltip/tooltip.component.module
 import { ComponentFixture } from '@angular/core/testing';
 
 @Component({
-  selector: 'x-outline-icon',
+  selector: 'x-mark-outline-icon',
   template: '.'
 })
-class XOutlineIconComponent {
+class XMarkOutlineIconComponent {
   @Input() size = 24;
 }
 
 @Component({
-  selector: 'search-outline-icon',
+  selector: 'magnifying-glass-outline-icon',
   template: '.'
 })
-class SearchOutlineIconComponent {
+class MagnifyingGlassCircleOutlineIconComponent {
   @Input() size = 24;
 }
 
 @Component({
-  selector: 'zoom-out-outline-icon',
+  selector: 'magnifying-glass-plus-outline-icon',
   template: 'ZOOM_OUT_OUTLINE_ICON'
 })
-class ZoomOutOutlineIconComponent {
+class MagnifyingGlassPlusOutlineIconComponent {
   @Input() size = 24;
 }
 
 @Component({
-  selector: 'zoom-in-outline-icon',
+  selector: 'magnifying-glass-minus-outline-icon',
   template: 'ZOOM_IN_OUTLINE_ICON'
 })
-class ZoomInOutlineIconComponent {
+class MagnifyingGlassMinusOutlineIconComponent {
   @Input() size = 24;
 }
 
@@ -93,10 +93,10 @@ describe('IconsComponent', () => {
         OutlineIconsComponent,
         SolidIconsComponent,
 
-        XOutlineIconComponent,
-        SearchOutlineIconComponent,
-        ZoomOutOutlineIconComponent,
-        ZoomInOutlineIconComponent,
+        XMarkOutlineIconComponent,
+        MagnifyingGlassCircleOutlineIconComponent,
+        MagnifyingGlassPlusOutlineIconComponent,
+        MagnifyingGlassMinusOutlineIconComponent,
         HeartOutlineIconComponent,
         HeartSolidIconComponent,
       ],

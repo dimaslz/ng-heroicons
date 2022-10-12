@@ -21,4 +21,4 @@ import { TooltipModule } from '../../components/tooltip/tooltip.component.module
   exports: [IconsComponent, OutlineIconsComponent, SolidIconsComponent],
   bootstrap: [],
 })
-export class IconsModule {}
+export class IconsModule { }

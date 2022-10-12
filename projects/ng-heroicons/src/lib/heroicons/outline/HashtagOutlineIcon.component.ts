@@ -4,6 +4,6 @@ import { BaseOutlineIconComponent } from '../../../components/base-outline-icon.
 
 @Component({
   selector: 'hashtag-outline-icon',
-  template: `<svg [attr.style]="style" [attr.class]="svgClass" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"  stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m7 20 4-16m2 16 4-16M6 9h14M4 15h14"/></svg>`,
+  template: `<svg [attr.style]="style" [attr.class]="svgClass" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5-3.9 19.5m-2.1-19.5-3.9 19.5"/></svg>`,
 })
 export class HashtagOutlineIconComponent extends BaseOutlineIconComponent { }

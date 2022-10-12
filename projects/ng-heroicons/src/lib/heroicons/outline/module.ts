@@ -2,47 +2,100 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 
 import { AcademicCapOutlineIconComponent } from './AcademicCapOutlineIcon.component';
-import { AdjustmentsOutlineIconComponent } from './AdjustmentsOutlineIcon.component';
-import { AnnotationOutlineIconComponent } from './AnnotationOutlineIcon.component';
-import { ArchiveOutlineIconComponent } from './ArchiveOutlineIcon.component';
-import { ArrowCircleDownOutlineIconComponent } from './ArrowCircleDownOutlineIcon.component';
-import { ArrowCircleLeftOutlineIconComponent } from './ArrowCircleLeftOutlineIcon.component';
-import { ArrowCircleRightOutlineIconComponent } from './ArrowCircleRightOutlineIcon.component';
-import { ArrowCircleUpOutlineIconComponent } from './ArrowCircleUpOutlineIcon.component';
+import { AdjustmentsHorizontalOutlineIconComponent } from './AdjustmentsHorizontalOutlineIcon.component';
+import { AdjustmentsVerticalOutlineIconComponent } from './AdjustmentsVerticalOutlineIcon.component';
+import { ArchiveBoxArrowDownOutlineIconComponent } from './ArchiveBoxArrowDownOutlineIcon.component';
+import { ArchiveBoxXMarkOutlineIconComponent } from './ArchiveBoxXMarkOutlineIcon.component';
+import { ArchiveBoxOutlineIconComponent } from './ArchiveBoxOutlineIcon.component';
+import { ArrowDownCircleOutlineIconComponent } from './ArrowDownCircleOutlineIcon.component';
+import { ArrowDownLeftOutlineIconComponent } from './ArrowDownLeftOutlineIcon.component';
+import { ArrowDownOnSquareStackOutlineIconComponent } from './ArrowDownOnSquareStackOutlineIcon.component';
+import { ArrowDownOnSquareOutlineIconComponent } from './ArrowDownOnSquareOutlineIcon.component';
+import { ArrowDownRightOutlineIconComponent } from './ArrowDownRightOutlineIcon.component';
+import { ArrowDownTrayOutlineIconComponent } from './ArrowDownTrayOutlineIcon.component';
 import { ArrowDownOutlineIconComponent } from './ArrowDownOutlineIcon.component';
+import { ArrowLeftCircleOutlineIconComponent } from './ArrowLeftCircleOutlineIcon.component';
+import { ArrowLeftOnRectangleOutlineIconComponent } from './ArrowLeftOnRectangleOutlineIcon.component';
 import { ArrowLeftOutlineIconComponent } from './ArrowLeftOutlineIcon.component';
-import { ArrowNarrowDownOutlineIconComponent } from './ArrowNarrowDownOutlineIcon.component';
-import { ArrowNarrowLeftOutlineIconComponent } from './ArrowNarrowLeftOutlineIcon.component';
-import { ArrowNarrowRightOutlineIconComponent } from './ArrowNarrowRightOutlineIcon.component';
-import { ArrowNarrowUpOutlineIconComponent } from './ArrowNarrowUpOutlineIcon.component';
+import { ArrowLongDownOutlineIconComponent } from './ArrowLongDownOutlineIcon.component';
+import { ArrowLongLeftOutlineIconComponent } from './ArrowLongLeftOutlineIcon.component';
+import { ArrowLongRightOutlineIconComponent } from './ArrowLongRightOutlineIcon.component';
+import { ArrowLongUpOutlineIconComponent } from './ArrowLongUpOutlineIcon.component';
+import { ArrowPathRoundedSquareOutlineIconComponent } from './ArrowPathRoundedSquareOutlineIcon.component';
+import { ArrowPathOutlineIconComponent } from './ArrowPathOutlineIcon.component';
+import { ArrowRightCircleOutlineIconComponent } from './ArrowRightCircleOutlineIcon.component';
+import { ArrowRightOnRectangleOutlineIconComponent } from './ArrowRightOnRectangleOutlineIcon.component';
 import { ArrowRightOutlineIconComponent } from './ArrowRightOutlineIcon.component';
-import { ArrowSmDownOutlineIconComponent } from './ArrowSmDownOutlineIcon.component';
-import { ArrowSmLeftOutlineIconComponent } from './ArrowSmLeftOutlineIcon.component';
-import { ArrowSmRightOutlineIconComponent } from './ArrowSmRightOutlineIcon.component';
-import { ArrowSmUpOutlineIconComponent } from './ArrowSmUpOutlineIcon.component';
+import { ArrowSmallDownOutlineIconComponent } from './ArrowSmallDownOutlineIcon.component';
+import { ArrowSmallLeftOutlineIconComponent } from './ArrowSmallLeftOutlineIcon.component';
+import { ArrowSmallRightOutlineIconComponent } from './ArrowSmallRightOutlineIcon.component';
+import { ArrowSmallUpOutlineIconComponent } from './ArrowSmallUpOutlineIcon.component';
+import { ArrowTopRightOnSquareOutlineIconComponent } from './ArrowTopRightOnSquareOutlineIcon.component';
+import { ArrowTrendingDownOutlineIconComponent } from './ArrowTrendingDownOutlineIcon.component';
+import { ArrowTrendingUpOutlineIconComponent } from './ArrowTrendingUpOutlineIcon.component';
+import { ArrowUpCircleOutlineIconComponent } from './ArrowUpCircleOutlineIcon.component';
+import { ArrowUpLeftOutlineIconComponent } from './ArrowUpLeftOutlineIcon.component';
+import { ArrowUpOnSquareStackOutlineIconComponent } from './ArrowUpOnSquareStackOutlineIcon.component';
+import { ArrowUpOnSquareOutlineIconComponent } from './ArrowUpOnSquareOutlineIcon.component';
+import { ArrowUpRightOutlineIconComponent } from './ArrowUpRightOutlineIcon.component';
+import { ArrowUpTrayOutlineIconComponent } from './ArrowUpTrayOutlineIcon.component';
 import { ArrowUpOutlineIconComponent } from './ArrowUpOutlineIcon.component';
-import { ArrowsExpandOutlineIconComponent } from './ArrowsExpandOutlineIcon.component';
+import { ArrowUturnDownOutlineIconComponent } from './ArrowUturnDownOutlineIcon.component';
+import { ArrowUturnLeftOutlineIconComponent } from './ArrowUturnLeftOutlineIcon.component';
+import { ArrowUturnRightOutlineIconComponent } from './ArrowUturnRightOutlineIcon.component';
+import { ArrowUturnUpOutlineIconComponent } from './ArrowUturnUpOutlineIcon.component';
+import { ArrowsPointingInOutlineIconComponent } from './ArrowsPointingInOutlineIcon.component';
+import { ArrowsPointingOutOutlineIconComponent } from './ArrowsPointingOutOutlineIcon.component';
+import { ArrowsRightLeftOutlineIconComponent } from './ArrowsRightLeftOutlineIcon.component';
+import { ArrowsUpDownOutlineIconComponent } from './ArrowsUpDownOutlineIcon.component';
 import { AtSymbolOutlineIconComponent } from './AtSymbolOutlineIcon.component';
 import { BackspaceOutlineIconComponent } from './BackspaceOutlineIcon.component';
-import { BadgeCheckOutlineIconComponent } from './BadgeCheckOutlineIcon.component';
-import { BanOutlineIconComponent } from './BanOutlineIcon.component';
+import { BackwardOutlineIconComponent } from './BackwardOutlineIcon.component';
+import { BanknotesOutlineIconComponent } from './BanknotesOutlineIcon.component';
+import { Bars2OutlineIconComponent } from './Bars2OutlineIcon.component';
+import { Bars3BottomLeftOutlineIconComponent } from './Bars3BottomLeftOutlineIcon.component';
+import { Bars3BottomRightOutlineIconComponent } from './Bars3BottomRightOutlineIcon.component';
+import { Bars3CenterLeftOutlineIconComponent } from './Bars3CenterLeftOutlineIcon.component';
+import { Bars3OutlineIconComponent } from './Bars3OutlineIcon.component';
+import { Bars4OutlineIconComponent } from './Bars4OutlineIcon.component';
+import { BarsArrowDownOutlineIconComponent } from './BarsArrowDownOutlineIcon.component';
+import { BarsArrowUpOutlineIconComponent } from './BarsArrowUpOutlineIcon.component';
+import { Battery0OutlineIconComponent } from './Battery0OutlineIcon.component';
+import { Battery100OutlineIconComponent } from './Battery100OutlineIcon.component';
+import { Battery50OutlineIconComponent } from './Battery50OutlineIcon.component';
 import { BeakerOutlineIconComponent } from './BeakerOutlineIcon.component';
+import { BellAlertOutlineIconComponent } from './BellAlertOutlineIcon.component';
+import { BellSlashOutlineIconComponent } from './BellSlashOutlineIcon.component';
+import { BellSnoozeOutlineIconComponent } from './BellSnoozeOutlineIcon.component';
 import { BellOutlineIconComponent } from './BellOutlineIcon.component';
+import { BoltSlashOutlineIconComponent } from './BoltSlashOutlineIcon.component';
+import { BoltOutlineIconComponent } from './BoltOutlineIcon.component';
 import { BookOpenOutlineIconComponent } from './BookOpenOutlineIcon.component';
-import { BookmarkAltOutlineIconComponent } from './BookmarkAltOutlineIcon.component';
+import { BookmarkSlashOutlineIconComponent } from './BookmarkSlashOutlineIcon.component';
+import { BookmarkSquareOutlineIconComponent } from './BookmarkSquareOutlineIcon.component';
 import { BookmarkOutlineIconComponent } from './BookmarkOutlineIcon.component';
 import { BriefcaseOutlineIconComponent } from './BriefcaseOutlineIcon.component';
+import { BugAntOutlineIconComponent } from './BugAntOutlineIcon.component';
+import { BuildingLibraryOutlineIconComponent } from './BuildingLibraryOutlineIcon.component';
+import { BuildingOffice2OutlineIconComponent } from './BuildingOffice2OutlineIcon.component';
+import { BuildingOfficeOutlineIconComponent } from './BuildingOfficeOutlineIcon.component';
+import { BuildingStorefrontOutlineIconComponent } from './BuildingStorefrontOutlineIcon.component';
 import { CakeOutlineIconComponent } from './CakeOutlineIcon.component';
 import { CalculatorOutlineIconComponent } from './CalculatorOutlineIcon.component';
+import { CalendarDaysOutlineIconComponent } from './CalendarDaysOutlineIcon.component';
 import { CalendarOutlineIconComponent } from './CalendarOutlineIcon.component';
 import { CameraOutlineIconComponent } from './CameraOutlineIcon.component';
-import { CashOutlineIconComponent } from './CashOutlineIcon.component';
+import { ChartBarSquareOutlineIconComponent } from './ChartBarSquareOutlineIcon.component';
 import { ChartBarOutlineIconComponent } from './ChartBarOutlineIcon.component';
 import { ChartPieOutlineIconComponent } from './ChartPieOutlineIcon.component';
-import { ChartSquareBarOutlineIconComponent } from './ChartSquareBarOutlineIcon.component';
-import { ChatAlt2OutlineIconComponent } from './ChatAlt2OutlineIcon.component';
-import { ChatAltOutlineIconComponent } from './ChatAltOutlineIcon.component';
-import { ChatOutlineIconComponent } from './ChatOutlineIcon.component';
+import { ChatBubbleBottomCenterTextOutlineIconComponent } from './ChatBubbleBottomCenterTextOutlineIcon.component';
+import { ChatBubbleBottomCenterOutlineIconComponent } from './ChatBubbleBottomCenterOutlineIcon.component';
+import { ChatBubbleLeftEllipsisOutlineIconComponent } from './ChatBubbleLeftEllipsisOutlineIcon.component';
+import { ChatBubbleLeftRightOutlineIconComponent } from './ChatBubbleLeftRightOutlineIcon.component';
+import { ChatBubbleLeftOutlineIconComponent } from './ChatBubbleLeftOutlineIcon.component';
+import { ChatBubbleOvalLeftEllipsisOutlineIconComponent } from './ChatBubbleOvalLeftEllipsisOutlineIcon.component';
+import { ChatBubbleOvalLeftOutlineIconComponent } from './ChatBubbleOvalLeftOutlineIcon.component';
+import { CheckBadgeOutlineIconComponent } from './CheckBadgeOutlineIcon.component';
 import { CheckCircleOutlineIconComponent } from './CheckCircleOutlineIcon.component';
 import { CheckOutlineIconComponent } from './CheckOutlineIcon.component';
 import { ChevronDoubleDownOutlineIconComponent } from './ChevronDoubleDownOutlineIcon.component';
@@ -52,20 +105,25 @@ import { ChevronDoubleUpOutlineIconComponent } from './ChevronDoubleUpOutlineIco
 import { ChevronDownOutlineIconComponent } from './ChevronDownOutlineIcon.component';
 import { ChevronLeftOutlineIconComponent } from './ChevronLeftOutlineIcon.component';
 import { ChevronRightOutlineIconComponent } from './ChevronRightOutlineIcon.component';
+import { ChevronUpDownOutlineIconComponent } from './ChevronUpDownOutlineIcon.component';
 import { ChevronUpOutlineIconComponent } from './ChevronUpOutlineIcon.component';
-import { ChipOutlineIconComponent } from './ChipOutlineIcon.component';
-import { ClipboardCheckOutlineIconComponent } from './ClipboardCheckOutlineIcon.component';
-import { ClipboardCopyOutlineIconComponent } from './ClipboardCopyOutlineIcon.component';
-import { ClipboardListOutlineIconComponent } from './ClipboardListOutlineIcon.component';
+import { CircleStackOutlineIconComponent } from './CircleStackOutlineIcon.component';
+import { ClipboardDocumentCheckOutlineIconComponent } from './ClipboardDocumentCheckOutlineIcon.component';
+import { ClipboardDocumentListOutlineIconComponent } from './ClipboardDocumentListOutlineIcon.component';
+import { ClipboardDocumentOutlineIconComponent } from './ClipboardDocumentOutlineIcon.component';
 import { ClipboardOutlineIconComponent } from './ClipboardOutlineIcon.component';
 import { ClockOutlineIconComponent } from './ClockOutlineIcon.component';
-import { CloudDownloadOutlineIconComponent } from './CloudDownloadOutlineIcon.component';
-import { CloudUploadOutlineIconComponent } from './CloudUploadOutlineIcon.component';
+import { CloudArrowDownOutlineIconComponent } from './CloudArrowDownOutlineIcon.component';
+import { CloudArrowUpOutlineIconComponent } from './CloudArrowUpOutlineIcon.component';
 import { CloudOutlineIconComponent } from './CloudOutlineIcon.component';
-import { CodeOutlineIconComponent } from './CodeOutlineIcon.component';
+import { CodeBracketSquareOutlineIconComponent } from './CodeBracketSquareOutlineIcon.component';
+import { CodeBracketOutlineIconComponent } from './CodeBracketOutlineIcon.component';
+import { Cog6ToothOutlineIconComponent } from './Cog6ToothOutlineIcon.component';
+import { Cog8ToothOutlineIconComponent } from './Cog8ToothOutlineIcon.component';
 import { CogOutlineIconComponent } from './CogOutlineIcon.component';
-import { CollectionOutlineIconComponent } from './CollectionOutlineIcon.component';
-import { ColorSwatchOutlineIconComponent } from './ColorSwatchOutlineIcon.component';
+import { CommandLineOutlineIconComponent } from './CommandLineOutlineIcon.component';
+import { ComputerDesktopOutlineIconComponent } from './ComputerDesktopOutlineIcon.component';
+import { CpuChipOutlineIconComponent } from './CpuChipOutlineIcon.component';
 import { CreditCardOutlineIconComponent } from './CreditCardOutlineIcon.component';
 import { CubeTransparentOutlineIconComponent } from './CubeTransparentOutlineIcon.component';
 import { CubeOutlineIconComponent } from './CubeOutlineIcon.component';
@@ -75,206 +133,263 @@ import { CurrencyEuroOutlineIconComponent } from './CurrencyEuroOutlineIcon.comp
 import { CurrencyPoundOutlineIconComponent } from './CurrencyPoundOutlineIcon.component';
 import { CurrencyRupeeOutlineIconComponent } from './CurrencyRupeeOutlineIcon.component';
 import { CurrencyYenOutlineIconComponent } from './CurrencyYenOutlineIcon.component';
-import { CursorClickOutlineIconComponent } from './CursorClickOutlineIcon.component';
-import { DatabaseOutlineIconComponent } from './DatabaseOutlineIcon.component';
-import { DesktopComputerOutlineIconComponent } from './DesktopComputerOutlineIcon.component';
-import { DeviceMobileOutlineIconComponent } from './DeviceMobileOutlineIcon.component';
+import { CursorArrowRaysOutlineIconComponent } from './CursorArrowRaysOutlineIcon.component';
+import { CursorArrowRippleOutlineIconComponent } from './CursorArrowRippleOutlineIcon.component';
+import { DevicePhoneMobileOutlineIconComponent } from './DevicePhoneMobileOutlineIcon.component';
 import { DeviceTabletOutlineIconComponent } from './DeviceTabletOutlineIcon.component';
-import { DocumentAddOutlineIconComponent } from './DocumentAddOutlineIcon.component';
-import { DocumentDownloadOutlineIconComponent } from './DocumentDownloadOutlineIcon.component';
+import { DocumentArrowDownOutlineIconComponent } from './DocumentArrowDownOutlineIcon.component';
+import { DocumentArrowUpOutlineIconComponent } from './DocumentArrowUpOutlineIcon.component';
+import { DocumentChartBarOutlineIconComponent } from './DocumentChartBarOutlineIcon.component';
+import { DocumentCheckOutlineIconComponent } from './DocumentCheckOutlineIcon.component';
 import { DocumentDuplicateOutlineIconComponent } from './DocumentDuplicateOutlineIcon.component';
-import { DocumentRemoveOutlineIconComponent } from './DocumentRemoveOutlineIcon.component';
-import { DocumentReportOutlineIconComponent } from './DocumentReportOutlineIcon.component';
-import { DocumentSearchOutlineIconComponent } from './DocumentSearchOutlineIcon.component';
+import { DocumentMagnifyingGlassOutlineIconComponent } from './DocumentMagnifyingGlassOutlineIcon.component';
+import { DocumentMinusOutlineIconComponent } from './DocumentMinusOutlineIcon.component';
+import { DocumentPlusOutlineIconComponent } from './DocumentPlusOutlineIcon.component';
 import { DocumentTextOutlineIconComponent } from './DocumentTextOutlineIcon.component';
 import { DocumentOutlineIconComponent } from './DocumentOutlineIcon.component';
-import { DotsCircleHorizontalOutlineIconComponent } from './DotsCircleHorizontalOutlineIcon.component';
-import { DotsHorizontalOutlineIconComponent } from './DotsHorizontalOutlineIcon.component';
-import { DotsVerticalOutlineIconComponent } from './DotsVerticalOutlineIcon.component';
-import { DownloadOutlineIconComponent } from './DownloadOutlineIcon.component';
-import { DuplicateOutlineIconComponent } from './DuplicateOutlineIcon.component';
-import { EmojiHappyOutlineIconComponent } from './EmojiHappyOutlineIcon.component';
-import { EmojiSadOutlineIconComponent } from './EmojiSadOutlineIcon.component';
+import { EllipsisHorizontalCircleOutlineIconComponent } from './EllipsisHorizontalCircleOutlineIcon.component';
+import { EllipsisHorizontalOutlineIconComponent } from './EllipsisHorizontalOutlineIcon.component';
+import { EllipsisVerticalOutlineIconComponent } from './EllipsisVerticalOutlineIcon.component';
+import { EnvelopeOpenOutlineIconComponent } from './EnvelopeOpenOutlineIcon.component';
+import { EnvelopeOutlineIconComponent } from './EnvelopeOutlineIcon.component';
 import { ExclamationCircleOutlineIconComponent } from './ExclamationCircleOutlineIcon.component';
-import { ExclamationOutlineIconComponent } from './ExclamationOutlineIcon.component';
-import { ExternalLinkOutlineIconComponent } from './ExternalLinkOutlineIcon.component';
-import { EyeOffOutlineIconComponent } from './EyeOffOutlineIcon.component';
+import { ExclamationTriangleOutlineIconComponent } from './ExclamationTriangleOutlineIcon.component';
+import { EyeDropperOutlineIconComponent } from './EyeDropperOutlineIcon.component';
+import { EyeSlashOutlineIconComponent } from './EyeSlashOutlineIcon.component';
 import { EyeOutlineIconComponent } from './EyeOutlineIcon.component';
-import { FastForwardOutlineIconComponent } from './FastForwardOutlineIcon.component';
+import { FaceFrownOutlineIconComponent } from './FaceFrownOutlineIcon.component';
+import { FaceSmileOutlineIconComponent } from './FaceSmileOutlineIcon.component';
 import { FilmOutlineIconComponent } from './FilmOutlineIcon.component';
-import { FilterOutlineIconComponent } from './FilterOutlineIcon.component';
 import { FingerPrintOutlineIconComponent } from './FingerPrintOutlineIcon.component';
 import { FireOutlineIconComponent } from './FireOutlineIcon.component';
 import { FlagOutlineIconComponent } from './FlagOutlineIcon.component';
-import { FolderAddOutlineIconComponent } from './FolderAddOutlineIcon.component';
-import { FolderDownloadOutlineIconComponent } from './FolderDownloadOutlineIcon.component';
+import { FolderArrowDownOutlineIconComponent } from './FolderArrowDownOutlineIcon.component';
+import { FolderMinusOutlineIconComponent } from './FolderMinusOutlineIcon.component';
 import { FolderOpenOutlineIconComponent } from './FolderOpenOutlineIcon.component';
-import { FolderRemoveOutlineIconComponent } from './FolderRemoveOutlineIcon.component';
+import { FolderPlusOutlineIconComponent } from './FolderPlusOutlineIcon.component';
 import { FolderOutlineIconComponent } from './FolderOutlineIcon.component';
+import { ForwardOutlineIconComponent } from './ForwardOutlineIcon.component';
+import { FunnelOutlineIconComponent } from './FunnelOutlineIcon.component';
+import { GifOutlineIconComponent } from './GifOutlineIcon.component';
+import { GiftTopOutlineIconComponent } from './GiftTopOutlineIcon.component';
 import { GiftOutlineIconComponent } from './GiftOutlineIcon.component';
 import { GlobeAltOutlineIconComponent } from './GlobeAltOutlineIcon.component';
-import { GlobeOutlineIconComponent } from './GlobeOutlineIcon.component';
-import { HandOutlineIconComponent } from './HandOutlineIcon.component';
+import { GlobeAmericasOutlineIconComponent } from './GlobeAmericasOutlineIcon.component';
+import { GlobeAsiaAustraliaOutlineIconComponent } from './GlobeAsiaAustraliaOutlineIcon.component';
+import { GlobeEuropeAfricaOutlineIconComponent } from './GlobeEuropeAfricaOutlineIcon.component';
+import { HandRaisedOutlineIconComponent } from './HandRaisedOutlineIcon.component';
+import { HandThumbDownOutlineIconComponent } from './HandThumbDownOutlineIcon.component';
+import { HandThumbUpOutlineIconComponent } from './HandThumbUpOutlineIcon.component';
 import { HashtagOutlineIconComponent } from './HashtagOutlineIcon.component';
 import { HeartOutlineIconComponent } from './HeartOutlineIcon.component';
+import { HomeModernOutlineIconComponent } from './HomeModernOutlineIcon.component';
 import { HomeOutlineIconComponent } from './HomeOutlineIcon.component';
 import { IdentificationOutlineIconComponent } from './IdentificationOutlineIcon.component';
-import { InboxInOutlineIconComponent } from './InboxInOutlineIcon.component';
+import { InboxArrowDownOutlineIconComponent } from './InboxArrowDownOutlineIcon.component';
+import { InboxStackOutlineIconComponent } from './InboxStackOutlineIcon.component';
 import { InboxOutlineIconComponent } from './InboxOutlineIcon.component';
 import { InformationCircleOutlineIconComponent } from './InformationCircleOutlineIcon.component';
 import { KeyOutlineIconComponent } from './KeyOutlineIcon.component';
-import { LibraryOutlineIconComponent } from './LibraryOutlineIcon.component';
+import { LanguageOutlineIconComponent } from './LanguageOutlineIcon.component';
+import { LifebuoyOutlineIconComponent } from './LifebuoyOutlineIcon.component';
 import { LightBulbOutlineIconComponent } from './LightBulbOutlineIcon.component';
-import { LightningBoltOutlineIconComponent } from './LightningBoltOutlineIcon.component';
 import { LinkOutlineIconComponent } from './LinkOutlineIcon.component';
-import { LocationMarkerOutlineIconComponent } from './LocationMarkerOutlineIcon.component';
+import { ListBulletOutlineIconComponent } from './ListBulletOutlineIcon.component';
 import { LockClosedOutlineIconComponent } from './LockClosedOutlineIcon.component';
 import { LockOpenOutlineIconComponent } from './LockOpenOutlineIcon.component';
-import { LoginOutlineIconComponent } from './LoginOutlineIcon.component';
-import { LogoutOutlineIconComponent } from './LogoutOutlineIcon.component';
-import { MailOpenOutlineIconComponent } from './MailOpenOutlineIcon.component';
-import { MailOutlineIconComponent } from './MailOutlineIcon.component';
+import { MagnifyingGlassCircleOutlineIconComponent } from './MagnifyingGlassCircleOutlineIcon.component';
+import { MagnifyingGlassMinusOutlineIconComponent } from './MagnifyingGlassMinusOutlineIcon.component';
+import { MagnifyingGlassPlusOutlineIconComponent } from './MagnifyingGlassPlusOutlineIcon.component';
+import { MagnifyingGlassOutlineIconComponent } from './MagnifyingGlassOutlineIcon.component';
+import { MapPinOutlineIconComponent } from './MapPinOutlineIcon.component';
 import { MapOutlineIconComponent } from './MapOutlineIcon.component';
-import { MenuAlt1OutlineIconComponent } from './MenuAlt1OutlineIcon.component';
-import { MenuAlt2OutlineIconComponent } from './MenuAlt2OutlineIcon.component';
-import { MenuAlt3OutlineIconComponent } from './MenuAlt3OutlineIcon.component';
-import { MenuAlt4OutlineIconComponent } from './MenuAlt4OutlineIcon.component';
-import { MenuOutlineIconComponent } from './MenuOutlineIcon.component';
+import { MegaphoneOutlineIconComponent } from './MegaphoneOutlineIcon.component';
 import { MicrophoneOutlineIconComponent } from './MicrophoneOutlineIcon.component';
 import { MinusCircleOutlineIconComponent } from './MinusCircleOutlineIcon.component';
-import { MinusSmOutlineIconComponent } from './MinusSmOutlineIcon.component';
+import { MinusSmallOutlineIconComponent } from './MinusSmallOutlineIcon.component';
 import { MinusOutlineIconComponent } from './MinusOutlineIcon.component';
 import { MoonOutlineIconComponent } from './MoonOutlineIcon.component';
-import { MusicNoteOutlineIconComponent } from './MusicNoteOutlineIcon.component';
+import { MusicalNoteOutlineIconComponent } from './MusicalNoteOutlineIcon.component';
 import { NewspaperOutlineIconComponent } from './NewspaperOutlineIcon.component';
-import { OfficeBuildingOutlineIconComponent } from './OfficeBuildingOutlineIcon.component';
+import { NoSymbolOutlineIconComponent } from './NoSymbolOutlineIcon.component';
+import { PaintBrushOutlineIconComponent } from './PaintBrushOutlineIcon.component';
 import { PaperAirplaneOutlineIconComponent } from './PaperAirplaneOutlineIcon.component';
 import { PaperClipOutlineIconComponent } from './PaperClipOutlineIcon.component';
+import { PauseCircleOutlineIconComponent } from './PauseCircleOutlineIcon.component';
 import { PauseOutlineIconComponent } from './PauseOutlineIcon.component';
-import { PencilAltOutlineIconComponent } from './PencilAltOutlineIcon.component';
+import { PencilSquareOutlineIconComponent } from './PencilSquareOutlineIcon.component';
 import { PencilOutlineIconComponent } from './PencilOutlineIcon.component';
-import { PhoneIncomingOutlineIconComponent } from './PhoneIncomingOutlineIcon.component';
-import { PhoneMissedCallOutlineIconComponent } from './PhoneMissedCallOutlineIcon.component';
-import { PhoneOutgoingOutlineIconComponent } from './PhoneOutgoingOutlineIcon.component';
+import { PhoneArrowDownLeftOutlineIconComponent } from './PhoneArrowDownLeftOutlineIcon.component';
+import { PhoneArrowUpRightOutlineIconComponent } from './PhoneArrowUpRightOutlineIcon.component';
+import { PhoneXMarkOutlineIconComponent } from './PhoneXMarkOutlineIcon.component';
 import { PhoneOutlineIconComponent } from './PhoneOutlineIcon.component';
-import { PhotographOutlineIconComponent } from './PhotographOutlineIcon.component';
+import { PhotoOutlineIconComponent } from './PhotoOutlineIcon.component';
+import { PlayCircleOutlineIconComponent } from './PlayCircleOutlineIcon.component';
+import { PlayPauseOutlineIconComponent } from './PlayPauseOutlineIcon.component';
 import { PlayOutlineIconComponent } from './PlayOutlineIcon.component';
 import { PlusCircleOutlineIconComponent } from './PlusCircleOutlineIcon.component';
-import { PlusSmOutlineIconComponent } from './PlusSmOutlineIcon.component';
+import { PlusSmallOutlineIconComponent } from './PlusSmallOutlineIcon.component';
 import { PlusOutlineIconComponent } from './PlusOutlineIcon.component';
+import { PowerOutlineIconComponent } from './PowerOutlineIcon.component';
 import { PresentationChartBarOutlineIconComponent } from './PresentationChartBarOutlineIcon.component';
 import { PresentationChartLineOutlineIconComponent } from './PresentationChartLineOutlineIcon.component';
 import { PrinterOutlineIconComponent } from './PrinterOutlineIcon.component';
-import { PuzzleOutlineIconComponent } from './PuzzleOutlineIcon.component';
-import { QrcodeOutlineIconComponent } from './QrcodeOutlineIcon.component';
+import { PuzzlePieceOutlineIconComponent } from './PuzzlePieceOutlineIcon.component';
+import { QrCodeOutlineIconComponent } from './QrCodeOutlineIcon.component';
 import { QuestionMarkCircleOutlineIconComponent } from './QuestionMarkCircleOutlineIcon.component';
+import { QueueListOutlineIconComponent } from './QueueListOutlineIcon.component';
+import { RadioOutlineIconComponent } from './RadioOutlineIcon.component';
+import { ReceiptPercentOutlineIconComponent } from './ReceiptPercentOutlineIcon.component';
 import { ReceiptRefundOutlineIconComponent } from './ReceiptRefundOutlineIcon.component';
-import { ReceiptTaxOutlineIconComponent } from './ReceiptTaxOutlineIcon.component';
-import { RefreshOutlineIconComponent } from './RefreshOutlineIcon.component';
-import { ReplyOutlineIconComponent } from './ReplyOutlineIcon.component';
-import { RewindOutlineIconComponent } from './RewindOutlineIcon.component';
+import { RectangleGroupOutlineIconComponent } from './RectangleGroupOutlineIcon.component';
+import { RectangleStackOutlineIconComponent } from './RectangleStackOutlineIcon.component';
+import { RocketLaunchOutlineIconComponent } from './RocketLaunchOutlineIcon.component';
 import { RssOutlineIconComponent } from './RssOutlineIcon.component';
-import { SaveAsOutlineIconComponent } from './SaveAsOutlineIcon.component';
-import { SaveOutlineIconComponent } from './SaveOutlineIcon.component';
 import { ScaleOutlineIconComponent } from './ScaleOutlineIcon.component';
 import { ScissorsOutlineIconComponent } from './ScissorsOutlineIcon.component';
-import { SearchCircleOutlineIconComponent } from './SearchCircleOutlineIcon.component';
-import { SearchOutlineIconComponent } from './SearchOutlineIcon.component';
-import { SelectorOutlineIconComponent } from './SelectorOutlineIcon.component';
+import { ServerStackOutlineIconComponent } from './ServerStackOutlineIcon.component';
 import { ServerOutlineIconComponent } from './ServerOutlineIcon.component';
 import { ShareOutlineIconComponent } from './ShareOutlineIcon.component';
 import { ShieldCheckOutlineIconComponent } from './ShieldCheckOutlineIcon.component';
 import { ShieldExclamationOutlineIconComponent } from './ShieldExclamationOutlineIcon.component';
 import { ShoppingBagOutlineIconComponent } from './ShoppingBagOutlineIcon.component';
 import { ShoppingCartOutlineIconComponent } from './ShoppingCartOutlineIcon.component';
-import { SortAscendingOutlineIconComponent } from './SortAscendingOutlineIcon.component';
-import { SortDescendingOutlineIconComponent } from './SortDescendingOutlineIcon.component';
+import { SignalSlashOutlineIconComponent } from './SignalSlashOutlineIcon.component';
+import { SignalOutlineIconComponent } from './SignalOutlineIcon.component';
 import { SparklesOutlineIconComponent } from './SparklesOutlineIcon.component';
-import { SpeakerphoneOutlineIconComponent } from './SpeakerphoneOutlineIcon.component';
+import { SpeakerWaveOutlineIconComponent } from './SpeakerWaveOutlineIcon.component';
+import { SpeakerXMarkOutlineIconComponent } from './SpeakerXMarkOutlineIcon.component';
+import { Square2StackOutlineIconComponent } from './Square2StackOutlineIcon.component';
+import { Square3Stack3DOutlineIconComponent } from './Square3Stack3DOutlineIcon.component';
+import { Squares2X2OutlineIconComponent } from './Squares2X2OutlineIcon.component';
+import { SquaresPlusOutlineIconComponent } from './SquaresPlusOutlineIcon.component';
 import { StarOutlineIconComponent } from './StarOutlineIcon.component';
-import { StatusOfflineOutlineIconComponent } from './StatusOfflineOutlineIcon.component';
-import { StatusOnlineOutlineIconComponent } from './StatusOnlineOutlineIcon.component';
+import { StopCircleOutlineIconComponent } from './StopCircleOutlineIcon.component';
 import { StopOutlineIconComponent } from './StopOutlineIcon.component';
 import { SunOutlineIconComponent } from './SunOutlineIcon.component';
-import { SupportOutlineIconComponent } from './SupportOutlineIcon.component';
-import { SwitchHorizontalOutlineIconComponent } from './SwitchHorizontalOutlineIcon.component';
-import { SwitchVerticalOutlineIconComponent } from './SwitchVerticalOutlineIcon.component';
-import { TableOutlineIconComponent } from './TableOutlineIcon.component';
+import { SwatchOutlineIconComponent } from './SwatchOutlineIcon.component';
+import { TableCellsOutlineIconComponent } from './TableCellsOutlineIcon.component';
 import { TagOutlineIconComponent } from './TagOutlineIcon.component';
-import { TemplateOutlineIconComponent } from './TemplateOutlineIcon.component';
-import { TerminalOutlineIconComponent } from './TerminalOutlineIcon.component';
-import { ThumbDownOutlineIconComponent } from './ThumbDownOutlineIcon.component';
-import { ThumbUpOutlineIconComponent } from './ThumbUpOutlineIcon.component';
 import { TicketOutlineIconComponent } from './TicketOutlineIcon.component';
-import { TranslateOutlineIconComponent } from './TranslateOutlineIcon.component';
 import { TrashOutlineIconComponent } from './TrashOutlineIcon.component';
-import { TrendingDownOutlineIconComponent } from './TrendingDownOutlineIcon.component';
-import { TrendingUpOutlineIconComponent } from './TrendingUpOutlineIcon.component';
+import { TrophyOutlineIconComponent } from './TrophyOutlineIcon.component';
 import { TruckOutlineIconComponent } from './TruckOutlineIcon.component';
-import { UploadOutlineIconComponent } from './UploadOutlineIcon.component';
-import { UserAddOutlineIconComponent } from './UserAddOutlineIcon.component';
+import { TvOutlineIconComponent } from './TvOutlineIcon.component';
 import { UserCircleOutlineIconComponent } from './UserCircleOutlineIcon.component';
 import { UserGroupOutlineIconComponent } from './UserGroupOutlineIcon.component';
-import { UserRemoveOutlineIconComponent } from './UserRemoveOutlineIcon.component';
+import { UserMinusOutlineIconComponent } from './UserMinusOutlineIcon.component';
+import { UserPlusOutlineIconComponent } from './UserPlusOutlineIcon.component';
 import { UserOutlineIconComponent } from './UserOutlineIcon.component';
 import { UsersOutlineIconComponent } from './UsersOutlineIcon.component';
 import { VariableOutlineIconComponent } from './VariableOutlineIcon.component';
+import { VideoCameraSlashOutlineIconComponent } from './VideoCameraSlashOutlineIcon.component';
 import { VideoCameraOutlineIconComponent } from './VideoCameraOutlineIcon.component';
-import { ViewBoardsOutlineIconComponent } from './ViewBoardsOutlineIcon.component';
-import { ViewGridAddOutlineIconComponent } from './ViewGridAddOutlineIcon.component';
-import { ViewGridOutlineIconComponent } from './ViewGridOutlineIcon.component';
-import { ViewListOutlineIconComponent } from './ViewListOutlineIcon.component';
-import { VolumeOffOutlineIconComponent } from './VolumeOffOutlineIcon.component';
-import { VolumeUpOutlineIconComponent } from './VolumeUpOutlineIcon.component';
+import { ViewColumnsOutlineIconComponent } from './ViewColumnsOutlineIcon.component';
+import { ViewfinderCircleOutlineIconComponent } from './ViewfinderCircleOutlineIcon.component';
+import { WalletOutlineIconComponent } from './WalletOutlineIcon.component';
 import { WifiOutlineIconComponent } from './WifiOutlineIcon.component';
+import { WindowOutlineIconComponent } from './WindowOutlineIcon.component';
+import { WrenchScrewdriverOutlineIconComponent } from './WrenchScrewdriverOutlineIcon.component';
+import { WrenchOutlineIconComponent } from './WrenchOutlineIcon.component';
 import { XCircleOutlineIconComponent } from './XCircleOutlineIcon.component';
-import { XOutlineIconComponent } from './XOutlineIcon.component';
-import { ZoomInOutlineIconComponent } from './ZoomInOutlineIcon.component';
-import { ZoomOutOutlineIconComponent } from './ZoomOutOutlineIcon.component';
+import { XMarkOutlineIconComponent } from './XMarkOutlineIcon.component';
 
 const COMPONENTS = [
   AcademicCapOutlineIconComponent,
-  AdjustmentsOutlineIconComponent,
-  AnnotationOutlineIconComponent,
-  ArchiveOutlineIconComponent,
-  ArrowCircleDownOutlineIconComponent,
-  ArrowCircleLeftOutlineIconComponent,
-  ArrowCircleRightOutlineIconComponent,
-  ArrowCircleUpOutlineIconComponent,
+  AdjustmentsHorizontalOutlineIconComponent,
+  AdjustmentsVerticalOutlineIconComponent,
+  ArchiveBoxArrowDownOutlineIconComponent,
+  ArchiveBoxXMarkOutlineIconComponent,
+  ArchiveBoxOutlineIconComponent,
+  ArrowDownCircleOutlineIconComponent,
+  ArrowDownLeftOutlineIconComponent,
+  ArrowDownOnSquareStackOutlineIconComponent,
+  ArrowDownOnSquareOutlineIconComponent,
+  ArrowDownRightOutlineIconComponent,
+  ArrowDownTrayOutlineIconComponent,
   ArrowDownOutlineIconComponent,
+  ArrowLeftCircleOutlineIconComponent,
+  ArrowLeftOnRectangleOutlineIconComponent,
   ArrowLeftOutlineIconComponent,
-  ArrowNarrowDownOutlineIconComponent,
-  ArrowNarrowLeftOutlineIconComponent,
-  ArrowNarrowRightOutlineIconComponent,
-  ArrowNarrowUpOutlineIconComponent,
+  ArrowLongDownOutlineIconComponent,
+  ArrowLongLeftOutlineIconComponent,
+  ArrowLongRightOutlineIconComponent,
+  ArrowLongUpOutlineIconComponent,
+  ArrowPathRoundedSquareOutlineIconComponent,
+  ArrowPathOutlineIconComponent,
+  ArrowRightCircleOutlineIconComponent,
+  ArrowRightOnRectangleOutlineIconComponent,
   ArrowRightOutlineIconComponent,
-  ArrowSmDownOutlineIconComponent,
-  ArrowSmLeftOutlineIconComponent,
-  ArrowSmRightOutlineIconComponent,
-  ArrowSmUpOutlineIconComponent,
+  ArrowSmallDownOutlineIconComponent,
+  ArrowSmallLeftOutlineIconComponent,
+  ArrowSmallRightOutlineIconComponent,
+  ArrowSmallUpOutlineIconComponent,
+  ArrowTopRightOnSquareOutlineIconComponent,
+  ArrowTrendingDownOutlineIconComponent,
+  ArrowTrendingUpOutlineIconComponent,
+  ArrowUpCircleOutlineIconComponent,
+  ArrowUpLeftOutlineIconComponent,
+  ArrowUpOnSquareStackOutlineIconComponent,
+  ArrowUpOnSquareOutlineIconComponent,
+  ArrowUpRightOutlineIconComponent,
+  ArrowUpTrayOutlineIconComponent,
   ArrowUpOutlineIconComponent,
-  ArrowsExpandOutlineIconComponent,
+  ArrowUturnDownOutlineIconComponent,
+  ArrowUturnLeftOutlineIconComponent,
+  ArrowUturnRightOutlineIconComponent,
+  ArrowUturnUpOutlineIconComponent,
+  ArrowsPointingInOutlineIconComponent,
+  ArrowsPointingOutOutlineIconComponent,
+  ArrowsRightLeftOutlineIconComponent,
+  ArrowsUpDownOutlineIconComponent,
   AtSymbolOutlineIconComponent,
   BackspaceOutlineIconComponent,
-  BadgeCheckOutlineIconComponent,
-  BanOutlineIconComponent,
+  BackwardOutlineIconComponent,
+  BanknotesOutlineIconComponent,
+  Bars2OutlineIconComponent,
+  Bars3BottomLeftOutlineIconComponent,
+  Bars3BottomRightOutlineIconComponent,
+  Bars3CenterLeftOutlineIconComponent,
+  Bars3OutlineIconComponent,
+  Bars4OutlineIconComponent,
+  BarsArrowDownOutlineIconComponent,
+  BarsArrowUpOutlineIconComponent,
+  Battery0OutlineIconComponent,
+  Battery100OutlineIconComponent,
+  Battery50OutlineIconComponent,
   BeakerOutlineIconComponent,
+  BellAlertOutlineIconComponent,
+  BellSlashOutlineIconComponent,
+  BellSnoozeOutlineIconComponent,
   BellOutlineIconComponent,
+  BoltSlashOutlineIconComponent,
+  BoltOutlineIconComponent,
   BookOpenOutlineIconComponent,
-  BookmarkAltOutlineIconComponent,
+  BookmarkSlashOutlineIconComponent,
+  BookmarkSquareOutlineIconComponent,
   BookmarkOutlineIconComponent,
   BriefcaseOutlineIconComponent,
+  BugAntOutlineIconComponent,
+  BuildingLibraryOutlineIconComponent,
+  BuildingOffice2OutlineIconComponent,
+  BuildingOfficeOutlineIconComponent,
+  BuildingStorefrontOutlineIconComponent,
   CakeOutlineIconComponent,
   CalculatorOutlineIconComponent,
+  CalendarDaysOutlineIconComponent,
   CalendarOutlineIconComponent,
   CameraOutlineIconComponent,
-  CashOutlineIconComponent,
+  ChartBarSquareOutlineIconComponent,
   ChartBarOutlineIconComponent,
   ChartPieOutlineIconComponent,
-  ChartSquareBarOutlineIconComponent,
-  ChatAlt2OutlineIconComponent,
-  ChatAltOutlineIconComponent,
-  ChatOutlineIconComponent,
+  ChatBubbleBottomCenterTextOutlineIconComponent,
+  ChatBubbleBottomCenterOutlineIconComponent,
+  ChatBubbleLeftEllipsisOutlineIconComponent,
+  ChatBubbleLeftRightOutlineIconComponent,
+  ChatBubbleLeftOutlineIconComponent,
+  ChatBubbleOvalLeftEllipsisOutlineIconComponent,
+  ChatBubbleOvalLeftOutlineIconComponent,
+  CheckBadgeOutlineIconComponent,
   CheckCircleOutlineIconComponent,
   CheckOutlineIconComponent,
   ChevronDoubleDownOutlineIconComponent,
@@ -284,20 +399,25 @@ const COMPONENTS = [
   ChevronDownOutlineIconComponent,
   ChevronLeftOutlineIconComponent,
   ChevronRightOutlineIconComponent,
+  ChevronUpDownOutlineIconComponent,
   ChevronUpOutlineIconComponent,
-  ChipOutlineIconComponent,
-  ClipboardCheckOutlineIconComponent,
-  ClipboardCopyOutlineIconComponent,
-  ClipboardListOutlineIconComponent,
+  CircleStackOutlineIconComponent,
+  ClipboardDocumentCheckOutlineIconComponent,
+  ClipboardDocumentListOutlineIconComponent,
+  ClipboardDocumentOutlineIconComponent,
   ClipboardOutlineIconComponent,
   ClockOutlineIconComponent,
-  CloudDownloadOutlineIconComponent,
-  CloudUploadOutlineIconComponent,
+  CloudArrowDownOutlineIconComponent,
+  CloudArrowUpOutlineIconComponent,
   CloudOutlineIconComponent,
-  CodeOutlineIconComponent,
+  CodeBracketSquareOutlineIconComponent,
+  CodeBracketOutlineIconComponent,
+  Cog6ToothOutlineIconComponent,
+  Cog8ToothOutlineIconComponent,
   CogOutlineIconComponent,
-  CollectionOutlineIconComponent,
-  ColorSwatchOutlineIconComponent,
+  CommandLineOutlineIconComponent,
+  ComputerDesktopOutlineIconComponent,
+  CpuChipOutlineIconComponent,
   CreditCardOutlineIconComponent,
   CubeTransparentOutlineIconComponent,
   CubeOutlineIconComponent,
@@ -307,162 +427,166 @@ const COMPONENTS = [
   CurrencyPoundOutlineIconComponent,
   CurrencyRupeeOutlineIconComponent,
   CurrencyYenOutlineIconComponent,
-  CursorClickOutlineIconComponent,
-  DatabaseOutlineIconComponent,
-  DesktopComputerOutlineIconComponent,
-  DeviceMobileOutlineIconComponent,
+  CursorArrowRaysOutlineIconComponent,
+  CursorArrowRippleOutlineIconComponent,
+  DevicePhoneMobileOutlineIconComponent,
   DeviceTabletOutlineIconComponent,
-  DocumentAddOutlineIconComponent,
-  DocumentDownloadOutlineIconComponent,
+  DocumentArrowDownOutlineIconComponent,
+  DocumentArrowUpOutlineIconComponent,
+  DocumentChartBarOutlineIconComponent,
+  DocumentCheckOutlineIconComponent,
   DocumentDuplicateOutlineIconComponent,
-  DocumentRemoveOutlineIconComponent,
-  DocumentReportOutlineIconComponent,
-  DocumentSearchOutlineIconComponent,
+  DocumentMagnifyingGlassOutlineIconComponent,
+  DocumentMinusOutlineIconComponent,
+  DocumentPlusOutlineIconComponent,
   DocumentTextOutlineIconComponent,
   DocumentOutlineIconComponent,
-  DotsCircleHorizontalOutlineIconComponent,
-  DotsHorizontalOutlineIconComponent,
-  DotsVerticalOutlineIconComponent,
-  DownloadOutlineIconComponent,
-  DuplicateOutlineIconComponent,
-  EmojiHappyOutlineIconComponent,
-  EmojiSadOutlineIconComponent,
+  EllipsisHorizontalCircleOutlineIconComponent,
+  EllipsisHorizontalOutlineIconComponent,
+  EllipsisVerticalOutlineIconComponent,
+  EnvelopeOpenOutlineIconComponent,
+  EnvelopeOutlineIconComponent,
   ExclamationCircleOutlineIconComponent,
-  ExclamationOutlineIconComponent,
-  ExternalLinkOutlineIconComponent,
-  EyeOffOutlineIconComponent,
+  ExclamationTriangleOutlineIconComponent,
+  EyeDropperOutlineIconComponent,
+  EyeSlashOutlineIconComponent,
   EyeOutlineIconComponent,
-  FastForwardOutlineIconComponent,
+  FaceFrownOutlineIconComponent,
+  FaceSmileOutlineIconComponent,
   FilmOutlineIconComponent,
-  FilterOutlineIconComponent,
   FingerPrintOutlineIconComponent,
   FireOutlineIconComponent,
   FlagOutlineIconComponent,
-  FolderAddOutlineIconComponent,
-  FolderDownloadOutlineIconComponent,
+  FolderArrowDownOutlineIconComponent,
+  FolderMinusOutlineIconComponent,
   FolderOpenOutlineIconComponent,
-  FolderRemoveOutlineIconComponent,
+  FolderPlusOutlineIconComponent,
   FolderOutlineIconComponent,
+  ForwardOutlineIconComponent,
+  FunnelOutlineIconComponent,
+  GifOutlineIconComponent,
+  GiftTopOutlineIconComponent,
   GiftOutlineIconComponent,
   GlobeAltOutlineIconComponent,
-  GlobeOutlineIconComponent,
-  HandOutlineIconComponent,
+  GlobeAmericasOutlineIconComponent,
+  GlobeAsiaAustraliaOutlineIconComponent,
+  GlobeEuropeAfricaOutlineIconComponent,
+  HandRaisedOutlineIconComponent,
+  HandThumbDownOutlineIconComponent,
+  HandThumbUpOutlineIconComponent,
   HashtagOutlineIconComponent,
   HeartOutlineIconComponent,
+  HomeModernOutlineIconComponent,
   HomeOutlineIconComponent,
   IdentificationOutlineIconComponent,
-  InboxInOutlineIconComponent,
+  InboxArrowDownOutlineIconComponent,
+  InboxStackOutlineIconComponent,
   InboxOutlineIconComponent,
   InformationCircleOutlineIconComponent,
   KeyOutlineIconComponent,
-  LibraryOutlineIconComponent,
+  LanguageOutlineIconComponent,
+  LifebuoyOutlineIconComponent,
   LightBulbOutlineIconComponent,
-  LightningBoltOutlineIconComponent,
   LinkOutlineIconComponent,
-  LocationMarkerOutlineIconComponent,
+  ListBulletOutlineIconComponent,
   LockClosedOutlineIconComponent,
   LockOpenOutlineIconComponent,
-  LoginOutlineIconComponent,
-  LogoutOutlineIconComponent,
-  MailOpenOutlineIconComponent,
-  MailOutlineIconComponent,
+  MagnifyingGlassCircleOutlineIconComponent,
+  MagnifyingGlassMinusOutlineIconComponent,
+  MagnifyingGlassPlusOutlineIconComponent,
+  MagnifyingGlassOutlineIconComponent,
+  MapPinOutlineIconComponent,
   MapOutlineIconComponent,
-  MenuAlt1OutlineIconComponent,
-  MenuAlt2OutlineIconComponent,
-  MenuAlt3OutlineIconComponent,
-  MenuAlt4OutlineIconComponent,
-  MenuOutlineIconComponent,
+  MegaphoneOutlineIconComponent,
   MicrophoneOutlineIconComponent,
   MinusCircleOutlineIconComponent,
-  MinusSmOutlineIconComponent,
+  MinusSmallOutlineIconComponent,
   MinusOutlineIconComponent,
   MoonOutlineIconComponent,
-  MusicNoteOutlineIconComponent,
+  MusicalNoteOutlineIconComponent,
   NewspaperOutlineIconComponent,
-  OfficeBuildingOutlineIconComponent,
+  NoSymbolOutlineIconComponent,
+  PaintBrushOutlineIconComponent,
   PaperAirplaneOutlineIconComponent,
   PaperClipOutlineIconComponent,
+  PauseCircleOutlineIconComponent,
   PauseOutlineIconComponent,
-  PencilAltOutlineIconComponent,
+  PencilSquareOutlineIconComponent,
   PencilOutlineIconComponent,
-  PhoneIncomingOutlineIconComponent,
-  PhoneMissedCallOutlineIconComponent,
-  PhoneOutgoingOutlineIconComponent,
+  PhoneArrowDownLeftOutlineIconComponent,
+  PhoneArrowUpRightOutlineIconComponent,
+  PhoneXMarkOutlineIconComponent,
   PhoneOutlineIconComponent,
-  PhotographOutlineIconComponent,
+  PhotoOutlineIconComponent,
+  PlayCircleOutlineIconComponent,
+  PlayPauseOutlineIconComponent,
   PlayOutlineIconComponent,
   PlusCircleOutlineIconComponent,
-  PlusSmOutlineIconComponent,
+  PlusSmallOutlineIconComponent,
   PlusOutlineIconComponent,
+  PowerOutlineIconComponent,
   PresentationChartBarOutlineIconComponent,
   PresentationChartLineOutlineIconComponent,
   PrinterOutlineIconComponent,
-  PuzzleOutlineIconComponent,
-  QrcodeOutlineIconComponent,
+  PuzzlePieceOutlineIconComponent,
+  QrCodeOutlineIconComponent,
   QuestionMarkCircleOutlineIconComponent,
+  QueueListOutlineIconComponent,
+  RadioOutlineIconComponent,
+  ReceiptPercentOutlineIconComponent,
   ReceiptRefundOutlineIconComponent,
-  ReceiptTaxOutlineIconComponent,
-  RefreshOutlineIconComponent,
-  ReplyOutlineIconComponent,
-  RewindOutlineIconComponent,
+  RectangleGroupOutlineIconComponent,
+  RectangleStackOutlineIconComponent,
+  RocketLaunchOutlineIconComponent,
   RssOutlineIconComponent,
-  SaveAsOutlineIconComponent,
-  SaveOutlineIconComponent,
   ScaleOutlineIconComponent,
   ScissorsOutlineIconComponent,
-  SearchCircleOutlineIconComponent,
-  SearchOutlineIconComponent,
-  SelectorOutlineIconComponent,
+  ServerStackOutlineIconComponent,
   ServerOutlineIconComponent,
   ShareOutlineIconComponent,
   ShieldCheckOutlineIconComponent,
   ShieldExclamationOutlineIconComponent,
   ShoppingBagOutlineIconComponent,
   ShoppingCartOutlineIconComponent,
-  SortAscendingOutlineIconComponent,
-  SortDescendingOutlineIconComponent,
+  SignalSlashOutlineIconComponent,
+  SignalOutlineIconComponent,
   SparklesOutlineIconComponent,
-  SpeakerphoneOutlineIconComponent,
+  SpeakerWaveOutlineIconComponent,
+  SpeakerXMarkOutlineIconComponent,
+  Square2StackOutlineIconComponent,
+  Square3Stack3DOutlineIconComponent,
+  Squares2X2OutlineIconComponent,
+  SquaresPlusOutlineIconComponent,
   StarOutlineIconComponent,
-  StatusOfflineOutlineIconComponent,
-  StatusOnlineOutlineIconComponent,
+  StopCircleOutlineIconComponent,
   StopOutlineIconComponent,
   SunOutlineIconComponent,
-  SupportOutlineIconComponent,
-  SwitchHorizontalOutlineIconComponent,
-  SwitchVerticalOutlineIconComponent,
-  TableOutlineIconComponent,
+  SwatchOutlineIconComponent,
+  TableCellsOutlineIconComponent,
   TagOutlineIconComponent,
-  TemplateOutlineIconComponent,
-  TerminalOutlineIconComponent,
-  ThumbDownOutlineIconComponent,
-  ThumbUpOutlineIconComponent,
   TicketOutlineIconComponent,
-  TranslateOutlineIconComponent,
   TrashOutlineIconComponent,
-  TrendingDownOutlineIconComponent,
-  TrendingUpOutlineIconComponent,
+  TrophyOutlineIconComponent,
   TruckOutlineIconComponent,
-  UploadOutlineIconComponent,
-  UserAddOutlineIconComponent,
+  TvOutlineIconComponent,
   UserCircleOutlineIconComponent,
   UserGroupOutlineIconComponent,
-  UserRemoveOutlineIconComponent,
+  UserMinusOutlineIconComponent,
+  UserPlusOutlineIconComponent,
   UserOutlineIconComponent,
   UsersOutlineIconComponent,
   VariableOutlineIconComponent,
+  VideoCameraSlashOutlineIconComponent,
   VideoCameraOutlineIconComponent,
-  ViewBoardsOutlineIconComponent,
-  ViewGridAddOutlineIconComponent,
-  ViewGridOutlineIconComponent,
-  ViewListOutlineIconComponent,
-  VolumeOffOutlineIconComponent,
-  VolumeUpOutlineIconComponent,
+  ViewColumnsOutlineIconComponent,
+  ViewfinderCircleOutlineIconComponent,
+  WalletOutlineIconComponent,
   WifiOutlineIconComponent,
+  WindowOutlineIconComponent,
+  WrenchScrewdriverOutlineIconComponent,
+  WrenchOutlineIconComponent,
   XCircleOutlineIconComponent,
-  XOutlineIconComponent,
-  ZoomInOutlineIconComponent,
-  ZoomOutOutlineIconComponent
+  XMarkOutlineIconComponent
 ];
 
 @NgModule({

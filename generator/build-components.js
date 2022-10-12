@@ -5,6 +5,7 @@ const camelcase = require("camelcase");
 const mkdirp = require("mkdirp");
 const rimraf = require("rimraf");
 const shell = require("shelljs");
+const kebabCase = require("lodash.kebabcase");
 
 const root = path.resolve(__dirname + "/..");
 const projectsPath = path.resolve(`${root}/projects`);
@@ -37,8 +38,8 @@ function cloneHeroicons() {
   } else {
     rimraf.sync(heroiconsPath);
     shell.exec(`git clone ${heroiconsGitRepo} ${originalHeroiconsPath}`);
-    shell.exec(`mv ${heroiconsPath}/optimized/outline ${heroiconsPath}/`);
-    shell.exec(`mv ${heroiconsPath}/optimized/solid ${heroiconsPath}/`);
+    shell.exec(`mv ${heroiconsPath}/optimized/24/outline ${heroiconsPath}/`);
+    shell.exec(`mv ${heroiconsPath}/optimized/24/solid ${heroiconsPath}/`);
     const heroiconsFolder = require("fs").readdirSync(heroiconsPath);
     heroiconsFolder
       .filter((folder) => !["outline", "solid"].includes(folder))
@@ -189,8 +190,9 @@ function getFilesData(iconFiles) {
 
 async function getSVGContent(iconFilesData) {
   return await Promise.all(
-    iconFilesData.map(async ({ path, ...all }) => ({
+    iconFilesData.map(async ({ path, selector, ...all }) => ({
       template: await fs.readFile(path, "utf8"),
+      selector: kebabCase(selector),
       ...all,
     }))
   );

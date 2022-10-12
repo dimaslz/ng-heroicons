@@ -14,16 +14,16 @@
           formControlName="search"
           data-testid="search"
         />
-        <x-outline-icon
+        <x-mark-outline-icon
           class="absolute right-0 top-0 flex h-full cursor-pointer items-center pr-1 hover:opacity-50"
           [size]="16"
           *ngIf="form.get('search')?.value"
           (click)="form.get('search')?.setValue('')"
           name="clear-query"
-        ></x-outline-icon>
+        ></x-mark-outline-icon>
       </div>
       <div class="flex h-8 w-8 items-center justify-center bg-red-600">
-        <search-outline-icon class="text-white"></search-outline-icon>
+        <magnifying-glass-outline-icon class="text-white"></magnifying-glass-outline-icon>
       </div>
     </form>
   </div>
@@ -33,7 +33,7 @@
       name="zoom-out"
       [ngClass]="['flex items-center justify-center', 'h-8 w-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none']"
     >
-      <zoom-out-outline-icon></zoom-out-outline-icon>
+      <magnifying-glass-plus-outline-icon></magnifying-glass-plus-outline-icon>
     </button>
     <div class="flex h-8 w-16 items-center justify-center bg-red-600 text-white">
       {{ size }}
@@ -43,7 +43,7 @@
       name="zoom-in"
       [ngClass]="['flex items-center justify-center', 'h-8 w-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none']"
     >
-      <zoom-in-outline-icon></zoom-in-outline-icon>
+      <magnifying-glass-minus-outline-icon></magnifying-glass-minus-outline-icon>
     </button>
   </div>
 
