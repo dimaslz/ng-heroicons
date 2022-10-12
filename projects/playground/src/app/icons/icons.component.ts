@@ -21,7 +21,7 @@ import copyToClipboard from '../../utils/copy-to-clipboard.utils';
 export class IconsComponent implements OnInit, OnDestroy, OnChanges {
   @Input() color = 'white';
 
-  query = '';
+  query: string | null = '';
   classColor = 'white';
   colors: string[] = [
     'white',
@@ -171,7 +171,9 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
     }
   }
 
-  showIconsWhenMatchWithQuery(query: string): void {
+  showIconsWhenMatchWithQuery(query: string | null): void {
+    if (!query) { return; }
+
     try {
       query = query.trim().replace(/\s+/g, '-').toLowerCase();
       const icons: NodeListOf<Element> = document.querySelectorAll(
@@ -211,7 +213,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
     }
   }
 
-  onChangeSearch(query: string): void {
+  onChangeSearch(query: string | null): void {
     this.query = query;
     if (this.debounceSearch) {
       clearTimeout(this.debounceSearch);
@@ -223,6 +225,8 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
       this.showIconsWhenMatchWithQuery(query);
       this.loading = false;
     }, 200);
+
+    return;
   }
 
   onClickColor(color: string): void {
