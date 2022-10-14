@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
-import { Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { fireEvent, render, RenderResult, screen } from '@testing-library/angular';
+
 import * as copyToClipboardUtil from '../utils/copy-to-clipboard.utils';
 import { AppComponent } from './app.component';
 
@@ -23,7 +24,7 @@ class IconComponent {
   selector: 'app-darkmode-toggle',
   template: '.'
 })
-class DarkModeComponent {}
+class DarkModeComponent { }
 
 describe('AppComponent', () => {
   let componentRender: RenderResult<AppComponent>;

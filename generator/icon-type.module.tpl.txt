@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 
-{{componentsImports}}
+import * as {{TYPE}}_ICONS from "./"
 
 const COMPONENTS = [
   {{components}}

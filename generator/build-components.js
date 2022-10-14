@@ -244,8 +244,9 @@ async function generateModule(angularComponents) {
       iconTpl,
     });
 
+    const typeUppercase = type.toUpperCase()
     moduleComponents = moduleComponents.concat(
-      content.filter((c) => c.type === type).map((c) => c.className)
+      content.filter((c) => c.type === type).map((c) => `${typeUppercase}_ICONS.${c.className}`)
     );
     moduleImports = moduleImports.concat(
       content
@@ -263,7 +264,7 @@ async function generateModule(angularComponents) {
       .readFile(`${here}/icon-type.module.tpl.txt`, "utf8")
       .then((file) => {
         return file
-          .replace("{{componentsImports}}", moduleImports.join("\n"))
+          .replace("{{TYPE}}", typeUppercase)
           .replace(/\{\{components\}\}/g, moduleComponents.join(",\n  "))
           .replace(/\{\{type\}\}/g, jsUcfirst(type));
       })

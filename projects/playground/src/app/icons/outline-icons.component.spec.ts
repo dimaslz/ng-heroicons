@@ -4,11 +4,11 @@ import { ComponentFixture } from '@angular/core/testing';
 import { render } from '@testing-library/angular';
 import kebabcase from 'lodash.kebabcase';
 
-import * as OUTLINE_ICONS from '../../../../ng-heroicons/src/lib/heroicons/outline';
+import { OUTLINE_ICONS } from '../../../../ng-heroicons/src/public-api';
 
 import { OutlineIconsComponent } from './outline-icons.component';
 
-const ICONS_ARRAY = Object.entries(OUTLINE_ICONS);
+const ICONS_ARRAY = Object.entries(OUTLINE_ICONS as { [s: string]: unknown });
 
 describe('Outline icons', () => {
   let fixture: ComponentFixture<OutlineIconsComponent>;

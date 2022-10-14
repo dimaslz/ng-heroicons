@@ -7,16 +7,19 @@ import { IconsModule } from './icons/icons.module';
 import { IconModule } from '../components/icon/icon.module';
 import { DarkModeModule } from '../components/darkmode-toggle/darkmode-toggle.module';
 
+import { NgHeroiconsModule } from '@dimaslz/ng-heroicons';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     CommonModule,
-
     IconsModule,
     IconModule,
     DarkModeModule,
+
+    NgHeroiconsModule
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

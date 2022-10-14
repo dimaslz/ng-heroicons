@@ -1,592 +1,301 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 
-import { AcademicCapSolidIconComponent } from './AcademicCapSolidIcon.component';
-import { AdjustmentsHorizontalSolidIconComponent } from './AdjustmentsHorizontalSolidIcon.component';
-import { AdjustmentsVerticalSolidIconComponent } from './AdjustmentsVerticalSolidIcon.component';
-import { ArchiveBoxArrowDownSolidIconComponent } from './ArchiveBoxArrowDownSolidIcon.component';
-import { ArchiveBoxXMarkSolidIconComponent } from './ArchiveBoxXMarkSolidIcon.component';
-import { ArchiveBoxSolidIconComponent } from './ArchiveBoxSolidIcon.component';
-import { ArrowDownCircleSolidIconComponent } from './ArrowDownCircleSolidIcon.component';
-import { ArrowDownLeftSolidIconComponent } from './ArrowDownLeftSolidIcon.component';
-import { ArrowDownOnSquareStackSolidIconComponent } from './ArrowDownOnSquareStackSolidIcon.component';
-import { ArrowDownOnSquareSolidIconComponent } from './ArrowDownOnSquareSolidIcon.component';
-import { ArrowDownRightSolidIconComponent } from './ArrowDownRightSolidIcon.component';
-import { ArrowDownTraySolidIconComponent } from './ArrowDownTraySolidIcon.component';
-import { ArrowDownSolidIconComponent } from './ArrowDownSolidIcon.component';
-import { ArrowLeftCircleSolidIconComponent } from './ArrowLeftCircleSolidIcon.component';
-import { ArrowLeftOnRectangleSolidIconComponent } from './ArrowLeftOnRectangleSolidIcon.component';
-import { ArrowLeftSolidIconComponent } from './ArrowLeftSolidIcon.component';
-import { ArrowLongDownSolidIconComponent } from './ArrowLongDownSolidIcon.component';
-import { ArrowLongLeftSolidIconComponent } from './ArrowLongLeftSolidIcon.component';
-import { ArrowLongRightSolidIconComponent } from './ArrowLongRightSolidIcon.component';
-import { ArrowLongUpSolidIconComponent } from './ArrowLongUpSolidIcon.component';
-import { ArrowPathRoundedSquareSolidIconComponent } from './ArrowPathRoundedSquareSolidIcon.component';
-import { ArrowPathSolidIconComponent } from './ArrowPathSolidIcon.component';
-import { ArrowRightCircleSolidIconComponent } from './ArrowRightCircleSolidIcon.component';
-import { ArrowRightOnRectangleSolidIconComponent } from './ArrowRightOnRectangleSolidIcon.component';
-import { ArrowRightSolidIconComponent } from './ArrowRightSolidIcon.component';
-import { ArrowSmallDownSolidIconComponent } from './ArrowSmallDownSolidIcon.component';
-import { ArrowSmallLeftSolidIconComponent } from './ArrowSmallLeftSolidIcon.component';
-import { ArrowSmallRightSolidIconComponent } from './ArrowSmallRightSolidIcon.component';
-import { ArrowSmallUpSolidIconComponent } from './ArrowSmallUpSolidIcon.component';
-import { ArrowTopRightOnSquareSolidIconComponent } from './ArrowTopRightOnSquareSolidIcon.component';
-import { ArrowTrendingDownSolidIconComponent } from './ArrowTrendingDownSolidIcon.component';
-import { ArrowTrendingUpSolidIconComponent } from './ArrowTrendingUpSolidIcon.component';
-import { ArrowUpCircleSolidIconComponent } from './ArrowUpCircleSolidIcon.component';
-import { ArrowUpLeftSolidIconComponent } from './ArrowUpLeftSolidIcon.component';
-import { ArrowUpOnSquareStackSolidIconComponent } from './ArrowUpOnSquareStackSolidIcon.component';
-import { ArrowUpOnSquareSolidIconComponent } from './ArrowUpOnSquareSolidIcon.component';
-import { ArrowUpRightSolidIconComponent } from './ArrowUpRightSolidIcon.component';
-import { ArrowUpTraySolidIconComponent } from './ArrowUpTraySolidIcon.component';
-import { ArrowUpSolidIconComponent } from './ArrowUpSolidIcon.component';
-import { ArrowUturnDownSolidIconComponent } from './ArrowUturnDownSolidIcon.component';
-import { ArrowUturnLeftSolidIconComponent } from './ArrowUturnLeftSolidIcon.component';
-import { ArrowUturnRightSolidIconComponent } from './ArrowUturnRightSolidIcon.component';
-import { ArrowUturnUpSolidIconComponent } from './ArrowUturnUpSolidIcon.component';
-import { ArrowsPointingInSolidIconComponent } from './ArrowsPointingInSolidIcon.component';
-import { ArrowsPointingOutSolidIconComponent } from './ArrowsPointingOutSolidIcon.component';
-import { ArrowsRightLeftSolidIconComponent } from './ArrowsRightLeftSolidIcon.component';
-import { ArrowsUpDownSolidIconComponent } from './ArrowsUpDownSolidIcon.component';
-import { AtSymbolSolidIconComponent } from './AtSymbolSolidIcon.component';
-import { BackspaceSolidIconComponent } from './BackspaceSolidIcon.component';
-import { BackwardSolidIconComponent } from './BackwardSolidIcon.component';
-import { BanknotesSolidIconComponent } from './BanknotesSolidIcon.component';
-import { Bars2SolidIconComponent } from './Bars2SolidIcon.component';
-import { Bars3BottomLeftSolidIconComponent } from './Bars3BottomLeftSolidIcon.component';
-import { Bars3BottomRightSolidIconComponent } from './Bars3BottomRightSolidIcon.component';
-import { Bars3CenterLeftSolidIconComponent } from './Bars3CenterLeftSolidIcon.component';
-import { Bars3SolidIconComponent } from './Bars3SolidIcon.component';
-import { Bars4SolidIconComponent } from './Bars4SolidIcon.component';
-import { BarsArrowDownSolidIconComponent } from './BarsArrowDownSolidIcon.component';
-import { BarsArrowUpSolidIconComponent } from './BarsArrowUpSolidIcon.component';
-import { Battery0SolidIconComponent } from './Battery0SolidIcon.component';
-import { Battery100SolidIconComponent } from './Battery100SolidIcon.component';
-import { Battery50SolidIconComponent } from './Battery50SolidIcon.component';
-import { BeakerSolidIconComponent } from './BeakerSolidIcon.component';
-import { BellAlertSolidIconComponent } from './BellAlertSolidIcon.component';
-import { BellSlashSolidIconComponent } from './BellSlashSolidIcon.component';
-import { BellSnoozeSolidIconComponent } from './BellSnoozeSolidIcon.component';
-import { BellSolidIconComponent } from './BellSolidIcon.component';
-import { BoltSlashSolidIconComponent } from './BoltSlashSolidIcon.component';
-import { BoltSolidIconComponent } from './BoltSolidIcon.component';
-import { BookOpenSolidIconComponent } from './BookOpenSolidIcon.component';
-import { BookmarkSlashSolidIconComponent } from './BookmarkSlashSolidIcon.component';
-import { BookmarkSquareSolidIconComponent } from './BookmarkSquareSolidIcon.component';
-import { BookmarkSolidIconComponent } from './BookmarkSolidIcon.component';
-import { BriefcaseSolidIconComponent } from './BriefcaseSolidIcon.component';
-import { BugAntSolidIconComponent } from './BugAntSolidIcon.component';
-import { BuildingLibrarySolidIconComponent } from './BuildingLibrarySolidIcon.component';
-import { BuildingOffice2SolidIconComponent } from './BuildingOffice2SolidIcon.component';
-import { BuildingOfficeSolidIconComponent } from './BuildingOfficeSolidIcon.component';
-import { BuildingStorefrontSolidIconComponent } from './BuildingStorefrontSolidIcon.component';
-import { CakeSolidIconComponent } from './CakeSolidIcon.component';
-import { CalculatorSolidIconComponent } from './CalculatorSolidIcon.component';
-import { CalendarDaysSolidIconComponent } from './CalendarDaysSolidIcon.component';
-import { CalendarSolidIconComponent } from './CalendarSolidIcon.component';
-import { CameraSolidIconComponent } from './CameraSolidIcon.component';
-import { ChartBarSquareSolidIconComponent } from './ChartBarSquareSolidIcon.component';
-import { ChartBarSolidIconComponent } from './ChartBarSolidIcon.component';
-import { ChartPieSolidIconComponent } from './ChartPieSolidIcon.component';
-import { ChatBubbleBottomCenterTextSolidIconComponent } from './ChatBubbleBottomCenterTextSolidIcon.component';
-import { ChatBubbleBottomCenterSolidIconComponent } from './ChatBubbleBottomCenterSolidIcon.component';
-import { ChatBubbleLeftEllipsisSolidIconComponent } from './ChatBubbleLeftEllipsisSolidIcon.component';
-import { ChatBubbleLeftRightSolidIconComponent } from './ChatBubbleLeftRightSolidIcon.component';
-import { ChatBubbleLeftSolidIconComponent } from './ChatBubbleLeftSolidIcon.component';
-import { ChatBubbleOvalLeftEllipsisSolidIconComponent } from './ChatBubbleOvalLeftEllipsisSolidIcon.component';
-import { ChatBubbleOvalLeftSolidIconComponent } from './ChatBubbleOvalLeftSolidIcon.component';
-import { CheckBadgeSolidIconComponent } from './CheckBadgeSolidIcon.component';
-import { CheckCircleSolidIconComponent } from './CheckCircleSolidIcon.component';
-import { CheckSolidIconComponent } from './CheckSolidIcon.component';
-import { ChevronDoubleDownSolidIconComponent } from './ChevronDoubleDownSolidIcon.component';
-import { ChevronDoubleLeftSolidIconComponent } from './ChevronDoubleLeftSolidIcon.component';
-import { ChevronDoubleRightSolidIconComponent } from './ChevronDoubleRightSolidIcon.component';
-import { ChevronDoubleUpSolidIconComponent } from './ChevronDoubleUpSolidIcon.component';
-import { ChevronDownSolidIconComponent } from './ChevronDownSolidIcon.component';
-import { ChevronLeftSolidIconComponent } from './ChevronLeftSolidIcon.component';
-import { ChevronRightSolidIconComponent } from './ChevronRightSolidIcon.component';
-import { ChevronUpDownSolidIconComponent } from './ChevronUpDownSolidIcon.component';
-import { ChevronUpSolidIconComponent } from './ChevronUpSolidIcon.component';
-import { CircleStackSolidIconComponent } from './CircleStackSolidIcon.component';
-import { ClipboardDocumentCheckSolidIconComponent } from './ClipboardDocumentCheckSolidIcon.component';
-import { ClipboardDocumentListSolidIconComponent } from './ClipboardDocumentListSolidIcon.component';
-import { ClipboardDocumentSolidIconComponent } from './ClipboardDocumentSolidIcon.component';
-import { ClipboardSolidIconComponent } from './ClipboardSolidIcon.component';
-import { ClockSolidIconComponent } from './ClockSolidIcon.component';
-import { CloudArrowDownSolidIconComponent } from './CloudArrowDownSolidIcon.component';
-import { CloudArrowUpSolidIconComponent } from './CloudArrowUpSolidIcon.component';
-import { CloudSolidIconComponent } from './CloudSolidIcon.component';
-import { CodeBracketSquareSolidIconComponent } from './CodeBracketSquareSolidIcon.component';
-import { CodeBracketSolidIconComponent } from './CodeBracketSolidIcon.component';
-import { Cog6ToothSolidIconComponent } from './Cog6ToothSolidIcon.component';
-import { Cog8ToothSolidIconComponent } from './Cog8ToothSolidIcon.component';
-import { CogSolidIconComponent } from './CogSolidIcon.component';
-import { CommandLineSolidIconComponent } from './CommandLineSolidIcon.component';
-import { ComputerDesktopSolidIconComponent } from './ComputerDesktopSolidIcon.component';
-import { CpuChipSolidIconComponent } from './CpuChipSolidIcon.component';
-import { CreditCardSolidIconComponent } from './CreditCardSolidIcon.component';
-import { CubeTransparentSolidIconComponent } from './CubeTransparentSolidIcon.component';
-import { CubeSolidIconComponent } from './CubeSolidIcon.component';
-import { CurrencyBangladeshiSolidIconComponent } from './CurrencyBangladeshiSolidIcon.component';
-import { CurrencyDollarSolidIconComponent } from './CurrencyDollarSolidIcon.component';
-import { CurrencyEuroSolidIconComponent } from './CurrencyEuroSolidIcon.component';
-import { CurrencyPoundSolidIconComponent } from './CurrencyPoundSolidIcon.component';
-import { CurrencyRupeeSolidIconComponent } from './CurrencyRupeeSolidIcon.component';
-import { CurrencyYenSolidIconComponent } from './CurrencyYenSolidIcon.component';
-import { CursorArrowRaysSolidIconComponent } from './CursorArrowRaysSolidIcon.component';
-import { CursorArrowRippleSolidIconComponent } from './CursorArrowRippleSolidIcon.component';
-import { DevicePhoneMobileSolidIconComponent } from './DevicePhoneMobileSolidIcon.component';
-import { DeviceTabletSolidIconComponent } from './DeviceTabletSolidIcon.component';
-import { DocumentArrowDownSolidIconComponent } from './DocumentArrowDownSolidIcon.component';
-import { DocumentArrowUpSolidIconComponent } from './DocumentArrowUpSolidIcon.component';
-import { DocumentChartBarSolidIconComponent } from './DocumentChartBarSolidIcon.component';
-import { DocumentCheckSolidIconComponent } from './DocumentCheckSolidIcon.component';
-import { DocumentDuplicateSolidIconComponent } from './DocumentDuplicateSolidIcon.component';
-import { DocumentMagnifyingGlassSolidIconComponent } from './DocumentMagnifyingGlassSolidIcon.component';
-import { DocumentMinusSolidIconComponent } from './DocumentMinusSolidIcon.component';
-import { DocumentPlusSolidIconComponent } from './DocumentPlusSolidIcon.component';
-import { DocumentTextSolidIconComponent } from './DocumentTextSolidIcon.component';
-import { DocumentSolidIconComponent } from './DocumentSolidIcon.component';
-import { EllipsisHorizontalCircleSolidIconComponent } from './EllipsisHorizontalCircleSolidIcon.component';
-import { EllipsisHorizontalSolidIconComponent } from './EllipsisHorizontalSolidIcon.component';
-import { EllipsisVerticalSolidIconComponent } from './EllipsisVerticalSolidIcon.component';
-import { EnvelopeOpenSolidIconComponent } from './EnvelopeOpenSolidIcon.component';
-import { EnvelopeSolidIconComponent } from './EnvelopeSolidIcon.component';
-import { ExclamationCircleSolidIconComponent } from './ExclamationCircleSolidIcon.component';
-import { ExclamationTriangleSolidIconComponent } from './ExclamationTriangleSolidIcon.component';
-import { EyeDropperSolidIconComponent } from './EyeDropperSolidIcon.component';
-import { EyeSlashSolidIconComponent } from './EyeSlashSolidIcon.component';
-import { EyeSolidIconComponent } from './EyeSolidIcon.component';
-import { FaceFrownSolidIconComponent } from './FaceFrownSolidIcon.component';
-import { FaceSmileSolidIconComponent } from './FaceSmileSolidIcon.component';
-import { FilmSolidIconComponent } from './FilmSolidIcon.component';
-import { FingerPrintSolidIconComponent } from './FingerPrintSolidIcon.component';
-import { FireSolidIconComponent } from './FireSolidIcon.component';
-import { FlagSolidIconComponent } from './FlagSolidIcon.component';
-import { FolderArrowDownSolidIconComponent } from './FolderArrowDownSolidIcon.component';
-import { FolderMinusSolidIconComponent } from './FolderMinusSolidIcon.component';
-import { FolderOpenSolidIconComponent } from './FolderOpenSolidIcon.component';
-import { FolderPlusSolidIconComponent } from './FolderPlusSolidIcon.component';
-import { FolderSolidIconComponent } from './FolderSolidIcon.component';
-import { ForwardSolidIconComponent } from './ForwardSolidIcon.component';
-import { FunnelSolidIconComponent } from './FunnelSolidIcon.component';
-import { GifSolidIconComponent } from './GifSolidIcon.component';
-import { GiftTopSolidIconComponent } from './GiftTopSolidIcon.component';
-import { GiftSolidIconComponent } from './GiftSolidIcon.component';
-import { GlobeAltSolidIconComponent } from './GlobeAltSolidIcon.component';
-import { GlobeAmericasSolidIconComponent } from './GlobeAmericasSolidIcon.component';
-import { GlobeAsiaAustraliaSolidIconComponent } from './GlobeAsiaAustraliaSolidIcon.component';
-import { GlobeEuropeAfricaSolidIconComponent } from './GlobeEuropeAfricaSolidIcon.component';
-import { HandRaisedSolidIconComponent } from './HandRaisedSolidIcon.component';
-import { HandThumbDownSolidIconComponent } from './HandThumbDownSolidIcon.component';
-import { HandThumbUpSolidIconComponent } from './HandThumbUpSolidIcon.component';
-import { HashtagSolidIconComponent } from './HashtagSolidIcon.component';
-import { HeartSolidIconComponent } from './HeartSolidIcon.component';
-import { HomeModernSolidIconComponent } from './HomeModernSolidIcon.component';
-import { HomeSolidIconComponent } from './HomeSolidIcon.component';
-import { IdentificationSolidIconComponent } from './IdentificationSolidIcon.component';
-import { InboxArrowDownSolidIconComponent } from './InboxArrowDownSolidIcon.component';
-import { InboxStackSolidIconComponent } from './InboxStackSolidIcon.component';
-import { InboxSolidIconComponent } from './InboxSolidIcon.component';
-import { InformationCircleSolidIconComponent } from './InformationCircleSolidIcon.component';
-import { KeySolidIconComponent } from './KeySolidIcon.component';
-import { LanguageSolidIconComponent } from './LanguageSolidIcon.component';
-import { LifebuoySolidIconComponent } from './LifebuoySolidIcon.component';
-import { LightBulbSolidIconComponent } from './LightBulbSolidIcon.component';
-import { LinkSolidIconComponent } from './LinkSolidIcon.component';
-import { ListBulletSolidIconComponent } from './ListBulletSolidIcon.component';
-import { LockClosedSolidIconComponent } from './LockClosedSolidIcon.component';
-import { LockOpenSolidIconComponent } from './LockOpenSolidIcon.component';
-import { MagnifyingGlassCircleSolidIconComponent } from './MagnifyingGlassCircleSolidIcon.component';
-import { MagnifyingGlassMinusSolidIconComponent } from './MagnifyingGlassMinusSolidIcon.component';
-import { MagnifyingGlassPlusSolidIconComponent } from './MagnifyingGlassPlusSolidIcon.component';
-import { MagnifyingGlassSolidIconComponent } from './MagnifyingGlassSolidIcon.component';
-import { MapPinSolidIconComponent } from './MapPinSolidIcon.component';
-import { MapSolidIconComponent } from './MapSolidIcon.component';
-import { MegaphoneSolidIconComponent } from './MegaphoneSolidIcon.component';
-import { MicrophoneSolidIconComponent } from './MicrophoneSolidIcon.component';
-import { MinusCircleSolidIconComponent } from './MinusCircleSolidIcon.component';
-import { MinusSmallSolidIconComponent } from './MinusSmallSolidIcon.component';
-import { MinusSolidIconComponent } from './MinusSolidIcon.component';
-import { MoonSolidIconComponent } from './MoonSolidIcon.component';
-import { MusicalNoteSolidIconComponent } from './MusicalNoteSolidIcon.component';
-import { NewspaperSolidIconComponent } from './NewspaperSolidIcon.component';
-import { NoSymbolSolidIconComponent } from './NoSymbolSolidIcon.component';
-import { PaintBrushSolidIconComponent } from './PaintBrushSolidIcon.component';
-import { PaperAirplaneSolidIconComponent } from './PaperAirplaneSolidIcon.component';
-import { PaperClipSolidIconComponent } from './PaperClipSolidIcon.component';
-import { PauseCircleSolidIconComponent } from './PauseCircleSolidIcon.component';
-import { PauseSolidIconComponent } from './PauseSolidIcon.component';
-import { PencilSquareSolidIconComponent } from './PencilSquareSolidIcon.component';
-import { PencilSolidIconComponent } from './PencilSolidIcon.component';
-import { PhoneArrowDownLeftSolidIconComponent } from './PhoneArrowDownLeftSolidIcon.component';
-import { PhoneArrowUpRightSolidIconComponent } from './PhoneArrowUpRightSolidIcon.component';
-import { PhoneXMarkSolidIconComponent } from './PhoneXMarkSolidIcon.component';
-import { PhoneSolidIconComponent } from './PhoneSolidIcon.component';
-import { PhotoSolidIconComponent } from './PhotoSolidIcon.component';
-import { PlayCircleSolidIconComponent } from './PlayCircleSolidIcon.component';
-import { PlayPauseSolidIconComponent } from './PlayPauseSolidIcon.component';
-import { PlaySolidIconComponent } from './PlaySolidIcon.component';
-import { PlusCircleSolidIconComponent } from './PlusCircleSolidIcon.component';
-import { PlusSmallSolidIconComponent } from './PlusSmallSolidIcon.component';
-import { PlusSolidIconComponent } from './PlusSolidIcon.component';
-import { PowerSolidIconComponent } from './PowerSolidIcon.component';
-import { PresentationChartBarSolidIconComponent } from './PresentationChartBarSolidIcon.component';
-import { PresentationChartLineSolidIconComponent } from './PresentationChartLineSolidIcon.component';
-import { PrinterSolidIconComponent } from './PrinterSolidIcon.component';
-import { PuzzlePieceSolidIconComponent } from './PuzzlePieceSolidIcon.component';
-import { QrCodeSolidIconComponent } from './QrCodeSolidIcon.component';
-import { QuestionMarkCircleSolidIconComponent } from './QuestionMarkCircleSolidIcon.component';
-import { QueueListSolidIconComponent } from './QueueListSolidIcon.component';
-import { RadioSolidIconComponent } from './RadioSolidIcon.component';
-import { ReceiptPercentSolidIconComponent } from './ReceiptPercentSolidIcon.component';
-import { ReceiptRefundSolidIconComponent } from './ReceiptRefundSolidIcon.component';
-import { RectangleGroupSolidIconComponent } from './RectangleGroupSolidIcon.component';
-import { RectangleStackSolidIconComponent } from './RectangleStackSolidIcon.component';
-import { RocketLaunchSolidIconComponent } from './RocketLaunchSolidIcon.component';
-import { RssSolidIconComponent } from './RssSolidIcon.component';
-import { ScaleSolidIconComponent } from './ScaleSolidIcon.component';
-import { ScissorsSolidIconComponent } from './ScissorsSolidIcon.component';
-import { ServerStackSolidIconComponent } from './ServerStackSolidIcon.component';
-import { ServerSolidIconComponent } from './ServerSolidIcon.component';
-import { ShareSolidIconComponent } from './ShareSolidIcon.component';
-import { ShieldCheckSolidIconComponent } from './ShieldCheckSolidIcon.component';
-import { ShieldExclamationSolidIconComponent } from './ShieldExclamationSolidIcon.component';
-import { ShoppingBagSolidIconComponent } from './ShoppingBagSolidIcon.component';
-import { ShoppingCartSolidIconComponent } from './ShoppingCartSolidIcon.component';
-import { SignalSlashSolidIconComponent } from './SignalSlashSolidIcon.component';
-import { SignalSolidIconComponent } from './SignalSolidIcon.component';
-import { SparklesSolidIconComponent } from './SparklesSolidIcon.component';
-import { SpeakerWaveSolidIconComponent } from './SpeakerWaveSolidIcon.component';
-import { SpeakerXMarkSolidIconComponent } from './SpeakerXMarkSolidIcon.component';
-import { Square2StackSolidIconComponent } from './Square2StackSolidIcon.component';
-import { Square3Stack3DSolidIconComponent } from './Square3Stack3DSolidIcon.component';
-import { Squares2X2SolidIconComponent } from './Squares2X2SolidIcon.component';
-import { SquaresPlusSolidIconComponent } from './SquaresPlusSolidIcon.component';
-import { StarSolidIconComponent } from './StarSolidIcon.component';
-import { StopCircleSolidIconComponent } from './StopCircleSolidIcon.component';
-import { StopSolidIconComponent } from './StopSolidIcon.component';
-import { SunSolidIconComponent } from './SunSolidIcon.component';
-import { SwatchSolidIconComponent } from './SwatchSolidIcon.component';
-import { TableCellsSolidIconComponent } from './TableCellsSolidIcon.component';
-import { TagSolidIconComponent } from './TagSolidIcon.component';
-import { TicketSolidIconComponent } from './TicketSolidIcon.component';
-import { TrashSolidIconComponent } from './TrashSolidIcon.component';
-import { TrophySolidIconComponent } from './TrophySolidIcon.component';
-import { TruckSolidIconComponent } from './TruckSolidIcon.component';
-import { TvSolidIconComponent } from './TvSolidIcon.component';
-import { UserCircleSolidIconComponent } from './UserCircleSolidIcon.component';
-import { UserGroupSolidIconComponent } from './UserGroupSolidIcon.component';
-import { UserMinusSolidIconComponent } from './UserMinusSolidIcon.component';
-import { UserPlusSolidIconComponent } from './UserPlusSolidIcon.component';
-import { UserSolidIconComponent } from './UserSolidIcon.component';
-import { UsersSolidIconComponent } from './UsersSolidIcon.component';
-import { VariableSolidIconComponent } from './VariableSolidIcon.component';
-import { VideoCameraSlashSolidIconComponent } from './VideoCameraSlashSolidIcon.component';
-import { VideoCameraSolidIconComponent } from './VideoCameraSolidIcon.component';
-import { ViewColumnsSolidIconComponent } from './ViewColumnsSolidIcon.component';
-import { ViewfinderCircleSolidIconComponent } from './ViewfinderCircleSolidIcon.component';
-import { WalletSolidIconComponent } from './WalletSolidIcon.component';
-import { WifiSolidIconComponent } from './WifiSolidIcon.component';
-import { WindowSolidIconComponent } from './WindowSolidIcon.component';
-import { WrenchScrewdriverSolidIconComponent } from './WrenchScrewdriverSolidIcon.component';
-import { WrenchSolidIconComponent } from './WrenchSolidIcon.component';
-import { XCircleSolidIconComponent } from './XCircleSolidIcon.component';
-import { XMarkSolidIconComponent } from './XMarkSolidIcon.component';
+import * as SOLID_ICONS from "./"
 
 const COMPONENTS = [
-  AcademicCapSolidIconComponent,
-  AdjustmentsHorizontalSolidIconComponent,
-  AdjustmentsVerticalSolidIconComponent,
-  ArchiveBoxArrowDownSolidIconComponent,
-  ArchiveBoxXMarkSolidIconComponent,
-  ArchiveBoxSolidIconComponent,
-  ArrowDownCircleSolidIconComponent,
-  ArrowDownLeftSolidIconComponent,
-  ArrowDownOnSquareStackSolidIconComponent,
-  ArrowDownOnSquareSolidIconComponent,
-  ArrowDownRightSolidIconComponent,
-  ArrowDownTraySolidIconComponent,
-  ArrowDownSolidIconComponent,
-  ArrowLeftCircleSolidIconComponent,
-  ArrowLeftOnRectangleSolidIconComponent,
-  ArrowLeftSolidIconComponent,
-  ArrowLongDownSolidIconComponent,
-  ArrowLongLeftSolidIconComponent,
-  ArrowLongRightSolidIconComponent,
-  ArrowLongUpSolidIconComponent,
-  ArrowPathRoundedSquareSolidIconComponent,
-  ArrowPathSolidIconComponent,
-  ArrowRightCircleSolidIconComponent,
-  ArrowRightOnRectangleSolidIconComponent,
-  ArrowRightSolidIconComponent,
-  ArrowSmallDownSolidIconComponent,
-  ArrowSmallLeftSolidIconComponent,
-  ArrowSmallRightSolidIconComponent,
-  ArrowSmallUpSolidIconComponent,
-  ArrowTopRightOnSquareSolidIconComponent,
-  ArrowTrendingDownSolidIconComponent,
-  ArrowTrendingUpSolidIconComponent,
-  ArrowUpCircleSolidIconComponent,
-  ArrowUpLeftSolidIconComponent,
-  ArrowUpOnSquareStackSolidIconComponent,
-  ArrowUpOnSquareSolidIconComponent,
-  ArrowUpRightSolidIconComponent,
-  ArrowUpTraySolidIconComponent,
-  ArrowUpSolidIconComponent,
-  ArrowUturnDownSolidIconComponent,
-  ArrowUturnLeftSolidIconComponent,
-  ArrowUturnRightSolidIconComponent,
-  ArrowUturnUpSolidIconComponent,
-  ArrowsPointingInSolidIconComponent,
-  ArrowsPointingOutSolidIconComponent,
-  ArrowsRightLeftSolidIconComponent,
-  ArrowsUpDownSolidIconComponent,
-  AtSymbolSolidIconComponent,
-  BackspaceSolidIconComponent,
-  BackwardSolidIconComponent,
-  BanknotesSolidIconComponent,
-  Bars2SolidIconComponent,
-  Bars3BottomLeftSolidIconComponent,
-  Bars3BottomRightSolidIconComponent,
-  Bars3CenterLeftSolidIconComponent,
-  Bars3SolidIconComponent,
-  Bars4SolidIconComponent,
-  BarsArrowDownSolidIconComponent,
-  BarsArrowUpSolidIconComponent,
-  Battery0SolidIconComponent,
-  Battery100SolidIconComponent,
-  Battery50SolidIconComponent,
-  BeakerSolidIconComponent,
-  BellAlertSolidIconComponent,
-  BellSlashSolidIconComponent,
-  BellSnoozeSolidIconComponent,
-  BellSolidIconComponent,
-  BoltSlashSolidIconComponent,
-  BoltSolidIconComponent,
-  BookOpenSolidIconComponent,
-  BookmarkSlashSolidIconComponent,
-  BookmarkSquareSolidIconComponent,
-  BookmarkSolidIconComponent,
-  BriefcaseSolidIconComponent,
-  BugAntSolidIconComponent,
-  BuildingLibrarySolidIconComponent,
-  BuildingOffice2SolidIconComponent,
-  BuildingOfficeSolidIconComponent,
-  BuildingStorefrontSolidIconComponent,
-  CakeSolidIconComponent,
-  CalculatorSolidIconComponent,
-  CalendarDaysSolidIconComponent,
-  CalendarSolidIconComponent,
-  CameraSolidIconComponent,
-  ChartBarSquareSolidIconComponent,
-  ChartBarSolidIconComponent,
-  ChartPieSolidIconComponent,
-  ChatBubbleBottomCenterTextSolidIconComponent,
-  ChatBubbleBottomCenterSolidIconComponent,
-  ChatBubbleLeftEllipsisSolidIconComponent,
-  ChatBubbleLeftRightSolidIconComponent,
-  ChatBubbleLeftSolidIconComponent,
-  ChatBubbleOvalLeftEllipsisSolidIconComponent,
-  ChatBubbleOvalLeftSolidIconComponent,
-  CheckBadgeSolidIconComponent,
-  CheckCircleSolidIconComponent,
-  CheckSolidIconComponent,
-  ChevronDoubleDownSolidIconComponent,
-  ChevronDoubleLeftSolidIconComponent,
-  ChevronDoubleRightSolidIconComponent,
-  ChevronDoubleUpSolidIconComponent,
-  ChevronDownSolidIconComponent,
-  ChevronLeftSolidIconComponent,
-  ChevronRightSolidIconComponent,
-  ChevronUpDownSolidIconComponent,
-  ChevronUpSolidIconComponent,
-  CircleStackSolidIconComponent,
-  ClipboardDocumentCheckSolidIconComponent,
-  ClipboardDocumentListSolidIconComponent,
-  ClipboardDocumentSolidIconComponent,
-  ClipboardSolidIconComponent,
-  ClockSolidIconComponent,
-  CloudArrowDownSolidIconComponent,
-  CloudArrowUpSolidIconComponent,
-  CloudSolidIconComponent,
-  CodeBracketSquareSolidIconComponent,
-  CodeBracketSolidIconComponent,
-  Cog6ToothSolidIconComponent,
-  Cog8ToothSolidIconComponent,
-  CogSolidIconComponent,
-  CommandLineSolidIconComponent,
-  ComputerDesktopSolidIconComponent,
-  CpuChipSolidIconComponent,
-  CreditCardSolidIconComponent,
-  CubeTransparentSolidIconComponent,
-  CubeSolidIconComponent,
-  CurrencyBangladeshiSolidIconComponent,
-  CurrencyDollarSolidIconComponent,
-  CurrencyEuroSolidIconComponent,
-  CurrencyPoundSolidIconComponent,
-  CurrencyRupeeSolidIconComponent,
-  CurrencyYenSolidIconComponent,
-  CursorArrowRaysSolidIconComponent,
-  CursorArrowRippleSolidIconComponent,
-  DevicePhoneMobileSolidIconComponent,
-  DeviceTabletSolidIconComponent,
-  DocumentArrowDownSolidIconComponent,
-  DocumentArrowUpSolidIconComponent,
-  DocumentChartBarSolidIconComponent,
-  DocumentCheckSolidIconComponent,
-  DocumentDuplicateSolidIconComponent,
-  DocumentMagnifyingGlassSolidIconComponent,
-  DocumentMinusSolidIconComponent,
-  DocumentPlusSolidIconComponent,
-  DocumentTextSolidIconComponent,
-  DocumentSolidIconComponent,
-  EllipsisHorizontalCircleSolidIconComponent,
-  EllipsisHorizontalSolidIconComponent,
-  EllipsisVerticalSolidIconComponent,
-  EnvelopeOpenSolidIconComponent,
-  EnvelopeSolidIconComponent,
-  ExclamationCircleSolidIconComponent,
-  ExclamationTriangleSolidIconComponent,
-  EyeDropperSolidIconComponent,
-  EyeSlashSolidIconComponent,
-  EyeSolidIconComponent,
-  FaceFrownSolidIconComponent,
-  FaceSmileSolidIconComponent,
-  FilmSolidIconComponent,
-  FingerPrintSolidIconComponent,
-  FireSolidIconComponent,
-  FlagSolidIconComponent,
-  FolderArrowDownSolidIconComponent,
-  FolderMinusSolidIconComponent,
-  FolderOpenSolidIconComponent,
-  FolderPlusSolidIconComponent,
-  FolderSolidIconComponent,
-  ForwardSolidIconComponent,
-  FunnelSolidIconComponent,
-  GifSolidIconComponent,
-  GiftTopSolidIconComponent,
-  GiftSolidIconComponent,
-  GlobeAltSolidIconComponent,
-  GlobeAmericasSolidIconComponent,
-  GlobeAsiaAustraliaSolidIconComponent,
-  GlobeEuropeAfricaSolidIconComponent,
-  HandRaisedSolidIconComponent,
-  HandThumbDownSolidIconComponent,
-  HandThumbUpSolidIconComponent,
-  HashtagSolidIconComponent,
-  HeartSolidIconComponent,
-  HomeModernSolidIconComponent,
-  HomeSolidIconComponent,
-  IdentificationSolidIconComponent,
-  InboxArrowDownSolidIconComponent,
-  InboxStackSolidIconComponent,
-  InboxSolidIconComponent,
-  InformationCircleSolidIconComponent,
-  KeySolidIconComponent,
-  LanguageSolidIconComponent,
-  LifebuoySolidIconComponent,
-  LightBulbSolidIconComponent,
-  LinkSolidIconComponent,
-  ListBulletSolidIconComponent,
-  LockClosedSolidIconComponent,
-  LockOpenSolidIconComponent,
-  MagnifyingGlassCircleSolidIconComponent,
-  MagnifyingGlassMinusSolidIconComponent,
-  MagnifyingGlassPlusSolidIconComponent,
-  MagnifyingGlassSolidIconComponent,
-  MapPinSolidIconComponent,
-  MapSolidIconComponent,
-  MegaphoneSolidIconComponent,
-  MicrophoneSolidIconComponent,
-  MinusCircleSolidIconComponent,
-  MinusSmallSolidIconComponent,
-  MinusSolidIconComponent,
-  MoonSolidIconComponent,
-  MusicalNoteSolidIconComponent,
-  NewspaperSolidIconComponent,
-  NoSymbolSolidIconComponent,
-  PaintBrushSolidIconComponent,
-  PaperAirplaneSolidIconComponent,
-  PaperClipSolidIconComponent,
-  PauseCircleSolidIconComponent,
-  PauseSolidIconComponent,
-  PencilSquareSolidIconComponent,
-  PencilSolidIconComponent,
-  PhoneArrowDownLeftSolidIconComponent,
-  PhoneArrowUpRightSolidIconComponent,
-  PhoneXMarkSolidIconComponent,
-  PhoneSolidIconComponent,
-  PhotoSolidIconComponent,
-  PlayCircleSolidIconComponent,
-  PlayPauseSolidIconComponent,
-  PlaySolidIconComponent,
-  PlusCircleSolidIconComponent,
-  PlusSmallSolidIconComponent,
-  PlusSolidIconComponent,
-  PowerSolidIconComponent,
-  PresentationChartBarSolidIconComponent,
-  PresentationChartLineSolidIconComponent,
-  PrinterSolidIconComponent,
-  PuzzlePieceSolidIconComponent,
-  QrCodeSolidIconComponent,
-  QuestionMarkCircleSolidIconComponent,
-  QueueListSolidIconComponent,
-  RadioSolidIconComponent,
-  ReceiptPercentSolidIconComponent,
-  ReceiptRefundSolidIconComponent,
-  RectangleGroupSolidIconComponent,
-  RectangleStackSolidIconComponent,
-  RocketLaunchSolidIconComponent,
-  RssSolidIconComponent,
-  ScaleSolidIconComponent,
-  ScissorsSolidIconComponent,
-  ServerStackSolidIconComponent,
-  ServerSolidIconComponent,
-  ShareSolidIconComponent,
-  ShieldCheckSolidIconComponent,
-  ShieldExclamationSolidIconComponent,
-  ShoppingBagSolidIconComponent,
-  ShoppingCartSolidIconComponent,
-  SignalSlashSolidIconComponent,
-  SignalSolidIconComponent,
-  SparklesSolidIconComponent,
-  SpeakerWaveSolidIconComponent,
-  SpeakerXMarkSolidIconComponent,
-  Square2StackSolidIconComponent,
-  Square3Stack3DSolidIconComponent,
-  Squares2X2SolidIconComponent,
-  SquaresPlusSolidIconComponent,
-  StarSolidIconComponent,
-  StopCircleSolidIconComponent,
-  StopSolidIconComponent,
-  SunSolidIconComponent,
-  SwatchSolidIconComponent,
-  TableCellsSolidIconComponent,
-  TagSolidIconComponent,
-  TicketSolidIconComponent,
-  TrashSolidIconComponent,
-  TrophySolidIconComponent,
-  TruckSolidIconComponent,
-  TvSolidIconComponent,
-  UserCircleSolidIconComponent,
-  UserGroupSolidIconComponent,
-  UserMinusSolidIconComponent,
-  UserPlusSolidIconComponent,
-  UserSolidIconComponent,
-  UsersSolidIconComponent,
-  VariableSolidIconComponent,
-  VideoCameraSlashSolidIconComponent,
-  VideoCameraSolidIconComponent,
-  ViewColumnsSolidIconComponent,
-  ViewfinderCircleSolidIconComponent,
-  WalletSolidIconComponent,
-  WifiSolidIconComponent,
-  WindowSolidIconComponent,
-  WrenchScrewdriverSolidIconComponent,
-  WrenchSolidIconComponent,
-  XCircleSolidIconComponent,
-  XMarkSolidIconComponent
+  SOLID_ICONS.AcademicCapSolidIconComponent,
+  SOLID_ICONS.AdjustmentsHorizontalSolidIconComponent,
+  SOLID_ICONS.AdjustmentsVerticalSolidIconComponent,
+  SOLID_ICONS.ArchiveBoxArrowDownSolidIconComponent,
+  SOLID_ICONS.ArchiveBoxXMarkSolidIconComponent,
+  SOLID_ICONS.ArchiveBoxSolidIconComponent,
+  SOLID_ICONS.ArrowDownCircleSolidIconComponent,
+  SOLID_ICONS.ArrowDownLeftSolidIconComponent,
+  SOLID_ICONS.ArrowDownOnSquareStackSolidIconComponent,
+  SOLID_ICONS.ArrowDownOnSquareSolidIconComponent,
+  SOLID_ICONS.ArrowDownRightSolidIconComponent,
+  SOLID_ICONS.ArrowDownTraySolidIconComponent,
+  SOLID_ICONS.ArrowDownSolidIconComponent,
+  SOLID_ICONS.ArrowLeftCircleSolidIconComponent,
+  SOLID_ICONS.ArrowLeftOnRectangleSolidIconComponent,
+  SOLID_ICONS.ArrowLeftSolidIconComponent,
+  SOLID_ICONS.ArrowLongDownSolidIconComponent,
+  SOLID_ICONS.ArrowLongLeftSolidIconComponent,
+  SOLID_ICONS.ArrowLongRightSolidIconComponent,
+  SOLID_ICONS.ArrowLongUpSolidIconComponent,
+  SOLID_ICONS.ArrowPathRoundedSquareSolidIconComponent,
+  SOLID_ICONS.ArrowPathSolidIconComponent,
+  SOLID_ICONS.ArrowRightCircleSolidIconComponent,
+  SOLID_ICONS.ArrowRightOnRectangleSolidIconComponent,
+  SOLID_ICONS.ArrowRightSolidIconComponent,
+  SOLID_ICONS.ArrowSmallDownSolidIconComponent,
+  SOLID_ICONS.ArrowSmallLeftSolidIconComponent,
+  SOLID_ICONS.ArrowSmallRightSolidIconComponent,
+  SOLID_ICONS.ArrowSmallUpSolidIconComponent,
+  SOLID_ICONS.ArrowTopRightOnSquareSolidIconComponent,
+  SOLID_ICONS.ArrowTrendingDownSolidIconComponent,
+  SOLID_ICONS.ArrowTrendingUpSolidIconComponent,
+  SOLID_ICONS.ArrowUpCircleSolidIconComponent,
+  SOLID_ICONS.ArrowUpLeftSolidIconComponent,
+  SOLID_ICONS.ArrowUpOnSquareStackSolidIconComponent,
+  SOLID_ICONS.ArrowUpOnSquareSolidIconComponent,
+  SOLID_ICONS.ArrowUpRightSolidIconComponent,
+  SOLID_ICONS.ArrowUpTraySolidIconComponent,
+  SOLID_ICONS.ArrowUpSolidIconComponent,
+  SOLID_ICONS.ArrowUturnDownSolidIconComponent,
+  SOLID_ICONS.ArrowUturnLeftSolidIconComponent,
+  SOLID_ICONS.ArrowUturnRightSolidIconComponent,
+  SOLID_ICONS.ArrowUturnUpSolidIconComponent,
+  SOLID_ICONS.ArrowsPointingInSolidIconComponent,
+  SOLID_ICONS.ArrowsPointingOutSolidIconComponent,
+  SOLID_ICONS.ArrowsRightLeftSolidIconComponent,
+  SOLID_ICONS.ArrowsUpDownSolidIconComponent,
+  SOLID_ICONS.AtSymbolSolidIconComponent,
+  SOLID_ICONS.BackspaceSolidIconComponent,
+  SOLID_ICONS.BackwardSolidIconComponent,
+  SOLID_ICONS.BanknotesSolidIconComponent,
+  SOLID_ICONS.Bars2SolidIconComponent,
+  SOLID_ICONS.Bars3BottomLeftSolidIconComponent,
+  SOLID_ICONS.Bars3BottomRightSolidIconComponent,
+  SOLID_ICONS.Bars3CenterLeftSolidIconComponent,
+  SOLID_ICONS.Bars3SolidIconComponent,
+  SOLID_ICONS.Bars4SolidIconComponent,
+  SOLID_ICONS.BarsArrowDownSolidIconComponent,
+  SOLID_ICONS.BarsArrowUpSolidIconComponent,
+  SOLID_ICONS.Battery0SolidIconComponent,
+  SOLID_ICONS.Battery100SolidIconComponent,
+  SOLID_ICONS.Battery50SolidIconComponent,
+  SOLID_ICONS.BeakerSolidIconComponent,
+  SOLID_ICONS.BellAlertSolidIconComponent,
+  SOLID_ICONS.BellSlashSolidIconComponent,
+  SOLID_ICONS.BellSnoozeSolidIconComponent,
+  SOLID_ICONS.BellSolidIconComponent,
+  SOLID_ICONS.BoltSlashSolidIconComponent,
+  SOLID_ICONS.BoltSolidIconComponent,
+  SOLID_ICONS.BookOpenSolidIconComponent,
+  SOLID_ICONS.BookmarkSlashSolidIconComponent,
+  SOLID_ICONS.BookmarkSquareSolidIconComponent,
+  SOLID_ICONS.BookmarkSolidIconComponent,
+  SOLID_ICONS.BriefcaseSolidIconComponent,
+  SOLID_ICONS.BugAntSolidIconComponent,
+  SOLID_ICONS.BuildingLibrarySolidIconComponent,
+  SOLID_ICONS.BuildingOffice2SolidIconComponent,
+  SOLID_ICONS.BuildingOfficeSolidIconComponent,
+  SOLID_ICONS.BuildingStorefrontSolidIconComponent,
+  SOLID_ICONS.CakeSolidIconComponent,
+  SOLID_ICONS.CalculatorSolidIconComponent,
+  SOLID_ICONS.CalendarDaysSolidIconComponent,
+  SOLID_ICONS.CalendarSolidIconComponent,
+  SOLID_ICONS.CameraSolidIconComponent,
+  SOLID_ICONS.ChartBarSquareSolidIconComponent,
+  SOLID_ICONS.ChartBarSolidIconComponent,
+  SOLID_ICONS.ChartPieSolidIconComponent,
+  SOLID_ICONS.ChatBubbleBottomCenterTextSolidIconComponent,
+  SOLID_ICONS.ChatBubbleBottomCenterSolidIconComponent,
+  SOLID_ICONS.ChatBubbleLeftEllipsisSolidIconComponent,
+  SOLID_ICONS.ChatBubbleLeftRightSolidIconComponent,
+  SOLID_ICONS.ChatBubbleLeftSolidIconComponent,
+  SOLID_ICONS.ChatBubbleOvalLeftEllipsisSolidIconComponent,
+  SOLID_ICONS.ChatBubbleOvalLeftSolidIconComponent,
+  SOLID_ICONS.CheckBadgeSolidIconComponent,
+  SOLID_ICONS.CheckCircleSolidIconComponent,
+  SOLID_ICONS.CheckSolidIconComponent,
+  SOLID_ICONS.ChevronDoubleDownSolidIconComponent,
+  SOLID_ICONS.ChevronDoubleLeftSolidIconComponent,
+  SOLID_ICONS.ChevronDoubleRightSolidIconComponent,
+  SOLID_ICONS.ChevronDoubleUpSolidIconComponent,
+  SOLID_ICONS.ChevronDownSolidIconComponent,
+  SOLID_ICONS.ChevronLeftSolidIconComponent,
+  SOLID_ICONS.ChevronRightSolidIconComponent,
+  SOLID_ICONS.ChevronUpDownSolidIconComponent,
+  SOLID_ICONS.ChevronUpSolidIconComponent,
+  SOLID_ICONS.CircleStackSolidIconComponent,
+  SOLID_ICONS.ClipboardDocumentCheckSolidIconComponent,
+  SOLID_ICONS.ClipboardDocumentListSolidIconComponent,
+  SOLID_ICONS.ClipboardDocumentSolidIconComponent,
+  SOLID_ICONS.ClipboardSolidIconComponent,
+  SOLID_ICONS.ClockSolidIconComponent,
+  SOLID_ICONS.CloudArrowDownSolidIconComponent,
+  SOLID_ICONS.CloudArrowUpSolidIconComponent,
+  SOLID_ICONS.CloudSolidIconComponent,
+  SOLID_ICONS.CodeBracketSquareSolidIconComponent,
+  SOLID_ICONS.CodeBracketSolidIconComponent,
+  SOLID_ICONS.Cog6ToothSolidIconComponent,
+  SOLID_ICONS.Cog8ToothSolidIconComponent,
+  SOLID_ICONS.CogSolidIconComponent,
+  SOLID_ICONS.CommandLineSolidIconComponent,
+  SOLID_ICONS.ComputerDesktopSolidIconComponent,
+  SOLID_ICONS.CpuChipSolidIconComponent,
+  SOLID_ICONS.CreditCardSolidIconComponent,
+  SOLID_ICONS.CubeTransparentSolidIconComponent,
+  SOLID_ICONS.CubeSolidIconComponent,
+  SOLID_ICONS.CurrencyBangladeshiSolidIconComponent,
+  SOLID_ICONS.CurrencyDollarSolidIconComponent,
+  SOLID_ICONS.CurrencyEuroSolidIconComponent,
+  SOLID_ICONS.CurrencyPoundSolidIconComponent,
+  SOLID_ICONS.CurrencyRupeeSolidIconComponent,
+  SOLID_ICONS.CurrencyYenSolidIconComponent,
+  SOLID_ICONS.CursorArrowRaysSolidIconComponent,
+  SOLID_ICONS.CursorArrowRippleSolidIconComponent,
+  SOLID_ICONS.DevicePhoneMobileSolidIconComponent,
+  SOLID_ICONS.DeviceTabletSolidIconComponent,
+  SOLID_ICONS.DocumentArrowDownSolidIconComponent,
+  SOLID_ICONS.DocumentArrowUpSolidIconComponent,
+  SOLID_ICONS.DocumentChartBarSolidIconComponent,
+  SOLID_ICONS.DocumentCheckSolidIconComponent,
+  SOLID_ICONS.DocumentDuplicateSolidIconComponent,
+  SOLID_ICONS.DocumentMagnifyingGlassSolidIconComponent,
+  SOLID_ICONS.DocumentMinusSolidIconComponent,
+  SOLID_ICONS.DocumentPlusSolidIconComponent,
+  SOLID_ICONS.DocumentTextSolidIconComponent,
+  SOLID_ICONS.DocumentSolidIconComponent,
+  SOLID_ICONS.EllipsisHorizontalCircleSolidIconComponent,
+  SOLID_ICONS.EllipsisHorizontalSolidIconComponent,
+  SOLID_ICONS.EllipsisVerticalSolidIconComponent,
+  SOLID_ICONS.EnvelopeOpenSolidIconComponent,
+  SOLID_ICONS.EnvelopeSolidIconComponent,
+  SOLID_ICONS.ExclamationCircleSolidIconComponent,
+  SOLID_ICONS.ExclamationTriangleSolidIconComponent,
+  SOLID_ICONS.EyeDropperSolidIconComponent,
+  SOLID_ICONS.EyeSlashSolidIconComponent,
+  SOLID_ICONS.EyeSolidIconComponent,
+  SOLID_ICONS.FaceFrownSolidIconComponent,
+  SOLID_ICONS.FaceSmileSolidIconComponent,
+  SOLID_ICONS.FilmSolidIconComponent,
+  SOLID_ICONS.FingerPrintSolidIconComponent,
+  SOLID_ICONS.FireSolidIconComponent,
+  SOLID_ICONS.FlagSolidIconComponent,
+  SOLID_ICONS.FolderArrowDownSolidIconComponent,
+  SOLID_ICONS.FolderMinusSolidIconComponent,
+  SOLID_ICONS.FolderOpenSolidIconComponent,
+  SOLID_ICONS.FolderPlusSolidIconComponent,
+  SOLID_ICONS.FolderSolidIconComponent,
+  SOLID_ICONS.ForwardSolidIconComponent,
+  SOLID_ICONS.FunnelSolidIconComponent,
+  SOLID_ICONS.GifSolidIconComponent,
+  SOLID_ICONS.GiftTopSolidIconComponent,
+  SOLID_ICONS.GiftSolidIconComponent,
+  SOLID_ICONS.GlobeAltSolidIconComponent,
+  SOLID_ICONS.GlobeAmericasSolidIconComponent,
+  SOLID_ICONS.GlobeAsiaAustraliaSolidIconComponent,
+  SOLID_ICONS.GlobeEuropeAfricaSolidIconComponent,
+  SOLID_ICONS.HandRaisedSolidIconComponent,
+  SOLID_ICONS.HandThumbDownSolidIconComponent,
+  SOLID_ICONS.HandThumbUpSolidIconComponent,
+  SOLID_ICONS.HashtagSolidIconComponent,
+  SOLID_ICONS.HeartSolidIconComponent,
+  SOLID_ICONS.HomeModernSolidIconComponent,
+  SOLID_ICONS.HomeSolidIconComponent,
+  SOLID_ICONS.IdentificationSolidIconComponent,
+  SOLID_ICONS.InboxArrowDownSolidIconComponent,
+  SOLID_ICONS.InboxStackSolidIconComponent,
+  SOLID_ICONS.InboxSolidIconComponent,
+  SOLID_ICONS.InformationCircleSolidIconComponent,
+  SOLID_ICONS.KeySolidIconComponent,
+  SOLID_ICONS.LanguageSolidIconComponent,
+  SOLID_ICONS.LifebuoySolidIconComponent,
+  SOLID_ICONS.LightBulbSolidIconComponent,
+  SOLID_ICONS.LinkSolidIconComponent,
+  SOLID_ICONS.ListBulletSolidIconComponent,
+  SOLID_ICONS.LockClosedSolidIconComponent,
+  SOLID_ICONS.LockOpenSolidIconComponent,
+  SOLID_ICONS.MagnifyingGlassCircleSolidIconComponent,
+  SOLID_ICONS.MagnifyingGlassMinusSolidIconComponent,
+  SOLID_ICONS.MagnifyingGlassPlusSolidIconComponent,
+  SOLID_ICONS.MagnifyingGlassSolidIconComponent,
+  SOLID_ICONS.MapPinSolidIconComponent,
+  SOLID_ICONS.MapSolidIconComponent,
+  SOLID_ICONS.MegaphoneSolidIconComponent,
+  SOLID_ICONS.MicrophoneSolidIconComponent,
+  SOLID_ICONS.MinusCircleSolidIconComponent,
+  SOLID_ICONS.MinusSmallSolidIconComponent,
+  SOLID_ICONS.MinusSolidIconComponent,
+  SOLID_ICONS.MoonSolidIconComponent,
+  SOLID_ICONS.MusicalNoteSolidIconComponent,
+  SOLID_ICONS.NewspaperSolidIconComponent,
+  SOLID_ICONS.NoSymbolSolidIconComponent,
+  SOLID_ICONS.PaintBrushSolidIconComponent,
+  SOLID_ICONS.PaperAirplaneSolidIconComponent,
+  SOLID_ICONS.PaperClipSolidIconComponent,
+  SOLID_ICONS.PauseCircleSolidIconComponent,
+  SOLID_ICONS.PauseSolidIconComponent,
+  SOLID_ICONS.PencilSquareSolidIconComponent,
+  SOLID_ICONS.PencilSolidIconComponent,
+  SOLID_ICONS.PhoneArrowDownLeftSolidIconComponent,
+  SOLID_ICONS.PhoneArrowUpRightSolidIconComponent,
+  SOLID_ICONS.PhoneXMarkSolidIconComponent,
+  SOLID_ICONS.PhoneSolidIconComponent,
+  SOLID_ICONS.PhotoSolidIconComponent,
+  SOLID_ICONS.PlayCircleSolidIconComponent,
+  SOLID_ICONS.PlayPauseSolidIconComponent,
+  SOLID_ICONS.PlaySolidIconComponent,
+  SOLID_ICONS.PlusCircleSolidIconComponent,
+  SOLID_ICONS.PlusSmallSolidIconComponent,
+  SOLID_ICONS.PlusSolidIconComponent,
+  SOLID_ICONS.PowerSolidIconComponent,
+  SOLID_ICONS.PresentationChartBarSolidIconComponent,
+  SOLID_ICONS.PresentationChartLineSolidIconComponent,
+  SOLID_ICONS.PrinterSolidIconComponent,
+  SOLID_ICONS.PuzzlePieceSolidIconComponent,
+  SOLID_ICONS.QrCodeSolidIconComponent,
+  SOLID_ICONS.QuestionMarkCircleSolidIconComponent,
+  SOLID_ICONS.QueueListSolidIconComponent,
+  SOLID_ICONS.RadioSolidIconComponent,
+  SOLID_ICONS.ReceiptPercentSolidIconComponent,
+  SOLID_ICONS.ReceiptRefundSolidIconComponent,
+  SOLID_ICONS.RectangleGroupSolidIconComponent,
+  SOLID_ICONS.RectangleStackSolidIconComponent,
+  SOLID_ICONS.RocketLaunchSolidIconComponent,
+  SOLID_ICONS.RssSolidIconComponent,
+  SOLID_ICONS.ScaleSolidIconComponent,
+  SOLID_ICONS.ScissorsSolidIconComponent,
+  SOLID_ICONS.ServerStackSolidIconComponent,
+  SOLID_ICONS.ServerSolidIconComponent,
+  SOLID_ICONS.ShareSolidIconComponent,
+  SOLID_ICONS.ShieldCheckSolidIconComponent,
+  SOLID_ICONS.ShieldExclamationSolidIconComponent,
+  SOLID_ICONS.ShoppingBagSolidIconComponent,
+  SOLID_ICONS.ShoppingCartSolidIconComponent,
+  SOLID_ICONS.SignalSlashSolidIconComponent,
+  SOLID_ICONS.SignalSolidIconComponent,
+  SOLID_ICONS.SparklesSolidIconComponent,
+  SOLID_ICONS.SpeakerWaveSolidIconComponent,
+  SOLID_ICONS.SpeakerXMarkSolidIconComponent,
+  SOLID_ICONS.Square2StackSolidIconComponent,
+  SOLID_ICONS.Square3Stack3DSolidIconComponent,
+  SOLID_ICONS.Squares2X2SolidIconComponent,
+  SOLID_ICONS.SquaresPlusSolidIconComponent,
+  SOLID_ICONS.StarSolidIconComponent,
+  SOLID_ICONS.StopCircleSolidIconComponent,
+  SOLID_ICONS.StopSolidIconComponent,
+  SOLID_ICONS.SunSolidIconComponent,
+  SOLID_ICONS.SwatchSolidIconComponent,
+  SOLID_ICONS.TableCellsSolidIconComponent,
+  SOLID_ICONS.TagSolidIconComponent,
+  SOLID_ICONS.TicketSolidIconComponent,
+  SOLID_ICONS.TrashSolidIconComponent,
+  SOLID_ICONS.TrophySolidIconComponent,
+  SOLID_ICONS.TruckSolidIconComponent,
+  SOLID_ICONS.TvSolidIconComponent,
+  SOLID_ICONS.UserCircleSolidIconComponent,
+  SOLID_ICONS.UserGroupSolidIconComponent,
+  SOLID_ICONS.UserMinusSolidIconComponent,
+  SOLID_ICONS.UserPlusSolidIconComponent,
+  SOLID_ICONS.UserSolidIconComponent,
+  SOLID_ICONS.UsersSolidIconComponent,
+  SOLID_ICONS.VariableSolidIconComponent,
+  SOLID_ICONS.VideoCameraSlashSolidIconComponent,
+  SOLID_ICONS.VideoCameraSolidIconComponent,
+  SOLID_ICONS.ViewColumnsSolidIconComponent,
+  SOLID_ICONS.ViewfinderCircleSolidIconComponent,
+  SOLID_ICONS.WalletSolidIconComponent,
+  SOLID_ICONS.WifiSolidIconComponent,
+  SOLID_ICONS.WindowSolidIconComponent,
+  SOLID_ICONS.WrenchScrewdriverSolidIconComponent,
+  SOLID_ICONS.WrenchSolidIconComponent,
+  SOLID_ICONS.XCircleSolidIconComponent,
+  SOLID_ICONS.XMarkSolidIconComponent
 ];
 
 @NgModule({

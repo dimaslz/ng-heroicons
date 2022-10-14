@@ -4,11 +4,11 @@ import { ComponentFixture } from '@angular/core/testing';
 import { render } from '@testing-library/angular';
 import kebabcase from 'lodash.kebabcase';
 
-import * as SOLID_ICONS from '../../../../ng-heroicons/src/lib/heroicons/solid';
+import { SOLID_ICONS } from '../../../../ng-heroicons/src/public-api';
 
-import {SolidIconsComponent} from './solid-icons.component';
+import { SolidIconsComponent } from './solid-icons.component';
 
-const ICONS_ARRAY = Object.entries(SOLID_ICONS);
+const ICONS_ARRAY = Object.entries(SOLID_ICONS as { [s: string]: unknown });
 
 describe('Solid icons', () => {
   let fixture: ComponentFixture<SolidIconsComponent>;

@@ -3,11 +3,11 @@ import { Component, Input } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
+import { ComponentFixture } from '@angular/core/testing';
 
 import { IconsComponent } from './icons.component';
 
 import { TooltipModule } from '../../components/tooltip/tooltip.component.module';
-import { ComponentFixture } from '@angular/core/testing';
 
 @Component({
   selector: 'x-mark-outline-icon',
