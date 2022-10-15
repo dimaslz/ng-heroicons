@@ -61,7 +61,7 @@
     "@types/lodash.throttle": "^4.1.6",
     "@types/node": "^18.11.0",
     "@types/prettier": "^2.6.3",
-    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/eslint-plugin-tslint": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "camelcase": "^6.3.0",
