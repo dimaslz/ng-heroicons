@@ -27,7 +27,7 @@ class MagnifyingGlassCircleOutlineIconComponent {
 
 @Component({
   selector: 'magnifying-glass-plus-outline-icon',
-  template: 'ZOOM_OUT_OUTLINE_ICON'
+  template: 'ZOOM_IN_OUTLINE_ICON'
 })
 class MagnifyingGlassPlusOutlineIconComponent {
   @Input() size = 24;
@@ -35,7 +35,7 @@ class MagnifyingGlassPlusOutlineIconComponent {
 
 @Component({
   selector: 'magnifying-glass-minus-outline-icon',
-  template: 'ZOOM_IN_OUTLINE_ICON'
+  template: 'ZOOM_OUT_OUTLINE_ICON'
 })
 class MagnifyingGlassMinusOutlineIconComponent {
   @Input() size = 24;
@@ -67,14 +67,6 @@ class SolidIconsComponent {
 }
 
 @Component({
-  selector: 'heart-outline-icon',
-  template: 'HEART_OUTLINE_ICON'
-})
-class HeartOutlineIconComponent {
-  @Input() size = 24;
-}
-
-@Component({
   selector: 'heart-solid-icon',
   template: 'HEART_SOLID_ICON'
 })
@@ -97,7 +89,6 @@ describe('IconsComponent', () => {
         MagnifyingGlassCircleOutlineIconComponent,
         MagnifyingGlassPlusOutlineIconComponent,
         MagnifyingGlassMinusOutlineIconComponent,
-        HeartOutlineIconComponent,
         HeartSolidIconComponent,
       ],
       imports: [
@@ -136,15 +127,23 @@ describe('IconsComponent', () => {
   });
 
   describe('MENU', () => {
-    it('clicking on heart, should switch the icon type', () => {
-      const input = screen.getByText('HEART_OUTLINE_ICON');
+    it('clicking on outline button, should switch the outline icon type', () => {
+      const input = screen.getByLabelText('outline');
       userEvent.click(input);
       fixture.detectChanges();
 
-      expect(screen.getByText('HEART_SOLID_ICON')).toBeTruthy();
+      expect(fixture.componentInstance.type).toBe('outline');
     });
 
-    it('on zoon in should modify the UI and default values', () => {
+    it('clicking on solid button, should switch the solid icon type', () => {
+      const input = screen.getByLabelText('solid');
+      userEvent.click(input);
+      fixture.detectChanges();
+
+      expect(fixture.componentInstance.type).toBe('solid');
+    });
+
+    it('on zoom in should modify the UI and default values', () => {
       const input = screen.getByText('ZOOM_IN_OUTLINE_ICON');
       userEvent.click(input);
       fixture.detectChanges();

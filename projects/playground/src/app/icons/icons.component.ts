@@ -21,6 +21,7 @@ import copyToClipboard from '../../utils/copy-to-clipboard.utils';
 export class IconsComponent implements OnInit, OnDestroy, OnChanges {
   @Input() color = 'white';
 
+  clipboardTime: ReturnType<typeof setTimeout> | null = null;
   query: string | null = '';
   classColor = 'white';
   colors: string[] = [
@@ -113,12 +114,15 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   onClickIcon(): void {
+    if (this.clipboardTime) {
+      clearTimeout(this.clipboardTime);
+    }
+
     copyToClipboard(this.tooltipContent);
     this.componentTagCopied = true;
-    const time = setTimeout(() => {
+    this.clipboardTime = setTimeout(() => {
       this.componentTagCopied = false;
-      clearTimeout(time);
-    }, 500);
+    }, 1000);
   }
 
   onMouseLeaveHandler(): void {

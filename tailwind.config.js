@@ -2,6 +2,7 @@ require("dotenv").config();
 const enablePurge = process.env.NODE_ENV === "production" || false;
 
 module.exports = {
+  enablePurge,
   important: true,
   content: [
     "./projects/**/*.{html,scss,ts}",

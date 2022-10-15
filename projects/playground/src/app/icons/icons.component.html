@@ -23,7 +23,11 @@
         ></x-mark-outline-icon>
       </div>
       <div class="flex h-8 w-8 items-center justify-center bg-red-600">
-        <magnifying-glass-outline-icon class="text-white"></magnifying-glass-outline-icon>
+        <magnifying-glass-outline-icon
+          class="text-white"
+          aria-label="search"
+          role="graphics-document"
+        ></magnifying-glass-outline-icon>
       </div>
     </form>
   </div>
@@ -31,6 +35,8 @@
     <button
       (click)="decrementSize()"
       name="zoom-out"
+      aria-label="zoom-out-button"
+      role="button"
       [ngClass]="['flex items-center justify-center', 'h-8 w-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none']"
     >
       <magnifying-glass-minus-outline-icon></magnifying-glass-minus-outline-icon>
@@ -41,6 +47,8 @@
     <button
       (click)="incrementSize()"
       name="zoom-in"
+      aria-label="zoom-out-in"
+      role="button"
       [ngClass]="['flex items-center justify-center', 'h-8 w-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none']"
     >
       <magnifying-glass-plus-outline-icon></magnifying-glass-plus-outline-icon>
@@ -49,22 +57,30 @@
 
   <div class="ml-2 flex">
     <button
-      *ngIf="type === 'outline'"
-      name="outline-solid-toggle"
-      data-testid="outline-solid-toggle"
-      (click)="switchToSolid()"
-      [ngClass]="['IconsComponent flex items-center justify-center', 'h-8 w-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none']"
-    >
-      <heart-outline-icon></heart-outline-icon>
-    </button>
-    <button
-      *ngIf="type === 'solid'"
       name="outline-solid-toggle"
       data-testid="outline-solid-toggle"
       (click)="switchToOutline()"
-      [ngClass]="['flex items-center justify-center', 'h-8 w-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none']"
+      aria-label="outline"
+      [ngClass]="[
+        'IconsComponent flex items-center justify-center',
+        'h-8 p-2 text-white hover:bg-red-500 focus:outline-none',
+        type === 'outline' ? 'bg-red-800' : 'bg-red-600'
+      ]"
     >
-      <heart-solid-icon></heart-solid-icon>
+      outline
+    </button>
+    <button
+      name="outline-solid-toggle"
+      data-testid="outline-solid-toggle"
+      aria-label="solid"
+      (click)="switchToSolid()"
+      [ngClass]="[
+        'flex items-center justify-center',
+        'h-8 p-2 text-white hover:bg-red-500 focus:outline-none',
+        type === 'solid' ? 'bg-red-800' : 'bg-red-600'
+      ]"
+    >
+      solid
     </button>
   </div>
 </div>
@@ -98,8 +114,8 @@
   <div class="flex items-center justify-center pb-4">
     <button
       *ngFor="let c of colors"
-      [ngClass]="[getColor(c), classColor.includes(c) ? 'font-bold' : '']"
-      class="mx-2 h-12 w-12 rounded-full text-xs ring-2 ring-gray-100"
+      [ngClass]="[getColor(c), classColor.includes(c) ? 'ring-2 ring-gray-100' : '']"
+      class="mx-2 h-12 w-12 rounded-full text-xs font-bold"
       (click)="onClickColor(c)"
     >
       {{ c }}

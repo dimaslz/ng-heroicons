@@ -24,6 +24,10 @@ body {
   &__name {
     @apply pointer-events-none text-xs text-center;
   }
+
+  &__name {
+    @apply h-8 flex items-center;
+  }
 }
 
 .dark {
