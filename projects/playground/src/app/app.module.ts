@@ -19,4 +19,4 @@ import { DarkModeModule } from '../components/darkmode-toggle/darkmode-toggle.mo
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

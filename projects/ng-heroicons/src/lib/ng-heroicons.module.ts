@@ -8,4 +8,4 @@ import { SolidIconsModule } from './heroicons/solid/module';
   imports: [CommonModule],
   exports: [OutlineIconsModule, SolidIconsModule],
 })
-export class NgHeroiconsModule {}
+export class NgHeroiconsModule { }
