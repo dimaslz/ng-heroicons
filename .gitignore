@@ -52,3 +52,5 @@ Thumbs.db
 # generator
 /assets
 /heroicons
+/packages/angular-v*/projects/lib/components
+/packages/angular-v*/projects/lib/variables
