@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { BaseOutlineIconComponent } from '../base-outline-icon.component';
+import { BaseOutlineIconComponent } from '../common/base-outline-icon.component';
 import { {{template}} } from '../../variables/outline';
 
 @Component({

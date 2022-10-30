@@ -300,8 +300,22 @@ async function generatePlayground(components, version) {
     .replace("{{solid-icons}}", iconsListTagNames['solid'].join("\n    "))
     .replace("{{outline-icons}}", iconsListTagNames['outline'].join("\n    "))
 
-  mkdirp.sync(`${destHeroicons}/v12/`);
-  await fs.writeFile(`${destHeroicons}/v12/app.component.html`, iconsListComponentsTpl)
+  mkdirp.sync(`${destHeroicons}/${version}/`);
+  await fs.writeFile(`${destHeroicons}/${version}/app.component.html`, iconsListComponentsTpl)
+}
+
+async function moveCommonCompoents() {
+  // outline base component
+  const baseOutlineComponent = await fs.readFile(`${here}/base-outline-icon.component.ts.tpl`, "utf8")
+
+  mkdirp.sync(`${destHeroicons}/components/common`);
+  await fs.writeFile(`${destHeroicons}/components/common/base-outline-icon.component.ts`, baseOutlineComponent)
+
+  // solid base component
+  const baseSolidComponent = await fs.readFile(`${here}/base-solid-icon.component.ts.tpl`, "utf8")
+
+  mkdirp.sync(`${destHeroicons}/components/common`);
+  await fs.writeFile(`${destHeroicons}/components/common/base-solid-icon.component.ts`, baseSolidComponent)
 }
 
 async function run() {
@@ -327,8 +341,8 @@ async function run() {
   for (const type of TYPES) {
     mkdirp.sync(`${destHeroicons}/components/${type}`);
 
-    // const files = (await fs.readdir(`${heroiconsPath}/${type}`)).slice(0, 20)
-    const files = (await fs.readdir(`${heroiconsPath}/${type}`))
+    const files = (await fs.readdir(`${heroiconsPath}/${type}`)).slice(0, 5)
+    // const files = (await fs.readdir(`${heroiconsPath}/${type}`))
     const iconFiles = await compressSVG(files, type)
 
     const iconFilesData = getFilesData(iconFiles);
@@ -345,6 +359,8 @@ async function run() {
     await writeFileIcons(angularComponents);
 
     await generateModule(angularComponents, type);
+
+    await moveCommonCompoents();
 
     allComponents = allComponents.concat(angularComponents);
   }
