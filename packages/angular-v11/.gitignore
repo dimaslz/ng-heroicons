@@ -1,8 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-dist
-/projects/**/dist
+/dist
 /tmp
 /out-tsc
 # Only exists if Bazel was run
@@ -33,7 +32,6 @@ speed-measure-plugin*.json
 .history/*
 
 # misc
-/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage
@@ -46,9 +44,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-.env
-
-# generator
-/assets
-/heroicons

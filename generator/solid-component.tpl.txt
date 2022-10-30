@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
-import { BaseSolidIconComponent } from '../../../components/base-solid-icon.component';
+import { BaseSolidIconComponent } from '../base-solid-icon.component';
+import { {{template}} } from '../../variables/solid';
 
 @Component({
   selector: '{{selector}}',
-  template: `{{template}}`,
+  template: {{template}},
 })
 export class {{className}} extends BaseSolidIconComponent { }

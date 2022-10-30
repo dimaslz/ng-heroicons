@@ -1,4 +1,4 @@
-const fs = require("fs").promises;
+ const fs = require("fs").promises;
 const path = require("path");
 const dedent = require("dedent");
 const camelcase = require("camelcase");
@@ -8,22 +8,28 @@ const shell = require("shelljs");
 const kebabCase = require("lodash.kebabcase");
 
 const root = path.resolve(__dirname + "/..");
-const projectsPath = path.resolve(`${root}/projects`);
-const destHeroicons = `${projectsPath}/ng-heroicons/src/lib/heroicons`;
+const projectsPath = path.resolve(`${root}/assets`);
+const destHeroicons = `${projectsPath}`;
 const here = path.resolve(`${root}/generator`);
 const heroiconsPath = path.resolve(`${root}/heroicons`);
 const heroiconsGitRepo = "https://github.com/tailwindlabs/heroicons.git";
 const originalHeroiconsPath = path.resolve(`${__dirname}/../heroicons`);
 const TYPES = ["outline", "solid"];
-let iconTpl = "";
+const ANGULAR_VERSION = {
+  "v11": "angular-v11",
+  "v12": "angular-v12",
+  "v13": "angular-v13",
+  "v14": "angular-v14",
+};
+
 let iconComponentsWrapperTpl = "";
 
 async function getIconTpl() {
-  iconTpl = await fs.readFile(`${here}/icon-wrapper.tpl.txt`, "utf8");
+  return await fs.readFile(`${here}/icon-wrapper.tpl.txt`, "utf8");
 }
 
 async function getComponentTpl() {
-  iconComponentsWrapperTpl = await fs.readFile(
+  return await fs.readFile(
     `${here}/icons-list-component.tpl.txt`,
     "utf8"
   );
@@ -51,21 +57,21 @@ function cloneHeroicons() {
   console.log("Heroicons repo cloned! \n");
 }
 
-async function SVGToAngular({ selector, template, className, type }) {
+async function SVGToAngular({ selector, template, varName, className, type }) {
   let componentTpl = await fs.readFile(
     `${here}/${type}-component.tpl.txt`,
     "utf8"
   );
 
   componentTpl = componentTpl
-    .replace("{{template}}", dedent(template))
+    .replaceAll("{{template}}", varName)
     .replace("{{className}}", className)
-    .replace(/<svg/, '<svg [attr.style]="style" [attr.class]="svgClass"')
+    // .replace(/<svg/, '<svg [attr.style]="style" [attr.class]="svgClass"')
     .replace("{{selector}}", selector);
 
-  if (type === "outline") {
-    componentTpl = componentTpl.replace(/stroke-width="\d+"/g, "");
-  }
+  // if (type === "outline") {
+  //   componentTpl = componentTpl.replace(/stroke-width="\d+"/g, "");
+  // }
 
   return componentTpl;
 }
@@ -120,7 +126,7 @@ async function writeFiles({ files, type }) {
     .join("\n");
 
   await fs.writeFile(
-    `${projectsPath}/ng-heroicons/src/lib/heroicons/${type}/index.ts`,
+    `${destHeroicons}/components/${type}/index.ts`,
     exportStatements
   );
 
@@ -138,36 +144,26 @@ async function writeFiles({ files, type }) {
   });
 }
 
-async function compressSVG() {
+async function compressSVG(files, type) {
   console.log("🏗  Compress SVG files...");
-  let icons = [];
 
-  for (const typeIndex in TYPES) {
-    const type = TYPES[typeIndex];
-    console.log(`Compressing ${type} SVG icons ...`);
+  const icons = files
+    .filter((filename) => !/Ds_Store/gi.test(filename))
+    .map((filename) => {
+      const filePath = `${heroiconsPath}/${type}/${filename}`;
 
-    rimraf.sync(`${destHeroicons}/${type}`);
-    mkdirp.sync(`${destHeroicons}/${type}`);
+      shell.exec(
+        `svgo --config svgo.config.js ${filePath} -o ${filePath} >> /dev/null`
+      );
 
-    icons = icons.concat(
-      (await fs.readdir(`${heroiconsPath}/${type}`))
-        .filter((filename) => !/Ds_Store/gi.test(filename))
-        .map((filename) => {
-          const filePath = `${heroiconsPath}/${type}/${filename}`;
-          shell.exec(
-            `svgo --config svgo.config.js ${filePath} -o ${filePath} >> /dev/null`
-          );
+      return {
+        path: filePath,
+        filename,
+        type,
+      };
+    });
 
-          return {
-            path: filePath,
-            filename,
-            type,
-          };
-        })
-    );
-  }
-
-  console.log(`✅  SVG icons compressed`);
+  console.log(`✅  ${type} SVG icons compressed`);
 
   return icons;
 }
@@ -192,6 +188,7 @@ async function getSVGContent(iconFilesData) {
   return await Promise.all(
     iconFilesData.map(async ({ path, selector, ...all }) => ({
       template: await fs.readFile(path, "utf8"),
+      varName: `${camelcase(selector)}Svg`,
       selector: kebabCase(selector),
       ...all,
     }))
@@ -201,8 +198,8 @@ async function getSVGContent(iconFilesData) {
 async function getAngularComponent(contentsIcon) {
   return await Promise.all(
     contentsIcon.map(
-      async ({ selector, template, className, type, ...rest }) => {
-        const svgToAngularData = { selector, template, className, type };
+      async ({ selector, template, className, type, varName, ...rest }) => {
+        const svgToAngularData = { selector, template, className, type, varName };
         return {
           component: await SVGToAngular(svgToAngularData),
           ...svgToAngularData,
@@ -216,90 +213,153 @@ async function getAngularComponent(contentsIcon) {
 async function writeFileIcons(angularComponents) {
   await Promise.all(
     angularComponents.map(({ component, filename, type }) => {
-      return fs.writeFile(`${destHeroicons}/${type}/${filename}`, component);
+      return fs.writeFile(`${destHeroicons}/components/${type}/${filename}`, component);
     })
   );
 }
 
-async function generateModule(angularComponents) {
-  for (const typeIndex in TYPES) {
-    let moduleComponents = [];
-    let moduleImports = [];
+async function generateModule(angularComponents, type) {
+  let moduleComponents = [];
+  let moduleImports = [];
 
-    const type = TYPES[typeIndex];
-    const content = await writeFiles({
-      files: angularComponents
-        .filter((c) => c.type === type)
-        .map(({ className, filename, ...rest }) => ({
-          filename,
-          className,
-          ...rest,
-        })),
-      type,
+  const contents = await writeFiles({
+    files: angularComponents
+      .map(({ className, filename, ...rest }) => ({
+        filename,
+        className,
+        ...rest,
+      })),
+    type,
+  });
+
+  // await setIconsInPlayground({
+  //   icons: contents,
+  //   type,
+  //   iconTpl,
+  // });
+
+  moduleComponents = moduleComponents.concat(
+    contents.map((c) => c.className)
+  );
+  moduleImports = moduleImports.concat(
+    contents
+      .map(
+        (c) =>
+          `import { ${c.className} } from './${c.filename.replace(
+            ".ts",
+            ""
+          )}';`
+      )
+  );
+
+  await fs
+    .readFile(`${here}/icon-type.module.tpl.txt`, "utf8")
+    .then((file) => {
+      return file
+        .replace("{{componentsImports}}", moduleImports.join("\n"))
+        .replace(/\{\{components\}\}/g, moduleComponents.join(",\n  "))
+        .replace(/\{\{type\}\}/g, jsUcfirst(type));
+    })
+    .then((content) => {
+      return fs.writeFile(
+        `${destHeroicons}/components/${type}/module.ts`,
+        content
+      );
     });
+}
 
-    await setIconsInPlayground({
-      icons: content.filter((c) => c.type === type),
-      type,
-      iconTpl,
-    });
+async function generateSvgVariables(contentsIcon) {
+  return contentsIcon.map((c) => {
 
-    moduleComponents = moduleComponents.concat(
-      content.filter((c) => c.type === type).map((c) => c.className)
-    );
-    moduleImports = moduleImports.concat(
-      content
-        .filter((c) => c.type === type)
-        .map(
-          (c) =>
-            `import { ${c.className} } from './${c.filename.replace(
-              ".ts",
-              ""
-            )}';`
-        )
-    );
+    let content = c.template.replace(/<svg/, '<svg [attr.style]="style" [attr.class]="svgClass"');
 
-    await fs
-      .readFile(`${here}/icon-type.module.tpl.txt`, "utf8")
-      .then((file) => {
-        return file
-          .replace("{{componentsImports}}", moduleImports.join("\n"))
-          .replace(/\{\{components\}\}/g, moduleComponents.join(",\n  "))
-          .replace(/\{\{type\}\}/g, jsUcfirst(type));
-      })
-      .then((content) => {
-        return fs.writeFile(
-          `${projectsPath}/ng-heroicons/src/lib/heroicons/${type}/module.ts`,
-          content
-        );
-      });
+    if (c.type === "outline") {
+      content = content.replace(/stroke-width="\d+"/g, "");
+    }
+
+    return `export const ${c.varName} = '${content}';`
+  }).join("\n")
+}
+
+async function generatePlayground(components, version) {
+  let iconsListComponentsTpl = await fs
+    .readFile(`${here}/icons-list-components.tpl.txt`, "utf8")
+
+  const iconsListTagNames = {}
+
+  for (const component of components) {
+    if (component.type in iconsListTagNames) {
+      iconsListTagNames[component.type].push(`<${component.selector}></${component.selector}>`)
+    } else {
+      iconsListTagNames[component.type] = [`<${component.selector}></${component.selector}>`]
+    }
   }
+
+  iconsListComponentsTpl = iconsListComponentsTpl
+    .replace("{{version}}", version)
+    .replace("{{solid-icons}}", iconsListTagNames['solid'].join("\n    "))
+    .replace("{{outline-icons}}", iconsListTagNames['outline'].join("\n    "))
+
+  mkdirp.sync(`${destHeroicons}/v12/`);
+  await fs.writeFile(`${destHeroicons}/v12/app.component.html`, iconsListComponentsTpl)
 }
 
 async function run() {
-  await getIconTpl();
-  await getComponentTpl();
+  const angularVersion = process.argv.length > 2
+    ? process.argv.slice(-1)[0].split("=")[1]
+    : null
+
+  if (!angularVersion) {
+    throw new Error("Angular version is mandatory")
+  }
+
+  iconTpl = await getIconTpl();
 
   cloneHeroicons();
 
-  const iconFiles = await compressSVG();
+  rimraf.sync(`${destHeroicons}/variables`);
+  rimraf.sync(`${destHeroicons}/components`);
 
-  const iconFilesData = getFilesData(iconFiles);
+  mkdirp.sync(`${destHeroicons}/variables`);
+  mkdirp.sync(`${destHeroicons}/components`);
 
-  const contentsIcon = await getSVGContent(iconFilesData);
+  let allComponents = []
+  for (const type of TYPES) {
+    mkdirp.sync(`${destHeroicons}/components/${type}`);
 
-  const angularComponents = await getAngularComponent(contentsIcon);
+    // const files = (await fs.readdir(`${heroiconsPath}/${type}`)).slice(0, 20)
+    const files = (await fs.readdir(`${heroiconsPath}/${type}`))
+    const iconFiles = await compressSVG(files, type)
 
-  await writeFileIcons(angularComponents);
-  console.log("creating components...");
+    const iconFilesData = getFilesData(iconFiles);
 
-  await generateModule(angularComponents);
-  console.log("creating outline and solid icons modules...");
+    const contentsIcon = await getSVGContent(iconFilesData);
 
-  rimraf.sync(originalHeroiconsPath);
+    const content = await generateSvgVariables(contentsIcon)
+
+    await fs.writeFile(`${destHeroicons}/variables/${type}.ts`, content, { encoding: "utf-8" })
+
+    const angularComponents = await getAngularComponent(contentsIcon);
+
+    console.log("👷 creating components...");
+    await writeFileIcons(angularComponents);
+
+    await generateModule(angularComponents, type);
+
+    allComponents = allComponents.concat(angularComponents);
+  }
+
+  await generatePlayground(allComponents, angularVersion)
+
   console.log("delete original heroicons files");
+  rimraf.sync(originalHeroiconsPath);
+  console.log("delete original heroicons files: Done ✅");
 
   return;
 }
 
-run();
+try {
+  run();
+} catch (error) {
+  console.error(error.message)
+}
