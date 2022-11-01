@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+// @tailwind components;
+@tailwind utilities;
+
+:root {
+  --ng-icon__stroke-width: 10;
+  // --ng-icon__color: red;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.IconWrapper {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+  @apply flex flex-col items-center justify-center p-2 bg-gray-100 text-sm h-32;
+  &:hover {
+    @apply bg-gray-200 cursor-pointer;
+  }
+
+  &__icon {
+    @apply flex-grow flex items-center justify-center;
+  }
+
+  &__icon,
+  &__name {
+    @apply pointer-events-none text-xs text-center;
+  }
+
+  &__name {
+    @apply h-8 flex items-center;
+  }
+}
+
+.dark {
+  .IconWrapper {
+    @apply bg-gray-700 text-white;
+
+    &:hover {
+      @apply bg-gray-600 cursor-pointer;
+    }
+  }
+}
+

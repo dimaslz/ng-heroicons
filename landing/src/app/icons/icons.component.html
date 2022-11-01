@@ -1,0 +1,147 @@
+<div class="Icons__menu my-4 flex justify-end">
+  <div class="flex w-full">
+    <form
+      [formGroup]="form"
+      novalidate
+      class="flex w-full"
+    >
+      <div class="relative flex w-full flex-row">
+        <input
+          role="search"
+          type="text"
+          class="w-full border border-red-600 pl-2 pr-6 text-xs text-gray-800 outline-none dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
+          placeholder="arrow"
+          formControlName="search"
+          data-testid="search"
+        />
+        <x-mark-outline-icon
+          class="absolute right-0 top-0 flex h-full cursor-pointer items-center pr-1 hover:opacity-50"
+          [size]="16"
+          *ngIf="form.get('search')?.value"
+          (click)="form.get('search')?.setValue('')"
+          name="clear-query"
+        ></x-mark-outline-icon>
+      </div>
+      <div class="flex h-8 w-8 items-center justify-center bg-red-600">
+        <magnifying-glass-outline-icon
+          class="text-white"
+          aria-label="search"
+          role="graphics-document"
+        ></magnifying-glass-outline-icon>
+      </div>
+    </form>
+  </div>
+  <div class="ml-2 flex">
+    <button
+      (click)="decrementSize()"
+      name="zoom-out"
+      aria-label="zoom-out-button"
+      role="button"
+      [ngClass]="['flex items-center justify-center', 'h-8 w-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none']"
+    >
+      <magnifying-glass-minus-outline-icon></magnifying-glass-minus-outline-icon>
+    </button>
+    <div class="flex h-8 w-16 items-center justify-center bg-red-600 text-white">
+      {{ size }}
+    </div>
+    <button
+      (click)="incrementSize()"
+      name="zoom-in"
+      aria-label="zoom-out-in"
+      role="button"
+      [ngClass]="['flex items-center justify-center', 'h-8 w-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none']"
+    >
+      <magnifying-glass-plus-outline-icon></magnifying-glass-plus-outline-icon>
+    </button>
+  </div>
+
+  <div class="ml-2 flex">
+    <button
+      name="outline-solid-toggle"
+      data-testid="outline-solid-toggle"
+      (click)="switchToOutline()"
+      aria-label="outline"
+      [ngClass]="[
+        'IconsComponent flex items-center justify-center',
+        'h-8 p-2 text-white hover:bg-red-500 focus:outline-none',
+        type === 'outline' ? 'bg-red-800' : 'bg-red-600'
+      ]"
+    >
+      outline
+    </button>
+    <button
+      name="outline-solid-toggle"
+      data-testid="outline-solid-toggle"
+      aria-label="solid"
+      (click)="switchToSolid()"
+      [ngClass]="[
+        'flex items-center justify-center',
+        'h-8 p-2 text-white hover:bg-red-500 focus:outline-none',
+        type === 'solid' ? 'bg-red-800' : 'bg-red-600'
+      ]"
+    >
+      solid
+    </button>
+  </div>
+</div>
+
+<div class="relative h-full">
+  <div
+    [ngClass]="[
+      'absolute top-0 bottom-0 left-0 right-0 z-10',
+      'h-full w-full',
+      'flex flex-col items-center justify-center',
+      'bg-white text-xl text-gray-700 dark:bg-gray-900 dark:text-white'
+    ]"
+    *ngIf="empty"
+  >
+    <img
+      src="../assets/empty.svg"
+      alt=""
+      srcset=""
+      class="h-64 w-64"
+    />
+    <div>there are no icons matching the search</div>
+  </div>
+
+  <div
+    class="absolute top-0 bottom-0 left-0 right-0 z-10 flex h-full w-full items-center justify-center bg-white text-xl text-gray-700 dark:bg-gray-900 dark:text-white"
+    *ngIf="loading"
+  >
+    loading...
+  </div>
+
+  <div class="flex items-center justify-center pb-4">
+    <button
+      *ngFor="let c of colors"
+      [ngClass]="[getColor(c), classColor.includes(c) ? 'ring-2 ring-gray-100' : '']"
+      class="mx-2 h-12 w-12 rounded-full text-xs font-bold"
+      (click)="onClickColor(c)"
+    >
+      {{ c }}
+    </button>
+  </div>
+
+  <div
+    data-testid="list-of-icons"
+    [ngClass]="{ hidden: empty || loading }"
+  >
+    <outline-icons
+      *ngIf="type === 'outline'"
+      [size]="size"
+      [stroke]="stroke"
+      [class]="classColor"
+    ></outline-icons>
+    <solid-icons
+      *ngIf="type === 'solid'"
+      [size]="size"
+      [class]="classColor"
+    ></solid-icons>
+  </div>
+</div>
+
+<tooltip
+  *ngIf="tooltipContent"
+  [copied]="componentTagCopied"
+  ><div>{{ tooltipContent }}</div></tooltip
+>
