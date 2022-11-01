@@ -1,6 +1,6 @@
 {
   "name": "@dimaslz/ng-heroicons",
-  "version": "2.0.0-rc",
+  "version": "1.0.0",
   "author": "Dimas López <me@dimaslz.io> (dimaslz)",
   "repository": {
     "url": "git+https://github.com/dimaslz/ng-heroicons.git",
@@ -20,8 +20,8 @@
     "clean:v11": "rimraf packages/angular-v11/dist && rimraf packages/angular-v11/projects/lib/components",
     "update:v11": "yarn clean:v11 && yarn v11-copy-assets",
     "reinstall:v11": "rimraf packages/angular-v11/node_modules && yarn --cwd=packages/angular-v11 install",
+    "v11-copy-release": "rimraf dist/v11 && mkdirp dist/v11 && cp -Rf packages/angular-v11/dist/lib/* dist/v11",
     "--------- ! Angular v11 Commands ---------": "",
-
     "--------- Angular v12 Commands ---------": "",
     "v12-copy-common-components": "cpy assets/components/common packages/angular-v12/projects/lib/components/common --flat",
     "v12-copy-outline-components": "cpy assets/components/outline packages/angular-v12/projects/lib/components/outline --flat",
@@ -34,8 +34,8 @@
     "clean:v12": "rimraf packages/angular-v12/dist && rimraf packages/angular-v12/projects/lib/components",
     "update:v12": "yarn clean:v12 && yarn v12-copy-assets",
     "reinstall:v12": "rimraf packages/angular-v12/node_modules && yarn --cwd=packages/angular-v12 install",
+    "v12-copy-release": "rimraf dist/v12 && mkdirp dist/v12 && cp -Rf packages/angular-v12/dist/lib/* dist/v12",
     "--------- ! Angular v12 Commands ---------": "",
-
     "--------- Angular v13 Commands ---------": "",
     "v13-copy-common-components": "cpy assets/components/common packages/angular-v13/projects/lib/components/common --flat",
     "v13-copy-outline-components": "cpy assets/components/outline packages/angular-v13/projects/lib/components/outline --flat",
@@ -48,9 +48,9 @@
     "clean:v13": "rimraf packages/angular-v13/dist && rimraf packages/angular-v13/projects/lib/components",
     "update:v13": "yarn clean:v13 && yarn v13-copy-assets",
     "reinstall:v13": "rimraf packages/angular-v13/node_modules && yarn --cwd=packages/angular-v13 install",
-    "--------- ! Angular v13 Commands ---------": "",
-
-    "--------- Angular v14 Commands ---------": "",
+    "v13-copy-release": "rimraf dist/v13 && mkdirp dist/v13 && cp -Rf packages/angular-v13/dist/lib/* dist/v13",
+    "-------- ! Angular v13 Commands --------": "",
+    "---------- Angular v14 Commands ----------": "",
     "v14-copy-common-components": "cpy assets/components/common packages/angular-v14/projects/lib/components/common --flat",
     "v14-copy-outline-components": "cpy assets/components/outline packages/angular-v14/projects/lib/components/outline --flat",
     "v14-copy-solid-components": "cpy assets/components/solid packages/angular-v14/projects/lib/components/solid --flat",
@@ -62,21 +62,25 @@
     "clean:v14": "rimraf packages/angular-v14/dist && rimraf packages/angular-v14/projects/lib/components",
     "update:v14": "yarn clean:v14 && yarn v14-copy-assets",
     "reinstall:v14": "rimraf packages/angular-v14/node_modules && yarn --cwd=packages/angular-v14 install",
+    "v14-copy-release": "rimraf dist/v14 && mkdirp dist/v14 && cp -Rf packages/angular-v14/dist/lib/* dist/v14",
     "--------- ! Angular v14 Commands ---------": "",
-
-    "--------- ! General Commands ---------": "",
+    "------------ General Commands ------------": "",
     "generate": "node ./generator/build-components.js",
     "test": "jest",
     "clean-dist": "rimraf clean/v11 && rimraf dist/v12 && rimraf dist/v13 && rimraf dist/v14",
     "clean-projects": "yarn clean:v11 && yarn clean:v12 && yarn clean:v13 && yarn clean:v14",
     "update-projects": "yarn update:v11 && yarn update:v12 && yarn update:v13 && yarn update:v14",
-    "build:prod": "yarn build:v11 && yarn build:v12 && yarn build:v13 && yarn build:v14"
+    "build:prod": "yarn build:v11 && yarn build:v12 && yarn build:v13 && yarn build:v14",
+    "copy-releases": "yarn v11-copy-release && yarn v12-copy-release && yarn v13-copy-release && yarn v14-copy-release",
+    "----------- ! General Commands -----------": ""
   },
   "devDependencies": {
     "@types/jest": "^29.2.0",
     "camelcase": "^6.3.0",
     "cpy-cli": "^4.2.0",
     "dedent": "^0.7.0",
+    "dotenv": "^16.0.3",
+    "dotenv-cli": "^6.0.0",
     "jest": "^29.2.2",
     "jest-cli": "^29.2.2",
     "jest-environment-jsdom": "^29.2.2",
