@@ -17,8 +17,9 @@
     "v11-watch:lib": "yarn --cwd=packages/angular-v11/projects build lib --watch --configuration production",
     "v11-copy-assets": "yarn v11-copy-common-components && yarn v11-copy-outline-components && yarn v11-copy-solid-components && yarn v11-copy-component-variables && yarn v11-copy-playground-app",
     "build:v11": "yarn --cwd=packages/angular-v11 build --configuration production",
-    "clean:v11": "rimraf packages/angular-v11/dist && rimraf packages/angular-v11/projects/lib/components && rimraf packages/angular-v11/projects/lib/variables",
+    "clean:v11": "rimraf packages/angular-v11/dist && rimraf packages/angular-v11/projects/lib/components",
     "update:v11": "yarn clean:v11 && yarn v11-copy-assets",
+    "reinstall:v11": "rimraf packages/angular-v11/node_modules && yarn --cwd=packages/angular-v11 install",
     "--------- ! Angular v11 Commands ---------": "",
 
     "--------- Angular v12 Commands ---------": "",
@@ -30,8 +31,9 @@
     "v12-watch:lib": "yarn --cwd=packages/angular-v12/projects build lib --watch --configuration production",
     "v12-copy-assets": "yarn v12-copy-common-components && yarn v12-copy-outline-components && yarn v12-copy-solid-components && yarn v12-copy-component-variables && yarn v12-copy-playground-app",
     "build:v12": "yarn --cwd=packages/angular-v12 build --configuration production",
-    "clean:v12": "rimraf packages/angular-v12/dist && rimraf packages/angular-v12/projects/lib/components && rimraf packages/angular-v12/projects/lib/variables",
+    "clean:v12": "rimraf packages/angular-v12/dist && rimraf packages/angular-v12/projects/lib/components",
     "update:v12": "yarn clean:v12 && yarn v12-copy-assets",
+    "reinstall:v12": "rimraf packages/angular-v12/node_modules && yarn --cwd=packages/angular-v12 install",
     "--------- ! Angular v12 Commands ---------": "",
 
     "--------- Angular v13 Commands ---------": "",
@@ -43,8 +45,9 @@
     "v13-watch:lib": "yarn --cwd=packages/angular-v13/projects build lib --watch --configuration production",
     "v13-copy-assets": "yarn v13-copy-common-components && yarn v13-copy-outline-components && yarn v13-copy-solid-components && yarn v13-copy-component-variables && yarn v13-copy-playground-app",
     "build:v13": "yarn --cwd=packages/angular-v13 build --configuration production",
-    "clean:v13": "rimraf packages/angular-v13/dist && rimraf packages/angular-v13/projects/lib/components && rimraf packages/angular-v13/projects/lib/variables",
+    "clean:v13": "rimraf packages/angular-v13/dist && rimraf packages/angular-v13/projects/lib/components",
     "update:v13": "yarn clean:v13 && yarn v13-copy-assets",
+    "reinstall:v13": "rimraf packages/angular-v13/node_modules && yarn --cwd=packages/angular-v13 install",
     "--------- ! Angular v13 Commands ---------": "",
 
     "--------- Angular v14 Commands ---------": "",
@@ -56,8 +59,9 @@
     "v14-watch:lib": "yarn --cwd=packages/angular-v14/projects build lib --watch --configuration production",
     "v14-copy-assets": "yarn v14-copy-common-components && yarn v14-copy-outline-components && yarn v14-copy-solid-components && yarn v14-copy-component-variables && yarn v14-copy-playground-app",
     "build:v14": "yarn --cwd=packages/angular-v14 build --configuration production",
-    "clean:v14": "rimraf packages/angular-v14/dist && rimraf packages/angular-v14/projects/lib/components && rimraf packages/angular-v14/projects/lib/variables",
+    "clean:v14": "rimraf packages/angular-v14/dist && rimraf packages/angular-v14/projects/lib/components",
     "update:v14": "yarn clean:v14 && yarn v14-copy-assets",
+    "reinstall:v14": "rimraf packages/angular-v14/node_modules && yarn --cwd=packages/angular-v14 install",
     "--------- ! Angular v14 Commands ---------": "",
 
     "--------- ! General Commands ---------": "",
