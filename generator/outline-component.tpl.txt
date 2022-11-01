@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 import { BaseOutlineIconComponent } from '../common/base-outline-icon.component';
-import { {{template}} } from '../../variables/outline';
 
 @Component({
   selector: '{{selector}}',
-  template: {{template}},
+  template: '{{template}}',
 })
 export class {{className}} extends BaseOutlineIconComponent { }

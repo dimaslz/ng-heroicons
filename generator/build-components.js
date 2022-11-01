@@ -64,14 +64,14 @@ async function SVGToAngular({ selector, template, varName, className, type }) {
   );
 
   componentTpl = componentTpl
-    .replaceAll("{{template}}", varName)
+    .replaceAll("{{template}}", template)
     .replace("{{className}}", className)
-    // .replace(/<svg/, '<svg [attr.style]="style" [attr.class]="svgClass"')
+    .replace(/<svg/, '<svg [attr.style]="style" [attr.class]="svgClass"')
     .replace("{{selector}}", selector);
 
-  // if (type === "outline") {
-  //   componentTpl = componentTpl.replace(/stroke-width="\d+"/g, "");
-  // }
+  if (type === "outline") {
+    componentTpl = componentTpl.replace(/stroke-width="\d+"/g, "");
+  }
 
   return componentTpl;
 }
@@ -268,19 +268,6 @@ async function generateModule(angularComponents, type) {
     });
 }
 
-async function generateSvgVariables(contentsIcon) {
-  return contentsIcon.map((c) => {
-
-    let content = c.template.replace(/<svg/, '<svg [attr.style]="style" [attr.class]="svgClass"');
-
-    if (c.type === "outline") {
-      content = content.replace(/stroke-width="\d+"/g, "");
-    }
-
-    return `export const ${c.varName} = '${content}';`
-  }).join("\n")
-}
-
 async function generatePlayground(components, version) {
   let iconsListComponentsTpl = await fs
     .readFile(`${here}/icons-list-components.tpl.txt`, "utf8")
@@ -327,14 +314,15 @@ async function run() {
     throw new Error("Angular version is mandatory")
   }
 
+  if (angularVersion === "all") {
+    return
+  }
+
   iconTpl = await getIconTpl();
 
   cloneHeroicons();
 
-  rimraf.sync(`${destHeroicons}/variables`);
   rimraf.sync(`${destHeroicons}/components`);
-
-  mkdirp.sync(`${destHeroicons}/variables`);
   mkdirp.sync(`${destHeroicons}/components`);
 
   let allComponents = []
@@ -348,10 +336,6 @@ async function run() {
     const iconFilesData = getFilesData(iconFiles);
 
     const contentsIcon = await getSVGContent(iconFilesData);
-
-    const content = await generateSvgVariables(contentsIcon)
-
-    await fs.writeFile(`${destHeroicons}/variables/${type}.ts`, content, { encoding: "utf-8" })
 
     const angularComponents = await getAngularComponent(contentsIcon);
 

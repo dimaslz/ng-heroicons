@@ -1,0 +1,3 @@
+<div class="{{type}}Icons w-full grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-1">
+  {{icons}}
+</div>
