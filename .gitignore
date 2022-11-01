@@ -54,4 +54,5 @@ Thumbs.db
 /assets
 /heroicons
 /packages/angular-v*/projects/lib/components
-/packages/angular-v*/projects/lib/variables
+/packages/angular-v*/dist
+.angular
