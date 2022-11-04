@@ -1,0 +1,12 @@
+# docker-compose.yml
+version: "3.8"
+services:
+   angular-v12:
+     build:
+       context: .
+       dockerfile: Dockerfile.node14
+     volumes:
+       - ./packages/angular-v12:/app:delegated
+       - /app/node_modules
+     ports:
+       - 4200:4200
