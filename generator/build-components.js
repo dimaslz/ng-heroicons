@@ -64,7 +64,7 @@ async function SVGToAngular({ selector, template, varName, className, type }) {
   );
 
   componentTpl = componentTpl
-    .replaceAll("{{template}}", template)
+    .replace("{{template}}", template)
     .replace("{{className}}", className)
     .replace(/<svg/, '<svg [attr.style]="style" [attr.class]="svgClass"')
     .replace("{{selector}}", selector);
@@ -329,8 +329,8 @@ async function run() {
   for (const type of TYPES) {
     mkdirp.sync(`${destHeroicons}/components/${type}`);
 
-    const files = (await fs.readdir(`${heroiconsPath}/${type}`)).slice(0, 5)
-    // const files = (await fs.readdir(`${heroiconsPath}/${type}`))
+    // const files = (await fs.readdir(`${heroiconsPath}/${type}`)).slice(0, 5)
+    const files = (await fs.readdir(`${heroiconsPath}/${type}`))
     const iconFiles = await compressSVG(files, type)
 
     const iconFilesData = getFilesData(iconFiles);
@@ -351,9 +351,9 @@ async function run() {
 
   await generatePlayground(allComponents, angularVersion)
 
-  console.log("delete original heroicons files");
-  rimraf.sync(originalHeroiconsPath);
-  console.log("delete original heroicons files: Done ✅");
+  // console.log("delete original heroicons files");
+  // rimraf.sync(originalHeroiconsPath);
+  // console.log("delete original heroicons files: Done ✅");
 
   return;
 }
