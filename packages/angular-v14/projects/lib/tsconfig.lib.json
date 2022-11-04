@@ -6,10 +6,10 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": []
+    "types": [],
+    "removeComments": true,
   },
   "exclude": [
-    "src/test.ts",
     "**/*.spec.ts"
   ]
 }

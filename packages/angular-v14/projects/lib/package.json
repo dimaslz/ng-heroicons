@@ -1,6 +1,6 @@
 {
-  "name": "lib",
-  "version": "0.0.1",
+  "name": "@dimaslz/ng-heroicons",
+  "version": "1.14.0-rc.1",
   "peerDependencies": {
     "@angular/common": "^14.2.0",
     "@angular/core": "^14.2.0"
