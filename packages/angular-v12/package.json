@@ -3,12 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "echo2": "yarn --cwd='../../' echo",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "echo": "echo ´HELLO Angular v12´"
   },
   "private": true,
   "dependencies": {
