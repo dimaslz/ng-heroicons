@@ -3,12 +3,18 @@ const path = require("path");
 const shell = require("shelljs");
 const prompts = require('prompts');
 const rimraf = require("rimraf");
+const commandLineArgs = require('command-line-args')
 
 const root = path.resolve(__dirname);
 const here = path.resolve(root);
 const heroiconsPath = path.resolve(`${here}/../heroicons`);
 const heroiconsGitRepo = "https://github.com/tailwindlabs/heroicons.git";
 const config = require("./config.json");
+const optionDefinitions = [
+  { name: 'version', alias: 'v', type: String },
+  { name: 'publish', alias: 'p', type: Boolean },
+]
+const options = commandLineArgs(optionDefinitions)
 
 const ANGULAR_VERSION = {
   "v11": "angular-v11",
@@ -31,9 +37,16 @@ async function updateReadme(version) {
 	await fs.writeFile(`${angularDistFolderPath}/README.md`, mainReadmeFile);
 };
 
-async function updatePackageVersion(angularVersion) {
+async function updatePackageVersion(angularVersion, update) {
 	try {
-		const distPackagePath = `${here}/../dist/${angularVersion}/package.json`;
+		const distPackagePath = `${root}/../dist/${angularVersion}/package.json`;
+
+		if (!update) {
+			const package = await fs.readFile(distPackagePath, { encoding: "utf-8" });
+			const packageJSON = JSON.parse(package);
+			return packageJSON.version;
+		}
+
 		const package = await fs.readFile(distPackagePath, { encoding: "utf-8" });
 		const packageJSON = JSON.parse(package);
 		const versionSplit = packageJSON.version.split(".");
@@ -72,6 +85,7 @@ async function updatePackageVersion(angularVersion) {
 			console.log("⚠️ Version is not updated")
 		}
 	} catch (error) {
+		console.log("error", error.message)
 		throw new Error("Something happen updating package version")
 	}
 }
@@ -105,9 +119,7 @@ function updateComponents(angularVersion) {
 }
 
 function getAngularVersion() {
-	const angularVersion = process.argv.length > 2
-	? process.argv.slice(-1)[0].split("=")[1]
-	: null
+	const angularVersion = options.version || null;
 
 	if (!angularVersion) {
 		throw new Error("Angular version is mandatory");
@@ -180,12 +192,7 @@ async function run() {
 		initial: true
 	});
 
-	if (canUpdatePackageVersion) {
-		await updatePackageVersion(angularVersion);
-	} else {
-		console.log("⚠️ Version is not updated")
-	}
-
+	const newVersion = await updatePackageVersion(angularVersion, canUpdatePackageVersion);
 
 	// move readme
 	// if (updateReadme) {

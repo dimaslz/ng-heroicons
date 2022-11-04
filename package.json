@@ -78,6 +78,7 @@
   "devDependencies": {
     "@types/jest": "^29.2.0",
     "camelcase": "^6.3.0",
+    "command-line-args": "^5.2.1",
     "cpy-cli": "^4.2.0",
     "dedent": "^0.7.0",
     "dotenv": "^16.0.3",
