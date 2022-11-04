@@ -9,7 +9,7 @@ import rimraf from "rimraf";
 import commandLineArgs from "command-line-args";
 import axios from "axios";
 
-import config from "./config.json";
+import config from "../release.config.js";
 
 const {pathname: __dirname} = new URL('.', import.meta.url)
 
