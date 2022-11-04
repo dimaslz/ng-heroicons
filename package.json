@@ -72,6 +72,7 @@
     "update-projects": "yarn update:v11 && yarn update:v12 && yarn update:v13 && yarn update:v14",
     "build:prod": "yarn build:v11 && yarn build:v12 && yarn build:v13 && yarn build:v14",
     "copy-releases": "yarn v11-copy-release && yarn v12-copy-release && yarn v13-copy-release && yarn v14-copy-release",
+    "release": "node release",
     "----------- ! General Commands -----------": ""
   },
   "devDependencies": {
@@ -87,6 +88,7 @@
     "jest-preset-angular": "^12.2.2",
     "lodash.kebabcase": "^4.1.1",
     "mkdirp": "^1.0.4",
+    "prompts": "^2.4.2",
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.5",
     "svgo": "^3.0.0",
