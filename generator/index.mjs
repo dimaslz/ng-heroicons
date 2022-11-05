@@ -1,11 +1,14 @@
- const fs = require("fs").promises;
-const path = require("path");
-const dedent = require("dedent");
-const camelcase = require("camelcase");
-const mkdirp = require("mkdirp");
-const rimraf = require("rimraf");
-const shell = require("shelljs");
-const kebabCase = require("lodash.kebabcase");
+import fs from "fs/promises";
+import path from "path";
+import camelcase from "camelcase";
+import mkdirp from "mkdirp";
+import rimraf from "rimraf";
+import shell from "shelljs";
+import kebabCase from "lodash.kebabcase";
+import commandLineArgs from "command-line-args";
+import prompts from "prompts";
+
+const { pathname: __dirname } = new URL('.', import.meta.url)
 
 const root = path.resolve(__dirname + "/..");
 const projectsPath = path.resolve(`${root}/assets`);
@@ -21,6 +24,21 @@ const ANGULAR_VERSION = {
   "v13": "angular-v13",
   "v14": "angular-v14",
 };
+
+async function prompt(props, onCancel = null) {
+	return await prompts(props, {
+		onCancel: onCancel || (() => {
+			console.log("\n🛑 Command release has been canceled.\n")
+
+			shell.exit(1);
+		})
+	})
+}
+
+const optionDefinitions = [
+  { name: 'version', alias: 'v', type: String },
+]
+const options = commandLineArgs(optionDefinitions)
 
 let iconComponentsWrapperTpl = "";
 
@@ -46,7 +64,7 @@ function cloneHeroicons() {
     shell.exec(`git clone ${heroiconsGitRepo} ${originalHeroiconsPath}`);
     shell.exec(`mv ${heroiconsPath}/optimized/24/outline ${heroiconsPath}/`);
     shell.exec(`mv ${heroiconsPath}/optimized/24/solid ${heroiconsPath}/`);
-    const heroiconsFolder = require("fs").readdirSync(heroiconsPath);
+    const heroiconsFolder = fs.readdir(heroiconsPath);
     heroiconsFolder
       .filter((folder) => !["outline", "solid"].includes(folder))
       .forEach((folder) => {
@@ -306,21 +324,32 @@ async function moveCommonCompoents() {
 }
 
 async function run() {
-  const angularVersion = process.argv.length > 2
-    ? process.argv.slice(-1)[0].split("=")[1]
-    : null
+  if (!shell.which("git")) {
+		shell.echo("Sorry, this script requires git repo");
+		shell.exit(1);
+	}
 
-  if (!angularVersion) {
-    throw new Error("Angular version is mandatory")
+  const angularVersion = options.version || null;
+
+  let versions;
+  if (!angularVersion || angularVersion === "all") {
+    versions = ["v11", "v12", "v13", "v14"];
+  } else {
+    versions = [angularVersion];
   }
 
-  if (angularVersion === "all") {
-    return
+  if (shell.test("-e", heroiconsPath)) {
+    const { value: cloneHeroicons } = await prompts({
+      type: 'confirm',
+      name: 'value',
+      message: `Heroicons folder already exists. Do you want to update?`,
+      initial: true
+    });
+
+    if (cloneHeroicons) {
+      cloneHeroicons();
+    }
   }
-
-  iconTpl = await getIconTpl();
-
-  cloneHeroicons();
 
   rimraf.sync(`${destHeroicons}/components`);
   mkdirp.sync(`${destHeroicons}/components`);
@@ -329,8 +358,8 @@ async function run() {
   for (const type of TYPES) {
     mkdirp.sync(`${destHeroicons}/components/${type}`);
 
-    // const files = (await fs.readdir(`${heroiconsPath}/${type}`)).slice(0, 5)
-    const files = (await fs.readdir(`${heroiconsPath}/${type}`))
+    const files = (await fs.readdir(`${heroiconsPath}/${type}`)).slice(0, 5)
+    // const files = (await fs.readdir(`${heroiconsPath}/${type}`))
     const iconFiles = await compressSVG(files, type)
 
     const iconFilesData = getFilesData(iconFiles);
@@ -349,11 +378,17 @@ async function run() {
     allComponents = allComponents.concat(angularComponents);
   }
 
-  await generatePlayground(allComponents, angularVersion)
+  for (const version of versions) {
+    shell.exec(`yarn update:${version}`);
 
-  // console.log("delete original heroicons files");
-  // rimraf.sync(originalHeroiconsPath);
-  // console.log("delete original heroicons files: Done ✅");
+    await generatePlayground(allComponents, version);
+    const appContent = await fs.readFile(
+      `${here}/../assets/${version}/app.component.html`,
+      { encoding: "utf-8" }
+    );
+    const playgroundPath = `${here}/../packages/${ANGULAR_VERSION[version]}/projects/playground/src/app/app.component.html`;
+    await fs.writeFile(playgroundPath, appContent)
+  }
 
   return;
 }

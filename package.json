@@ -65,7 +65,7 @@
     "v14-copy-release": "rimraf dist/v14 && mkdirp dist/v14 && cp -Rf packages/angular-v14/dist/lib/* dist/v14",
     "--------- ! Angular v14 Commands ---------": "",
     "------------ General Commands ------------": "",
-    "generate": "node generator/build-components.js",
+    "generate": "node generator/build-components.mjs",
     "test": "jest",
     "clean-dist": "rimraf clean/v11 && rimraf dist/v12 && rimraf dist/v13 && rimraf dist/v14",
     "clean-projects": "yarn clean:v11 && yarn clean:v12 && yarn clean:v13 && yarn clean:v14",
