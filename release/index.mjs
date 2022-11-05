@@ -297,7 +297,7 @@ async function run() {
 
 	// publish package
 	if (options.publish || config.npmPublish) {
-		await publishNPM();
+		await publishNPM(angularVersion);
 	}
 };
 
