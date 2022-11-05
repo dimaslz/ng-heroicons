@@ -70,10 +70,11 @@ async function versionAlreadyExists(version) {
 
 async function bumpPackageVersion({ angularVersion, update }) {
 	const publish = options.publish;
+	const release = options.release;
 	try {
 		const distPackagePath = `${root}/../dist/${angularVersion}/package.json`;
 
-		if (publish || !update) {
+		if ((!release && publish) || !update) {
 			const packageContent = await fs.readFile(distPackagePath, { encoding: "utf-8" });
 			const packageJSON = JSON.parse(packageContent);
 
@@ -293,6 +294,11 @@ async function run() {
 	});
 
 	const versionExists = await versionAlreadyExists(newVersion);
+
+	if (versionExists) {
+		shell.echo("🛑 version already exists in NPM");
+		shell.exit(1);
+	}
 
 	// move readme
 	await updateReadme(angularVersion);
