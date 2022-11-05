@@ -56,3 +56,4 @@ Thumbs.db
 /packages/angular-v*/projects/lib/components
 /packages/angular-v*/dist
 .angular
+.npmrc
