@@ -38,7 +38,7 @@
     "@types/lodash.throttle": "^4.1.7",
     "jest": "^28",
     "jest-cli": "^28",
-    "jest-environment-jsdom": "^29.2.2",
+    "jest-environment-jsdom": "^28",
     "jest-preset-angular": "^12.2.2",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "tailwindcss": "^3.2.1",

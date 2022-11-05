@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { fireEvent, render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 
-
 import { IconsComponent } from './icons.component';
 
 import { TooltipModule } from '../../components/tooltip/tooltip.component.module';
@@ -100,23 +99,17 @@ const setup = async () => {
 		})
 	}
 }
+
 describe('IconsComponent', () => {
 	let fixture: ComponentFixture<IconsComponent>;
 	let user: UserEvent;
 
 	beforeEach(async () => {
-		jest.useFakeTimers();
-
 		const { user: u, component } = await setup();
 		fixture = component.fixture;
 		user = u
 
 		fixture.autoDetectChanges();
-	});
-
-	afterEach(() => {
-		jest.runOnlyPendingTimers();
-		jest.useRealTimers();
 	});
 
 	describe('By default', () => {
@@ -126,7 +119,6 @@ describe('IconsComponent', () => {
 		});
 
 		it('outline icons should be render', () => {
-			fixture.detectChanges();
 			expect(screen.getByText('OUTLINE_ICONS')).toBeTruthy();
 		});
 
@@ -161,20 +153,30 @@ describe('IconsComponent', () => {
 
 			expect(fixture.componentInstance.size).toBe(48);
 		});
+
+		it('on zoom out should modify the UI and default values', async () => {
+			const input = screen.getByText('ZOOM_OUT_OUTLINE_ICON');
+			await fireEvent.click(input);
+
+			expect(fixture.componentInstance.size).toBe(32);
+		});
 	});
 
-	describe('on typing in search', () => {
-		it.skip('search icons does not exists', async () => {
-			const input = screen.getByRole('search');
-			// user.type(input, 'something');
-			user.type(input, 'something');
+	describe('SEARCH on typing', () => {
+		describe('search icons does not exists', () => {
+			let input: HTMLElement;
+			const search = 'something'
+			beforeEach(async () => {
+				input = screen.getByRole('search');
+				await user.type(input, search);
+			});
 
-			fixture.detectChanges();
-
-			// expect(screen.getByText('there are no icons matching the search')).toBeTruthy();
-			expect(fixture.componentInstance.empty).toBe(true);
-			// expect(true).toBe(true);
-			// expect(input).toHaveValue("dfsdfsd");
+			it("should show empty message", () => {
+				expect(screen.getByText('there are no icons matching the search')).toBeTruthy();
+			});
+			it("input search should keep the text", () => {
+				expect(input).toHaveValue(search);
+			});
 		});
 
 		it('clear input search', async () => {
@@ -186,10 +188,9 @@ describe('IconsComponent', () => {
 			expect(input).toHaveValue("");
 		});
 
-		it('search existing icons', () => {
+		it('search existing icons', async () => {
 			const input = screen.getByRole('search');
-			userEvent.type(input, 'icon');
-			jest.advanceTimersByTime(200);
+			await user.type(input, 'icon');
 
 			fixture.detectChanges();
 
