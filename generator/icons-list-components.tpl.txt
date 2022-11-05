@@ -1,0 +1,13 @@
+<h1>Angular {{version}}</h1>
+
+<div>
+  <div><h2>Outline</h2></div>
+  <div>
+    {{outline-icons}}
+  </div>
+
+  <div><h2>Solid</h2></div>
+  <div>
+    {{solid-icons}}
+  </div>
+</div>
