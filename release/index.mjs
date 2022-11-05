@@ -1,3 +1,4 @@
+":" //#;exec /usr/bin/env node --input-type=module - "$@" < "$0"
 "use strict";
 
 import chalk from "chalk";
@@ -9,9 +10,9 @@ import rimraf from "rimraf";
 import commandLineArgs from "command-line-args";
 import axios from "axios";
 
-import config from "../release.config.js";
+import config from "../release.config.mjs";
 
-const {pathname: __dirname} = new URL('.', import.meta.url)
+const { pathname: __dirname } = new URL('.', import.meta.url)
 
 const root = path.resolve(__dirname);
 const here = path.resolve(root);
@@ -131,28 +132,6 @@ async function bumpPackageVersion(angularVersion, update) {
 	}
 }
 
-function cloneHeroicons() {
-  console.log("👨‍💻  Clonning Heroicons from git");
-
-  if (!shell.which("git")) {
-    shell.echo("Sorry, this script requires git repo");
-    shell.exit(1);
-  } else {
-    rimraf.sync(heroiconsPath);
-    shell.exec(`git clone ${heroiconsGitRepo} ${heroiconsPath}`);
-    shell.exec(`mv ${heroiconsPath}/optimized/24/outline ${heroiconsPath}/`);
-    shell.exec(`mv ${heroiconsPath}/optimized/24/solid ${heroiconsPath}/`);
-    const heroiconsFolder = require("fs").readdirSync(heroiconsPath);
-    heroiconsFolder
-      .filter((folder) => !["outline", "solid"].includes(folder))
-      .forEach((folder) => {
-        rimraf.sync(path.resolve(`${heroiconsPath}/${folder}`));
-      });
-  }
-
-  console.log("Heroicons repo cloned! \n");
-}
-
 function updateComponents(angularVersion) {
 	console.log(`\n🕣 Update components in ${ANGULAR_VERSION[angularVersion]}\n`)
 	shell.exec(`yarn update:${angularVersion}`);
@@ -179,7 +158,7 @@ function getCurrentBranch() {
 	return shell.exec("git rev-parse --abbrev-ref HEAD");
 }
 
-async function downloadHeroicons() {
+async function downloadHeroicons(angularVersion) {
 	if (shell.test("-e", heroiconsPath)) {
 		const { value: canUpdateHeroicons } = await prompt({
 			type: 'confirm',
@@ -189,7 +168,7 @@ async function downloadHeroicons() {
 		});
 
 		if (canUpdateHeroicons) {
-			cloneHeroicons()
+			shell.echo(` run the command: ${chalk.yellow("yarn generate --v=" + angularVersion)}`);
 		}
 	} else {
 		const { value: canUpdateHeroicons } = await prompt({
@@ -200,7 +179,7 @@ async function downloadHeroicons() {
 		});
 
 		if (canUpdateHeroicons) {
-			cloneHeroicons()
+			shell.echo(` run the command: ${chalk.yellow("yarn generate -v=" + angularVersion)}`);
 		}
 	}
 }
@@ -267,14 +246,13 @@ async function run() {
 	const angularVersion = getAngularVersion();
 
 	if (angularVersion === "all") {
-		console.log("")
 		shell.exit(1);
 	}
 
 	const BRANCH = getCurrentBranch();
 
 	// update heroicons files
-	await downloadHeroicons();
+	await downloadHeroicons(angularVersion);
 
 	// install package
 	await installPackages(angularVersion);
