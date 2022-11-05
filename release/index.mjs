@@ -203,7 +203,7 @@ async function commitTag({ angularVersion, newVersion, branch }) {
 	});
 
 	if (canTag) {
-		shell.exec(`git add . && git tag ${angularVersion}-${newVersion} && git push -f --tags origin ${branch}`);
+		shell.exec(`git add packages/${ANGULAR_VERSION[angularVersion]} && git tag ${angularVersion}-${newVersion} && git push -f --tags origin ${branch}`);
 	}
 }
 
