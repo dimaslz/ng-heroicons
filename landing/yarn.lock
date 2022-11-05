@@ -1344,8 +1344,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.0.2.tgz#1bfafe4b7ed0f3e4105837e056e0a89b108ebe36"
   integrity sha512-IkpVW/ehM1hWKln4fCA3NzJU8KwD+kIOvPZA4cqxoJHtE21CCzjyp+Kxbu0i5I4tBNOlXPL9mjwnWlL0VEG4Fg==
 
-"@dimaslz/ng-heroicons@../packages/angular-v14/dist/lib":
+"@dimaslz/ng-heroicons@^1.14.0":
   version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@dimaslz/ng-heroicons/-/ng-heroicons-1.14.0.tgz#46d14ac66eb9aacccdcfc3581669ad536ceca019"
+  integrity sha512-z9CAYUliQ+H9ZEd6rtByBe0nVBNHINeRbfCjLjS7Ss/vfJibgnWzuKet3YUpn8vYB7hvDm2dG7260qeZ3OaETw==
   dependencies:
     tslib "^2.3.0"
 

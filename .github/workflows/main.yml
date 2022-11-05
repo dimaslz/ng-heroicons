@@ -22,15 +22,15 @@ jobs:
           run: "npm install -g yarn"
 
         - name: "Install dependencies"
-          run: "yarn install"
+          run: "yarn --cwd=landing install"
 
         - name: "Cache files"
           uses: "actions/cache@master"
           id: "main-files"
           with:
-            path: "./*"
+            path: "./landing"
             key: "${{ github.sha }}"
-  test-icon-components:
+  test-landing:
     name: Test icon components
     needs: dependencies
     if: ${{ success() }}
@@ -46,29 +46,50 @@ jobs:
         uses: "actions/cache@master"
         id: "main-files"
         with:
-          path: "./*"
+          path: "./landing"
           key: "${{ github.sha }}"
 
       - name: Run Jest Tests
-        run: yarn test:icons
-  test-playground:
-    name: Test playground
-    needs: dependencies
-    if: ${{ success() }}
-    runs-on: ubuntu-latest
+        run: yarn test
+  # test-icon-components:
+  #   name: Test icon components
+  #   needs: dependencies
+  #   if: ${{ success() }}
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Set up NodeJS
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
+  #   steps:
+  #     - name: Set up NodeJS
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 16
 
-      - name: "Restore cache files"
-        uses: "actions/cache@master"
-        id: "main-files"
-        with:
-          path: "./*"
-          key: "${{ github.sha }}"
+  #     - name: "Restore cache files"
+  #       uses: "actions/cache@master"
+  #       id: "main-files"
+  #       with:
+  #         path: "./*"
+  #         key: "${{ github.sha }}"
 
-      - name: Run Jest Tests
-        run: yarn test:playground
+  #     - name: Run Jest Tests
+  #       run: yarn test:icons
+  # test-playground:
+  #   name: Test playground
+  #   needs: dependencies
+  #   if: ${{ success() }}
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Set up NodeJS
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 16
+
+  #     - name: "Restore cache files"
+  #       uses: "actions/cache@master"
+  #       id: "main-files"
+  #       with:
+  #         path: "./*"
+  #         key: "${{ github.sha }}"
+
+  #     - name: Run Jest Tests
+  #       run: yarn test:playground
