@@ -340,17 +340,11 @@ async function run() {
     versions = [angularVersion];
   }
 
-  if (shell.test("-e", heroiconsPath)) {
-    const { value: cloneHeroicons } = await prompts({
-      type: 'confirm',
-      name: 'value',
-      message: `Heroicons folder already exists. Do you want to update?`,
-      initial: true
-    });
-
-    if (options.clone || cloneHeroicons) {
-      cloneHeroicons();
-    }
+  if (options.clone) {
+    cloneHeroicons();
+  } else if (!shell.test("-e", heroiconsPath)) {
+    console.log("Heroicons folder does not exists. Cloning repo...")
+    cloneHeroicons();
   }
 
   rimraf.sync(`${destHeroicons}/components`);
