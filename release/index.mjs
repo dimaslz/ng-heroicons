@@ -285,12 +285,9 @@ async function run() {
 	);
 
 	const versionExists = await versionAlreadyExists(newVersion);
-	// move readme
-	// if (updateReadme) {
-	// 	await updateReadme(angularVersion);
-	// }
 
-	// shell.cd(`dist/${angularVersion}`);
+	// move readme
+	await updateReadme(angularVersion);
 
 	// do you want to commit changes?
 	await commitChanges(newVersion);
