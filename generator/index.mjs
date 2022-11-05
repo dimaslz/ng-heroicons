@@ -37,6 +37,8 @@ async function prompt(props, onCancel = null) {
 
 const optionDefinitions = [
   { name: 'version', alias: 'v', type: String },
+  { name: 'clone', alias: 'c', type: Boolean },
+  { name: 'limit', alias: 'l', type: Number },
 ]
 const options = commandLineArgs(optionDefinitions)
 
@@ -346,7 +348,7 @@ async function run() {
       initial: true
     });
 
-    if (cloneHeroicons) {
+    if (options.clone || cloneHeroicons) {
       cloneHeroicons();
     }
   }
@@ -358,8 +360,13 @@ async function run() {
   for (const type of TYPES) {
     mkdirp.sync(`${destHeroicons}/components/${type}`);
 
-    const files = (await fs.readdir(`${heroiconsPath}/${type}`)).slice(0, 5)
-    // const files = (await fs.readdir(`${heroiconsPath}/${type}`))
+    let files;
+    if (options.limit) {
+      files = (await fs.readdir(`${heroiconsPath}/${type}`)).slice(0, options.limit);
+    } else {
+      files = (await fs.readdir(`${heroiconsPath}/${type}`));
+    }
+
     const iconFiles = await compressSVG(files, type)
 
     const iconFilesData = getFilesData(iconFiles);
