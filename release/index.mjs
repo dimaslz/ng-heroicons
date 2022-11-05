@@ -150,7 +150,7 @@ function getAngularVersion() {
 
 function buildLib(angularVersion) {
 	console.log(`\n🕣 building ${ANGULAR_VERSION[angularVersion]} library\n`)
-	shell.exec(`yarn --cwd=packages/${ANGULAR_VERSION[angularVersion]} build lib -c production`)
+	shell.exec(`yarn build:/${angularVersion}`)
 	console.log(`\n${chalk.green("✔")} building ${ANGULAR_VERSION[angularVersion]} library\n`)
 }
 
