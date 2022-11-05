@@ -1,17 +1,22 @@
 {
   "name": "@dimaslz/ng-heroicons",
-  "version": "1.11.0-rc.2",
+  "version": "1.11.0",
   "author": "Dimas López <me@dimaslz.io> (dimaslz)",
   "repository": {
     "url": "git+https://github.com/dimaslz/ng-heroicons.git",
     "type": "git"
   },
   "bugs": {
-    "url" : "https://github.com/dimaslz/ng-heroicons/issues",
-    "email" : "me+ng-heroicons@dimaslz.io"
+    "url": "https://github.com/dimaslz/ng-heroicons/issues",
+    "email": "me+ng-heroicons@dimaslz.io"
   },
   "description": "Angular library components to use Heroicons.com",
-  "keywords": ["angular", "components", "library", "heroicons"],
+  "keywords": [
+    "angular",
+    "components",
+    "library",
+    "heroicons"
+  ],
   "peerDependencies": {
     "@angular/common": "^11.2.14",
     "@angular/core": "^11.2.14"
