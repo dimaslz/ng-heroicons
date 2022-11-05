@@ -20,8 +20,10 @@ const heroiconsPath = path.resolve(`${here}/../heroicons`);
 const heroiconsGitRepo = "https://github.com/tailwindlabs/heroicons.git";
 const optionDefinitions = [
   { name: 'version', alias: 'v', type: String },
-  { name: 'updateHeroicons', alias: 'uh', type: Boolean },
+  { name: 'updateHeroicons', alias: 'u', type: Boolean },
   { name: 'publish', alias: 'p', type: Boolean },
+  { name: 'bump', alias: 'b', type: Boolean },
+  { name: 'release', alias: 'r', type: Boolean },
 ]
 const options = commandLineArgs(optionDefinitions)
 
@@ -66,12 +68,12 @@ async function versionAlreadyExists(version) {
 	}
 }
 
-async function bumpPackageVersion(angularVersion, update) {
-	const force = options.publish;
+async function bumpPackageVersion({ angularVersion, update }) {
+	const publish = options.publish;
 	try {
 		const distPackagePath = `${root}/../dist/${angularVersion}/package.json`;
 
-		if (!force || !update) {
+		if (publish || !update) {
 			const packageContent = await fs.readFile(distPackagePath, { encoding: "utf-8" });
 			const packageJSON = JSON.parse(packageContent);
 
@@ -88,15 +90,21 @@ async function bumpPackageVersion(angularVersion, update) {
 		const minor = versionSplit.shift();
 		let patch = versionSplit;
 
-		if (/-rc/.test(patch.join("."))) {
+		if (options.release) {
+			const rcNumber = +(patch.slice(-1)) + 1;
+			patch.splice(1, 1, rcNumber);
+			patch = patch.shift().replace("-rc", "");
+
+		} else if (/-rc/.test(patch.join("."))) {
 			const rcNumber = +(patch.slice(-1)) + 1;
 			patch.splice(1, 1, rcNumber);
 			patch = patch.join(".");
+
 		} else {
 			patch = +(patch) + 1;
 		}
 
-		const newVersion = [ major, minor, patch ].join(".");
+		const newVersion = [major, minor, patch].join(".");
 		packageJSON.version = newVersion;
 
 		const { value: agreeNewVerion } = await prompts({
@@ -151,7 +159,7 @@ function getAngularVersion() {
 
 function buildLib(angularVersion) {
 	console.log(`\n🕣 building ${ANGULAR_VERSION[angularVersion]} library\n`)
-	shell.exec(`yarn build:/${angularVersion}`)
+	shell.exec(`yarn build:${angularVersion}`)
 	console.log(`\n${chalk.green("✔")} building ${ANGULAR_VERSION[angularVersion]} library\n`)
 }
 
@@ -210,7 +218,7 @@ async function installPackages(angularVersion) {
 	}
 }
 
-async function commitChanges(newVersion) {
+async function commitChanges({ angularVersion, newVersion }) {
 	const { value: canCommit } = await prompt({
 		type: 'confirm',
 		name: 'value',
@@ -219,7 +227,7 @@ async function commitChanges(newVersion) {
 	});
 
 	if (canCommit) {
-		shell.exec(`git add . && git commit -m "chore(tag): bump version to ${newVersion}"`);
+		shell.exec(`git add packages/${ANGULAR_VERSION[angularVersion]} && git commit -m "chore(tag): bump version to ${newVersion}"`);
 	}
 }
 
@@ -279,10 +287,10 @@ async function run() {
 		initial: true
 	});
 
-	const { currentVersion, newVersion } = await bumpPackageVersion(
+	const { currentVersion, newVersion } = await bumpPackageVersion({
 		angularVersion,
-		canBumpPackageVersion
-	);
+		update: canBumpPackageVersion
+	});
 
 	const versionExists = await versionAlreadyExists(newVersion);
 
@@ -290,7 +298,7 @@ async function run() {
 	await updateReadme(angularVersion);
 
 	// do you want to commit changes?
-	await commitChanges(newVersion);
+	await commitChanges({ angularVersion, newVersion });
 
 	// do you want to tag?
 	await commitTag({ angularVersion, newVersion, branch: BRANCH });
