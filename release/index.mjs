@@ -20,6 +20,7 @@ const heroiconsPath = path.resolve(`${here}/../heroicons`);
 const heroiconsGitRepo = "https://github.com/tailwindlabs/heroicons.git";
 const optionDefinitions = [
   { name: 'version', alias: 'v', type: String },
+  { name: 'updateHeroicons', alias: 'uh', type: Boolean },
   { name: 'publish', alias: 'p', type: Boolean },
 ]
 const options = commandLineArgs(optionDefinitions)
@@ -252,7 +253,9 @@ async function run() {
 	const BRANCH = getCurrentBranch();
 
 	// update heroicons files
-	await downloadHeroicons(angularVersion);
+	if (options.updateHeroicons) {
+		await downloadHeroicons(angularVersion);
+	}
 
 	// install package
 	await installPackages(angularVersion);
