@@ -112,5 +112,5 @@ Keep in mind, first you should build the `lib` package. This playgrounds does no
 ## My other projects
 - https://randomdata.loremapi.io: API mock data (no open source)
 - https://icon-lib-builder.dimaslz.dev: SVG to Framework component (open source soon)
-- https://ng-v-class.dimaslz.dev: Use dynamic class in Angular as Vue (open source)
+- https://ng-heroicons.dimaslz.dev: Use Heroicons.com in you Angular projects (open source)
 - https://react-dynamic-classname.dimaslz.dev: Use dynamic class in React as Vue (open source)
