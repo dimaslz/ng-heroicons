@@ -1,5 +1,5 @@
 # @dimaslz/ng-heroicons
-
+<img src='https://track.dimaslz.dev/track?name=github&url=https://ng-heroicons.dimaslz.dev&domain=ng-heroicons.dimaslz.dev&props={"readme":"main"}' width="0px" height="0px" />
 NgHeroicons just it is a Angular components to use [Heroicons](https://heroicons.com) in your projects. I hope that could be useful.
 
 If you want to know how is working Angular CLI follow this [https://cli.angular.io/](https://cli.angular.io/).
