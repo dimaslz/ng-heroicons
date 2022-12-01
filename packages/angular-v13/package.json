@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.9",
-    "@angular/cli": "~13.3.9",
+    "@angular/cli": "~15.0.2",
     "@angular/compiler-cli": "~13.3.0",
     "@types/node": "^12.11.1",
     "ng-packagr": "^13.0.0",
