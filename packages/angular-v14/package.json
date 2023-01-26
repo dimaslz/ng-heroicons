@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "export TS_JEST_DISABLE_VER_CHECKER=true && jest",
+    "lint": "eslint",
+    "lint:fix": "yarn lint --fix",
+    "lint:quiet": "yarn lint --quiet"
   },
   "private": true,
   "dependencies": {
@@ -24,16 +27,39 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.7",
+    "@angular-eslint/builder": "^15.1.0",
+    "@angular-eslint/eslint-plugin": "^15.1.0",
+    "@angular-eslint/eslint-plugin-template": "^15.1.0",
+    "@angular-eslint/schematics": "^15.1.0",
+    "@angular-eslint/template-parser": "^15.1.0",
     "@angular/cli": "~14.2.7",
     "@angular/compiler-cli": "^14.2.0",
-    "@types/jasmine": "~4.0.0",
-    "jasmine-core": "~4.3.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.0.0",
+    "@testing-library/angular": "13.0.2",
+    "@testing-library/dom": "^8.20.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-angular": "^4.1.0",
+    "eslint-plugin-import": "^2.27.0",
+    "eslint-plugin-prefer-arrow": "1.2.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.4.0",
+    "jest-cli": "^29.4.0",
+    "jest-environment-jsdom": "^29.4.0",
+    "jest-preset-angular": "^12.2.5",
     "ng-packagr": "^14.2.0",
+    "prettier": "^2.8.3",
+    "prettier-eslint": "^15.0.1",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
     "typescript": "~4.7.2"
+  },
+  "engines": {
+    "node": ">=14",
+    "npm": ">=6"
   }
 }

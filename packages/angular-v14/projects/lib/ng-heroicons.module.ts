@@ -5,7 +5,9 @@ import { OutlineIconsModule } from './components/outline/module';
 import { SolidIconsModule } from './components/solid/module';
 
 @NgModule({
-  imports: [CommonModule],
-  exports: [OutlineIconsModule, SolidIconsModule],
+	imports: [CommonModule],
+	exports: [OutlineIconsModule, SolidIconsModule],
 })
-export class NgHeroiconsModule { }
+export class NgHeroiconsModule {
+	//
+}
