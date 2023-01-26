@@ -1,0 +1,16 @@
+{
+	"useTabs": true,
+	"tabWidth": 2,
+	"endOfLine": "auto",
+	"arrowParens": "avoid",
+	"trailingComma": "all",
+	"bracketSpacing": true,
+	"proseWrap": "always",
+	"semi": true,
+	"overrides": [
+		{
+			"files": "*.html",
+			"options": { "parser": "html" }
+		}
+	]
+}
