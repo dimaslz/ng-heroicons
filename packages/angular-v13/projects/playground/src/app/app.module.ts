@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
-import { NgHeroiconsModule } from 'lib';
+import { NgHeroiconsModule } from '../../../lib/public-api';
 
 @NgModule({
   declarations: [
