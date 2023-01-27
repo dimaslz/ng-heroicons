@@ -16,7 +16,7 @@ const destHeroicons = `${projectsPath}`;
 const here = path.resolve(`${root}/generator`);
 const heroiconsPath = path.resolve(`${root}/heroicons`);
 const heroiconsGitRepo = "https://github.com/tailwindlabs/heroicons.git";
-const originalHeroiconsPath = path.resolve(`${__dirname}/../heroicons`);
+const originalHeroiconsPath = path.resolve(`${root}/heroicons`);
 const TYPES = ["outline", "solid"];
 const ANGULAR_VERSION = {
   "v11": "angular-v11",
@@ -56,7 +56,7 @@ async function getComponentTpl() {
   );
 }
 
-function cloneHeroicons() {
+async function cloneHeroicons() {
   console.log("👨‍💻  Clonning Heroicons from git");
 
   if (!shell.which("git")) {
@@ -67,7 +67,7 @@ function cloneHeroicons() {
     shell.exec(`git clone ${heroiconsGitRepo} ${originalHeroiconsPath}`);
     shell.exec(`mv ${heroiconsPath}/optimized/24/outline ${heroiconsPath}/`);
     shell.exec(`mv ${heroiconsPath}/optimized/24/solid ${heroiconsPath}/`);
-    const heroiconsFolder = fs.readdir(heroiconsPath);
+    const heroiconsFolder = await fs.readdir(heroiconsPath);
     heroiconsFolder
       .filter((folder) => !["outline", "solid"].includes(folder))
       .forEach((folder) => {
@@ -336,16 +336,16 @@ async function run() {
 
   let versions;
   if (!angularVersion || angularVersion === "all") {
-    versions = ["v11", "v12", "v13", "v14"];
+    versions = ["v11", "v12", "v13", "v14", "v15"];
   } else {
     versions = [angularVersion];
   }
 
   if (options.clone) {
-    cloneHeroicons();
+    await cloneHeroicons();
   } else if (!shell.test("-e", heroiconsPath)) {
     console.log("Heroicons folder does not exists. Cloning repo...")
-    cloneHeroicons();
+    await cloneHeroicons();
   }
 
   rimraf.sync(`${destHeroicons}/components`);
@@ -385,10 +385,10 @@ async function run() {
 
     await generatePlayground(allComponents, version);
     const appContent = await fs.readFile(
-      `${here}/../assets/${version}/app.component.html`,
+      `${root}/assets/${version}/app.component.html`,
       { encoding: "utf-8" }
     );
-    const playgroundPath = `${here}/../packages/${ANGULAR_VERSION[version]}/projects/playground/src/app/app.component.html`;
+    const playgroundPath = `${root}/packages/${ANGULAR_VERSION[version]}/projects/playground/src/app/app.component.html`;
     await fs.writeFile(playgroundPath, appContent)
   }
 
