@@ -14,7 +14,8 @@ This package has compatibility with Angular version from 11 to 14.
 | 11.x.x | `^11` ||
 | 12.x.x | `^12` ||
 | 13.x.x | `^13` ||
-| 14.x.x & 15.x.x | `^14` | default |
+| 14.x.x | `^14` ||
+| 15.x.x | `^15` | default |
 
 `$ yarn add @dimaslz/ng-heroicons@^XX`
 
@@ -80,6 +81,7 @@ Keep in mind, first you should build the `lib` package
 | angular 12 | `$ yarn --cwd=packages/angular-v12 build lib -c production` |
 | angular 13 | `$ yarn --cwd=packages/angular-v13 build lib -c production` |
 | angular 14 | `$ yarn --cwd=packages/angular-v14 build lib -c production` |
+| angular 15 | `$ yarn --cwd=packages/angular-v15 build lib -c production` |
 
 ### Run playground per version
 Keep in mind, first you should build the `lib` package. This playgrounds does not have any special, is a demo page to test the library is working as expected.
@@ -90,6 +92,7 @@ Keep in mind, first you should build the `lib` package. This playgrounds does no
 | angular 12 | `$ yarn --cwd=packages/angular-v12 start playground` |
 | angular 13 | `$ yarn --cwd=packages/angular-v13 start playground` |
 | angular 14 | `$ yarn --cwd=packages/angular-v14 start playground` |
+| angular 15 | `$ yarn --cwd=packages/angular-v15 start playground` |
 
 ### Regenerate components
 `$ yarn generate` This will generate the new angular components in `projects/ng-heroicons/src/lib/heroicons/outline` and `projects/ng-heroicons/src/lib/heroicons/solid`, and the templated in playground as `projects/playground/src/app/icons/outline-icons.html` and `projects/playground/src/app/icons/solid-icons.html`
