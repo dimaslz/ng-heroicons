@@ -14,7 +14,7 @@ This package has compatibility with Angular version from 11 to 14.
 | 11.x.x | `^11` ||
 | 12.x.x | `^12` ||
 | 13.x.x | `^13` ||
-| 14.x.x | `^14` | default |
+| 14.x.x & 15.x.x | `^14` | default |
 
 `$ yarn add @dimaslz/ng-heroicons@^XX`
 
