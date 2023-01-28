@@ -1,6 +1,6 @@
 {
   "name": "@dimaslz/ng-heroicons",
-  "version": "1.14.0",
+  "version": "1.15.0",
   "author": "Dimas López <me@dimaslz.io> (dimaslz)",
   "repository": {
     "url": "git+https://github.com/dimaslz/ng-heroicons.git",
@@ -18,8 +18,8 @@
     "heroicons"
   ],
   "peerDependencies": {
-    "@angular/common": "^14.2.0",
-    "@angular/core": "^14.2.0"
+    "@angular/common": "^15.2.0",
+    "@angular/core": "^15.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
