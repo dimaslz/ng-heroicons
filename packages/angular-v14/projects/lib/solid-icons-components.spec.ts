@@ -23,10 +23,9 @@ describe('Solid icons', () => {
 			});
 
 			it('size parameter should work', async () => {
-				const { fixture } = await render(iconComponent);
-
-				fixture.componentInstance.size = 99;
-				fixture.detectChanges();
+				const { fixture } = await render(iconComponent, {
+					componentProperties: { size: 99 },
+				});
 
 				const { width, height } =
 					fixture.nativeElement.querySelector('svg').style;
@@ -36,10 +35,9 @@ describe('Solid icons', () => {
 			});
 
 			it('color parameter should work', async () => {
-				const { fixture } = await render(iconComponent);
-
-				fixture.componentInstance.color = 'red';
-				fixture.detectChanges();
+				const { fixture } = await render(iconComponent, {
+					componentProperties: { color: 'red' },
+				});
 
 				expect(fixture.nativeElement.querySelector('svg').style.color).toBe(
 					'red',
@@ -47,10 +45,9 @@ describe('Solid icons', () => {
 			});
 
 			it('svgStyle parameter should work', async () => {
-				const { fixture } = await render(iconComponent);
-
-				fixture.componentInstance.style = 'color: red;';
-				fixture.detectChanges();
+				const { fixture } = await render(iconComponent, {
+					componentProperties: { svgStyle: 'color: red;' },
+				});
 
 				expect(fixture.nativeElement.querySelector('svg').style.color).toBe(
 					'red',
