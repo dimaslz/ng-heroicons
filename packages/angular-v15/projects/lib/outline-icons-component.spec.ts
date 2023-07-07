@@ -21,14 +21,13 @@ describe('Outline icons', () => {
 				expect(width).toBe('24px');
 				expect(height).toBe('24px');
 				// TODO: should be 1px
-				expect(strokeWidth).toBe('1');
+				expect(strokeWidth).toBe('1px');
 			});
 
 			it('size parameter should work', async () => {
-				const { fixture } = await render(iconComponent);
-
-				fixture.componentInstance.size = 99;
-				fixture.detectChanges();
+				const { fixture } = await render(iconComponent, {
+					componentProperties: { size: 99 }
+				});
 
 				const { width, height } =
 					fixture.nativeElement.querySelector('svg').style;
@@ -38,10 +37,9 @@ describe('Outline icons', () => {
 			});
 
 			it('color parameter should work', async () => {
-				const { fixture } = await render(iconComponent);
-
-				fixture.componentInstance.color = 'red';
-				fixture.detectChanges();
+				const { fixture } = await render(iconComponent, {
+					componentProperties: { color: 'red' },
+				});
 
 				expect(fixture.nativeElement.querySelector('svg').style.color).toBe(
 					'red',
@@ -49,15 +47,14 @@ describe('Outline icons', () => {
 			});
 
 			it('stroke parameter should work', async () => {
-				const { fixture } = await render(iconComponent);
-
-				fixture.componentInstance.stroke = 99;
-				fixture.detectChanges();
+				const { fixture } = await render(iconComponent, {
+					componentProperties: { stroke: 99 }
+				});
 
 				// TODO: should be 99px
 				expect(
 					fixture.nativeElement.querySelector('svg').style.strokeWidth,
-				).toBe('99');
+				).toBe('99px');
 			});
 
 			it('svgStyle parameter should work', async () => {
