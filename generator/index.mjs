@@ -18,13 +18,10 @@ const heroiconsPath = path.resolve(`${root}/heroicons`);
 const heroiconsGitRepo = "https://github.com/tailwindlabs/heroicons.git";
 const originalHeroiconsPath = path.resolve(`${root}/heroicons`);
 const TYPES = ["outline", "solid"];
-const ANGULAR_VERSION = {
-  "v11": "angular-v11",
-  "v12": "angular-v12",
-  "v13": "angular-v13",
-  "v14": "angular-v14",
-  "v15": "angular-v15",
-};
+const VERSIONS = ["v11", "v12", "v13", "v14", "v15", "v16"];
+const ANGULAR_VERSION = VERSIONS.map((version) => ({
+  [version]: `angular-${version}`,
+})).reduce((a, b) => ({ ...a, ...b }), {});
 
 async function prompt(props, onCancel = null) {
 	return await prompts(props, {
@@ -336,7 +333,7 @@ async function run() {
 
   let versions;
   if (!angularVersion || angularVersion === "all") {
-    versions = ["v11", "v12", "v13", "v14", "v15"];
+    versions = VERSIONS;
   } else {
     versions = [angularVersion];
   }
