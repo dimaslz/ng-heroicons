@@ -1,4 +1,4 @@
-import { screen, render } from '@testing-library/angular';
+import { render } from '@testing-library/angular';
 
 import * as SOLID_ICONS from './components/solid';
 
@@ -22,33 +22,36 @@ describe('Solid icons', () => {
 				expect(height).toBe('24px');
 			});
 
-			it('update size by paremeter', async () => {
+			it('size parameter should work', async () => {
 				const { fixture } = await render(iconComponent, {
-					componentProperties: {
-						size: 100
-					}
+					componentProperties: { size: 99 },
 				});
-				fixture.detectChanges();
 
 				const { width, height } =
 					fixture.nativeElement.querySelector('svg').style;
 
-				expect(width).toBe('100px');
-				expect(height).toBe('100px');
+				expect(width).toBe('99px');
+				expect(height).toBe('99px');
 			});
 
 			it('color parameter should work', async () => {
 				const { fixture } = await render(iconComponent, {
-					componentProperties: {
-						style: "color: red;"
-					}
+					componentProperties: { color: 'red' },
 				});
-				fixture.detectChanges();
 
-				const { color } =
-					fixture.nativeElement.querySelector('svg').style;
+				expect(fixture.nativeElement.querySelector('svg').style.color).toBe(
+					'red',
+				);
+			});
 
-				expect(color).toBe('red');
+			it('svgStyle parameter should work', async () => {
+				const { fixture } = await render(iconComponent, {
+					componentProperties: { svgStyle: 'color: red;' },
+				});
+
+				expect(fixture.nativeElement.querySelector('svg').style.color).toBe(
+					'red',
+				);
 			});
 		},
 	);

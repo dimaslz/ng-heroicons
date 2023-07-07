@@ -21,14 +21,13 @@ describe('Outline icons', () => {
 				expect(width).toBe('24px');
 				expect(height).toBe('24px');
 				// TODO: should be 1px
-				expect(strokeWidth).toBe('1');
+				expect(strokeWidth).toBe('1px');
 			});
 
 			it('size parameter should work', async () => {
-				const { fixture } = await render(iconComponent);
-
-				fixture.componentInstance.size = 99;
-				fixture.detectChanges();
+				const { fixture } = await render(iconComponent, {
+					componentProperties: { size: 99 },
+				});
 
 				const { width, height } =
 					fixture.nativeElement.querySelector('svg').style;
@@ -37,46 +36,36 @@ describe('Outline icons', () => {
 				expect(height).toBe('99px');
 			});
 
+			it('color parameter should work', async () => {
+				const { fixture } = await render(iconComponent, {
+					componentProperties: { color: 'red' },
+				});
+
+				expect(fixture.nativeElement.querySelector('svg').style.color).toBe(
+					'red',
+				);
+			});
 
 			it('stroke parameter should work', async () => {
-				const { fixture } = await render(iconComponent);
-
-				fixture.componentInstance.stroke = 99;
-				fixture.detectChanges();
+				const { fixture } = await render(iconComponent, {
+					componentProperties: { stroke: 99 },
+				});
 
 				// TODO: should be 99px
 				expect(
 					fixture.nativeElement.querySelector('svg').style.strokeWidth,
-				).toBe('99');
+				).toBe('99px');
 			});
 
-			it('update size by paremeter', async () => {
-				const { fixture } = await render(iconComponent, {
-					componentProperties: {
-						size: 100
-					}
-				});
+			it('svgStyle parameter should work', async () => {
+				const { fixture } = await render(iconComponent);
+
+				fixture.componentInstance.style = 'color: red;';
 				fixture.detectChanges();
 
-				const { width, height } =
-					fixture.nativeElement.querySelector('svg').style;
-
-				expect(width).toBe('100px');
-				expect(height).toBe('100px');
-			});
-
-			it('color parameter should work', async () => {
-				const { fixture } = await render(iconComponent, {
-					componentProperties: {
-						style: "color: red;"
-					}
-				});
-				fixture.detectChanges();
-
-				const { color } =
-					fixture.nativeElement.querySelector('svg').style;
-
-				expect(color).toBe('red');
+				expect(fixture.nativeElement.querySelector('svg').style.color).toBe(
+					'red',
+				);
 			});
 		},
 	);
