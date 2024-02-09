@@ -1,0 +1,60 @@
+name: Testing Angular v12
+
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  dependencies:
+      name: "install dependencies"
+      runs-on: "ubuntu-latest"
+
+      steps:
+        - name: "Checkout under $GITHUB_WORKSPACE"
+          uses: "actions/checkout@v4"
+
+        - name: "Set up NodeJS"
+          uses: "actions/setup-node@v4"
+          with:
+            node-version: 18
+
+        - name: "install dependencies"
+          run: yarn install
+
+        - name: "generate icon components"
+          run: node generator/index.mjs
+
+        - name: "Cache files"
+          uses: "actions/cache@master"
+          id: "main-files"
+          with:
+            path: "./"
+            key: "${{ github.sha }}"
+
+  test-angular-v12:
+    name: test angular v12
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: "Restore cache files"
+        uses: "actions/cache@master"
+        id: "main-files"
+        with:
+          path: "./"
+          key: "${{ github.sha }}"
+
+      - name: "run tests"
+        run: |
+          yarn --cwd=packages/angular-v12 install
+          yarn --cwd=packages/angular-v12 test
+
+      - name: DEMO
+        run: |
+          ls -al
