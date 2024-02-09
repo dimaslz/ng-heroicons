@@ -160,3 +160,53 @@ jobs:
 
       - name: "running tests"
         run: yarn --cwd=packages/angular-v16 test
+
+  test-angular-v17-node18:
+    name: test angular v17 - node 18
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: "Restore cache files"
+        uses: "actions/cache@v4"
+        id: "main-files"
+        with:
+          path: "./"
+          key: "${{ github.sha }}"
+
+      - name: "install version dependencies"
+        run: yarn --cwd=packages/angular-v17 install
+
+      - name: "running tests"
+        run: yarn --cwd=packages/angular-v17 test
+
+  test-angular-v17-node20:
+    name: test angular v17 - node 20
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: "Restore cache files"
+        uses: "actions/cache@v4"
+        id: "main-files"
+        with:
+          path: "./"
+          key: "${{ github.sha }}"
+
+      - name: "install version dependencies"
+        run: yarn --cwd=packages/angular-v17 install
+
+      - name: "running tests"
+        run: yarn --cwd=packages/angular-v17 test
