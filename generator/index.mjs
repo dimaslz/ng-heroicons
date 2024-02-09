@@ -171,7 +171,7 @@ async function compressSVG(files, type) {
       const filePath = `${heroiconsPath}/${type}/${filename}`;
 
       shell.exec(
-        `svgo --config svgo.config.js ${filePath} -o ${filePath} >> /dev/null`
+        `./node_modules/.bin/svgo --config svgo.config.js ${filePath} -o ${filePath} >> /dev/null`
       );
 
       return {
