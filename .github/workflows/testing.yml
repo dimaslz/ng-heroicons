@@ -44,12 +44,12 @@ jobs:
 
     steps:
       - name: Set up NodeJS
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 14
 
       - name: "Restore cache files"
-        uses: "actions/cache@master"
+        uses: "actions/cache@v4"
         id: "main-files"
         with:
           path: "./"
@@ -69,12 +69,12 @@ jobs:
 
     steps:
       - name: Set up NodeJS
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 14
 
       - name: "Restore cache files"
-        uses: "actions/cache@master"
+        uses: "actions/cache@v4"
         id: "main-files"
         with:
           path: "./"
@@ -94,12 +94,12 @@ jobs:
 
     steps:
       - name: Set up NodeJS
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 16
 
       - name: "Restore cache files"
-        uses: "actions/cache@master"
+        uses: "actions/cache@v4"
         id: "main-files"
         with:
           path: "./"
@@ -119,12 +119,12 @@ jobs:
 
     steps:
       - name: Set up NodeJS
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 16
 
       - name: "Restore cache files"
-        uses: "actions/cache@master"
+        uses: "actions/cache@v4"
         id: "main-files"
         with:
           path: "./"
@@ -144,12 +144,12 @@ jobs:
 
     steps:
       - name: Set up NodeJS
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
       - name: "Restore cache files"
-        uses: "actions/cache@master"
+        uses: "actions/cache@v4"
         id: "main-files"
         with:
           path: "./"
