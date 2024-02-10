@@ -1,3 +1,5 @@
+import '@testing-library/jest-dom';
+
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
