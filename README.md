@@ -1,6 +1,6 @@
 # @dimaslz/ng-heroicons
 
-<img src='https://track.dimaslz.dev/track?name=github&url=https://ng-heroicons.dimaslz.dev&domain=ng-heroicons.dimaslz.dev&props={"readme":"main"}' width="0px" height="0px" />
+<img src='https://track.dimaslz.dev/track?name=github&url=https://ng-heroicons.dimaslz.dev&domain=ng-heroicons.dimaslz.dev&props={"readme":"main"}' alt="track" width="0px" height="0px" />
 
 NgHeroicons just it is a Angular components to use [Heroicons](https://heroicons.com) in your projects. I hope that could be useful.
 
@@ -10,7 +10,7 @@ Live demo: [https://ng-heroicons.dimaslz.dev](https://ng-heroicons.dimaslz.dev)
 
 ## How to install in your project
 
-This package has compatibility with Angular version from 11 to 14.
+This package has compatibility with Angular version from 11 to 17.
 
 | angular version | package version ||
 |-|-|-|
@@ -19,7 +19,8 @@ This package has compatibility with Angular version from 11 to 14.
 | 13.x.x | `^13` ||
 | 14.x.x | `^14` ||
 | 15.x.x | `^15` ||
-| 16.x.x | `^16` | default |
+| 16.x.x | `^16` ||
+| 17.x.x | `^17` | default |
 
 `$ yarn add @dimaslz/ng-heroicons@^XX`
 
@@ -71,7 +72,7 @@ This is a monorepo to build the icon components for multiple Angular versions. T
 
 ### Landing
 
-Landing page is the common landing https://ng-heroicons.dimaslz.dev/ which is using the last Angular version.
+Landing page is the common landing <https://ng-heroicons.dimaslz.dev/> which is using the last Angular version.
 
 - Build the Angular 14 lib: `$ yarn --cwd=packages/angular-v14 build lib -c production`
 - Refresh the distribution content in `dist/v14`: `$ yarn v14-copy-release`
@@ -91,6 +92,7 @@ Keep in mind, first you should build the `lib` package
 | angular 14 | `$ yarn --cwd=packages/angular-v14 build lib -c production` |
 | angular 15 | `$ yarn --cwd=packages/angular-v15 build lib -c production` |
 | angular 16 | `$ yarn --cwd=packages/angular-v16 build lib -c production` |
+| angular 17 | `$ yarn --cwd=packages/angular-v17 build lib -c production` |
 
 ### Run playground per version
 
@@ -104,6 +106,7 @@ Keep in mind, first you should build the `lib` package. This playgrounds does no
 | angular 14 | `$ yarn --cwd=packages/angular-v14 start playground` |
 | angular 15 | `$ yarn --cwd=packages/angular-v15 start playground` |
 | angular 16 | `$ yarn --cwd=packages/angular-v16 start playground` |
+| angular 17 | `$ yarn --cwd=packages/angular-v17 start playground` |
 
 ### Regenerate components
 
