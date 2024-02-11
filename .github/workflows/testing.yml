@@ -5,10 +5,18 @@ on:
     branches:
       - master
       - main
+    paths:
+      - "packages/*"
+    paths-ignore:
+      - "pacakges/**/*.md"
   push:
     branches:
       - master
       - main
+    paths:
+      - "packages/*"
+    paths-ignore:
+      - "pacakges/**/*.md"
 jobs:
   dependencies:
       name: "install dependencies"
