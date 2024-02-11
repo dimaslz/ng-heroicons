@@ -1,0 +1,64 @@
+name: Testing Landing
+
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+    paths:
+      - "landing/*"
+    paths-ignore:
+      - "landing/**/*.md"
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - "landing/*"
+    paths-ignore:
+      - "landing/**/*.md"
+jobs:
+  dependencies:
+      name: "install dependencies"
+      runs-on: "ubuntu-latest"
+
+      steps:
+        - name: "Checkout under $GITHUB_WORKSPACE"
+          uses: "actions/checkout@v4"
+
+        - name: "Set up NodeJS"
+          uses: "actions/setup-node@v4"
+          with:
+            node-version: 20
+
+        - name: "install dependencies"
+          run: yarn --cwd=landing install
+
+        - name: "Cache files"
+          uses: "actions/cache@master"
+          id: "main-files"
+          with:
+            path: "./"
+            key: "${{ github.sha }}"
+
+  test:
+    name: test
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14
+
+      - name: "Restore cache files"
+        uses: "actions/cache@v4"
+        id: "main-files"
+        with:
+          path: "./"
+          key: "${{ github.sha }}"
+
+      - name: "running tests"
+        run: yarn --cwd=landing test
