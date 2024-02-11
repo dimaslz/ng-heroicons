@@ -3,7 +3,7 @@
 
 import { Component, Input } from '@angular/core';
 import { fireEvent, render, RenderResult, screen } from '@testing-library/angular';
-import * as copyToClipboardUtil from '@/utils/copy-to-clipboard.utils';
+import * as copyToClipboardUtil from '../utils/copy-to-clipboard.utils';
 import { AppComponent } from './app.component';
 
 @Component({ selector: 'icons', template: '' })

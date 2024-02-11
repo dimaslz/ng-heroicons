@@ -40,6 +40,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	sizes: number[] = [6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64];
 	stroke = 1;
 	sizeIndex = 8;
+	counter = 0;
 	size = this.sizes[this.sizeIndex];
 	type = 'outline';
 	class = '';
@@ -68,6 +69,8 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 			document
 				.querySelector('.Icons')
 				?.addEventListener('mouseleave', this.onMouseLeaveHandler);
+
+			this.counter = this.getIconVisibleElements().length;
 		}
 
 		this.formSubscription$ = this.form
@@ -99,6 +102,14 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 		if (this.formSubscription$) {
 			this.formSubscription$.unsubscribe();
 		}
+	}
+
+	getIconVisibleElements(query?: string): Element[] {
+		const icons: NodeListOf<Element> = document.querySelectorAll(
+			query || `.IconWrapper .IconWrapper__icon`
+		);
+
+		return Array.from(icons);
 	}
 
 	onMouseOverHandler($event: Event): void {
@@ -181,18 +192,21 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	}
 
 	showIconsWhenMatchWithQuery(query: string | null): void {
-		if (!query) { return; }
+		if (!query) {
+			this.counter = this.getIconVisibleElements(`.IconWrapper .IconWrapper__icon`).length;
+
+			return;
+		}
 
 		try {
 			query = query.trim().replace(/\s+/g, '-').toLowerCase();
-			const icons: NodeListOf<Element> = document.querySelectorAll(
-				`.IconWrapper .IconWrapper__icon:not([id*=${query}])`
-			);
-			const iconElements: Element[] = Array.from(icons);
+			const iconElements: Element[] = this.getIconVisibleElements(`.IconWrapper .IconWrapper__icon:not([id*=${query}])`);
 
 			iconElements.forEach((element: Element) => {
 				element.parentElement?.classList.add('hidden');
 			});
+
+			this.counter = this.getIconVisibleElements(`.IconWrapper .IconWrapper__icon[id*=${query}]`).length;
 		} catch (err) { }
 		this.isEmpty();
 	}

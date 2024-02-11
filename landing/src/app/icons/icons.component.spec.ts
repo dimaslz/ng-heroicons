@@ -50,9 +50,15 @@ class MagnifyingGlassMinusOutlineIconComponent {
   <div>
     <div class="IconWrapper">
       <div class="IconWrapper__icon" id="icon_1">
-        icon_1
+        icon_1_svg
       </div>
-      <div class="IconWrapper__name">icon_1</div>
+      <div class="IconWrapper__name">icon_1_name</div>
+    </div>
+    <div class="IconWrapper">
+      <div class="IconWrapper__icon" id="icon_2">
+        icon_2_svg
+      </div>
+      <div class="IconWrapper__name">icon_2_name</div>
     </div>
   </div>`
 })
@@ -169,7 +175,7 @@ describe('IconsComponent', () => {
 			let input: HTMLElement;
 			const search = 'something'
 			beforeEach(async () => {
-				input = screen.getByRole('search');
+				input = screen.getByRole('textbox');
 				await user.type(input, search);
 			});
 
@@ -183,20 +189,33 @@ describe('IconsComponent', () => {
 
 		it('clear input search', async () => {
 			fixture.componentInstance.form.get("search")?.setValue("something")
-			const input = screen.getByRole('search');
+			const input = screen.getByRole('textbox');
 			user.clear(input);
 			fixture.detectChanges();
 
 			expect(input).toHaveValue("");
 		});
 
-		it('search existing icons', async () => {
-			const input = screen.getByRole('search');
-			await user.type(input, 'icon');
+		describe('search existing icons', () => {
+			it('found 1 icon', async () => {
+				const input = screen.getByRole('textbox');
+				await user.type(input, 'icon_1');
 
-			fixture.detectChanges();
+				fixture.detectChanges();
 
-			expect(screen.getAllByText(/icon_*/));
+				expect(screen.getAllByText(/icon_1*/));
+				expect(screen.getByText(/there are 1 icon/i));
+			});
+
+			it('found more than 1 icon', async () => {
+				const input = screen.getByRole('textbox');
+				await user.type(input, 'icon');
+
+				fixture.detectChanges();
+
+				expect(screen.getAllByText(/icon_*/));
+				expect(screen.getByText(/there are 2 icons/i));
+			});
 		});
 	});
 });
