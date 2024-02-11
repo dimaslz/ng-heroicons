@@ -1,9 +1,12 @@
 import {
 	Component,
-	OnInit,
 	Output,
 	EventEmitter,
+	Inject,
 } from '@angular/core';
+
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
 
 @Component({
 	selector: 'app-darkmode-toggle',
@@ -18,14 +21,16 @@ import {
   </button>
 </div>`
 })
-export class DarkModeComponent implements OnInit {
+export class DarkModeComponent {
 	@Output() update = new EventEmitter();
 
 	public darkmode = false;
 
-	ngOnInit(): void {
-		this.darkmode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-		this.switchMode();
+	constructor(@Inject(PLATFORM_ID) private platformId: Object	) {
+		if (isPlatformBrowser(this.platformId)) {
+			this.darkmode = window?.matchMedia('(prefers-color-scheme: dark)').matches;
+			this.switchMode();
+		}
 	}
 
 	toggleDarkMode(): void {

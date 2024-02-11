@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/unbound-method, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call */
 import {
 	Component,
+	Inject,
 	Input,
 	OnChanges,
 	OnDestroy,
 	OnInit,
+	PLATFORM_ID,
 	SimpleChanges,
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -12,6 +14,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import copyToClipboard from '../../utils/copy-to-clipboard.utils';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
 	selector: 'icons',
@@ -50,7 +53,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	empty = false;
 	loading = false;
 
-	constructor() {
+	constructor(@Inject(PLATFORM_ID) private platformId: Object) {
 		this.onMouseOverHandler = this.onMouseOverHandler.bind(this);
 		this.onMouseLeaveHandler = this.onMouseLeaveHandler.bind(this);
 		this.onClickIcon = this.onClickIcon.bind(this);
@@ -58,12 +61,14 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	}
 
 	ngOnInit(): void {
-		document
-			.querySelector('.Icons')
-			?.addEventListener('mouseover', this.onMouseOverHandler);
-		document
-			.querySelector('.Icons')
-			?.addEventListener('mouseleave', this.onMouseLeaveHandler);
+		if (isPlatformBrowser(this.platformId)) {
+			document
+				.querySelector('.Icons')
+				?.addEventListener('mouseover', this.onMouseOverHandler);
+			document
+				.querySelector('.Icons')
+				?.addEventListener('mouseleave', this.onMouseLeaveHandler);
+		}
 
 		this.formSubscription$ = this.form
 			.get('search')
@@ -82,12 +87,15 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	}
 
 	ngOnDestroy(): void {
-		document
-			.querySelector('.Icons')
-			?.removeEventListener('mouseover', this.onMouseOverHandler);
-		document
-			.querySelector('.Icons')
-			?.removeEventListener('mouseleave', this.onMouseLeaveHandler);
+		if (isPlatformBrowser(this.platformId)) {
+			document
+				.querySelector('.Icons')
+				?.removeEventListener('mouseover', this.onMouseOverHandler);
+			document
+				.querySelector('.Icons')
+				?.removeEventListener('mouseleave', this.onMouseLeaveHandler);
+		}
+
 		if (this.formSubscription$) {
 			this.formSubscription$.unsubscribe();
 		}
