@@ -6,13 +6,13 @@ on:
       - master
       - main
     paths:
-      - "packages/*"
+      - "packages/**"
   push:
     branches:
       - master
       - main
     paths:
-      - "packages/*"
+      - "packages/**"
 jobs:
   dependencies:
       name: "install dependencies"
