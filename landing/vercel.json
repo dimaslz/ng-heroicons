@@ -1,16 +1,16 @@
 {
-	"version": 2,
-	"builds": [
-	 {
-		"src": "./dist/landing/server/server.mjs",
-		"use": "@vercel/node",
-		"config": { "includeFiles": ["dist/**"] }
-	 }
-	],
-	"routes": [
-	 {
-		"src": "/(.*)",
-		"dest": "/"
-	 }
-	]
- }
+  "version": 2,
+  "public": true,
+  "name": "landing",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ],
+  "functions": {
+    "api/index.mjs": {
+      "includeFiles": "dist/landing/browser/**"
+    }
+  }
+}
