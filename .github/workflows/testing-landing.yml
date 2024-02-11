@@ -6,7 +6,7 @@ on:
       - master
       - main
     paths:
-      - "landing/*"
+      - "landing"
     paths-ignore:
       - "landing/**/*.md"
   push:
@@ -14,7 +14,7 @@ on:
       - master
       - main
     paths:
-      - "landing/*"
+      - "landing"
     paths-ignore:
       - "landing/**/*.md"
 jobs:
