@@ -47,7 +47,7 @@ jobs:
       - name: Set up NodeJS
         uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: 20
 
       - name: "Restore cache files"
         uses: "actions/cache@v4"
