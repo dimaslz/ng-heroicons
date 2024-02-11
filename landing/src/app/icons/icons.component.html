@@ -7,12 +7,13 @@
     >
       <div class="relative flex w-full flex-row">
         <input
-          role="search"
+          role="textbox"
           type="text"
           class="w-full border border-red-600 pl-2 pr-6 text-xs text-gray-800 outline-none dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
           placeholder="arrow"
           formControlName="search"
           data-testid="search"
+          aria-label="search text box to filter icons"
         />
         <x-mark-outline-icon
           class="absolute right-0 top-0 flex h-full cursor-pointer items-center pr-1 hover:opacity-50"
@@ -86,9 +87,32 @@
 </div>
 
 <div class="relative h-full">
+  <div class="flex items-center justify-center pb-4 flex-col space-y-4">
+    <div class="text-gray-800 dark:text-white">Test with different colors:</div>
+    <div>
+      <button
+        *ngFor="let c of colors"
+        [ngClass]="[getColor(c), classColor.includes(c) ? 'ring-2 ring-gray-100' : '']"
+        class="mx-2 h-12 w-12 rounded-full text-xs font-bold"
+        (click)="onClickColor(c)"
+        attr.aria-label="{{ 'Fill icons with the color \"' + c + '\"' }}"
+      ></button>
+    </div>
+  </div>
+
+  <div class="w-full py-2 text-white text-sm">
+    @if (counter === 1) {
+      <span>There are {{ counter }} icon</span>
+    } @else if(counter > 1) {
+      <span>There are {{ counter }} icons</span>
+    } @else {
+      <span>Thare are no icons</span>
+    }
+  </div>
+
   <div
     [ngClass]="[
-      'absolute top-0 bottom-0 left-0 right-0 z-10',
+      'absolute- top-0 bottom-0 left-0 right-0 z-10',
       'h-full w-full',
       'flex flex-col items-center justify-center',
       'bg-white text-xl text-gray-700 dark:bg-gray-900 dark:text-white'
@@ -96,10 +120,10 @@
     *ngIf="empty"
   >
     <img
-      src="../assets/empty.svg"
+      loading="lazy"
+      src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW95bzRlMmE3Ym94aGpoMWxnZDc5M2V3N2RsOHc2NXY5eW9xeGg0ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ez1QgBv3LAzwcYiGDK/giphy.gif"
       alt=""
       srcset=""
-      class="h-64 w-64"
     />
     <div>there are no icons matching the search</div>
   </div>
@@ -109,17 +133,6 @@
     *ngIf="loading"
   >
     loading...
-  </div>
-
-  <div class="flex items-center justify-center pb-4">
-    <button
-      *ngFor="let c of colors"
-      [ngClass]="[getColor(c), classColor.includes(c) ? 'ring-2 ring-gray-100' : '']"
-      class="mx-2 h-12 w-12 rounded-full text-xs font-bold"
-      (click)="onClickColor(c)"
-    >
-      {{ c }}
-    </button>
   </div>
 
   <div
