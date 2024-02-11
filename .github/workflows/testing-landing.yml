@@ -6,13 +6,13 @@ on:
       - master
       - main
     paths:
-      - "landing"
+      - "landing/**"
   push:
     branches:
       - master
       - main
     paths:
-      - "landing"
+      - "landing/**"
 jobs:
   dependencies:
       name: "install dependencies"
