@@ -17,6 +17,12 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
+  server.get('/robots.txt', (_, res) => {
+    res.type('text/plain')
+
+    res.send("User-agent: *\nDisallow:");
+  });
+
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
