@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 
 import copyToClipboard from '../utils/copy-to-clipboard.utils';
 import { RouterOutlet } from '@angular/router';

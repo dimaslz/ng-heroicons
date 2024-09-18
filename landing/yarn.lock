@@ -59,7 +59,7 @@
     ora "5.4.1"
     rxjs "7.8.1"
 
-"@angular/animations@^18.2.4":
+"@angular/animations@^18.2.0", "@angular/animations@^18.2.4":
   version "18.2.4"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-18.2.4.tgz#a6d0b3ec11f8dfedd3d3282c8ca30565666a3362"
   integrity sha512-ajjXpLD+SyxbHnmhj2ZvYpXneviOjcBgU9L2UX4OVS0jVWxCNHLhJrcMqtqFHA6U5fPnhPNR9cmnt6tmqri0rA==
@@ -120,7 +120,7 @@
     symbol-observable "4.0.0"
     yargs "17.7.2"
 
-"@angular/common@^18.2.4":
+"@angular/common@^18.2.0", "@angular/common@^18.2.4":
   version "18.2.4"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-18.2.4.tgz#24a672708aace65b0269d67671f12766dcfe07b2"
   integrity sha512-flUaKhdr8KvtjH0cLC6Rrjirt8GsiFlrmZLZplr784O3Gkei2VBBNFoopgmlEzbVGPiIG5QlFZH9yvah6JPQZw==
@@ -141,42 +141,42 @@
     tslib "^2.3.0"
     yargs "^17.2.1"
 
-"@angular/compiler@^18.2.4":
+"@angular/compiler@^18.2.0", "@angular/compiler@^18.2.4":
   version "18.2.4"
   resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-18.2.4.tgz#fe8b50b33e81824f989dc11d065e57a534fa5659"
   integrity sha512-o3ngFr1Bjt7cKOu4DSZJGCUF9YPTxJee97wFon2eNFj6FFNTmnGwAvsnJjHBMmk90fmZLC2/HpPdhYz7WprMZQ==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/core@^18.2.4":
+"@angular/core@^18.2.0", "@angular/core@^18.2.4":
   version "18.2.4"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-18.2.4.tgz#2430a4136364b38ef37cdc0d0be49a8253d9ed7d"
   integrity sha512-ulYmYpI/ZVQ5BL38rBy4DS/9wgGWmVD9Uo6tcrLqCzt1G1G2nKwseZv009536pHfk6dj2HdPSkpcerhWh57DWw==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/forms@^18.2.4":
+"@angular/forms@^18.2.0", "@angular/forms@^18.2.4":
   version "18.2.4"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-18.2.4.tgz#4c44d6dae20bd27e4067dc515e89ba72eaaf1b72"
   integrity sha512-rlLhReauUz6jhLCEkGabLqqF6xLaTfvxafuj2ojzcqoKGSZcXDIM/UOSoWX756B8NtrpsuglpGBZjZlsrAZGsg==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser-dynamic@^18.2.4":
+"@angular/platform-browser-dynamic@^18.2.0", "@angular/platform-browser-dynamic@^18.2.4":
   version "18.2.4"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-18.2.4.tgz#97ed143c4107a074be7702ecde806598cc7b556f"
   integrity sha512-0nA04zJueGzdnl37TJ7guDCrzxYS4fjqgvYKiOpFktpMHPuNrBlAQo5YA7u20HGFG3i47PQh7hEWhQaqcXXpQw==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser@^18.2.4":
+"@angular/platform-browser@^18.2.0", "@angular/platform-browser@^18.2.4":
   version "18.2.4"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-18.2.4.tgz#06a6494af1f8422097a92272bab5dc1bc2b2c68a"
   integrity sha512-ddzq5MyPvFyTv0kUe8U9fbhE1nZtLYBCFKDqICrzHXiVRAdqLv6qtE5PtbURrdspSy1u/YEGV4LdkNJK3UgnZQ==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-server@^18.2.4":
+"@angular/platform-server@^18.2.0", "@angular/platform-server@^18.2.4":
   version "18.2.4"
   resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-18.2.4.tgz#43c209333d9f3014ad91e45a48f647c2c00be8d3"
   integrity sha512-ix4jyN+rzkeJ/aEiWcstRHy7C4j/Q+KrXGumRLwpCkNgFRaO8YKFGGivXuPQsViCJoUzPtHu0zptJa6zSVLxyw==
@@ -184,7 +184,7 @@
     tslib "^2.3.0"
     xhr2 "^0.2.0"
 
-"@angular/router@^18.2.4":
+"@angular/router@^18.2.0", "@angular/router@^18.2.4":
   version "18.2.4"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-18.2.4.tgz#adcfeb549ec1faeea2b856eb2e22d68d15528cdc"
   integrity sha512-kYNHD3K1Xou2PRMqbG2tVahtMobgDlhwHdMB7G5oFHg6K13gQ2TmopF1U5A2wYtIMdsC+AkVGIJEOxQN8fmgcA==
@@ -678,10 +678,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@dimaslz/ng-heroicons@^1.17.0":
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/@dimaslz/ng-heroicons/-/ng-heroicons-1.17.0.tgz#131591895023f1808623893021b68db0f9734d0c"
-  integrity sha512-6qLsKXxASQyg1lSn1VJH7Jk3EgfBPzFygT4+zhJzeetAmlJYyDNQOCTQgUnSgNA/BNYzLhojylp7z06J8JstZQ==
+"@dimaslz/ng-heroicons@^1.18.0":
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/@dimaslz/ng-heroicons/-/ng-heroicons-1.18.0.tgz#a3b8acf41542e9aa6ac233d2b8b488a3e039e217"
+  integrity sha512-orWS9su6DcMkdytUHG/mz7Crjiw8wZuIghiJvpCJIWuJGSLmegz5oWb3faOuTNGeIo/dibwZ1dcghaQ/RO3RLA==
   dependencies:
     tslib "^2.3.0"
 
@@ -2298,6 +2298,24 @@ ajv@^8.0.0:
     json-schema-traverse "^1.0.0"
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
+
+angular-v18@../packages/angular-v18:
+  version "0.0.0"
+  dependencies:
+    "@angular/animations" "^18.2.0"
+    "@angular/common" "^18.2.0"
+    "@angular/compiler" "^18.2.0"
+    "@angular/core" "^18.2.0"
+    "@angular/forms" "^18.2.0"
+    "@angular/platform-browser" "^18.2.0"
+    "@angular/platform-browser-dynamic" "^18.2.0"
+    "@angular/platform-server" "^18.2.0"
+    "@angular/router" "^18.2.0"
+    "@angular/ssr" "^18.2.4"
+    express "^4.18.2"
+    rxjs "~7.8.0"
+    tslib "^2.3.0"
+    zone.js "~0.14.10"
 
 ansi-escapes@^4.2.1, ansi-escapes@^4.3.2:
   version "4.3.2"
@@ -5874,7 +5892,7 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-rxjs@7.8.1, rxjs@~7.8.1:
+rxjs@7.8.1, rxjs@~7.8.0, rxjs@~7.8.1:
   version "7.8.1"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.8.1.tgz#6f6f3d99ea8044291efd92e7c7fcf562c4057543"
   integrity sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==

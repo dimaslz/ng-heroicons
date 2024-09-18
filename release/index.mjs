@@ -35,6 +35,7 @@ const ANGULAR_VERSION = {
   "v15": "angular-v15",
   "v16": "angular-v16",
   "v17": "angular-v17",
+  "v18": "angular-v18",
 };
 
 async function prompt(props, onCancel = null) {

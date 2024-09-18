@@ -10,7 +10,7 @@ Live demo: [https://ng-heroicons.dimaslz.dev](https://ng-heroicons.dimaslz.dev)
 
 ## How to install in your project
 
-This package has compatibility with Angular version from 11 to 17.
+This package has compatibility with Angular version from 11 to 18.
 
 | angular version | package version ||
 |-|-|-|
@@ -20,7 +20,8 @@ This package has compatibility with Angular version from 11 to 17.
 | 14.x.x | `^14` ||
 | 15.x.x | `^15` ||
 | 16.x.x | `^16` ||
-| 17.x.x | `^17` | default |
+| 17.x.x | `^17` ||
+| 17.x.x | `^18` | default |
 
 `$ yarn add @dimaslz/ng-heroicons@^XX`
 
@@ -93,6 +94,7 @@ Keep in mind, first you should build the `lib` package
 | angular 15 | `$ yarn --cwd=packages/angular-v15 build lib -c production` |
 | angular 16 | `$ yarn --cwd=packages/angular-v16 build lib -c production` |
 | angular 17 | `$ yarn --cwd=packages/angular-v17 build lib -c production` |
+| angular 18 | `$ yarn --cwd=packages/angular-v18 build lib -c production` |
 
 ### Run playground per version
 
@@ -107,6 +109,7 @@ Keep in mind, first you should build the `lib` package. This playgrounds does no
 | angular 15 | `$ yarn --cwd=packages/angular-v15 start playground` |
 | angular 16 | `$ yarn --cwd=packages/angular-v16 start playground` |
 | angular 17 | `$ yarn --cwd=packages/angular-v17 start playground` |
+| angular 18 | `$ yarn --cwd=packages/angular-v18 start playground` |
 
 ### Regenerate components
 
@@ -124,7 +127,7 @@ Keep in mind, first you should build the `lib` package. This playgrounds does no
   role: "FullStack Software development",
   alias: "dimaslz",
   twitter: "https://twitter.com/dimaslz",
-  site: "https://dimaslz.dev",
+  site: "https://dimaslz.com",
   linkedin: "https://www.linkedin.com/in/dimaslopezzurita"
 }
 ```
