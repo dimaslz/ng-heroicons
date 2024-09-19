@@ -18,7 +18,7 @@ const heroiconsPath = path.resolve(`${root}/heroicons`);
 const heroiconsGitRepo = "https://github.com/tailwindlabs/heroicons.git";
 const originalHeroiconsPath = path.resolve(`${root}/heroicons`);
 const TYPES = ["outline", "solid"];
-const VERSIONS = ["v11", "v12", "v13", "v14", "v15", "v16", "v17"];
+const VERSIONS = ["v12", "v13", "v14", "v15", "v16", "v17", "v18"];
 const ANGULAR_VERSION = VERSIONS.map((version) => ({
   [version]: `angular-${version}`,
 })).reduce((a, b) => ({ ...a, ...b }), {});
@@ -305,7 +305,7 @@ async function generatePlayground(components, version) {
     .replace("{{solid-icons}}", iconsListTagNames['solid'].join("\n    "))
     .replace("{{outline-icons}}", iconsListTagNames['outline'].join("\n    "))
 
-  mkdirp.sync(`${destHeroicons}/${version}/`);
+  mkdirp.sync(`${destHeroicons}/${version}`);
   await fs.writeFile(`${destHeroicons}/${version}/app.component.html`, iconsListComponentsTpl)
 }
 
@@ -378,9 +378,10 @@ async function run() {
   }
 
   for (const version of versions) {
+    await generatePlayground(allComponents, version);
+
     shell.exec(`yarn update:${version}`);
 
-    await generatePlayground(allComponents, version);
     const appContent = await fs.readFile(
       `${root}/assets/${version}/app.component.html`,
       { encoding: "utf-8" }

@@ -1,0 +1,553 @@
+name: Testing Components
+
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+    paths:
+      - "packages/**"
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - "packages/**"
+jobs:
+  dependencies:
+      name: "install dependencies"
+      runs-on: "ubuntu-latest"
+
+      steps:
+        - name: "Checkout under $GITHUB_WORKSPACE"
+          uses: "actions/checkout@v4"
+
+        - name: "Set up NodeJS"
+          uses: "actions/setup-node@v4"
+          with:
+            node-version: 20
+
+        - name: "install dependencies"
+          run: yarn install
+
+        - name: "generate icon components"
+          run: node generator/index.mjs
+
+        - name: "Cache files"
+          uses: "actions/cache@v4"
+          id: "main-files"
+          with:
+            path: |
+              tsconfig.json
+              packages
+            key: "${{ github.sha }}"
+
+  test-angular-v12node14:
+    name: test angular v12 - node 14
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14
+
+      - name: "Restore cache files"
+        uses: "actions/cache@v4"
+        id: "main-files"
+        with:
+          path: |
+            tsconfig.json
+            packages
+          key: "${{ github.sha }}"
+
+      - name: "install dependencies"
+        run: |
+          mv tsconfig.json packages/angular-v12
+          rm packages/angular-v12/yarn.lock
+          cd packages/angular-v12
+          yarn install
+
+      - name: "running tests"
+        run: cd packages/angular-v12 && yarn test
+
+  test-angular-v12node16:
+    name: test angular v12 - node 16
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+
+      - name: "Restore cache files"
+        uses: "actions/cache@v4"
+        id: "main-files"
+        with:
+          path: |
+            tsconfig.json
+            packages
+          key: "${{ github.sha }}"
+
+      - name: "install dependencies"
+        run: |
+          mv tsconfig.json packages/angular-v12
+          rm packages/angular-v12/yarn.lock
+          cd packages/angular-v12
+          yarn install
+
+      - name: "running tests"
+        run: cd packages/angular-v12 && yarn test
+
+  test-angular-v12node18:
+    name: test angular v12 - node 18
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: "Restore cache files"
+        uses: "actions/cache@v4"
+        id: "main-files"
+        with:
+          path: |
+            tsconfig.json
+            packages
+          key: "${{ github.sha }}"
+
+      - name: "install dependencies"
+        run: |
+          mv tsconfig.json packages/angular-v12
+          rm packages/angular-v12/yarn.lock
+          cd packages/angular-v12
+          yarn install
+
+      - name: "running tests"
+        run: cd packages/angular-v12 && yarn test
+
+  test-angular-v13node14:
+    name: test angular v13 - node 14
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14
+
+      - name: "Restore cache files"
+        uses: "actions/cache@v4"
+        id: "main-files"
+        with:
+          path: |
+            tsconfig.json
+            packages
+          key: "${{ github.sha }}"
+
+      - name: "install dependencies"
+        run: |
+          mv tsconfig.json packages/angular-v13
+          rm packages/angular-v13/yarn.lock
+          cd packages/angular-v13
+          yarn install
+
+      - name: "running tests"
+        run: cd packages/angular-v13 && yarn test
+
+  test-angular-v13node16:
+    name: test angular v13 - node 16
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+
+      - name: "Restore cache files"
+        uses: "actions/cache@v4"
+        id: "main-files"
+        with:
+          path: |
+            tsconfig.json
+            packages
+          key: "${{ github.sha }}"
+
+      - name: "install dependencies"
+        run: |
+          mv tsconfig.json packages/angular-v13
+          rm packages/angular-v13/yarn.lock
+          cd packages/angular-v13
+          yarn install
+
+      - name: "running tests"
+        run: cd packages/angular-v13 && yarn test
+
+  test-angular-v13node18:
+    name: test angular v13 - node 18
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: "Restore cache files"
+        uses: "actions/cache@v4"
+        id: "main-files"
+        with:
+          path: |
+            tsconfig.json
+            packages
+          key: "${{ github.sha }}"
+
+      - name: "install dependencies"
+        run: |
+          mv tsconfig.json packages/angular-v13
+          rm packages/angular-v13/yarn.lock
+          cd packages/angular-v13
+          yarn install
+
+      - name: "running tests"
+        run: cd packages/angular-v13 && yarn test
+
+  test-angular-v14node18:
+    name: test angular v14 - node 18
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: "Restore cache files"
+        uses: "actions/cache@v4"
+        id: "main-files"
+        with:
+          path: |
+            tsconfig.json
+            packages
+          key: "${{ github.sha }}"
+
+      - name: "install dependencies"
+        run: |
+          mv tsconfig.json packages/angular-v14
+          rm packages/angular-v14/yarn.lock
+          cd packages/angular-v14
+          yarn install
+
+      - name: "running tests"
+        run: cd packages/angular-v14 && yarn test
+
+  test-angular-v14node20:
+    name: test angular v14 - node 20
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: "Restore cache files"
+        uses: "actions/cache@v4"
+        id: "main-files"
+        with:
+          path: |
+            tsconfig.json
+            packages
+          key: "${{ github.sha }}"
+
+      - name: "install dependencies"
+        run: |
+          mv tsconfig.json packages/angular-v14
+          rm packages/angular-v14/yarn.lock
+          cd packages/angular-v14
+          yarn install
+
+      - name: "running tests"
+        run: cd packages/angular-v14 && yarn test
+
+  test-angular-v18node20:
+    name: test angular v18 - node 20
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: "Restore cache files"
+        uses: "actions/cache@v4"
+        id: "main-files"
+        with:
+          path: |
+            tsconfig.json
+            packages
+          key: "${{ github.sha }}"
+
+      - name: "install dependencies"
+        run: |
+          mv tsconfig.json packages/angular-v18
+          rm packages/angular-v18/yarn.lock
+          cd packages/angular-v18
+          yarn install
+
+      - name: "running tests"
+        run: cd packages/angular-v18 && yarn test
+
+  test-angular-v18node22:
+    name: test angular v18 - node 22
+    needs: dependencies
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: "Restore cache files"
+        uses: "actions/cache@v4"
+        id: "main-files"
+        with:
+          path: |
+            tsconfig.json
+            packages
+          key: "${{ github.sha }}"
+
+      - name: "install dependencies"
+        run: |
+          mv tsconfig.json packages/angular-v18
+          rm packages/angular-v18/yarn.lock
+          cd packages/angular-v18
+          yarn install
+
+      - name: "running tests"
+        run: cd packages/angular-v18 && yarn test
+
+  # test-angular-v14:
+  #   name: test angular v14 - node 16
+  #   needs: dependencies
+  #   if: ${{ success() }}
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Set up NodeJS
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 16
+
+  #     - name: "Restore cache files"
+  #       uses: "actions/cache@v4"
+  #       id: "main-files"
+  #       with:
+  #         path: "./"
+  #         key: "${{ github.sha }}"
+
+  #     - name: "install version dependencies"
+  #       run: yarn --cwd=packages/angular-v14 install
+
+  #     - name: "running tests"
+  #       run: yarn --cwd=packages/angular-v14 test
+
+  # test-angular-v15:
+  #   name: test angular v15 - node 16
+  #   needs: dependencies
+  #   if: ${{ success() }}
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Set up NodeJS
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 16
+
+  #     - name: "Restore cache files"
+  #       uses: "actions/cache@v4"
+  #       id: "main-files"
+  #       with:
+  #         path: "./"
+  #         key: "${{ github.sha }}"
+
+  #     - name: "install version dependencies"
+  #       run: yarn --cwd=packages/angular-v15 install
+
+  #     - name: "running tests"
+  #       run: yarn --cwd=packages/angular-v15 test
+
+  # test-angular-v16:
+  #   name: test angular v16 - node 18
+  #   needs: dependencies
+  #   if: ${{ success() }}
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Set up NodeJS
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 18
+
+  #     - name: "Restore cache files"
+  #       uses: "actions/cache@v4"
+  #       id: "main-files"
+  #       with:
+  #         path: "./"
+  #         key: "${{ github.sha }}"
+
+  #     - name: "install version dependencies"
+  #       run: yarn --cwd=packages/angular-v16 install
+
+  #     - name: "running tests"
+  #       run: yarn --cwd=packages/angular-v16 test
+
+  # test-angular-v17-node18:
+  #   name: test angular v17 - node 18
+  #   needs: dependencies
+  #   if: ${{ success() }}
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Set up NodeJS
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 18
+
+  #     - name: "Restore cache files"
+  #       uses: "actions/cache@v4"
+  #       id: "main-files"
+  #       with:
+  #         path: "./"
+  #         key: "${{ github.sha }}"
+
+  #     - name: "install version dependencies"
+  #       run: yarn --cwd=packages/angular-v17 install
+
+  #     - name: "running tests"
+  #       run: yarn --cwd=packages/angular-v17 test
+
+  # test-angular-v17-node20:
+  #   name: test angular v17 - node 20
+  #   needs: dependencies
+  #   if: ${{ success() }}
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Set up NodeJS
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 20
+
+  #     - name: "Restore cache files"
+  #       uses: "actions/cache@v4"
+  #       id: "main-files"
+  #       with:
+  #         path: "./"
+  #         key: "${{ github.sha }}"
+
+  #     - name: "install version dependencies"
+  #       run: yarn --cwd=packages/angular-v17 install
+
+  #     - name: "running tests"
+  #       run: yarn --cwd=packages/angular-v17 test
+
+  # test-angular-v18-node18:
+  #   name: test angular v18 - node 18
+  #   needs: dependencies
+  #   if: ${{ success() }}
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Set up NodeJS
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 18
+
+  #     - name: "Restore cache files"
+  #       uses: "actions/cache@v4"
+  #       id: "main-files"
+  #       with:
+  #         path: "./"
+  #         key: "${{ github.sha }}"
+
+  #     - name: "install version dependencies"
+  #       run: yarn --cwd=packages/angular-v18 install
+
+  #     - name: "running tests"
+  #       run: yarn --cwd=packages/angular-v18 test
+
+  # test-angular-v18-node20:
+  #   name: test angular v18 - node 20
+  #   needs: dependencies
+  #   if: ${{ success() }}
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Set up NodeJS
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 20
+
+  #     - name: "Restore cache files"
+  #       uses: "actions/cache@v4"
+  #       id: "main-files"
+  #       with:
+  #         path: "./"
+  #         key: "${{ github.sha }}"
+
+  #     - name: "install version dependencies"
+  #       run: yarn --cwd=packages/angular-v18 install
+
+  #     - name: "running tests"
+  #       run: yarn --cwd=packages/angular-v18 test
+
+  # test-angular-v18-node22:
+  #   name: test angular v18 - node 22
+  #   needs: dependencies
+  #   if: ${{ success() }}
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Set up NodeJS
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 22
+
+  #     - name: "Restore cache files"
+  #       uses: "actions/cache@v4"
+  #       id: "main-files"
+  #       with:
+  #         path: "./"
+  #         key: "${{ github.sha }}"
+
+  #     - name: "install version dependencies"
+  #       run: yarn --cwd=packages/angular-v18 install
+
+  #     - name: "running tests"
+  #       run: yarn --cwd=packages/angular-v18 test
