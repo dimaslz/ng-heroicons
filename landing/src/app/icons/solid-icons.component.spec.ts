@@ -1,17 +1,15 @@
 import '@testing-library/jest-dom';
 
 import { CommonModule } from '@angular/common';
-import { ComponentFixture } from '@angular/core/testing';
-import { render } from '@testing-library/angular';
+import { render, RenderResult } from '@testing-library/angular';
 import { kebabCase } from 'lodash';
 
 import { SolidIconsComponent } from './solid-icons.component';
 import { NgHeroiconsModule, SOLID_ICONS, T_SOLID_ICONS } from '@dimaslz/ng-heroicons';
 
 describe('Solid icons', () => {
-	let fixture: ComponentFixture<SolidIconsComponent>;
 	let container: Element;
-	let component: any;
+	let component: RenderResult<SolidIconsComponent>;
 
 	beforeEach(async () => {
 		(component = await render(SolidIconsComponent, {
@@ -21,7 +19,6 @@ describe('Solid icons', () => {
 			],
 		}));
 
-		fixture = component.fixture;
 		container = component.container;
 	});
 

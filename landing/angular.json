@@ -35,7 +35,7 @@
               "entry": "server.ts"
             },
             "allowedCommonJsDependencies": [
-              "lodash.throttle"
+              "lodash"
             ]
           },
           "configurations": {
@@ -43,8 +43,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1.5mb",
-                  "maximumError": "1.5mb"
+                  "maximumWarning": "512kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",

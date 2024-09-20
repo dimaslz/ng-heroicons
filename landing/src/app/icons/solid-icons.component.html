@@ -1,19 +1,18 @@
-<div class="SolidIcons grid w-full grid-cols-3 gap-1 md:grid-cols-6 lg:grid-cols-8">
-  @for (component of components; track component) {
-    <div class="IconWrapper">
-      <div
-        class="IconWrapper__icon"
-        [id]="component"
-      >
-        <ng-heroicons
-          outline
-          [icon]="component"
-          [size]="size"
-          [color]="color"
-          [class]="class"
-        />
-      </div>
-      <div class="IconWrapper__name">{{ component }}</div>
-    </div>
-  }
+<div
+	class="SolidIcons grid w-full grid-cols-3 gap-1 md:grid-cols-6 lg:grid-cols-8"
+>
+	@for (component of components; track component) {
+		<div class="IconWrapper">
+			<div class="IconWrapper__icon" [id]="component">
+				<ng-heroicons
+					outline
+					[icon]="component"
+					[size]="size"
+					[color]="color"
+					[class]="class"
+				/>
+			</div>
+			<div class="IconWrapper__name">{{ component }}</div>
+		</div>
+	}
 </div>

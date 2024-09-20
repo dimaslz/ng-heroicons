@@ -54,7 +54,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	loading = false;
 
 	constructor(
-		@Inject(PLATFORM_ID) private platformId: Object,
+		@Inject(PLATFORM_ID) private platformId: object,
 		@Inject(DOCUMENT) private document: Document,
 	) {
 		this.onMouseOverHandler = this.onMouseOverHandler.bind(this);
@@ -209,7 +209,9 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 			});
 
 			this.counter = this.getIconVisibleElements(`.IconWrapper .IconWrapper__icon[id*=${query}]`).length;
-		} catch (err) { }
+		} catch (err: any) {
+			console.error(err.message);
+		}
 		this.isEmpty();
 	}
 
@@ -223,7 +225,9 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 			iconElements.forEach((element: Element) => {
 				element.classList.remove('hidden');
 			});
-		} catch (err) { }
+		} catch (err: any) {
+			console.error(err.message);
+		}
 	}
 
 	isEmpty(): void {
@@ -233,7 +237,9 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 			);
 			const iconElements: Element[] = Array.from(icons);
 			this.empty = iconElements.length === 0;
-		} catch (err) {
+		} catch (err: any) {
+			console.error(err.message);
+
 			this.empty = true;
 		}
 	}
