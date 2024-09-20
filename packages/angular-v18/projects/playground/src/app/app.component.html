@@ -328,6 +328,11 @@
     <x-circle-outline-icon></x-circle-outline-icon>
     <x-mark-outline-icon></x-mark-outline-icon>
   </div>
+  <div>
+    @for (component of outlineComponents; track component) {
+      <ng-heroicons [icon]="component" outline></ng-heroicons>
+    }
+  </div>
 
   <div><h2>Solid</h2></div>
   <div>
@@ -655,5 +660,10 @@
     <wrench-solid-icon></wrench-solid-icon>
     <x-circle-solid-icon></x-circle-solid-icon>
     <x-mark-solid-icon></x-mark-solid-icon>
+  </div>
+  <div>
+    @for (component of solidComponents; track component) {
+      <ng-heroicons [icon]="component" solid></ng-heroicons>
+    }
   </div>
 </div>

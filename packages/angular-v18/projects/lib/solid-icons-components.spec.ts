@@ -1,6 +1,6 @@
 import { render } from '@testing-library/angular';
 
-import * as SOLID_ICONS from './components/solid';
+import { SOLID_ICONS } from './constants';
 
 describe('Solid icons', () => {
 	describe.each(Object.entries(SOLID_ICONS))(

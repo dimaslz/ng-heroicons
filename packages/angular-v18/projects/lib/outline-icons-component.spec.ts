@@ -1,6 +1,6 @@
 import { render } from '@testing-library/angular';
 
-import * as OUTLINE_ICONS from './components/outline';
+import { OUTLINE_ICONS } from './constants';
 
 describe('Outline icons', () => {
 	describe.each(Object.entries(OUTLINE_ICONS))(
