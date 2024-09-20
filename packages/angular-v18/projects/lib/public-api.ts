@@ -11,5 +11,3 @@ export * from './components/solid';
 
 export * from './ng-heroicons.component';
 export * from './ng-heroicons.module';
-
-

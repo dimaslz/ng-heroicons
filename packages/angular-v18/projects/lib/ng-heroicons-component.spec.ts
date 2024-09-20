@@ -1,3 +1,5 @@
+import '@testing-library/jest-dom';
+
 import { render } from '@testing-library/angular';
 
 import { T_OUTLINE_ICONS, T_SOLID_ICONS } from './types';
@@ -5,46 +7,84 @@ import { OUTLINE_ICONS, SOLID_ICONS } from './constants';
 
 import { kebabCase } from 'lodash';
 import { NgHeroiconsComponent } from './ng-heroicons.component';
+import { MODULE_CONFIG } from './ng-heroicons.module';
 
 describe('NgHeroicons Component icons', () => {
-
-	describe("on failure", () => {
-		it("should return error when icon does not exists in outline", async () => {
-			await expect(async () => {
-				await render(NgHeroiconsComponent, {
-					componentProperties: {
-						icon: "wrong-icon",
-						outline: ""
-					}
-				} as any);
-			}).rejects.toThrow(new Error("The icon name <wrong-icon> does not exists on outline icons."))
-		});
-
-		it("should return error when icon does not exists in solid", async () => {
-			await expect(async () => {
-				await render(NgHeroiconsComponent, {
-					componentProperties: {
-						icon: "wrong-icon",
-						solid: ""
-					}
-				} as any);
-			}).rejects.toThrow(new Error("The icon name <wrong-icon> does not exists on solid icons."))
-		})
-	})
-
 	describe("on success", () => {
-		it("should use outline icon as default", async () => {
-			const { container } = await render(NgHeroiconsComponent, {
-				componentProperties: {
-					icon: "academic-cap",
-				}
+		beforeEach(() => {
+			jest.resetAllMocks();
+			jest.resetModules();
+		})
+
+		describe("respect default settings", () => {
+			it("{ default: 'outline', stroke: 1 }", async () => {
+				const { fixture, container } = await render(NgHeroiconsComponent, {
+					providers: [{
+						provide: MODULE_CONFIG,
+						useValue: { default: 'outline', stroke: 1 }
+					}],
+					componentProperties: {
+						icon: "academic-cap",
+					}
+				});
+
+				expect(fixture.componentInstance.stroke).toBe(1)
+
+				const element = container.querySelector("academic-cap-outline-icon");
+
+				expect(element).toBeInTheDocument();
+				expect(element?.querySelector("svg")?.style.strokeWidth).toBe("1px");
 			});
 
-			expect(container.getElementsByTagName("academic-cap-outline-icon")).toBeDefined();
+			it("{ default: 'solid', stroke: 1 }", async () => {
+				const { container } = await render(NgHeroiconsComponent, {
+					providers: [{
+						provide: MODULE_CONFIG,
+						useValue: { default: 'solid', stroke: 1 }
+					}],
+					componentProperties: {
+						icon: "academic-cap",
+					}
+				});
 
+				const element = container.querySelector("academic-cap-solid-icon");
+
+				expect(element).toBeInTheDocument();
+				expect(element?.querySelector("svg")?.style.strokeWidth).toBe("");
+			});
+
+			it("overriding default setting: outline to solid", async () => {
+				const { container } = await render(NgHeroiconsComponent, {
+					providers: [{
+						provide: MODULE_CONFIG,
+						useValue: { default: 'outline', stroke: 1 }
+					}],
+					componentProperties: {
+						icon: "academic-cap",
+						solid: ''
+					}
+				});
+
+				const element = container.querySelector("academic-cap-solid-icon");
+
+				expect(element).toBeInTheDocument();
+				expect(element?.querySelector("svg")?.style.strokeWidth).toBe("");
+			});
 		})
 
 		describe("outline icons", () => {
+			let defaultSettings: any
+
+			beforeEach(() => {
+				defaultSettings = {
+					providers: [{
+						provide: MODULE_CONFIG,
+						useValue: { default: 'outline', stroke: 1 }
+					}]
+				};
+			})
+
+
 			describe.each(Object.entries(OUTLINE_ICONS))(
 				'component: %s',
 				(name) => {
@@ -52,6 +92,7 @@ describe('NgHeroicons Component icons', () => {
 
 					it('should work', async () => {
 						const { fixture, container } = await render(NgHeroiconsComponent, {
+							...defaultSettings,
 							componentProperties: {
 								icon,
 							}
@@ -63,12 +104,11 @@ describe('NgHeroicons Component icons', () => {
 
 					it('default style', async () => {
 						const { fixture } = await render(NgHeroiconsComponent, {
+							...defaultSettings,
 							componentProperties: {
 								icon,
 							}
 						});
-
-						fixture.detectChanges();
 
 						const { width, height, strokeWidth } =
 							fixture.nativeElement.querySelector('svg').style;
@@ -80,6 +120,7 @@ describe('NgHeroicons Component icons', () => {
 
 					it('size parameter should work', async () => {
 						const { fixture } = await render(NgHeroiconsComponent, {
+							...defaultSettings,
 							componentProperties: {
 								icon,
 								size: 99
@@ -95,6 +136,7 @@ describe('NgHeroicons Component icons', () => {
 
 					it('color parameter should work', async () => {
 						const { fixture } = await render(NgHeroiconsComponent, {
+							...defaultSettings,
 							componentProperties: {
 								icon,
 								color: 'red'
@@ -107,20 +149,25 @@ describe('NgHeroicons Component icons', () => {
 					});
 
 					it('stroke parameter should work', async () => {
-						const { fixture } = await render(NgHeroiconsComponent, {
+						const { fixture, container } = await render(NgHeroiconsComponent, {
+							...defaultSettings,
 							componentProperties: {
 								icon,
 								stroke: 99
 							}
 						});
 
-						expect(
-							fixture.nativeElement.querySelector('svg').style.strokeWidth,
-						).toBe('99px');
+						expect(fixture.componentInstance.stroke).toBe(99)
+
+						const element = container.querySelector(`${kebabCase(name).replace("-component", "")}`);
+
+						expect(element).toBeInTheDocument();
+						expect(element?.querySelector("svg")?.style.strokeWidth).toBe("99px");
 					});
 
 					it('svgStyle parameter should work', async () => {
 						const { fixture, rerender } = await render(NgHeroiconsComponent, {
+							...defaultSettings,
 							componentProperties: {
 								icon,
 							}
@@ -139,8 +186,20 @@ describe('NgHeroicons Component icons', () => {
 					});
 				},
 			);
-		})
+		});
+
 		describe("solid icons", () => {
+			let defaultSettings: any
+
+			beforeEach(() => {
+				defaultSettings = {
+					providers: [{
+						provide: MODULE_CONFIG,
+						useValue: { default: 'solid', stroke: 1 }
+					}]
+				};
+			})
+
 			describe.each(Object.entries(SOLID_ICONS))(
 				'component: %s',
 				(name) => {
@@ -148,6 +207,7 @@ describe('NgHeroicons Component icons', () => {
 
 					it('should work', async () => {
 						const { fixture, container } = await render(NgHeroiconsComponent, {
+							...defaultSettings,
 							componentProperties: {
 								icon,
 							}
@@ -159,23 +219,23 @@ describe('NgHeroicons Component icons', () => {
 
 					it('default style', async () => {
 						const { fixture } = await render(NgHeroiconsComponent, {
+							...defaultSettings,
 							componentProperties: {
 								icon,
 							}
 						});
-
-						fixture.detectChanges();
 
 						const { width, height, strokeWidth } =
 							fixture.nativeElement.querySelector('svg').style;
 
 						expect(width).toBe('24px');
 						expect(height).toBe('24px');
-						expect(strokeWidth).toBe('1px');
+						expect(strokeWidth).toBe('');
 					});
 
 					it('size parameter should work', async () => {
 						const { fixture } = await render(NgHeroiconsComponent, {
+							...defaultSettings,
 							componentProperties: {
 								icon,
 								size: 99
@@ -191,6 +251,7 @@ describe('NgHeroicons Component icons', () => {
 
 					it('color parameter should work', async () => {
 						const { fixture } = await render(NgHeroiconsComponent, {
+							...defaultSettings,
 							componentProperties: {
 								icon,
 								color: 'red'
@@ -204,6 +265,7 @@ describe('NgHeroicons Component icons', () => {
 
 					it('stroke parameter should work', async () => {
 						const { fixture } = await render(NgHeroiconsComponent, {
+							...defaultSettings,
 							componentProperties: {
 								icon,
 								stroke: 99
@@ -212,11 +274,12 @@ describe('NgHeroicons Component icons', () => {
 
 						expect(
 							fixture.nativeElement.querySelector('svg').style.strokeWidth,
-						).toBe('99px');
+						).toBe('');
 					});
 
 					it('svgStyle parameter should work', async () => {
 						const { fixture, rerender } = await render(NgHeroiconsComponent, {
+							...defaultSettings,
 							componentProperties: {
 								icon,
 							}
@@ -237,4 +300,41 @@ describe('NgHeroicons Component icons', () => {
 			);
 		});
 	});
+
+	describe("on failure", () => {
+		let defaultSettings: any
+
+		beforeEach(() => {
+			defaultSettings = {
+				providers: [{
+					provide: MODULE_CONFIG,
+					useValue: { default: 'outline', stroke: 1 }
+				}]
+			};
+		});
+
+		it("should return error when icon does not exists in outline", async () => {
+			await expect(async () => {
+				await render(NgHeroiconsComponent, {
+					...defaultSettings,
+					componentProperties: {
+						icon: "wrong-icon",
+						outline: ""
+					}
+				} as any);
+			}).rejects.toThrow(new Error("The icon name <wrong-icon> does not exists on outline icons."))
+		});
+
+		it("should return error when icon does not exists in solid", async () => {
+			await expect(async () => {
+				await render(NgHeroiconsComponent, {
+					...defaultSettings,
+					componentProperties: {
+						icon: "wrong-icon",
+						solid: ""
+					}
+				} as any);
+			}).rejects.toThrow(new Error("The icon name <wrong-icon> does not exists on solid icons."))
+		})
+	})
 });

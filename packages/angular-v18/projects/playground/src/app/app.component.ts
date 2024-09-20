@@ -4,17 +4,20 @@ import { RouterOutlet } from '@angular/router';
 import kebabCase from 'lodash/kebabCase';
 
 import {
-  NgHeroiconsModule,
   SOLID_ICONS,
   T_SOLID_ICONS,
   OUTLINE_ICONS,
   T_OUTLINE_ICONS,
+  NgHeroiconsModule,
 } from '../../../lib/public-api';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgHeroiconsModule],
+  imports: [
+    RouterOutlet,
+    NgHeroiconsModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
