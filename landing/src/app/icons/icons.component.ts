@@ -9,12 +9,11 @@ import {
 	PLATFORM_ID,
 	SimpleChanges,
 } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { FormControl, FormGroup } from '@angular/forms';
-// import throttle from 'lodash.throttle';
 import { Subscription } from 'rxjs';
 
 import copyToClipboard from '../../utils/copy-to-clipboard.utils';
-import { isPlatformBrowser } from '@angular/common';
 
 @Component({
 	selector: 'icons',
@@ -40,7 +39,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	sizes: number[] = [6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64];
 	stroke = 1;
 	sizeIndex = 8;
-	counter = 0;
+	counter = 316;
 	size = this.sizes[this.sizeIndex];
 	type = 'outline';
 	class = '';
@@ -54,7 +53,10 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	empty = false;
 	loading = false;
 
-	constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+	constructor(
+		@Inject(PLATFORM_ID) private platformId: Object,
+		@Inject(DOCUMENT) private document: Document,
+	) {
 		this.onMouseOverHandler = this.onMouseOverHandler.bind(this);
 		this.onMouseLeaveHandler = this.onMouseLeaveHandler.bind(this);
 		this.onClickIcon = this.onClickIcon.bind(this);
@@ -91,10 +93,10 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 
 	ngOnDestroy(): void {
 		if (isPlatformBrowser(this.platformId)) {
-			document
+			this.document
 				.querySelector('.Icons')
 				?.removeEventListener('mouseover', this.onMouseOverHandler);
-			document
+				this.document
 				.querySelector('.Icons')
 				?.removeEventListener('mouseleave', this.onMouseLeaveHandler);
 		}
@@ -105,7 +107,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	}
 
 	getIconVisibleElements(query?: string): Element[] {
-		const icons: NodeListOf<Element> = document.querySelectorAll(
+		const icons: NodeListOf<Element> = this.document.querySelectorAll(
 			query || `.IconWrapper .IconWrapper__icon`
 		);
 
@@ -199,7 +201,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 		}
 
 		try {
-			query = query.trim().replace(/\s+/g, '-').toLowerCase();
+			query = query?.trim().replace(/\s+/g, '-').toLowerCase() || '';
 			const iconElements: Element[] = this.getIconVisibleElements(`.IconWrapper .IconWrapper__icon:not([id*=${query}])`);
 
 			iconElements.forEach((element: Element) => {
@@ -213,7 +215,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 
 	showAllIcons(): void {
 		try {
-			const icons: NodeListOf<Element> = document.querySelectorAll(
+			const icons: NodeListOf<Element> = this.document.querySelectorAll(
 				'.IconWrapper[class*="hidden"]'
 			);
 			const iconElements: Element[] = Array.from(icons);
@@ -226,7 +228,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 
 	isEmpty(): void {
 		try {
-			const icons: NodeListOf<Element> = document.querySelectorAll(
+			const icons: NodeListOf<Element> = this.document.querySelectorAll(
 				'.IconWrapper:not([class*=hidden])'
 			);
 			const iconElements: Element[] = Array.from(icons);

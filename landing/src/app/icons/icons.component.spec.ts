@@ -4,13 +4,12 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { fireEvent, render, screen } from '@testing-library/angular';
-import userEvent from '@testing-library/user-event';
+import userEvent, { UserEvent } from '@testing-library/user-event';
+import { ComponentFixture } from '@angular/core/testing';
 
 import { IconsComponent } from './icons.component';
 
 import { TooltipModule } from '../../components/tooltip/tooltip.component.module';
-import { ComponentFixture } from '@angular/core/testing';
-import { UserEvent } from '@testing-library/user-event/dist/types/setup/setup';
 
 @Component({
 	selector: 'x-mark-outline-icon',
@@ -47,7 +46,7 @@ class MagnifyingGlassMinusOutlineIconComponent {
 @Component({
 	selector: 'outline-icons',
 	template: `<div>OUTLINE_ICONS</div>
-  <div>
+  <div class="Icons">
     <div class="IconWrapper">
       <div class="IconWrapper__icon" id="icon_1">
         icon_1_svg
@@ -111,11 +110,11 @@ const setup = async () => {
 describe('IconsComponent', () => {
 	let fixture: ComponentFixture<IconsComponent>;
 	let user: UserEvent;
+	let component: any;
 
 	beforeEach(async () => {
-		const { user: u, component } = await setup();
+		({ user, component } = await setup());
 		fixture = component.fixture;
-		user = u
 
 		fixture.autoDetectChanges();
 	});
@@ -218,4 +217,6 @@ describe('IconsComponent', () => {
 			});
 		});
 	});
+
+
 });

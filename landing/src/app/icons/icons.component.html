@@ -21,14 +21,14 @@
           *ngIf="form.get('search')?.value"
           (click)="form.get('search')?.setValue('')"
           name="clear-query"
-        ></x-mark-outline-icon>
+        />
       </div>
       <div class="flex h-8 w-8 items-center justify-center bg-red-600">
         <magnifying-glass-outline-icon
           class="text-white"
           aria-label="search"
           role="graphics-document"
-        ></magnifying-glass-outline-icon>
+        />
       </div>
     </form>
   </div>
@@ -40,7 +40,7 @@
       role="button"
       [ngClass]="['flex items-center justify-center', 'h-8 w-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none']"
     >
-      <magnifying-glass-minus-outline-icon></magnifying-glass-minus-outline-icon>
+      <magnifying-glass-minus-outline-icon/>
     </button>
     <div class="flex h-8 w-16 items-center justify-center bg-red-600 text-white">
       {{ size }}
@@ -52,7 +52,7 @@
       role="button"
       [ngClass]="['flex items-center justify-center', 'h-8 w-8 bg-red-600 text-white hover:bg-red-500 focus:outline-none']"
     >
-      <magnifying-glass-plus-outline-icon></magnifying-glass-plus-outline-icon>
+      <magnifying-glass-plus-outline-icon/>
     </button>
   </div>
 
@@ -144,17 +144,18 @@
       [size]="size"
       [stroke]="stroke"
       [class]="classColor"
-    ></outline-icons>
+    />
     <solid-icons
       *ngIf="type === 'solid'"
       [size]="size"
       [class]="classColor"
-    ></solid-icons>
+    />
   </div>
 </div>
 
 <tooltip
   *ngIf="tooltipContent"
   [copied]="componentTagCopied"
-  ><div>{{ tooltipContent }}</div></tooltip
 >
+  <div>{{ tooltipContent }}</div>
+</tooltip>

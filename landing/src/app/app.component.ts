@@ -1,8 +1,9 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 
-import copyToClipboard from '../utils/copy-to-clipboard.utils';
 import { RouterOutlet } from '@angular/router';
 import { NgHeroiconsModule } from '@dimaslz/ng-heroicons';
+
+import copyToClipboard from '../utils/copy-to-clipboard.utils';
 import { IconsModule } from './icons/icons.module';
 import { IconModule } from '../components/icon/icon.module';
 import { DarkModeModule } from '../components/darkmode-toggle/darkmode-toggle.module';
@@ -22,14 +23,13 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
     IconModule,
     DarkModeModule,
   ],
-
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   public copied = false;
   public color = 'white';
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {
     if (isPlatformBrowser(this.platformId)) {
       const node: HTMLScriptElement = document.createElement('script');
       node.src = 'https://plausible.io/js/plausible.js';

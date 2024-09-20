@@ -26,7 +26,7 @@ export class DarkModeComponent {
 
 	public darkmode = false;
 
-	constructor(@Inject(PLATFORM_ID) private platformId: Object	) {
+	constructor(@Inject(PLATFORM_ID) private platformId: object	) {
 		if (isPlatformBrowser(this.platformId)) {
 			this.darkmode = window?.matchMedia('(prefers-color-scheme: dark)').matches;
 			this.switchMode();

@@ -1,49 +1,38 @@
-// import { CommonModule } from '@angular/common';
-// import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-// import { ComponentFixture } from '@angular/core/testing';
-// import { render } from '@testing-library/angular';
-// import kebabcase from 'lodash.kebabcase';
+import '@testing-library/jest-dom';
 
-// import * as OUTLINE_ICONS from '../../../../ng-heroicons/src/lib/heroicons/outline';
+import { CommonModule } from '@angular/common';
+import { ComponentFixture } from '@angular/core/testing';
+import { render } from '@testing-library/angular';
+import { kebabCase } from 'lodash';
 
-// import { OutlineIconsComponent } from './outline-icons.component';
-
-// const ICONS_ARRAY = Object.entries(OUTLINE_ICONS);
+import { OutlineIconsComponent } from './outline-icons.component';
+import { NgHeroiconsModule, OUTLINE_ICONS, T_OUTLINE_ICONS } from '@dimaslz/ng-heroicons';
 
 describe('Outline icons', () => {
-	it("dummy", () => {
-		expect(true).toBe(true)
-	})
-	// 	let fixture: ComponentFixture<OutlineIconsComponent>;
-	// 	let container: Element;
+	let fixture: ComponentFixture<OutlineIconsComponent>;
+	let container: Element;
+	let component: any;
 
-	// 	beforeAll(async () => {
-	// 		const component = await render(OutlineIconsComponent, {
-	// 			imports: [
-	// 				CommonModule,
-	// 			],
-	// 			schemas: [CUSTOM_ELEMENTS_SCHEMA]
-	// 		});
+	beforeEach(async () => {
+		(component = await render(OutlineIconsComponent, {
+			imports: [
+				CommonModule,
+				NgHeroiconsModule
+			],
+		}));
 
-	// 		fixture = component.fixture;
-	// 		container = component.container;
-	// 	});
+		fixture = component.fixture;
+		container = component.container;
+	});
 
-	// 	it('should create the app', () => {
-	// 		const app = fixture.componentInstance;
-	// 		expect(app).toBeTruthy();
-	// 	});
+	describe.each(Object.entries(OUTLINE_ICONS))(
+		'component: %s',
+		(name) => {
+			test(`should be visible`, async () => {
+				const icon = kebabCase(name).replace("-outline-icon-component", "") as T_OUTLINE_ICONS;
 
-	// 	let componentsCounter = 0;
-	// 	it.each(ICONS_ARRAY)(
-	// 		'should be component: %s', (name) => {
-	// 			const componentTag = kebabcase(name).replace('-component', '');
-	// 			expect(container.querySelector(componentTag)).toBeTruthy();
-
-	// 			componentsCounter++;
-	// 		});
-
-	// 	it(`should be ${ICONS_ARRAY.length} components`, () => {
-	// 		expect(ICONS_ARRAY.length).toBe(componentsCounter);
-	// 	});
+				expect(component.getByText(icon)).toBeInTheDocument();
+				expect(container.querySelector(`#${icon}`)).toBeInTheDocument();
+			});
+		});
 });
