@@ -14,14 +14,15 @@ This package has compatibility with Angular version from 11 to 18.
 
 | angular version | package version ||
 |-|-|-|
-| 11.x.x | `^11` ||
-| 12.x.x | `^12` ||
-| 13.x.x | `^13` ||
-| 14.x.x | `^14` ||
-| 15.x.x | `^15` ||
-| 16.x.x | `^16` ||
-| 17.x.x | `^17` ||
-| 17.x.x | `^18` | default |
+| 11.x.x | `^1.11.*` ||
+| 12.x.x | `^1.12.*` ||
+| 13.x.x | `^1.13.*` ||
+| 14.x.x | `^1.14.*` ||
+| 15.x.x | `^1.15.*` ||
+| 16.x.x | `^1.16.*` ||
+| 17.x.x | `^1.17.*` ||
+| 18.x.x | `^1.18.0` ||
+|        | `^1.18.1` | default |
 
 `$ yarn add @dimaslz/ng-heroicons@^XX`
 
@@ -46,7 +47,7 @@ import { NgHeroiconsModule } from "@dimaslz/ng-heroicons";
 
 ## How to use
 
-Go to [https://ng-heroicons.dimaslz.dev](https://ng-heroicons.dimaslz.dev) and get the name of the icon and use in your tag html following suffix `{outline|solid}-icon`. For example: `academic cap` should be `<academic-cap-outline-icon></academic-cap-outline-icon>` for outline or `<academic-cap-solid-icon></academic-cap-solid-icon>` for solid icons.
+Go to [https://ng-heroicons.dimaslz.dev](https://ng-heroicons.dimaslz.dev) and get the name of the icon and use in your tag html following suffix `{outline|solid}-icon`. For example: `academic cap` should be `<academic-cap-outline-icon></academic-cap-outline-icon>` for outline or `<academic-cap-solid-icon></academic-cap-solid-icon>` for solid icons. From version **>= 1.18.1** is possible to use the dynamic component `<ng-heroicons icon="..." />`
 
 You can use your style in line, css or just pass color and size.
 
@@ -65,6 +66,26 @@ You can use your style in line, css or just pass color and size.
 
 <!-- To apply specific css to the SVG, use `svgClass` -->
 <academic-cap-outline-icon svgClass="your-class-for-the-svg"></academic-cap-outline-icon>
+```
+
+By using a dynamic component `<ng-heroicons ... icon="..." />` (from versions **>= 1.18.1**)
+
+```html
+<!-- force to render outline icon -->
+<ng-heroicons icon="academic-cap" outline />
+
+<!-- force to render solid icon -->
+<ng-heroicons icon="academic-cap" solid />
+
+<!-- using style -->
+<ng-heroicons icon="academic-cap" style="color: red;" />
+
+<!-- using css classes (class for color will affect to svg) -->
+<ng-heroicons icon="academic-cap" class="text-red-400" />
+
+<!-- pass color or size -->
+<ng-heroicons icon="academic-cap" size="48" color="red" />
+
 ```
 
 ## Development
@@ -124,7 +145,7 @@ Keep in mind, first you should build the `lib` package. This playgrounds does no
 ```js
 {
   name: "Dimas López",
-  role: "FullStack Software development",
+  role: "FullStack Software Engineer",
   alias: "dimaslz",
   twitter: "https://twitter.com/dimaslz",
   site: "https://dimaslz.com",
