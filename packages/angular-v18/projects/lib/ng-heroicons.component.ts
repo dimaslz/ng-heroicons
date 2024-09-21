@@ -21,6 +21,14 @@ import { T_OUTLINE_ICONS, T_SOLID_ICONS } from './types';
 import { OUTLINE_ICONS, SOLID_ICONS } from './constants';
 import { MODULE_CONFIG, NgHeroiconsModuleConfig } from './ng-heroicons.module';
 
+function getOutput(value: string | undefined | boolean): boolean {
+	if (typeof value === 'boolean') {
+		return value;
+	}
+
+	return value !== undefined;
+}
+
 @Component({
   selector: 'ng-heroicons',
 	template: `<ng-container #container />`,
@@ -31,8 +39,8 @@ export class NgHeroiconsComponent implements AfterViewInit, OnChanges {
 	@Input() size: number = 24;
 	@Input() color: string = '';
 	@Input() stroke: number | undefined = undefined;
-	@Input() outline: string | undefined = "";
-	@Input() solid: string | undefined = undefined;
+	@Input({ transform: getOutput }) outline: string | undefined | boolean = false;
+	@Input({ transform: getOutput }) solid: string | undefined | boolean = false;
 	@Input() class: string | undefined = undefined;
 	@Input() style: string = '';
 
@@ -43,31 +51,58 @@ export class NgHeroiconsComponent implements AfterViewInit, OnChanges {
 		private renderer: Renderer2,
 		@Optional() @Inject(MODULE_CONFIG) private config: NgHeroiconsModuleConfig
 	) {
-		if (this.config.default === 'outline' || this.outline !== undefined) {
-			this.stroke = this.stroke || this.config.stroke;
-		}
+		this.stroke = this.stroke || this.config.stroke;
+		this.outline = this.config.default === 'outline';
+		this.solid = this.config.default === 'solid';
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
-		const class_ = changes['class']?.currentValue || this.class;
-		const solid = changes['solid']?.currentValue !== undefined || this.config.default === 'solid' || undefined;
-		const outline = solid ? undefined : (changes['outline']?.currentValue !== undefined || this.config.default === 'outline' || undefined);
-		const color = changes['color']?.currentValue || this.color;
-		const stroke = solid ? undefined : (changes['stroke']?.currentValue || this.stroke);
 		const icon = changes['icon']?.currentValue || this.icon;
-		const size = changes['size']?.currentValue || this.size;
-		const style = changes['style']?.currentValue || this.style;
-
-		const isSolid = solid !== undefined;
-		const isOutline = outline !== undefined;
-
 		if (!icon) {
 			throw new Error("Is necessary the icon name")
 		}
 
+
+		let solid;
+		let outline;
+
+		if (!changes['solid']) {
+			solid = this.solid;
+		} else {
+			solid = typeof changes['solid']?.currentValue === 'boolean' ? changes['solid']?.currentValue : changes['solid']?.currentValue !== undefined;
+		}
+
+		if (!changes['outline']) {
+			outline = this.outline;
+		} else {
+			if (changes['outline'].firstChange) {}
+			outline = typeof changes['outline']?.currentValue === 'boolean' ? changes['outline']?.currentValue : changes['outline']?.currentValue !== undefined;
+		}
+
+		if (this.config.default === 'outline') {
+			outline = solid ? false : this.config.default === 'outline';
+		} else if (this.config.default === 'solid') {
+			solid = outline ? false : this.config.default === 'solid';
+		}
+
+		const stroke = solid
+			? undefined
+			: (changes['stroke']?.currentValue || this.stroke || undefined);
+
+		const size = changes['size']?.currentValue || this.size;
+		const color = changes['color']?.currentValue || this.color;
+		const class_ = changes['class']?.currentValue || this.class;
+		const style = changes['style']?.currentValue || this.style;
+
+		this.solid = solid;
+		this.outline = outline;
+		this.stroke = stroke;
+		this.class = class_;
+		this.style = style;
+
 		this.loadContent(icon, {
-			outline: isOutline,
-			solid: isSolid,
+			outline,
+			solid,
 			size,
 			color,
 			stroke,
@@ -77,30 +112,31 @@ export class NgHeroiconsComponent implements AfterViewInit, OnChanges {
 	}
 
 	ngAfterViewInit() {
-		const class_ = this.class || '';
-		const solid = this.solid !== undefined || this.config.default === 'solid' || undefined;
-		const outline = solid ? undefined : this.outline !== undefined || this.config.default === 'outline' || undefined;
-		const color = this.color;
-		const stroke = solid ? undefined : (this.stroke || this.config.stroke);
 		const icon = this.icon;
-		const size = this.size;
-		const style = this.style;
-
-		const isSolid = solid !== undefined;
-		const isOutline = outline !== undefined;
-
 		if (!icon) {
 			throw new Error("Is necessary the icon name")
 		}
 
+		let solid = this.solid;
+		let outline = this.outline;
+
+		if (this.config.default === 'outline') {
+				outline = solid ? false : this.config.default === 'outline';
+		} else if (this.config.default === 'solid') {
+				solid = outline ? false : this.config.default === 'solid';
+		}
+
+		this.solid = solid;
+		this.outline = outline;
+
 		this.loadContent(icon, {
-			outline: isOutline,
-			solid: isSolid,
-			size,
-			color,
-			stroke,
-			class_,
-			style
+			outline,
+			solid,
+			size: this.size,
+			color: this.color,
+			stroke: solid ? undefined : this.stroke || undefined,
+			class_: this.class || '',
+			style: this.style
 		});
 	}
 
@@ -115,8 +151,8 @@ export class NgHeroiconsComponent implements AfterViewInit, OnChanges {
 			class_,
 			style,
 		}: {
-			outline: boolean;
-			solid: boolean;
+			outline: boolean | string | undefined;
+			solid: boolean | string | undefined;
 			color: string;
 			size: number;
 			stroke: number | undefined;

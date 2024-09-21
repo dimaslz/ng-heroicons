@@ -1,6 +1,6 @@
 {
   "name": "@dimaslz/ng-heroicons",
-  "version": "1.18.0",
+  "version": "1.18.1",
   "author": "Dimas López <me@dimaslz.io> (dimaslz)",
   "repository": {
     "url": "git+https://github.com/dimaslz/ng-heroicons.git",
@@ -24,10 +24,5 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false,
-  "exports": {
-    "./constants": {
-      "import": "../../dist/lib/esm2022/constants.mjs"
-    }
-  }
+  "sideEffects": false
 }

@@ -26,7 +26,7 @@ describe('Outline icons', () => {
 
 			it('size parameter should work', async () => {
 				const { fixture } = await render(iconComponent, {
-					componentProperties: { size: 99 }
+					inputs: { size: 99 }
 				});
 
 				const { width, height } =
@@ -38,7 +38,7 @@ describe('Outline icons', () => {
 
 			it('color parameter should work', async () => {
 				const { fixture } = await render(iconComponent, {
-					componentProperties: { color: 'red' },
+					inputs: { color: 'red' },
 				});
 
 				expect(fixture.nativeElement.querySelector('svg').style.color).toBe(
@@ -48,7 +48,7 @@ describe('Outline icons', () => {
 
 			it('stroke parameter should work', async () => {
 				const { fixture } = await render(iconComponent, {
-					componentProperties: { stroke: 99 }
+					inputs: { stroke: 99 }
 				});
 
 				// TODO: should be 99px
