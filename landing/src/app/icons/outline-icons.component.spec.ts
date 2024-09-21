@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { render, RenderResult } from '@testing-library/angular';
 import { kebabCase } from 'lodash';
 
+import { NgHeroiconsModule, OUTLINE_ICONS, T_OUTLINE_ICONS } from '@/ng-heroicons';
+
 import { OutlineIconsComponent } from './outline-icons.component';
-import { NgHeroiconsModule, OUTLINE_ICONS, T_OUTLINE_ICONS } from '@dimaslz/ng-heroicons';
 
 describe('Outline icons', () => {
 	let container: Element;

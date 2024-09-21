@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+
+import { NgHeroiconsModule } from '@/ng-heroicons';
 
 import { DarkModeComponent } from './darkmode-toggle.component';
-import { NgHeroiconsModule } from '@dimaslz/ng-heroicons';
 
 @NgModule({
 	declarations: [DarkModeComponent],

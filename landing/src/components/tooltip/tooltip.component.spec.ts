@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 import { Component, Input } from '@angular/core';
 import { render, RenderResult, screen } from '@testing-library/angular';
+
 import { TooltipComponent } from './tooltip.component';
 
 @Component({

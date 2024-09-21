@@ -1,10 +1,10 @@
 import {
+	ChangeDetectionStrategy,
 	Component,
 	Input,
 	OnChanges,
-	SimpleChanges,
 	OnInit,
-	ChangeDetectionStrategy,
+	SimpleChanges,
 } from '@angular/core';
 
 @Component({

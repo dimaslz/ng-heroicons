@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/unbound-method, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call */
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
 	Component,
 	Inject,
@@ -9,11 +9,10 @@ import {
 	PLATFORM_ID,
 	SimpleChanges,
 } from '@angular/core';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
-import copyToClipboard from '../../utils/copy-to-clipboard.utils';
+import copyToClipboard from '@/utils/copy-to-clipboard.utils';
 
 @Component({
 	selector: 'icons',
@@ -115,14 +114,21 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	}
 
 	onMouseOverHandler($event: Event): void {
-		if (/IconWrapper/.test(($event.target as HTMLElement).className)) {
-			const iconName = ($event.target as HTMLElement).querySelector(
+		if (/IconWrapper__type/.test(($event.target as HTMLElement).className)) {
+			const type = ($event.target as HTMLElement).textContent?.trim();
+			const iconName = ($event.target as HTMLElement).parentElement?.parentElement?.querySelector(
 				'.IconWrapper__name'
 			);
+
 			const componentTag = iconName?.textContent?.trim().replace(/\s+/g, '-');
 
 			if (componentTag) {
-				this.tooltipContent = `<${componentTag}-${this.type}-icon></${componentTag}-${this.type}-icon>`;
+				if (type === 'component') {
+					this.tooltipContent = `<${componentTag}-${this.type}-icon />`;
+				} else {
+					this.tooltipContent = `<ng-heroicons icon="${componentTag}" ${this.type} />`;
+				}
+
 				$event.target?.addEventListener('click', this.onClickIcon);
 			}
 		} else {

@@ -5,7 +5,7 @@
 		<div class="IconWrapper">
 			<div class="IconWrapper__icon" [id]="component">
 				<ng-heroicons
-					outline
+					solid
 					[icon]="component"
 					[size]="size"
 					[color]="color"
@@ -13,6 +13,21 @@
 				/>
 			</div>
 			<div class="IconWrapper__name">{{ component }}</div>
+
+			<div
+				class="size-full flex absolute inset-0 flex-col justify-center opacity-0 hover:opacity-100"
+			>
+				<div
+					class="IconWrapper__type size-full bg-slate-800/70 hover:bg-slate-800/90 flex items-center justify-center text-center text-xs"
+				>
+					component
+				</div>
+				<div
+					class="IconWrapper__type size-full bg-slate-800/70 hover:bg-slate-800/90 flex items-center justify-center text-center text-xs"
+				>
+					dynamic component
+				</div>
+			</div>
 		</div>
 	}
 </div>

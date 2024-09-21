@@ -1,7 +1,7 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import kebabCase from 'lodash/kebabCase';
 
-import { SOLID_ICONS, T_SOLID_ICONS } from '@dimaslz/ng-heroicons';
+import { SOLID_ICONS, T_SOLID_ICONS } from '@/ng-heroicons';
 
 @Component({
   selector: 'solid-icons',

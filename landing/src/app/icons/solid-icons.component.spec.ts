@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { render, RenderResult } from '@testing-library/angular';
 import { kebabCase } from 'lodash';
 
+import { NgHeroiconsModule, SOLID_ICONS, T_SOLID_ICONS } from '@/ng-heroicons';
+
 import { SolidIconsComponent } from './solid-icons.component';
-import { NgHeroiconsModule, SOLID_ICONS, T_SOLID_ICONS } from '@dimaslz/ng-heroicons';
 
 describe('Solid icons', () => {
 	let container: Element;

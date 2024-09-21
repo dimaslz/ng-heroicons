@@ -1,7 +1,7 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import kebabCase from 'lodash/kebabCase';
 
-import { OUTLINE_ICONS, T_OUTLINE_ICONS } from '@dimaslz/ng-heroicons';
+import { OUTLINE_ICONS, T_OUTLINE_ICONS } from '@/ng-heroicons';
 
 @Component({
 	selector: 'outline-icons',

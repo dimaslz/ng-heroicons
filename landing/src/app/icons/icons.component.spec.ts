@@ -2,14 +2,14 @@ import '@testing-library/jest-dom';
 
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { fireEvent, render, screen } from '@testing-library/angular';
-import userEvent, { UserEvent } from '@testing-library/user-event';
 import { ComponentFixture } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { fireEvent, render, RenderResult, screen } from '@testing-library/angular';
+import userEvent, { UserEvent } from '@testing-library/user-event';
+
+import { TooltipModule } from '@/components/tooltip/tooltip.component.module';
 
 import { IconsComponent } from './icons.component';
-
-import { TooltipModule } from '../../components/tooltip/tooltip.component.module';
 
 @Component({
 	selector: 'x-mark-outline-icon',
@@ -110,7 +110,7 @@ const setup = async () => {
 describe('IconsComponent', () => {
 	let fixture: ComponentFixture<IconsComponent>;
 	let user: UserEvent;
-	let component: any;
+	let component: RenderResult<IconsComponent>;
 
 	beforeEach(async () => {
 		({ user, component } = await setup());
@@ -217,6 +217,4 @@ describe('IconsComponent', () => {
 			});
 		});
 	});
-
-
 });

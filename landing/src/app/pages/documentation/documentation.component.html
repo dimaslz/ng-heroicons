@@ -1,0 +1,67 @@
+<span class="dark:text-gray-50 text-gray-800">
+	<h1 class="text-4xl">Documentation</h1>
+
+	<div class="py-4">
+		<ul class="text-xs text-gray-400 divide-x flex">
+			<li class="px-2">
+				<a
+					routerLink="/docs"
+					(click)="onScrollToTitle('usage')"
+					[queryParams]="{ id: 'usage' }"
+				>
+					Usage
+				</a>
+			</li>
+			<li class="px-2">
+				<a
+					routerLink="/docs"
+					(click)="onScrollToTitle('usage')"
+					[queryParams]="{ id: 'latest-version' }"
+				>
+					Work with the lastest version
+				</a>
+			</li>
+			<li class="px-2">
+				<a
+					routerLink="/docs"
+					(click)="onScrollToTitle('usage')"
+					[queryParams]="{ id: 'legacy-versions' }"
+				>
+					Work with the legacy versions
+				</a>
+			</li>
+		</ul>
+
+		<div class="space-y-4 mt-6">
+			<code-presentation
+				ngSkipHydration
+				title="Usage"
+				id="usage"
+				[snippets]="[{ type: 'typescript', code: install1 }]"
+			/>
+
+			<code-presentation
+				ngSkipHydration
+				title=""
+				description="If you are using the last version <span class='font-bold'>>= 1.18.1</span>, and you are setting the default config, you should do it in the `app.config` file like the following example."
+				[snippets]="[{ type: 'typescript', code: install2 }]"
+			/>
+
+			<code-presentation
+				ngSkipHydration
+				id="latest-version"
+				title="Working with lastest versions (>= 1.18.1)"
+				description="By default the icons will be in `outline` type, but it will only affect to the `ng-heroicons` component."
+				[snippets]="[{ type: 'html', code: lastVersionsExample }]"
+			/>
+
+			<code-presentation
+				ngSkipHydration
+				id="legacy-versions"
+				title="Working with legacy versions (< 1.18.0)"
+				description=""
+				[snippets]="[{ type: 'html', code: legacyVersionsExample }]"
+			/>
+		</div>
+	</div>
+</span>

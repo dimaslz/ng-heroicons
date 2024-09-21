@@ -19,9 +19,13 @@ module.exports = {
         '@angular-eslint/eslint-plugin',
         '@angular-eslint/eslint-plugin-template',
         '@typescript-eslint',
+        "simple-import-sort",
+        "import"
       ],
       rules: {
         "@typescript-eslint/no-explicit-any": "warn",
+        "simple-import-sort/exports": "error",
+		    "simple-import-sort/imports": "error",
       },
     },
     {
