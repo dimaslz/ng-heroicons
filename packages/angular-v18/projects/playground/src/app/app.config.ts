@@ -11,7 +11,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(),
     importProvidersFrom(
-      NgHeroiconsModule.forRoot({ default: 'solid' })
+      NgHeroiconsModule.forRoot()
     )
   ],
 };

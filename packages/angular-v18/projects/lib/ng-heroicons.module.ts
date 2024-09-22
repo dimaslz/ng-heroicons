@@ -1,28 +1,19 @@
 import { CommonModule } from "@angular/common";
-import { InjectionToken, ModuleWithProviders, NgModule } from "@angular/core";
-import { NgHeroiconsComponent } from "./ng-heroicons.component";
-
+import { ModuleWithProviders, NgModule } from "@angular/core";
 import { OutlineIconsModule } from './components/outline/module';
 import { SolidIconsModule } from './components/solid/module';
-
-export type NgHeroiconsModuleConfig = {
-	stroke?: number;
-	default?: 'outline' | 'solid'
-};
-
-export const DEFAULT_CONFIG: NgHeroiconsModuleConfig = { stroke: 1, default: 'outline' };
-export const MODULE_CONFIG = new InjectionToken<NgHeroiconsModuleConfig>('config');
+import { DynamicIconsModule } from "./ng-heroicons.component";
+import { NgHeroiconsModuleConfig } from "./types";
+import { DEFAULT_CONFIG, MODULE_CONFIG } from "./constants";
 
 @NgModule({
-	imports: [CommonModule],
-	declarations: [
-		NgHeroiconsComponent,
+	imports: [
+		CommonModule,
 	],
 	exports: [
 		OutlineIconsModule,
 		SolidIconsModule,
-
-		NgHeroiconsComponent,
+		DynamicIconsModule,
 	],
 })
 export class NgHeroiconsModule {

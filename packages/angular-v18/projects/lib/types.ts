@@ -11,3 +11,8 @@ type Kebab<S extends string> = S extends `${infer T}${infer U}`
 
 export type T_SOLID_ICONS = Replace<Kebab<keyof typeof SOLID_ICONS>, "-solid-icon-component", "">;
 export type T_OUTLINE_ICONS = Replace<Kebab<keyof typeof OUTLINE_ICONS>, "-outline-icon-component", "">;
+
+export type NgHeroiconsModuleConfig = {
+	stroke?: number;
+	default?: 'outline' | 'solid'
+};

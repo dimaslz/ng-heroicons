@@ -20,7 +20,6 @@ describe('Outline icons', () => {
 
 				expect(width).toBe('24px');
 				expect(height).toBe('24px');
-				// TODO: should be 1px
 				expect(strokeWidth).toBe('1px');
 			});
 
@@ -51,7 +50,6 @@ describe('Outline icons', () => {
 					inputs: { stroke: 99 }
 				});
 
-				// TODO: should be 99px
 				expect(
 					fixture.nativeElement.querySelector('svg').style.strokeWidth,
 				).toBe('99px');

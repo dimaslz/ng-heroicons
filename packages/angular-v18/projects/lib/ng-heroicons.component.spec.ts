@@ -1,24 +1,18 @@
 import '@testing-library/jest-dom';
 
 import { render } from '@testing-library/angular';
+import { kebabCase } from 'lodash';
 
 import { T_OUTLINE_ICONS, T_SOLID_ICONS } from './types';
-import { OUTLINE_ICONS, SOLID_ICONS } from './constants';
+import { MODULE_CONFIG, OUTLINE_ICONS, SOLID_ICONS } from './constants';
 
-import { kebabCase } from 'lodash';
-import { NgHeroiconsComponent } from './ng-heroicons.component';
-import { MODULE_CONFIG } from './ng-heroicons.module';
+import { DynamicComponent } from './ng-heroicons.component';
 
 describe('NgHeroicons Component icons', () => {
 	describe("on success", () => {
-		beforeEach(() => {
-			jest.resetAllMocks();
-			jest.resetModules();
-		})
-
 		describe("respect default settings", () => {
 			it("{ default: 'outline', stroke: 1 }", async () => {
-				const { fixture, container } = await render(NgHeroiconsComponent, {
+				const { fixture, container } = await render(DynamicComponent, {
 					providers: [{
 						provide: MODULE_CONFIG,
 						useValue: { default: 'outline', stroke: 1 }
@@ -37,7 +31,7 @@ describe('NgHeroicons Component icons', () => {
 			});
 
 			it("{ default: 'solid', stroke: 1 }", async () => {
-				const { container } = await render(NgHeroiconsComponent, {
+				const { container } = await render(DynamicComponent, {
 					providers: [{
 						provide: MODULE_CONFIG,
 						useValue: { default: 'solid', stroke: 1 }
@@ -56,7 +50,7 @@ describe('NgHeroicons Component icons', () => {
 
 		describe("overriding default settings", () => {
 			it("overriding default setting: outline to solid", async () => {
-				const { container } = await render(NgHeroiconsComponent, {
+				const { container } = await render(DynamicComponent, {
 					providers: [{
 						provide: MODULE_CONFIG,
 						useValue: { default: 'outline', stroke: 1 }
@@ -74,7 +68,7 @@ describe('NgHeroicons Component icons', () => {
 			});
 
 			it("overriding default setting: solid to outline", async () => {
-				const { container } = await render(NgHeroiconsComponent, {
+				const { container } = await render(DynamicComponent, {
 					providers: [{
 						provide: MODULE_CONFIG,
 						useValue: { default: 'solid', stroke: 1 }
@@ -112,7 +106,7 @@ describe('NgHeroicons Component icons', () => {
 					const icon = kebabCase(name).replace("-outline-icon-component", "") as T_OUTLINE_ICONS;
 
 					it('should work', async () => {
-						const { fixture, container } = await render(NgHeroiconsComponent, {
+						const { fixture, container } = await render(DynamicComponent, {
 							...defaultSettings,
 							inputs: {
 								icon,
@@ -124,7 +118,7 @@ describe('NgHeroicons Component icons', () => {
 					});
 
 					it('default style', async () => {
-						const { fixture } = await render(NgHeroiconsComponent, {
+						const { fixture } = await render(DynamicComponent, {
 							...defaultSettings,
 							inputs: {
 								icon,
@@ -140,7 +134,7 @@ describe('NgHeroicons Component icons', () => {
 					});
 
 					it('size parameter should work', async () => {
-						const { fixture } = await render(NgHeroiconsComponent, {
+						const { fixture } = await render(DynamicComponent, {
 							...defaultSettings,
 							inputs: {
 								icon,
@@ -156,7 +150,7 @@ describe('NgHeroicons Component icons', () => {
 					});
 
 					it('color parameter should work', async () => {
-						const { fixture } = await render(NgHeroiconsComponent, {
+						const { fixture } = await render(DynamicComponent, {
 							...defaultSettings,
 							inputs: {
 								icon,
@@ -170,7 +164,7 @@ describe('NgHeroicons Component icons', () => {
 					});
 
 					it('stroke parameter should work', async () => {
-						const { fixture, container } = await render(NgHeroiconsComponent, {
+						const { fixture, container } = await render(DynamicComponent, {
 							...defaultSettings,
 							inputs: {
 								icon,
@@ -187,7 +181,7 @@ describe('NgHeroicons Component icons', () => {
 					});
 
 					it('svgStyle parameter should work', async () => {
-						const { fixture, rerender } = await render(NgHeroiconsComponent, {
+						const { fixture, rerender } = await render(DynamicComponent, {
 							...defaultSettings,
 							inputs: {
 								icon,
@@ -227,7 +221,7 @@ describe('NgHeroicons Component icons', () => {
 					const icon = kebabCase(name).replace("-solid-icon-component", "") as T_SOLID_ICONS;
 
 					it('should work', async () => {
-						const { fixture, container } = await render(NgHeroiconsComponent, {
+						const { fixture, container } = await render(DynamicComponent, {
 							...defaultSettings,
 							inputs: {
 								icon,
@@ -240,7 +234,7 @@ describe('NgHeroicons Component icons', () => {
 					});
 
 					it('default style', async () => {
-						const { fixture, container } = await render(NgHeroiconsComponent, {
+						const { fixture, container } = await render(DynamicComponent, {
 							...defaultSettings,
 							inputs: {
 								icon,
@@ -258,7 +252,7 @@ describe('NgHeroicons Component icons', () => {
 					});
 
 					it('size parameter should work', async () => {
-						const { container, fixture } = await render(NgHeroiconsComponent, {
+						const { container, fixture } = await render(DynamicComponent, {
 							...defaultSettings,
 							inputs: {
 								icon,
@@ -276,7 +270,7 @@ describe('NgHeroicons Component icons', () => {
 					});
 
 					it('color parameter should work', async () => {
-						const { container, fixture } = await render(NgHeroiconsComponent, {
+						const { container, fixture } = await render(DynamicComponent, {
 							...defaultSettings,
 							inputs: {
 								icon,
@@ -292,7 +286,7 @@ describe('NgHeroicons Component icons', () => {
 					});
 
 					it('stroke parameter should work', async () => {
-						const { container, fixture } = await render(NgHeroiconsComponent, {
+						const { container, fixture } = await render(DynamicComponent, {
 							...defaultSettings,
 							inputs: {
 								icon,
@@ -308,7 +302,7 @@ describe('NgHeroicons Component icons', () => {
 					});
 
 					it('svgStyle parameter should work', async () => {
-						const { fixture, container, rerender } = await render(NgHeroiconsComponent, {
+						const { fixture, container, rerender } = await render(DynamicComponent, {
 							...defaultSettings,
 							inputs: {
 								icon,
@@ -347,7 +341,7 @@ describe('NgHeroicons Component icons', () => {
 
 		it("should return error when icon does not exists in outline", async () => {
 			await expect(async () => {
-				await render(NgHeroiconsComponent, {
+				await render(DynamicComponent, {
 					...defaultSettings,
 					inputs: {
 						icon: "wrong-icon",
@@ -359,7 +353,7 @@ describe('NgHeroicons Component icons', () => {
 
 		it("should return error when icon does not exists in solid", async () => {
 			await expect(async () => {
-				await render(NgHeroiconsComponent, {
+				await render(DynamicComponent, {
 					...defaultSettings,
 					inputs: {
 						icon: "wrong-icon",

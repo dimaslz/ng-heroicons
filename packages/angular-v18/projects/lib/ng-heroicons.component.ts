@@ -17,9 +17,8 @@ import {
 import camelCase from 'lodash/camelCase';
 import upperFirst from 'lodash/upperFirst';
 
-import { T_OUTLINE_ICONS, T_SOLID_ICONS } from './types';
-import { OUTLINE_ICONS, SOLID_ICONS } from './constants';
-import { MODULE_CONFIG, NgHeroiconsModuleConfig } from './ng-heroicons.module';
+import { T_OUTLINE_ICONS, NgHeroiconsModuleConfig, T_SOLID_ICONS } from './types';
+import { MODULE_CONFIG, OUTLINE_ICONS, SOLID_ICONS } from './constants';
 
 function getOutput(value: string | undefined | boolean): boolean {
 	if (typeof value === 'boolean') {
@@ -30,19 +29,19 @@ function getOutput(value: string | undefined | boolean): boolean {
 }
 
 @Component({
-  selector: 'ng-heroicons',
+	selector: 'ng-heroicons',
 	template: `<ng-container #container />`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NgHeroiconsComponent implements AfterViewInit, OnChanges {
+export class DynamicComponent implements AfterViewInit, OnChanges {
 	@Input() icon: T_SOLID_ICONS | T_OUTLINE_ICONS | undefined = undefined;
-	@Input() size: number = 24;
-	@Input() color: string = '';
-	@Input() stroke: number | undefined = undefined;
-	@Input({ transform: getOutput }) outline: string | undefined | boolean = false;
-	@Input({ transform: getOutput }) solid: string | undefined | boolean = false;
-	@Input() class: string | undefined = undefined;
-	@Input() style: string = '';
+	@Input() size?: number = 24;
+	@Input() color?: string = '';
+	@Input() stroke?: number | undefined = undefined;
+	@Input({ transform: getOutput }) outline?: string | undefined | boolean = false;
+	@Input({ transform: getOutput }) solid?: string | undefined | boolean = false;
+	@Input() class?: string | undefined = undefined;
+	@Input() style?: string = '';
 
 	@ViewChild('container', { read: ViewContainerRef }) private container!: ViewContainerRef;
 
@@ -153,11 +152,11 @@ export class NgHeroiconsComponent implements AfterViewInit, OnChanges {
 		}: {
 			outline: boolean | string | undefined;
 			solid: boolean | string | undefined;
-			color: string;
-			size: number;
+			color: string | undefined;
+			size: number | undefined;
 			stroke: number | undefined;
 			class_: string;
-			style: string;
+			style: string | undefined;
 		}
 	) {
 		let element: any;
@@ -197,3 +196,9 @@ export class NgHeroiconsComponent implements AfterViewInit, OnChanges {
 		)
   }
 }
+
+@NgModule({
+	declarations: [DynamicComponent],
+	exports: [DynamicComponent],
+})
+export class DynamicIconsModule {}
