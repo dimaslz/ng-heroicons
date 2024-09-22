@@ -1,7 +1,7 @@
-import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-import { routes } from "@/app/app.routes";
+import { routes } from '@/app/app.routes';
 
 @NgModule({
 	imports: [
@@ -9,6 +9,6 @@ import { routes } from "@/app/app.routes";
 			initialNavigation: 'enabledBlocking',
 		}),
 	],
-	exports: [RouterModule]
+	exports: [RouterModule],
 })
 export class AppRoutingModule {}

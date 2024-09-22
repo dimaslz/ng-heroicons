@@ -6,27 +6,17 @@ import { CodePresentationModule } from '@/components/code-presentation/code-pres
 
 import { DocumentationPageComponent } from './documentation.component';
 
-const routes: Routes = [
-	{ path: "", component: DocumentationPageComponent }
-]
+const routes: Routes = [{ path: '', component: DocumentationPageComponent }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
-export class DocumentationRoutingModule { }
+export class DocumentationRoutingModule {}
 
 @NgModule({
-	imports: [
-		CommonModule,
-		DocumentationRoutingModule,
-		CodePresentationModule
-	],
-	exports: [
-		DocumentationPageComponent
-	],
-	declarations: [
-		DocumentationPageComponent,
-	]
+	imports: [CommonModule, DocumentationRoutingModule, CodePresentationModule],
+	exports: [DocumentationPageComponent],
+	declarations: [DocumentationPageComponent],
 })
-export class DocumentationModule { }
+export class DocumentationModule {}

@@ -20,9 +20,11 @@ module.exports = {
         '@angular-eslint/eslint-plugin-template',
         '@typescript-eslint',
         "simple-import-sort",
-        "import"
+        "import",
+        "prettier"
       ],
       rules: {
+        "prettier/prettier": "error",
         "@typescript-eslint/no-explicit-any": "warn",
         "simple-import-sort/exports": "error",
 		    "simple-import-sort/imports": "error",

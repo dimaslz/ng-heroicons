@@ -19,6 +19,7 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
+    "preserveSymlinks": true,
     "lib": [
       "ES2022",
       "dom"
@@ -27,7 +28,7 @@
     "allowJs": true,
     "paths": {
       "@/*": ["src/*"],
-      "~/*": ["./*"]
+      "~/*": ["./*"],
     },
   },
   "angularCompilerOptions": {

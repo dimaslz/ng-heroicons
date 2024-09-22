@@ -45,7 +45,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	tooltipContent = '';
 	componentTagCopied = false;
 	form = new FormGroup({
-		search: new FormControl('')
+		search: new FormControl(''),
 	});
 	formSubscription$: Subscription | undefined = new Subscription();
 	debounceSearch: ReturnType<typeof setTimeout> | null = null;
@@ -95,7 +95,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 			this.document
 				.querySelector('.Icons')
 				?.removeEventListener('mouseover', this.onMouseOverHandler);
-				this.document
+			this.document
 				.querySelector('.Icons')
 				?.removeEventListener('mouseleave', this.onMouseLeaveHandler);
 		}
@@ -107,7 +107,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 
 	getIconVisibleElements(query?: string): Element[] {
 		const icons: NodeListOf<Element> = this.document.querySelectorAll(
-			query || `.IconWrapper .IconWrapper__icon`
+			query || `.IconWrapper .IconWrapper__icon`,
 		);
 
 		return Array.from(icons);
@@ -116,9 +116,9 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	onMouseOverHandler($event: Event): void {
 		if (/IconWrapper__type/.test(($event.target as HTMLElement).className)) {
 			const type = ($event.target as HTMLElement).textContent?.trim();
-			const iconName = ($event.target as HTMLElement).parentElement?.parentElement?.querySelector(
-				'.IconWrapper__name'
-			);
+			const iconName = (
+				$event.target as HTMLElement
+			).parentElement?.parentElement?.querySelector('.IconWrapper__name');
 
 			const componentTag = iconName?.textContent?.trim().replace(/\s+/g, '-');
 
@@ -201,20 +201,26 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 
 	showIconsWhenMatchWithQuery(query: string | null): void {
 		if (!query) {
-			this.counter = this.getIconVisibleElements(`.IconWrapper .IconWrapper__icon`).length;
+			this.counter = this.getIconVisibleElements(
+				`.IconWrapper .IconWrapper__icon`,
+			).length;
 
 			return;
 		}
 
 		try {
 			query = query?.trim().replace(/\s+/g, '-').toLowerCase() || '';
-			const iconElements: Element[] = this.getIconVisibleElements(`.IconWrapper .IconWrapper__icon:not([id*=${query}])`);
+			const iconElements: Element[] = this.getIconVisibleElements(
+				`.IconWrapper .IconWrapper__icon:not([id*=${query}])`,
+			);
 
 			iconElements.forEach((element: Element) => {
 				element.parentElement?.classList.add('hidden');
 			});
 
-			this.counter = this.getIconVisibleElements(`.IconWrapper .IconWrapper__icon[id*=${query}]`).length;
+			this.counter = this.getIconVisibleElements(
+				`.IconWrapper .IconWrapper__icon[id*=${query}]`,
+			).length;
 		} catch (err: any) {
 			console.error(err.message);
 		}
@@ -224,7 +230,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	showAllIcons(): void {
 		try {
 			const icons: NodeListOf<Element> = this.document.querySelectorAll(
-				'.IconWrapper[class*="hidden"]'
+				'.IconWrapper[class*="hidden"]',
 			);
 			const iconElements: Element[] = Array.from(icons);
 
@@ -239,7 +245,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	isEmpty(): void {
 		try {
 			const icons: NodeListOf<Element> = this.document.querySelectorAll(
-				'.IconWrapper:not([class*=hidden])'
+				'.IconWrapper:not([class*=hidden])',
 			);
 			const iconElements: Element[] = Array.from(icons);
 			this.empty = iconElements.length === 0;

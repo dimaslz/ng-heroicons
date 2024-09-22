@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "preserveSymlinks": true,
             "outputPath": "dist/landing",
             "index": "src/index.html",
             "browser": "src/main.ts",

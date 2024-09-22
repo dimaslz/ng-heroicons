@@ -1,7 +1,6 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { OUTLINE_ICONS, T_OUTLINE_ICONS } from '@dimaslz/ng-heroicons';
 import kebabCase from 'lodash/kebabCase';
-
-import { OUTLINE_ICONS, T_OUTLINE_ICONS } from '@/ng-heroicons';
 
 @Component({
 	selector: 'outline-icons',
@@ -15,8 +14,8 @@ export class OutlineIconsComponent {
 	@Input() class = '';
 
 	components = Object.keys(OUTLINE_ICONS).map((icon) => {
-		return kebabCase(icon).replace("-outline-icon-component", "");
+		return kebabCase(icon).replace('-outline-icon-component', '');
 	}) as T_OUTLINE_ICONS[];
 
-	constructor() { }
+	constructor() {}
 }

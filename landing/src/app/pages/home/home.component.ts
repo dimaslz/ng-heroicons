@@ -1,22 +1,19 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgHeroiconsModule } from '@dimaslz/ng-heroicons';
 
 import { DarkModeModule } from '@/components/darkmode-toggle/darkmode-toggle.module';
 import { IconModule } from '@/components/icon/icon.module';
 import copyToClipboard from '@/utils/copy-to-clipboard.utils';
 
-import { IconsModule } from './icons/icons.module';
+import { IconsModule } from '../../icons/icons.module';
 
 @Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html',
+	selector: 'home-page',
+	templateUrl: './home.component.html',
 	standalone: true,
 	imports: [
 		CommonModule,
-		RouterOutlet,
-		RouterLink,
 
 		NgHeroiconsModule,
 		IconsModule,
@@ -24,7 +21,7 @@ import { IconsModule } from './icons/icons.module';
 		DarkModeModule,
 	],
 })
-export class AppComponent {
+export class HomePageComponent {
 	public copied = false;
 	public color = 'white';
 
