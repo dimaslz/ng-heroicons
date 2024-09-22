@@ -72,7 +72,10 @@
             "prerender": true,
             "ssr": {
               "entry": "projects/playground/server.ts"
-            }
+            },
+            "allowedCommonJsDependencies": [
+              "lodash"
+            ]
           },
           "configurations": {
             "production": {

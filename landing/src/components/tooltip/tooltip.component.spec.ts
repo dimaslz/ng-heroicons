@@ -1,20 +1,17 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 import { Component, Input } from '@angular/core';
 import { render, RenderResult, screen } from '@testing-library/angular';
+
 import { TooltipComponent } from './tooltip.component';
 
 @Component({
 	selector: 'app',
-	template: '<tooltip [copied]="copied"><div id="foo">FOO</div></tooltip>'
+	template: '<tooltip [copied]="copied"><div id="foo">FOO</div></tooltip>',
 })
 class AppDummyComponent {
 	@Input() copied = false;
 }
 
 describe('TooltipComponent', () => {
-
 	describe('By default', () => {
 		let componentRender: RenderResult<TooltipComponent>;
 		beforeEach(async () => {
@@ -31,7 +28,7 @@ describe('TooltipComponent', () => {
 		let componentRender: RenderResult<TooltipComponent>;
 		beforeEach(async () => {
 			componentRender = await render(AppDummyComponent, {
-				declarations: [TooltipComponent]
+				declarations: [TooltipComponent],
 			});
 		});
 
@@ -40,12 +37,16 @@ describe('TooltipComponent', () => {
 		});
 
 		it('if copied, I can see the notification', () => {
-			expect(screen.getByText('Copied!').classList.contains('invisible')).toBe(true);
+			expect(screen.getByText('Copied!').classList.contains('invisible')).toBe(
+				true,
+			);
 
 			componentRender.fixture.componentInstance.copied = true;
 			componentRender.fixture.detectChanges();
 
-			expect(screen.getByText('Copied!').classList.contains('visible')).toBe(true);
+			expect(screen.getByText('Copied!').classList.contains('visible')).toBe(
+				true,
+			);
 		});
 	});
 });

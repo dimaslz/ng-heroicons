@@ -1,75 +1,49 @@
 <main>
-  <div class="ForkMeOnGithub fixed top-0 right-0 z-10 mt-10 -mr-12 rotate-45 transform bg-gray-900">
-    <a
-      href="https://github.com/dimaslz/ng-heroicons"
-      target="_blank"
-      class="my-1 flex border border-dashed border-white px-10 py-1 text-gray-300 hover:text-gray-100"
-      >Fork me on GitHub</a
-    >
-  </div>
+	<div
+		class="ForkMeOnGithub fixed top-0 right-0 z-10 mt-10 -mr-12 rotate-45 transform bg-gray-900"
+	>
+		<a
+			href="https://github.com/dimaslz/ng-heroicons"
+			target="_blank"
+			class="my-1 flex border border-dashed border-white px-10 py-1 text-gray-300 hover:text-gray-100"
+			>Fork me on GitHub</a
+		>
+	</div>
 
-  <div class="container my-0 mx-auto flex h-full flex-col px-4">
-    <app-darkmode-toggle (update)="onModeChange($event)"></app-darkmode-toggle>
+	<div class="container my-0 mx-auto flex h-full flex-col px-4">
+		<div class="flex items-center">
+			<app-darkmode-toggle (update)="onModeChange($event)" />
 
-    <div class="Header flex flex-col items-center">
-      <div>
-        <app-icon [size]="256"></app-icon>
-      </div>
-      <h1 class="mb-6 text-6xl dark:text-gray-200">ng-heroicons</h1>
+			<div class="text-white space-x-4 text-sm">
+				<a
+					routerLink="/"
+					class="dark:text-gray-400 dark:hover:text-gray-50 text-gray-400 hover:text-gray-950"
+					>home</a
+				>
+				<a
+					routerLink="/docs"
+					class="dark:text-gray-400 dark:hover:text-gray-50 text-gray-400 hover:text-gray-950"
+				>
+					documentation
+				</a>
+			</div>
+		</div>
 
-      <div class="Header__install">
-        <code
-          class="relative flex cursor-pointer rounded text-sm text-gray-400 shadow-inner dark:text-gray-900"
-          [ngClass]="{
-            'bg-gray-900 hover:bg-gray-700 dark:bg-gray-200 dark:hover:bg-gray-100': !copied
-          }"
-        >
-          <div
-            *ngIf="copied"
-            class="absolute inset-0 z-10 flex h-full w-full items-center justify-center rounded bg-green-600 p-4 text-white"
-          >
-            command copied to clipboard
-          </div>
-          <div
-            (click)="onClickCommandExample($event)"
-            class="z-0 flex h-full w-full items-center justify-center rounded p-4"
-          >
-            $ yarn add &#64;dimaslz/ng-heroicons
-          </div>
-        </code>
-      </div>
+		<router-outlet></router-outlet>
 
-      <div class="text-xs text-gray-800 dark:text-white mt-2"><span class="text-red-600 font-bold mr-2">npm</span><a href="https://www.npmjs.com/package/@dimaslz/ng-heroicons" target="_blank" class="underline hover:opacity-75">https://www.npmjs.com/package/&#64;dimaslz/ng-heroicons</a></div>
-    </div>
-
-    <h2 class="my-4 text-center text-lg font-light dark:text-white">
-      Angular components to use
-      <a
-        class="text-purple-400 hover:text-purple-600"
-        href="https://heroicons.com/"
-        >Heroicons</a
-      >
-      in your projects.
-    </h2>
-
-    <icons
-      class="Icons flex flex-grow flex-col pb-16"
-      [color]="color"
-    ></icons>
-
-    <div class="fixed bottom-0 right-0 w-full bg-white p-4 text-right text-xs dark:bg-gray-900 dark:text-white">
-      developed with ♥ by
-      <a
-        href="https://twitter.com/dimaslz"
-        class="hover:text-gray-600"
-        >dimaslz</a
-      >
-      (fork in
-      <a
-        href="https://github.com/dimaslz/ng-heroicons"
-        class="hover:text-gray-600"
-        >Github</a
-      >)
-    </div>
-  </div>
+		<div
+			class="fixed bottom-0 right-0 w-full bg-white p-4 text-right text-xs dark:bg-gray-900 dark:text-white"
+		>
+			developed with ♥ by
+			<a href="https://twitter.com/dimaslz" class="hover:text-gray-600"
+				>dimaslz</a
+			>
+			(fork in
+			<a
+				href="https://github.com/dimaslz/ng-heroicons"
+				class="hover:text-gray-600"
+				>Github</a
+			>)
+		</div>
+	</div>
 </main>

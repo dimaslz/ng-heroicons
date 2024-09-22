@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/unbound-method, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call */
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
 	Component,
 	Inject,
@@ -10,11 +10,9 @@ import {
 	SimpleChanges,
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-// import throttle from 'lodash.throttle';
 import { Subscription } from 'rxjs';
 
-import copyToClipboard from '../../utils/copy-to-clipboard.utils';
-import { isPlatformBrowser } from '@angular/common';
+import copyToClipboard from '@/utils/copy-to-clipboard.utils';
 
 @Component({
 	selector: 'icons',
@@ -40,21 +38,24 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	sizes: number[] = [6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64];
 	stroke = 1;
 	sizeIndex = 8;
-	counter = 0;
+	counter = 316;
 	size = this.sizes[this.sizeIndex];
 	type = 'outline';
 	class = '';
 	tooltipContent = '';
 	componentTagCopied = false;
 	form = new FormGroup({
-		search: new FormControl('')
+		search: new FormControl(''),
 	});
 	formSubscription$: Subscription | undefined = new Subscription();
 	debounceSearch: ReturnType<typeof setTimeout> | null = null;
 	empty = false;
 	loading = false;
 
-	constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+	constructor(
+		@Inject(PLATFORM_ID) private platformId: object,
+		@Inject(DOCUMENT) private document: Document,
+	) {
 		this.onMouseOverHandler = this.onMouseOverHandler.bind(this);
 		this.onMouseLeaveHandler = this.onMouseLeaveHandler.bind(this);
 		this.onClickIcon = this.onClickIcon.bind(this);
@@ -91,10 +92,10 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 
 	ngOnDestroy(): void {
 		if (isPlatformBrowser(this.platformId)) {
-			document
+			this.document
 				.querySelector('.Icons')
 				?.removeEventListener('mouseover', this.onMouseOverHandler);
-			document
+			this.document
 				.querySelector('.Icons')
 				?.removeEventListener('mouseleave', this.onMouseLeaveHandler);
 		}
@@ -105,22 +106,29 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	}
 
 	getIconVisibleElements(query?: string): Element[] {
-		const icons: NodeListOf<Element> = document.querySelectorAll(
-			query || `.IconWrapper .IconWrapper__icon`
+		const icons: NodeListOf<Element> = this.document.querySelectorAll(
+			query || `.IconWrapper .IconWrapper__icon`,
 		);
 
 		return Array.from(icons);
 	}
 
 	onMouseOverHandler($event: Event): void {
-		if (/IconWrapper/.test(($event.target as HTMLElement).className)) {
-			const iconName = ($event.target as HTMLElement).querySelector(
-				'.IconWrapper__name'
-			);
+		if (/IconWrapper__type/.test(($event.target as HTMLElement).className)) {
+			const type = ($event.target as HTMLElement).textContent?.trim();
+			const iconName = (
+				$event.target as HTMLElement
+			).parentElement?.parentElement?.querySelector('.IconWrapper__name');
+
 			const componentTag = iconName?.textContent?.trim().replace(/\s+/g, '-');
 
 			if (componentTag) {
-				this.tooltipContent = `<${componentTag}-${this.type}-icon></${componentTag}-${this.type}-icon>`;
+				if (type === 'component') {
+					this.tooltipContent = `<${componentTag}-${this.type}-icon />`;
+				} else {
+					this.tooltipContent = `<ng-heroicons icon="${componentTag}" ${this.type} />`;
+				}
+
 				$event.target?.addEventListener('click', this.onClickIcon);
 			}
 		} else {
@@ -193,45 +201,57 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 
 	showIconsWhenMatchWithQuery(query: string | null): void {
 		if (!query) {
-			this.counter = this.getIconVisibleElements(`.IconWrapper .IconWrapper__icon`).length;
+			this.counter = this.getIconVisibleElements(
+				`.IconWrapper .IconWrapper__icon`,
+			).length;
 
 			return;
 		}
 
 		try {
-			query = query.trim().replace(/\s+/g, '-').toLowerCase();
-			const iconElements: Element[] = this.getIconVisibleElements(`.IconWrapper .IconWrapper__icon:not([id*=${query}])`);
+			query = query?.trim().replace(/\s+/g, '-').toLowerCase() || '';
+			const iconElements: Element[] = this.getIconVisibleElements(
+				`.IconWrapper .IconWrapper__icon:not([id*=${query}])`,
+			);
 
 			iconElements.forEach((element: Element) => {
 				element.parentElement?.classList.add('hidden');
 			});
 
-			this.counter = this.getIconVisibleElements(`.IconWrapper .IconWrapper__icon[id*=${query}]`).length;
-		} catch (err) { }
+			this.counter = this.getIconVisibleElements(
+				`.IconWrapper .IconWrapper__icon[id*=${query}]`,
+			).length;
+		} catch (err: any) {
+			console.error(err.message);
+		}
 		this.isEmpty();
 	}
 
 	showAllIcons(): void {
 		try {
-			const icons: NodeListOf<Element> = document.querySelectorAll(
-				'.IconWrapper[class*="hidden"]'
+			const icons: NodeListOf<Element> = this.document.querySelectorAll(
+				'.IconWrapper[class*="hidden"]',
 			);
 			const iconElements: Element[] = Array.from(icons);
 
 			iconElements.forEach((element: Element) => {
 				element.classList.remove('hidden');
 			});
-		} catch (err) { }
+		} catch (err: any) {
+			console.error(err.message);
+		}
 	}
 
 	isEmpty(): void {
 		try {
-			const icons: NodeListOf<Element> = document.querySelectorAll(
-				'.IconWrapper:not([class*=hidden])'
+			const icons: NodeListOf<Element> = this.document.querySelectorAll(
+				'.IconWrapper:not([class*=hidden])',
 			);
 			const iconElements: Element[] = Array.from(icons);
 			this.empty = iconElements.length === 0;
-		} catch (err) {
+		} catch (err: any) {
+			console.error(err.message);
+
 			this.empty = true;
 		}
 	}

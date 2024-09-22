@@ -1,6 +1,6 @@
 import { render } from '@testing-library/angular';
 
-import * as OUTLINE_ICONS from './components/outline';
+import { OUTLINE_ICONS } from './constants';
 
 describe('Outline icons', () => {
 	describe.each(Object.entries(OUTLINE_ICONS))(
@@ -20,13 +20,12 @@ describe('Outline icons', () => {
 
 				expect(width).toBe('24px');
 				expect(height).toBe('24px');
-				// TODO: should be 1px
 				expect(strokeWidth).toBe('1px');
 			});
 
 			it('size parameter should work', async () => {
 				const { fixture } = await render(iconComponent, {
-					componentProperties: { size: 99 }
+					inputs: { size: 99 }
 				});
 
 				const { width, height } =
@@ -38,7 +37,7 @@ describe('Outline icons', () => {
 
 			it('color parameter should work', async () => {
 				const { fixture } = await render(iconComponent, {
-					componentProperties: { color: 'red' },
+					inputs: { color: 'red' },
 				});
 
 				expect(fixture.nativeElement.querySelector('svg').style.color).toBe(
@@ -48,10 +47,9 @@ describe('Outline icons', () => {
 
 			it('stroke parameter should work', async () => {
 				const { fixture } = await render(iconComponent, {
-					componentProperties: { stroke: 99 }
+					inputs: { stroke: 99 }
 				});
 
-				// TODO: should be 99px
 				expect(
 					fixture.nativeElement.querySelector('svg').style.strokeWidth,
 				).toBe('99px');

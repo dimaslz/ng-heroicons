@@ -1,8 +1,6 @@
 // require("dotenv").config();
 const enablePurge = process.env.NODE_ENV === "production" || false;
 
-console.log("process.env.NODE_ENV", process.env.NODE_ENV)
-
 module.exports = {
   enablePurge,
   important: true,

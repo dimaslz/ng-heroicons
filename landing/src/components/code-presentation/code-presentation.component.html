@@ -1,0 +1,25 @@
+<div class="dark:bg-gray-900 bg-white rounded mb-8" [id]="id">
+	<div>
+		<h2 class="text-xl mb-2 dark:text-white text-gray-800" *ngIf="title">
+			{{ title }}
+		</h2>
+		<div
+			class="text-xs mt-2 py-2 dark:text-gray-300 text-gray-800"
+			*ngIf="description"
+			[innerHtml]="description | safe: 'html'"
+		></div>
+
+		<div class="text-xs">
+			<pre *ngFor="let snippet of snippets" class="flex">
+				<code
+					class="language-{{ snippet.type }} hljs rounded-lg dark:bg-gray-800 bg-gray-200 w-full"
+					[innerHtml]="snippet.code | safe:'html'">
+				</code>
+			</pre>
+		</div>
+	</div>
+
+	<div *ngIf="caption" class="text-xs mt-2 dark:text-white text-gray-800">
+		{{ caption }}
+	</div>
+</div>
