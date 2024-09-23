@@ -52,11 +52,11 @@ class MagnifyingGlassMinusOutlineIconComponent {
 	selector: 'outline-icons',
 	template: `<div>OUTLINE_ICONS</div>
 		<div class="Icons">
-			<div class="IconWrapper">
+			<div class="IconWrapper" id="icon_1">
 				<div class="IconWrapper__icon" id="icon_1">icon_1_svg</div>
 				<div class="IconWrapper__name">icon_1_name</div>
 			</div>
-			<div class="IconWrapper">
+			<div class="IconWrapper" id="icon_2">
 				<div class="IconWrapper__icon" id="icon_2">icon_2_svg</div>
 				<div class="IconWrapper__name">icon_2_name</div>
 			</div>
@@ -200,7 +200,7 @@ describe('IconsComponent', () => {
 
 				fixture.detectChanges();
 
-				expect(screen.getAllByText(/icon_1*/));
+				expect(component.getAllByText(/icon_1*/));
 				expect(screen.getByText(/there are 1 icon/i));
 			});
 

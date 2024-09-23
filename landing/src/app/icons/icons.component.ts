@@ -1,5 +1,6 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
+	AfterViewInit,
 	Component,
 	Inject,
 	Input,
@@ -10,6 +11,7 @@ import {
 	SimpleChanges,
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import copyToClipboard from '@/utils/copy-to-clipboard.utils';
@@ -19,7 +21,9 @@ import copyToClipboard from '@/utils/copy-to-clipboard.utils';
 	templateUrl: './icons.component.html',
 	styleUrls: ['./icons.component.scss'],
 })
-export class IconsComponent implements OnInit, OnDestroy, OnChanges {
+export class IconsComponent
+	implements OnInit, OnDestroy, OnChanges, AfterViewInit
+{
 	@Input() color = 'white';
 
 	clipboardTime: ReturnType<typeof setTimeout> | null = null;
@@ -55,11 +59,26 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	constructor(
 		@Inject(PLATFORM_ID) private platformId: object,
 		@Inject(DOCUMENT) private document: Document,
+		private router: Router,
 	) {
 		this.onMouseOverHandler = this.onMouseOverHandler.bind(this);
 		this.onMouseLeaveHandler = this.onMouseLeaveHandler.bind(this);
 		this.onClickIcon = this.onClickIcon.bind(this);
 		this.onChangeSearch = this.onChangeSearch.bind(this);
+
+		const url = new URL(this.document.location.href);
+		if (url.searchParams.get('type') === 'solid') {
+			this.switchToSolid();
+		}
+	}
+
+	ngAfterViewInit(): void {
+		if (this.isBrowser()) {
+			const url = new URL(this.document.location.href);
+			if (url.searchParams.get('icon')) {
+				this.onScrollTo(url.searchParams.get('icon')!);
+			}
+		}
 	}
 
 	ngOnInit(): void {
@@ -102,6 +121,36 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 
 		if (this.formSubscription$) {
 			this.formSubscription$.unsubscribe();
+		}
+	}
+
+	isBrowser() {
+		return isPlatformBrowser(this.platformId);
+	}
+
+	onScrollTo(id: string) {
+		const element = this.document.querySelector(`#${id}`);
+		if (element) {
+			const elementYOffset = element.clientHeight / 2;
+			const yOffset = window.document.body.clientHeight / 2;
+			const y =
+				element.getBoundingClientRect().top +
+				window.scrollY -
+				yOffset +
+				elementYOffset;
+
+			window.scrollTo({ top: y, behavior: 'smooth' });
+
+			element.classList.add('outline');
+			element.classList.add('animate-pulse');
+			setTimeout(() => {
+				element.classList.remove('outline');
+				element.classList.remove('animate-pulse');
+				this.router.navigate([], {
+					queryParams: { icon: null },
+					queryParamsHandling: 'merge',
+				});
+			}, 2000);
 		}
 	}
 
@@ -156,24 +205,36 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	switchToSolid(): void {
 		this.type = 'solid';
 
+		if (!/type=solid/i.test(this.document.location.search)) {
+			this.router.navigate([], {
+				queryParams: { type: this.type },
+				queryParamsHandling: 'merge',
+			});
+		}
+
 		if (this.query) {
 			this.loading = true;
 			setTimeout(() => {
 				this.showIconsWhenMatchWithQuery(this.query);
 				this.loading = false;
-			});
+			}, 1);
 		}
 	}
 
 	switchToOutline(): void {
 		this.type = 'outline';
 
+		this.router.navigate([], {
+			queryParams: { type: this.type },
+			queryParamsHandling: 'merge',
+		});
+
 		if (this.query) {
 			this.loading = true;
 			setTimeout(() => {
 				this.showIconsWhenMatchWithQuery(this.query);
 				this.loading = false;
-			});
+			}, 1);
 		}
 	}
 
@@ -201,9 +262,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 
 	showIconsWhenMatchWithQuery(query: string | null): void {
 		if (!query) {
-			this.counter = this.getIconVisibleElements(
-				`.IconWrapper .IconWrapper__icon`,
-			).length;
+			this.counter = this.getIconVisibleElements(`.IconWrapper`).length;
 
 			return;
 		}
@@ -211,7 +270,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 		try {
 			query = query?.trim().replace(/\s+/g, '-').toLowerCase() || '';
 			const iconElements: Element[] = this.getIconVisibleElements(
-				`.IconWrapper .IconWrapper__icon:not([id*=${query}])`,
+				`.IconWrapper:not([id*=${query}])`,
 			);
 
 			iconElements.forEach((element: Element) => {
@@ -219,7 +278,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 			});
 
 			this.counter = this.getIconVisibleElements(
-				`.IconWrapper .IconWrapper__icon[id*=${query}]`,
+				`.IconWrapper[id*=${query}]`,
 			).length;
 		} catch (err: any) {
 			console.error(err.message);
@@ -230,12 +289,12 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	showAllIcons(): void {
 		try {
 			const icons: NodeListOf<Element> = this.document.querySelectorAll(
-				'.IconWrapper[class*="hidden"]',
+				'icon-wrapper[class*="hidden"]',
 			);
 			const iconElements: Element[] = Array.from(icons);
 
 			iconElements.forEach((element: Element) => {
-				element.classList.remove('hidden');
+				element?.classList.remove('hidden');
 			});
 		} catch (err: any) {
 			console.error(err.message);
@@ -245,7 +304,7 @@ export class IconsComponent implements OnInit, OnDestroy, OnChanges {
 	isEmpty(): void {
 		try {
 			const icons: NodeListOf<Element> = this.document.querySelectorAll(
-				'.IconWrapper:not([class*=hidden])',
+				'icon-wrapper:not([class*=hidden])',
 			);
 			const iconElements: Element[] = Array.from(icons);
 			this.empty = iconElements.length === 0;

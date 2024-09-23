@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgHeroiconsModule } from '@dimaslz/ng-heroicons';
 
-import { TooltipModule } from '@/components/tooltip/tooltip.component.module';
+import { IconWrapperComponent, TooltipModule } from '@/components';
 
 import { IconsComponent } from './icons.component';
 import { OutlineIconsComponent } from './outline-icons.component';
@@ -17,6 +17,7 @@ import { SolidIconsComponent } from './solid-icons.component';
 		ReactiveFormsModule,
 		TooltipModule,
 		NgHeroiconsModule,
+		IconWrapperComponent,
 	],
 	exports: [IconsComponent, OutlineIconsComponent, SolidIconsComponent],
 	bootstrap: [],

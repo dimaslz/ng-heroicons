@@ -63,6 +63,5 @@ export class DocumentationPageComponent implements OnInit, AfterViewInit {
 		this.document
 			.querySelector(`#${id}`)
 			?.scrollIntoView({ behavior: 'smooth' });
-		// console.log("Tag", tag)
 	}
 }

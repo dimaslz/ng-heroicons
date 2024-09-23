@@ -16,6 +16,4 @@ export class OutlineIconsComponent {
 	components = Object.keys(OUTLINE_ICONS).map((icon) => {
 		return kebabCase(icon).replace('-outline-icon-component', '');
 	}) as T_OUTLINE_ICONS[];
-
-	constructor() {}
 }

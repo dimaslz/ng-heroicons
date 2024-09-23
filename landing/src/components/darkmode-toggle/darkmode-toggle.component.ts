@@ -1,4 +1,4 @@
-import { isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { PLATFORM_ID } from '@angular/core';
 
@@ -32,7 +32,10 @@ export class DarkModeComponent {
 
 	public darkmode = false;
 
-	constructor(@Inject(PLATFORM_ID) private platformId: object) {
+	constructor(
+		@Inject(PLATFORM_ID) private platformId: object,
+		@Inject(DOCUMENT) private document: Document,
+	) {
 		if (isPlatformBrowser(this.platformId)) {
 			this.darkmode = window?.matchMedia(
 				'(prefers-color-scheme: dark)',
@@ -48,9 +51,9 @@ export class DarkModeComponent {
 
 	switchMode(): void {
 		if (this.darkmode) {
-			document.querySelector('html')?.classList.add('dark');
+			this.document.querySelector('html')?.classList.add('dark');
 		} else {
-			document.querySelector('html')?.classList.remove('dark');
+			this.document.querySelector('html')?.classList.remove('dark');
 		}
 
 		this.update.emit(!this.darkmode ? 'dark' : 'light');
