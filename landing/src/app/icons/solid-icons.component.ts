@@ -15,6 +15,4 @@ export class SolidIconsComponent {
 	components = Object.keys(SOLID_ICONS).map((icon) => {
 		return kebabCase(icon).replace('-solid-icon-component', '');
 	}) as T_SOLID_ICONS[];
-
-	constructor() {}
 }

@@ -2,33 +2,15 @@
 	class="OutlineIcons grid w-full grid-cols-3 gap-1 md:grid-cols-6 lg:grid-cols-8"
 >
 	@for (component of components; track component) {
-		<div class="IconWrapper">
-			<div class="IconWrapper__icon" [id]="component">
-				<ng-heroicons
-					outline
-					[icon]="component"
-					[size]="size"
-					[color]="color"
-					[class]="class"
-					[stroke]="stroke"
-				/>
-			</div>
-			<div class="IconWrapper__name">{{ component }}</div>
-
-			<div
-				class="size-full flex absolute inset-0 flex-col justify-center opacity-0 hover:opacity-100 p-1 space-y-1"
-			>
-				<div
-					class="IconWrapper__type size-full dark:bg-slate-800/90 hover:dark:bg-slate-900/90 bg-slate-200/95 hover:bg-slate-300/95 flex items-center justify-center text-center text-xs"
-				>
-					component
-				</div>
-				<div
-					class="IconWrapper__type size-full dark:bg-slate-800/90 hover:dark:bg-slate-900/90 bg-slate-200/95 hover:bg-slate-300/95 flex items-center justify-center text-center text-xs"
-				>
-					dynamic component
-				</div>
-			</div>
-		</div>
+		<icon-wrapper [component]="component">
+			<ng-heroicons
+				outline
+				[icon]="component"
+				[size]="size"
+				[color]="color"
+				[class]="class"
+				[stroke]="stroke"
+			/>
+		</icon-wrapper>
 	}
 </div>
