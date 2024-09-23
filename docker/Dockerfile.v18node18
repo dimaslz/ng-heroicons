@@ -1,0 +1,13 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY ./packages/angular-v18 /app
+COPY ./tsconfig.json /app/tsconfig.json
+
+RUN rm /app/yarn.lock
+RUN rm -rf /app/node_modules
+
+RUN yarn install
+
+CMD ["yarn", "test"]

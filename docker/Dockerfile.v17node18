@@ -1,0 +1,15 @@
+FROM node:18-alpine
+
+RUN apk add g++ make py3-pip
+
+WORKDIR /app
+
+COPY ./packages/angular-v17 /app
+COPY ./tsconfig.json /app/tsconfig.json
+
+RUN rm /app/yarn.lock
+RUN rm -rf /app/node_modules
+
+RUN yarn install
+
+CMD ["yarn", "test"]
