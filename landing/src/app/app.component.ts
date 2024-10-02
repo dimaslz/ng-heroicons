@@ -1,5 +1,5 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgHeroiconsModule } from '@dimaslz/ng-heroicons';
 
@@ -28,18 +28,7 @@ export class AppComponent {
 	public copied = false;
 	public color = 'white';
 
-	constructor(@Inject(PLATFORM_ID) private platformId: object) {
-		if (isPlatformBrowser(this.platformId)) {
-			const node: HTMLScriptElement = document.createElement('script');
-			node.src = 'https://plausible.io/js/plausible.js';
-			node.type = 'text/javascript';
-			node.async = true;
-			node.defer = true;
-			node.dataset['domain'] = 'ng-heroicons.dimaslz.dev';
-
-			document.getElementsByTagName('head')[0].appendChild(node);
-		}
-	}
+	constructor() {}
 
 	onClickCommandExample($event: MouseEvent): void {
 		this.copied = true;
