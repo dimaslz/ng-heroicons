@@ -36,7 +36,9 @@
               "entry": "server.ts"
             },
             "allowedCommonJsDependencies": [
-              "lodash"
+              "lodash.upperfirst",
+              "lodash.camelcase",
+              "lodash.kebabcase"
             ]
           },
           "configurations": {

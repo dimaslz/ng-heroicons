@@ -1,11 +1,15 @@
 import { Component, Input } from '@angular/core';
 import { render, RenderResult, screen } from '@testing-library/angular';
 
+import { TooltipModule } from '@/components/tooltip/tooltip.component.module';
+
 import { TooltipComponent } from './tooltip.component';
 
 @Component({
 	selector: 'app',
+	imports: [TooltipModule],
 	template: '<tooltip [copied]="copied"><div id="foo">FOO</div></tooltip>',
+	standalone: true,
 })
 class AppDummyComponent {
 	@Input() copied = false;
@@ -27,9 +31,7 @@ describe('TooltipComponent', () => {
 	describe('In different scenarios', () => {
 		let componentRender: RenderResult<TooltipComponent>;
 		beforeEach(async () => {
-			componentRender = await render(AppDummyComponent, {
-				declarations: [TooltipComponent],
-			});
+			componentRender = await render(AppDummyComponent);
 		});
 
 		it('should see the content', () => {
