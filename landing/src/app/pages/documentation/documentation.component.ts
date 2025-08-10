@@ -21,6 +21,7 @@ import {
 @Component({
 	selector: 'documentation-page',
 	templateUrl: './documentation.component.html',
+	standalone: false,
 })
 export class DocumentationPageComponent implements OnInit, AfterViewInit {
 	public install1 = hljs.highlight(installationExample, {

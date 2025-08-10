@@ -11,15 +11,14 @@ import { IconsModule } from '../../icons/icons.module';
 @Component({
 	selector: 'home-page',
 	templateUrl: './home.component.html',
-	standalone: true,
 	imports: [
 		CommonModule,
-
 		NgHeroiconsModule,
 		IconsModule,
 		IconModule,
 		DarkModeModule,
 	],
+	standalone: true,
 })
 export class HomePageComponent {
 	public copied = false;

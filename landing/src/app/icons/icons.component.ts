@@ -20,6 +20,7 @@ import copyToClipboard from '@/utils/copy-to-clipboard.utils';
 	selector: 'icons',
 	templateUrl: './icons.component.html',
 	styleUrls: ['./icons.component.scss'],
+	standalone: false,
 })
 export class IconsComponent
 	implements OnInit, OnDestroy, OnChanges, AfterViewInit

@@ -6,6 +6,7 @@ import kebabCase from 'lodash/kebabCase';
 	selector: 'solid-icons',
 	templateUrl: './solid-icons.component.html',
 	encapsulation: ViewEncapsulation.None,
+	standalone: false,
 })
 export class SolidIconsComponent {
 	@Input() size = 24;

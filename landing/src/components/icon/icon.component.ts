@@ -30,6 +30,7 @@ import {
 		></path>
 	</svg>`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	standalone: false,
 })
 export class IconComponent implements OnInit, OnChanges {
 	@Input() style = '';

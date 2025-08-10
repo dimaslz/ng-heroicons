@@ -4,6 +4,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 	selector: 'tooltip',
 	templateUrl: './tooltip.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	standalone: false,
 })
 export class TooltipComponent {
 	@Input() copied = false;

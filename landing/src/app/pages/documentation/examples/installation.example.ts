@@ -1,4 +1,5 @@
 export const installationExample = `
+// app.config.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgHeroiconsModule } from '@dimaslz/ng-heroicons';

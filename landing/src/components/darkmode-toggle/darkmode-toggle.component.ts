@@ -26,6 +26,7 @@ import { PLATFORM_ID } from '@angular/core';
 			</div>
 		</button>
 	</div>`,
+	standalone: false,
 })
 export class DarkModeComponent {
 	@Output() update = new EventEmitter();

@@ -11,6 +11,7 @@ function transformDescription(value: string): string {
 	selector: 'code-presentation',
 	templateUrl: './code-presentation.component.html',
 	styleUrl: './code-presentation.component.scss',
+	standalone: false,
 })
 export class CodePresentationComponent implements OnInit {
 	@Input() title: string = '';

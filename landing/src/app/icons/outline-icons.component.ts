@@ -6,6 +6,7 @@ import kebabCase from 'lodash/kebabCase';
 	selector: 'outline-icons',
 	templateUrl: './outline-icons.component.html',
 	encapsulation: ViewEncapsulation.None,
+	standalone: false,
 })
 export class OutlineIconsComponent {
 	@Input() size = 24;

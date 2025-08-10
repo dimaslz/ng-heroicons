@@ -12,17 +12,16 @@ import { IconsModule } from './icons/icons.module';
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	standalone: true,
 	imports: [
 		CommonModule,
 		RouterOutlet,
 		RouterLink,
-
 		NgHeroiconsModule,
 		IconsModule,
 		IconModule,
 		DarkModeModule,
 	],
+	standalone: true,
 })
 export class AppComponent {
 	public copied = false;
