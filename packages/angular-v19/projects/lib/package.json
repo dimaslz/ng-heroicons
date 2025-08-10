@@ -1,6 +1,6 @@
 {
   "name": "@dimaslz/ng-heroicons",
-  "version": "1.19.0",
+  "version": "1.19.1",
   "author": "Dimas López <me@dimaslz.io> (dimaslz)",
   "repository": {
     "url": "git+https://github.com/dimaslz/ng-heroicons.git",
@@ -19,16 +19,16 @@
   ],
   "peerDependencies": {
     "@angular/common": "^19.2.0",
-    "@angular/core": "^19.2.0",
-    "lodash.upperfirst": "^4.3.1",
-    "lodash.camelcase": "^4.3.0"
+    "@angular/core": "^19.2.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "lodash.upperfirst": "^4",
+    "lodash.camelcase": "^4"
   },
   "devDependencies": {
-    "@types/lodash.upperfirst": "^4.3.9",
-    "@types/lodash.kebabcase": "^4.1.9"
+    "@types/lodash.upperfirst": "^4",
+    "@types/lodash.camelcase": "^4"
   },
   "sideEffects": false
 }
