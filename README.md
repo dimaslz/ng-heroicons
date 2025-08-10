@@ -27,7 +27,8 @@ This package has compatibility with Angular version from 11 to 19.
 | 18.x.x | `^1.18.0` ||
 |        | `^1.18.1` ||
 |        | `^1.18.2` ||
-| 19.x.x | `^1.19.0` | default |
+| 19.x.x | `^1.19.0` | ❌ issue ❌ |
+|        | `^1.19.1` | default     |
 
 `$ yarn add @dimaslz/ng-heroicons@^XX`
 
