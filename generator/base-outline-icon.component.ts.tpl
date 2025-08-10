@@ -12,14 +12,14 @@ import { Component, Input, OnChanges, SimpleChanges, OnInit, ChangeDetectionStra
   }`],
 })
 export class BaseOutlineIconComponent implements OnInit, OnChanges {
-  @Input() size: number = 24;
-  @Input() stroke: number | string = 1;
+  @Input() size: number | string | null = 24;
+  @Input() stroke: number | string | null | string = 1;
   @Input() color: string = "";
   @Input() class: string = "";
-  @Input() svgClass: string = "";
-  @Input() svgStyle: string = "";
+  @Input() style: string = "";
 
-  public style: string = "";
+  public _style: string = "";
+  public _class: string = "";
 
   constructor() { }
 
@@ -29,7 +29,7 @@ export class BaseOutlineIconComponent implements OnInit, OnChanges {
     const strokeHasChanged = changes["stroke"]?.previousValue !== changes["stroke"]?.currentValue;
 
     if (colorHasChanged || sizeHasChanged || strokeHasChanged) {
-      this.style = "";
+      this._style = "";
       this.renderStyle();
     }
   }
@@ -50,6 +50,6 @@ export class BaseOutlineIconComponent implements OnInit, OnChanges {
       style.push(`stroke-width: ${this.stroke}px;`);
     }
 
-    this.style = this.svgStyle + style.join(' ');
+    this.style = style.join(' ') + ' ' + this.style;
   }
 }

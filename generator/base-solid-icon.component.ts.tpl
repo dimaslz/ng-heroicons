@@ -14,10 +14,10 @@ export class BaseSolidIconComponent implements OnInit, OnChanges {
   @Input() size: number = 24;
   @Input() color: string = "";
   @Input() class: string = "";
-  @Input() svgClass: string = "";
-  @Input() svgStyle: string = "";
+  @Input() style: string = "";
 
-  public style: string = "";
+  public _style: string = "";
+  public _class: string = "";
 
   constructor() { }
 
@@ -26,7 +26,7 @@ export class BaseSolidIconComponent implements OnInit, OnChanges {
     const sizeHasChanged = changes["size"]?.previousValue !== changes["size"]?.currentValue;
 
     if (colorHasChanged || sizeHasChanged) {
-      this.style = "";
+      this._style = "";
       this.renderStyle();
     }
   }
@@ -44,6 +44,6 @@ export class BaseSolidIconComponent implements OnInit, OnChanges {
       style.push(`color: ${this.color};`);
     }
 
-    this.style = this.svgStyle + style.join(' ');
+    this.style = style.join(' ') + ' ' + this.style;
   }
 }

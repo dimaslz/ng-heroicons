@@ -18,7 +18,7 @@ const heroiconsPath = path.resolve(`${root}/heroicons`);
 const heroiconsGitRepo = "https://github.com/tailwindlabs/heroicons.git";
 const originalHeroiconsPath = path.resolve(`${root}/heroicons`);
 const TYPES = ["outline", "solid"];
-const VERSIONS = ["v12", "v13", "v14", "v15", "v16", "v17", "v18"];
+const VERSIONS = ["v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19"];
 const ANGULAR_VERSION = VERSIONS.map((version) => ({
   [version]: `angular-${version}`,
 })).reduce((a, b) => ({ ...a, ...b }), {});
@@ -84,7 +84,7 @@ async function SVGToAngular({ selector, template, varName, className, type }) {
   componentTpl = componentTpl
     .replace("{{template}}", template)
     .replace("{{className}}", className)
-    .replace(/<svg/, '<svg [attr.style]="style" [attr.class]="svgClass"')
+    .replace(/<svg/, '<svg [attr.style]="style" [attr.class]="class"')
     .replace("{{selector}}", selector);
 
   if (type === "outline") {
@@ -337,6 +337,7 @@ async function run() {
   } else {
     versions = [angularVersion];
   }
+
 
   if (options.clone) {
     await cloneHeroicons();

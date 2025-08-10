@@ -10,7 +10,10 @@ Live demo: [https://ng-heroicons.dimaslz.dev](https://ng-heroicons.dimaslz.dev)
 
 ## How to install in your project
 
-This package has compatibility with Angular version from 11 to 18.
+This package has compatibility with Angular version from 11 to 19.
+
+> [!IMPORTANT]
+> The versions from 11 to 16, will not longer be maintained anymore.
 
 | angular version | package version ||
 |-|-|-|
@@ -23,11 +26,14 @@ This package has compatibility with Angular version from 11 to 18.
 | 17.x.x | `^1.17.*` ||
 | 18.x.x | `^1.18.0` ||
 |        | `^1.18.1` ||
-|        | `^1.18.2` | default |
+|        | `^1.18.2` ||
+| 19.x.x | `^1.19.0` | default |
 
 `$ yarn add @dimaslz/ng-heroicons@^XX`
 
 `$ npm install @dimaslz/ng-heroicons@^XX`
+
+### from angular 11 to 17
 
 ```ts
 // app.module.ts
@@ -46,6 +52,43 @@ import { NgHeroiconsModule } from "@dimaslz/ng-heroicons";
 //...
 ```
 
+### from angular 18
+
+```ts
+// app.config.ts
+import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { NgHeroiconsModule } from '@dimaslz/ng-heroicons';
+
+import { routes } from './app.routes';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideClientHydration(withEventReplay()),
+    importProvidersFrom(
+      NgHeroiconsModule.forRoot()
+    )
+  ]
+};
+
+// app.component.ts
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { NgHeroiconsModule } from '@dimaslz/ng-heroicons';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, NgHeroiconsModule],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
+})
+export class AppComponent {}
+
+```
+
 ## How to use
 
 Go to [https://ng-heroicons.dimaslz.dev](https://ng-heroicons.dimaslz.dev) and get the name of the icon and use in your tag html following suffix `{outline|solid}-icon`. For example: `academic cap` should be `<academic-cap-outline-icon></academic-cap-outline-icon>` for outline or `<academic-cap-solid-icon></academic-cap-solid-icon>` for solid icons. From version **>= 1.18.1** is possible to use the dynamic component `<ng-heroicons icon="..." />`
@@ -61,12 +104,6 @@ You can use your style in line, css or just pass color and size.
 
 <!-- pass color or size -->
 <academic-cap-outline-icon size="48" color="red"></academic-cap-outline-icon>
-
-<!-- To apply specific style to the SVG, use `svgStyle` -->
-<academic-cap-outline-icon svgStyle="color: red;"></academic-cap-outline-icon>
-
-<!-- To apply specific css to the SVG, use `svgClass` -->
-<academic-cap-outline-icon svgClass="your-class-for-the-svg"></academic-cap-outline-icon>
 ```
 
 By using a dynamic component `<ng-heroicons ... icon="..." />` (from versions **>= 1.18.1**)
@@ -117,6 +154,7 @@ Keep in mind, first you should build the `lib` package
 | angular 16 | `$ yarn --cwd=packages/angular-v16 build lib -c production` |
 | angular 17 | `$ yarn --cwd=packages/angular-v17 build lib -c production` |
 | angular 18 | `$ yarn --cwd=packages/angular-v18 build lib -c production` |
+| angular 19 | `$ yarn --cwd=packages/angular-v19 build lib -c production` |
 
 ### Run playground per version
 
@@ -132,6 +170,7 @@ Keep in mind, first you should build the `lib` package. This playgrounds does no
 | angular 16 | `$ yarn --cwd=packages/angular-v16 start playground` |
 | angular 17 | `$ yarn --cwd=packages/angular-v17 start playground` |
 | angular 18 | `$ yarn --cwd=packages/angular-v18 start playground` |
+| angular 19 | `$ yarn --cwd=packages/angular-v19 start playground` |
 
 ### Regenerate components
 
